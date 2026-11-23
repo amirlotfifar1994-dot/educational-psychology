@@ -167,13 +167,13 @@ footer{text-align:center;color:var(--muted);padding:50px 14px 60px;font-size:14p
 .c-chap h3{position:relative;font-size:6cqw;font-weight:900;line-height:1.35;background:linear-gradient(110deg,#fff,color-mix(in srgb,var(--gc) 55%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent}
 .c-chap .dots{position:relative;display:flex;gap:1.2cqw;justify-content:center;margin:2.4cqw 0 1.6cqw}.c-chap .dots i{width:1.8cqw;height:1.8cqw;border-radius:50%}
 .typing:after{content:"▍";display:inline-block;color:var(--gc);filter:brightness(1.8);animation:blk .7s steps(2) infinite;margin-inline-start:.2em}@keyframes blk{50%{opacity:0}}
-.c-card.chk p.ex{font-size:2.5cqw;margin-bottom:1.6cqw}
-.c-card.chk .opts{display:grid;gap:1.1cqw}
-.c-card.chk .op{display:flex;gap:1.4cqw;align-items:center;padding:1.1cqw 1.8cqw;border-radius:1.6cqw;border:.2cqw solid #ffffff30;background:#ffffff0d;font-size:2.4cqw;font-weight:700;opacity:0;transform:translateX(3cqw);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.c-card.chk{padding:2.2cqw 3.4cqw}.c-card.chk .hd{margin-bottom:1cqw;font-size:1.8cqw}.c-card.chk .hd i{width:3.6cqw;height:3.6cqw;font-size:2cqw}.c-card.chk p.ex{font-size:2cqw;line-height:1.75;margin-bottom:1.2cqw}
+.c-card.chk .opts{display:grid;gap:.8cqw}
+.c-card.chk .op{display:flex;gap:1.4cqw;align-items:center;padding:.7cqw 1.6cqw;border-radius:1.4cqw;border:.2cqw solid #ffffff30;background:#ffffff0d;font-size:2cqw;font-weight:700;opacity:0;transform:translateX(3cqw);transition:all .5s cubic-bezier(.2,.8,.2,1)}
 .c-card.chk .op.show{opacity:1;transform:none}
-.c-card.chk .op b{width:3.6cqw;height:3.6cqw;border-radius:1.1cqw;display:grid;place-items:center;background:#ffffff1c;font-size:2cqw}
+.c-card.chk .op b{width:3cqw;height:3cqw;border-radius:1cqw;display:grid;place-items:center;background:#ffffff1c;font-size:1.7cqw}
 .c-card.chk .op.ok{background:#4ade8030;border-color:#4ade80;transform:scale(1.03);box-shadow:0 0 3cqw #4ade8066}.c-card.chk .op.dim{opacity:.3}
-.c-card.chk .cnt{display:flex;gap:1cqw;justify-content:center;margin-top:1.6cqw}.c-card.chk .cnt i{width:1.4cqw;height:1.4cqw;border-radius:50%;background:#ffffff2a;transition:.3s}.c-card.chk .cnt i.on{background:#ffc861;box-shadow:0 0 1.6cqw #ffc861}
+.c-card.chk .cnt{display:flex;gap:1cqw;justify-content:center;margin-top:1.1cqw}.c-card.chk .cnt i{width:1.4cqw;height:1.4cqw;border-radius:50%;background:#ffffff2a;transition:.3s}.c-card.chk .cnt i.on{background:#ffc861;box-shadow:0 0 1.6cqw #ffc861}
 .c-end .rc{display:flex;flex-wrap:wrap;gap:1.2cqw;justify-content:center;max-width:70cqw;margin:2.4cqw auto 1.4cqw}
 .c-end .rc span{width:5.4cqw;height:5.4cqw;border-radius:1.4cqw;display:grid;place-items:center;font-size:3cqw;background:color-mix(in srgb,var(--c) 28%,#0008);border:.18cqw solid var(--c);opacity:0;transform:scale(.5);animation:rcin .5s cubic-bezier(.34,1.56,.64,1) forwards}
 @keyframes rcin{to{opacity:1;transform:none}}
@@ -187,10 +187,6 @@ body.rl .grain{display:none}
 body.rl .k-b,body.rl .c-card,body.rl .feed{backdrop-filter:none!important}
 body.rl .bg .o{filter:blur(4cqw)}
 body.rl .k-t.av,body.rl .k-t.em .in{filter:none}
-/*RESP-FIX*/
-.top{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.top::-webkit-scrollbar{display:none}.top>*{flex:none}.top b{margin-inline-end:auto}
-@media(max-width:600px){.top{padding:8px 10px;gap:4px}.top a{padding:6px 10px;font-size:13px}.top b{font-size:14px;padding-inline-end:8px}}
-/*END-RESP-FIX*/
 </style>
 </head>
 <body>
@@ -778,8 +774,8 @@ function burst(G,t,o){const c=G.ctx,s=c.createBufferSource();s.buffer=G.nb;s.loo
 const R=(a,b)=>a+Math.random()*(b-a);
 /* ---------- SFX library ---------- */
 const SFX={
- key(G,t,v=1){burst(G,t,{type:'highpass',f:R(2800,4200),d:.012,g:.09*v});tone(G,t,{f:R(170,230),f2:100,d:.035,g:.07*v})},
- space(G,t,v=1){burst(G,t,{type:'bandpass',f:1300,d:.03,g:.1*v});tone(G,t,{f:140,f2:80,d:.06,g:.1*v})},
+ key(G,t,v=1){burst(G,t,{type:'highpass',f:R(2600,3800),d:.007,g:.06*v});burst(G,t,{type:'bandpass',f:R(650,1000),d:.03,g:.13*v,q:1.1});tone(G,t,{f:R(140,190),f2:85,d:.045,g:.085*v})},
+ space(G,t,v=1){burst(G,t,{type:'bandpass',f:520,d:.05,g:.15*v,q:.9});burst(G,t,{type:'highpass',f:2200,d:.01,g:.05*v});tone(G,t,{f:110,f2:62,d:.08,g:.13*v})},
  click(G,t,v=1){burst(G,t,{type:'highpass',f:4200,d:.008,g:.09*v})},
  pop(G,t,v=1){const b=R(480,560);tone(G,t,{f:b,f2:b*1.7,d:.09,g:.14*v,a:.004})},
  pop2(G,t,v=1){tone(G,t,{f:330,f2:540,d:.1,g:.13*v,a:.004})},
@@ -842,6 +838,7 @@ function scheduleBar(G,dest,ch,k,t){const P=PRE[ch]||PRE[1],R2=rng(ch*977+k*131+
 function ensure(){if(A.silent)return false;if(!A.ctx){try{const C=window.AudioContext||window.webkitAudioContext;A.ctx=new C();A.G=graph(A.ctx)}catch(e){return false}}if(A.ctx.state==='suspended')A.ctx.resume();return true}
 A.unlock=()=>{ensure()};
 A.setVol=v=>{A.vol=v;if(A.G)A.G.master.gain.value=v};
+A.playAt=(name,delayMs,v=1)=>{if(A.log)A.log.push({n:name,t:performance.now()-A.t0+delayMs,v});if(!A.sfxOn||!ensure())return;const f=SFX[name];if(f)try{f(A.G,A.ctx.currentTime+.012+delayMs/1000,v)}catch(e){}};
 A.play=(name,v=1)=>{if(A.log)A.log.push({n:name,t:performance.now()-A.t0,v});if(!A.sfxOn||!ensure())return;const f=SFX[name];if(f)try{f(A.G,A.ctx.currentTime+.012,v)}catch(e){}};
 function stopCur(fade=1.6){const cur=A.cur;if(!cur)return;const now=A.ctx.currentTime;cur.g.gain.cancelScheduledValues(now);cur.g.gain.setValueAtTime(cur.g.gain.value,now);cur.g.gain.linearRampToValueAtTime(0,now+fade);setTimeout(()=>{try{cur.g.disconnect()}catch(e){}},fade*1000+300);A.cur=null;clearInterval(A.timer)}
 A.music=ch=>{if(A.log)A.log.push({m:ch,t:performance.now()-A.t0});A.wantCh=ch;if(!A.musicOn||!ensure())return;if(A.cur&&A.cur.ch===ch)return;stopCur(1.8);if(ch==null)return;
@@ -938,14 +935,21 @@ const beatsOf=(i,intro)=>{const p=PAT[i],c=CASES[p.n],g=gBy[p.g],a=[];
  a.push({t:'chk',cap:'پرسش سریع: این مثال کدام الگوست؟',d:12500},{t:'review',cap:'بازبینی: '+p.r});
  return a};
 const durOf=b=>b.d||Math.max(3800,Math.min(17000,2800+b.cap.length*62));
-function clearType(){clearInterval(S.typeTm);S.wTms.forEach(clearTimeout);S.wTms=[]}
+function clearType(){if(S.typeStop){S.typeStop();S.typeStop=null}S.wTms.forEach(clearTimeout);S.wTms=[]}
 function kin(el,text,dur,base,snd){const w=text.split(/\s+/),step=Math.min(240,dur*.6/w.length);if(base){const k=text.length>170?Math.max(.62,Math.pow(170/text.length,.6)):1;el.style.fontSize=(base*k).toFixed(2)+'cqw'}
  el.className=(el.className||'')+' kw';el.innerHTML=w.map((x,i)=>`<span style="animation-delay:${Math.round(i*step)}ms">${esc(x)}</span>`).join('');
  if(snd)w.forEach((x,i)=>S.wTms.push(setTimeout(()=>AUD.play('click',.45),Math.round(i*step))))}
-function typeIn(el,text,dur,base,done){if(base){const k=text.length>170?Math.max(.62,Math.pow(170/text.length,.6)):1;el.style.fontSize=(base*k).toFixed(2)+'cqw'}
- const n=text.length,step=Math.max(14,Math.min(52,dur*.58/n));let k=0;el.textContent='';el.classList.add('typing');
- S.typeTm=setInterval(()=>{k++;el.textContent=text.slice(0,k);const ch=text[k-1];if(ch===' ')AUD.play('space',.55);else AUD.play('key',.55+Math.random()*.4);
-  if(k>=n){clearInterval(S.typeTm);el.classList.remove('typing');done&&done()}},step)}
+function typeIn(el,text,dur,base,done,vel=1){if(base){const k=text.length>170?Math.max(.62,Math.pow(170/text.length,.6)):1;el.style.fontSize=(base*k).toFixed(2)+'cqw'}
+ const n=text.length,total=dur*.6;el.textContent='';el.classList.add('typing');
+ const w=[];let sum=0;for(let i=0;i<n;i++){const ch=text[i];let x=.75+Math.random()*.6;if(ch===' ')x*=1.2;if('.؟!'.includes(ch))x+=5;else if('،؛,:'.includes(ch))x+=2.6;w.push(x);sum+=x}
+ const T=[];let acc=0;for(let i=0;i<n;i++){T.push(acc/sum*total);acc+=w[i]}
+ const t0=performance.now();let k=0,sc=0,stop=false;
+ const tick=()=>{if(stop)return;const now=performance.now()-t0;
+  while(k<n&&T[k]<=now)k++;el.textContent=text.slice(0,k);
+  while(sc<n&&T[sc]<now+420){const ch=text[sc],sp=ch===' ';AUD.playAt(sp?'space':'key',Math.max(0,T[sc]-now),(sp?.55:.6+Math.random()*.4)*vel);sc++}
+  if(k>=n){el.classList.remove('typing');done&&done();return}
+  S.typeRaf=requestAnimationFrame(tick)};
+ S.typeStop=()=>{stop=true;cancelAnimationFrame(S.typeRaf)};tick()}
 function showCard(html,after){[...cards.children].forEach(c=>{c.classList.remove('in');c.classList.add('out');setTimeout(()=>c.remove(),650)});if(!html)return null;const d=document.createElement('div');d.className='cd';d.innerHTML=html;cards.appendChild(d);d.getBoundingClientRect();d.classList.add('in');after&&after(d);return d}
 const headCard=(ic,t)=>`<div class="hd"><i>${ic}</i>${t}</div>`;
 const later=(ms,f)=>S.wTms.push(setTimeout(f,ms/S.speed));
@@ -961,10 +965,10 @@ function render(b,p,c,g,dur){
  else if(b.t==='def'){cam.classList.add('off');showCard(`<div class="c-card">${headCard('📘','تعریف')}<p id="kt"></p></div>`,d=>typeIn($('#kt',d),p.d,dur,3.1))}
  else if(b.t==='case'){cam.classList.add('off');const real=c.k==='real';AUD.play('paper');later(950,()=>AUD.play(real?'stamp':'pop2'));
   const left=real?`<div class="paper"><div class="stamp">پروندهٔ واقعی</div><div class="mast">ARCHIVE · ${c.yr}</div><h4>${esc(c.head)}</h4><div class="rule"></div><div class="src">منبع: ${esc(c.src)}</div></div>`:`<div class="feed"><div class="stamp" style="left:2cqw;top:-2cqw">روایت نمادین</div><div class="who"><i></i><span>پست نمونه · ساختگی برای آموزش</span></div><h4>${esc(c.head)}</h4><div class="src">${esc(c.src)}</div></div>`;
-  showCard(`<div class="c-case ${real?'':'sym'}">${left}<div class="side"><div class="badges"><span>${c.yr}</span><span class="${real?'r':'s'}">${real?'مستند':'نمادین'}</span></div><p id="kt"></p></div></div>`,d=>kin($('#kt',d),c.narr,dur,2.65,true))}
- else if(b.t==='tie'){cam.classList.add('off');AUD.play('ping',.7);showCard(`<div class="c-card">${headCard('🔗','پیوند با الگو')}<p id="kt"></p><span class="pat">${p.ic} ${p.fa}</span></div>`,d=>kin($('#kt',d),c.tie,dur,3.1,true))}
+  showCard(`<div class="c-case ${real?'':'sym'}">${left}<div class="side"><div class="badges"><span>${c.yr}</span><span class="${real?'r':'s'}">${real?'مستند':'نمادین'}</span></div><p id="kt"></p></div></div>`,d=>typeIn($('#kt',d),c.narr,dur,2.65))}
+ else if(b.t==='tie'){cam.classList.add('off');AUD.play('ping',.7);showCard(`<div class="c-card">${headCard('🔗','پیوند با الگو')}<p id="kt"></p><span class="pat">${p.ic} ${p.fa}</span></div>`,d=>typeIn($('#kt',d),c.tie,dur,3.1))}
  else if(b.t==='chk'){cam.classList.add('off');const o=chkOpts(p);AUD.play('swell',.5);
-  showCard(`<div class="c-card chk">${headCard('🤔','پرسش سریع: این مثال کدام الگوست؟')}<p class="ex" id="kt"></p><div class="opts">${o.map((x,i)=>`<div class="op" data-ok="${x.n===p.n?1:0}"><b>${'ابج'[i]}</b>${x.fa}</div>`).join('')}</div><div class="cnt"><i></i><i></i><i></i></div></div>`,d=>{kin($('#kt',d),p.x,dur*.5,2.5);const ops=$$('.op',d),cn=$$('.cnt i',d);ops.forEach((e,i)=>later(2600+i*450,()=>{e.classList.add('show');AUD.play('pop',.7)}));
+  showCard(`<div class="c-card chk">${headCard('🤔','پرسش سریع: این مثال کدام الگوست؟')}<p class="ex" id="kt"></p><div class="opts">${o.map((x,i)=>`<div class="op" data-ok="${x.n===p.n?1:0}"><b>${'ابج'[i]}</b>${x.fa}</div>`).join('')}</div><div class="cnt"><i></i><i></i><i></i></div></div>`,d=>{typeIn($('#kt',d),p.x,dur*.42,2);const ops=$$('.op',d),cn=$$('.cnt i',d);ops.forEach((e,i)=>later(2600+i*450,()=>{e.classList.add('show');AUD.play('pop',.7)}));
    cn.forEach((e,i)=>later(6200+i*900,()=>{e.classList.add('on');AUD.play('tick',.8)}));
    later(9300,()=>{ops.forEach(e=>e.classList.add(e.dataset.ok==='1'?'ok':'dim'));AUD.play('chime')})})}
  else if(b.t==='review'){cam.classList.remove('off');cam.style.opacity='.2';
