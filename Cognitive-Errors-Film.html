@@ -159,6 +159,38 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 footer{text-align:center;color:var(--muted);padding:50px 14px 60px;font-size:14px}footer b{color:var(--ink)}
 @media(max-width:700px){.c-case{grid-template-columns:1fr}.cap{font-size:15px}.ctl .info{display:none}}
 @media(prefers-reduced-motion:reduce){.grain,.bg .o{animation:none!important}}
+
+.c-chap{position:relative;text-align:center;width:100%}
+.c-chap .ghost{position:absolute;inset:0;display:grid;place-items:center;font-size:46cqw;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:.28cqw color-mix(in srgb,var(--gc) 60%,#fff);opacity:.45}
+.c-chap small{position:relative;display:block;font-size:1.8cqw;color:#ffffffaa}
+.c-chap h2{position:relative;font-size:4.2cqw;font-weight:800;color:#ffffffcc;margin-top:1cqw}
+.c-chap h3{position:relative;font-size:6cqw;font-weight:900;line-height:1.35;background:linear-gradient(110deg,#fff,color-mix(in srgb,var(--gc) 55%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-chap .dots{position:relative;display:flex;gap:1.2cqw;justify-content:center;margin:2.4cqw 0 1.6cqw}.c-chap .dots i{width:1.8cqw;height:1.8cqw;border-radius:50%}
+.typing:after{content:"▍";display:inline-block;color:var(--gc);filter:brightness(1.8);animation:blk .7s steps(2) infinite;margin-inline-start:.2em}@keyframes blk{50%{opacity:0}}
+.c-card.chk p.ex{font-size:2.5cqw;margin-bottom:1.6cqw}
+.c-card.chk .opts{display:grid;gap:1.1cqw}
+.c-card.chk .op{display:flex;gap:1.4cqw;align-items:center;padding:1.1cqw 1.8cqw;border-radius:1.6cqw;border:.2cqw solid #ffffff30;background:#ffffff0d;font-size:2.4cqw;font-weight:700;opacity:0;transform:translateX(3cqw);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.c-card.chk .op.show{opacity:1;transform:none}
+.c-card.chk .op b{width:3.6cqw;height:3.6cqw;border-radius:1.1cqw;display:grid;place-items:center;background:#ffffff1c;font-size:2cqw}
+.c-card.chk .op.ok{background:#4ade8030;border-color:#4ade80;transform:scale(1.03);box-shadow:0 0 3cqw #4ade8066}.c-card.chk .op.dim{opacity:.3}
+.c-card.chk .cnt{display:flex;gap:1cqw;justify-content:center;margin-top:1.6cqw}.c-card.chk .cnt i{width:1.4cqw;height:1.4cqw;border-radius:50%;background:#ffffff2a;transition:.3s}.c-card.chk .cnt i.on{background:#ffc861;box-shadow:0 0 1.6cqw #ffc861}
+.c-end .rc{display:flex;flex-wrap:wrap;gap:1.2cqw;justify-content:center;max-width:70cqw;margin:2.4cqw auto 1.4cqw}
+.c-end .rc span{width:5.4cqw;height:5.4cqw;border-radius:1.4cqw;display:grid;place-items:center;font-size:3cqw;background:color-mix(in srgb,var(--c) 28%,#0008);border:.18cqw solid var(--c);opacity:0;transform:scale(.5);animation:rcin .5s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes rcin{to{opacity:1;transform:none}}
+.c-end small{font-size:1.8cqw;color:#ffffffaa}
+body.rl{overflow:hidden!important;background:#05071a}
+body.rl .top,body.rl .hero,body.rl .cap,body.rl .ctl,body.rl .strip,body.rl .now,body.rl .sec,body.rl footer,body.rl .bigplay,body.rl noscript{display:none!important}
+body.rl .wrap{padding:0;max-width:none}
+body.rl .player{position:fixed;left:0;top:0;width:1280px;height:720px;margin:0;border:0;border-radius:0;z-index:9999;box-shadow:none}
+body.rl .stage{width:1280px;height:720px}
+body.rl .grain{display:none}
+body.rl .k-b,body.rl .c-card,body.rl .feed{backdrop-filter:none!important}
+body.rl .bg .o{filter:blur(4cqw)}
+body.rl .k-t.av,body.rl .k-t.em .in{filter:none}
+/*RESP-FIX*/
+.top{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.top::-webkit-scrollbar{display:none}.top>*{flex:none}.top b{margin-inline-end:auto}
+@media(max-width:600px){.top{padding:8px 10px;gap:4px}.top a{padding:6px 10px;font-size:13px}.top b{font-size:14px;padding-inline-end:8px}}
+/*END-RESP-FIX*/
 </style>
 </head>
 <body>
@@ -188,7 +220,7 @@ footer{text-align:center;color:var(--muted);padding:50px 14px 60px;font-size:14p
   <div class="ctl">
     <button class="pp" id="pp" aria-label="پخش">▶</button><button id="ps" aria-label="صحنهٔ قبل" title="صحنهٔ قبل">⏮</button><button id="pb2" aria-label="بخش قبل" title="بخش قبل">◀</button><button id="nb" aria-label="بخش بعد" title="بخش بعد">▶</button><button id="ns2" aria-label="صحنهٔ بعد" title="صحنهٔ بعد">⏭</button>
     <span class="info" id="info"></span>
-    <span class="sp"><select id="spd" aria-label="سرعت"><option value="0.75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option></select><button id="cc" class="on" title="زیرنویس" aria-label="زیرنویس">CC</button><button id="nar" title="روایت صوتی (نیاز به صدای فارسی در مرورگر)" aria-label="روایت صوتی">🔊</button><button id="mus" title="موسیقی محیطی" aria-label="موسیقی">🎵</button><button id="fs" title="تمام‌صفحه" aria-label="تمام‌صفحه">⛶</button></span>
+    <span class="sp"><select id="spd" aria-label="سرعت"><option value="0.75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option></select><button id="cc" class="on" title="زیرنویس" aria-label="زیرنویس">CC</button><button id="nar" title="روایت صوتی (نیاز به صدای فارسی در مرورگر)" aria-label="روایت صوتی">🔊</button><button id="mus" class="on" title="موسیقی هر فصل" aria-label="موسیقی">🎵</button><button id="sfx" class="on" title="جلوه‌های صوتی (تایپ، ویژ، مهر…)" aria-label="جلوه‌های صوتی">🔔</button><input type="range" id="vol" min="0" max="1" step=".05" value=".8" aria-label="بلندی صدا" title="بلندی صدا" style="width:80px;accent-color:#7c5cff"><button id="fs" title="تمام‌صفحه" aria-label="تمام‌صفحه">⛶</button></span>
   </div>
   <div class="strip" id="strip"></div>
 </div>
@@ -721,6 +753,114 @@ const CASES={
  tie:'برای خودت و دیگران معیار یکسان بگذار.'}
 };
 
+/* ===== sound engine: synthesized SFX + generative chapter music (shared by live playback and offline render) ===== */
+const AUD=(()=>{
+const A={ctx:null,G:null,musicOn:true,sfxOn:true,vol:.8,log:null,t0:0,silent:false,cur:null,timer:null};
+const mf=m=>440*Math.pow(2,(m-69)/12);
+/* ---------- graph ---------- */
+function impulse(ctx,dur,decay){const n=Math.floor(ctx.sampleRate*dur),b=ctx.createBuffer(2,n,ctx.sampleRate);for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,decay)}return b}
+function graph(ctx){const G={ctx};
+ G.master=ctx.createGain();G.master.gain.value=A.vol;
+ const comp=ctx.createDynamicsCompressor();comp.threshold.value=-16;comp.knee.value=20;comp.ratio.value=4;comp.attack.value=.01;comp.release.value=.25;
+ G.master.connect(comp);comp.connect(ctx.destination);
+ G.sfx=ctx.createGain();G.sfx.gain.value=.9;G.sfx.connect(G.master);
+ G.musicBus=ctx.createGain();G.musicBus.gain.value=.5;G.musicBus.connect(G.master);
+ G.rev=ctx.createConvolver();G.rev.buffer=impulse(ctx,2.4,2.8);const rg=ctx.createGain();rg.gain.value=.28;G.rev.connect(rg);rg.connect(G.master);
+ const sr=ctx.createGain();sr.gain.value=.22;G.sfx.connect(sr);sr.connect(G.rev);
+ const mr=ctx.createGain();mr.gain.value=.5;G.musicBus.connect(mr);mr.connect(G.rev);
+ const nb=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),d=nb.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;G.nb=nb;
+ return G}
+/* ---------- primitives ---------- */
+function tone(G,t,o){const c=G.ctx,os=c.createOscillator(),e=c.createGain(),a=o.a??.003,d=o.d??.15;os.type=o.type||'sine';os.frequency.setValueAtTime(o.f,t);if(o.f2)os.frequency.exponentialRampToValueAtTime(o.f2,t+d);
+ e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(o.g??.2,t+a);e.gain.exponentialRampToValueAtTime(.0001,t+a+d);let n=os;if(o.lp){const f=c.createBiquadFilter();f.type='lowpass';f.frequency.value=o.lp;os.connect(f);n=f}n.connect(e);e.connect(o.dest||G.sfx);os.start(t);os.stop(t+a+d+.05)}
+function burst(G,t,o){const c=G.ctx,s=c.createBufferSource();s.buffer=G.nb;s.loop=true;const f=c.createBiquadFilter();f.type=o.type||'highpass';f.frequency.setValueAtTime(o.f||2000,t);if(o.f2)f.frequency.exponentialRampToValueAtTime(o.f2,t+(o.d||.05));f.Q.value=o.q??.8;
+ const e=c.createGain(),a=o.a??.001;e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(o.g??.2,t+a);e.gain.exponentialRampToValueAtTime(.0001,t+(o.d||.05));s.connect(f);f.connect(e);e.connect(o.dest||G.sfx);s.start(t,Math.random()*1.4);s.stop(t+(o.d||.05)+.05)}
+const R=(a,b)=>a+Math.random()*(b-a);
+/* ---------- SFX library ---------- */
+const SFX={
+ key(G,t,v=1){burst(G,t,{type:'highpass',f:R(2800,4200),d:.012,g:.09*v});tone(G,t,{f:R(170,230),f2:100,d:.035,g:.07*v})},
+ space(G,t,v=1){burst(G,t,{type:'bandpass',f:1300,d:.03,g:.1*v});tone(G,t,{f:140,f2:80,d:.06,g:.1*v})},
+ click(G,t,v=1){burst(G,t,{type:'highpass',f:4200,d:.008,g:.09*v})},
+ pop(G,t,v=1){const b=R(480,560);tone(G,t,{f:b,f2:b*1.7,d:.09,g:.14*v,a:.004})},
+ pop2(G,t,v=1){tone(G,t,{f:330,f2:540,d:.1,g:.13*v,a:.004})},
+ whoosh(G,t,v=1){burst(G,t,{type:'bandpass',f:260,f2:3200,d:.8,a:.18,g:.2*v,q:1.1})},
+ swell(G,t,v=1){burst(G,t,{type:'lowpass',f:200,f2:4200,d:1.7,a:1.4,g:.22*v,q:.7});tone(G,t,{f:110,f2:240,d:1.7,a:1.2,g:.1*v,type:'triangle'})},
+ boom(G,t,v=1){tone(G,t,{f:62,f2:34,d:1.3,g:.5*v,a:.004});burst(G,t,{type:'lowpass',f:160,d:.6,g:.3*v})},
+ tick(G,t,v=1){burst(G,t,{type:'bandpass',f:1900,d:.02,g:.2*v,q:2})},
+ tock(G,t,v=1){burst(G,t,{type:'bandpass',f:1000,d:.035,g:.22*v,q:2});tone(G,t,{f:680,d:.04,g:.06*v})},
+ stamp(G,t,v=1){tone(G,t,{f:130,f2:48,d:.24,g:.55*v,a:.002});burst(G,t,{type:'lowpass',f:700,d:.16,g:.3*v});burst(G,t+.02,{type:'highpass',f:3000,d:.04,g:.08*v})},
+ paper(G,t,v=1){burst(G,t,{type:'bandpass',f:2600,f2:900,d:.4,a:.08,g:.1*v,q:.6});burst(G,t+.38,{type:'highpass',f:4000,d:.03,g:.06*v})},
+ shutter(G,t,v=1){burst(G,t,{type:'highpass',f:5000,d:.012,g:.16*v});burst(G,t+.055,{type:'highpass',f:3800,d:.016,g:.12*v});tone(G,t,{f:900,d:.02,g:.05*v})},
+ coin(G,t,v=1){tone(G,t,{f:2600,d:.5,g:.1*v,a:.001});tone(G,t,{f:3900,d:.35,g:.06*v,a:.001});tone(G,t+.01,{f:1300,d:.4,g:.05*v,type:'triangle'})},
+ cash(G,t,v=1){for(let i=0;i<5;i++)SFX.coin(G,t+i*.055,.6*v);tone(G,t+.3,{f:1568,d:.9,g:.14*v,type:'triangle',a:.002});tone(G,t+.32,{f:2093,d:.8,g:.09*v,a:.002})},
+ alarm(G,t,v=1){for(let i=0;i<4;i++){tone(G,t+i*.2,{f:i%2?660:880,d:.12,g:.05*v,type:'square',lp:2600,a:.004})}},
+ heart(G,t,v=1){tone(G,t,{f:72,f2:40,d:.16,g:.55*v,a:.004});tone(G,t+.24,{f:66,f2:38,d:.14,g:.4*v,a:.004});tone(G,t+.95,{f:72,f2:40,d:.16,g:.45*v,a:.004});tone(G,t+1.19,{f:66,f2:38,d:.14,g:.32*v,a:.004})},
+ chime(G,t,v=1){[1047,1319,1568,2093].forEach((f,i)=>tone(G,t+i*.09,{f,d:.9,g:.09*v,a:.004}))},
+ buzz(G,t,v=1){tone(G,t,{f:118,f2:92,d:.28,g:.09*v,type:'sawtooth',lp:900,a:.01})},
+ think(G,t,v=1){tone(G,t,{f:440,f2:330,d:.4,g:.07*v,a:.02,type:'triangle'});tone(G,t+.14,{f:660,f2:495,d:.4,g:.05*v,a:.02,type:'triangle'})},
+ glass(G,t,v=1){tone(G,t,{f:1200,d:1.3,g:.09*v,a:.002});tone(G,t,{f:1810,d:1,g:.05*v,a:.002});tone(G,t,{f:2410,d:.7,g:.03*v,a:.002})},
+ gavel(G,t,v=1){for(let i=0;i<2;i++){tone(G,t+i*.2,{f:250,f2:120,d:.09,g:.4*v,a:.002});burst(G,t+i*.2,{type:'bandpass',f:900,d:.045,g:.2*v})}},
+ dice(G,t,v=1){let x=0;for(let i=0;i<7;i++){x+=R(.03,.075);burst(G,t+x,{type:'bandpass',f:R(1800,2600),d:.03,g:.09*v,q:2})}},
+ ping(G,t,v=1){tone(G,t,{f:880,d:1,g:.12*v,a:.003});tone(G,t+.36,{f:880,d:.8,g:.05*v});tone(G,t+.72,{f:880,d:.6,g:.025*v})},
+ murmur(G,t,v=1){burst(G,t,{type:'lowpass',f:480,d:1.7,a:.5,g:.12*v,q:.5});burst(G,t+.1,{type:'bandpass',f:900,d:1.4,a:.4,g:.05*v,q:.6})},
+ static(G,t,v=1){for(let i=0;i<3;i++)burst(G,t+i*.22,{type:'highpass',f:1500,d:.17,g:.06*v})},
+ rumble(G,t,v=1){burst(G,t,{type:'lowpass',f:110,d:1.9,a:.3,g:.5*v,q:.5});tone(G,t,{f:46,d:1.9,g:.18*v,a:.3})},
+ sparkle(G,t,v=1){for(let i=0;i<7;i++)tone(G,t+i*.05,{f:R(3000,5200),d:.28,g:.04*v,a:.002})},
+ sonar(G,t,v=1){SFX.ping(G,t,v)}
+};
+A.SFX=SFX;
+/* ---------- music presets (deterministic generation) ---------- */
+const SC={minor:[0,2,3,5,7,8,10],dorian:[0,2,3,5,7,9,10],lydian:[0,2,4,6,7,9,11],pent:[0,3,5,7,10],major:[0,2,4,5,7,9,11],mixo:[0,2,4,5,7,9,10]};
+const PRE={
+ 1:{root:57,sc:'minor',bpm:116,prog:[0,5,3,4],pad:'sawtooth',lp:700,pl:'square',plLp:1800,div:4,pat:'updown',dens:.8,bass:1},
+ 2:{root:50,sc:'dorian',bpm:94,prog:[0,3,5,4],pad:'triangle',lp:900,pl:'sine',plLp:3200,div:2,pat:'up',dens:.7,bass:1,bell:1},
+ 3:{root:53,sc:'lydian',bpm:82,prog:[0,1,3,0],pad:'sine',lp:1200,pl:'triangle',plLp:2600,div:2,pat:'rand',dens:.55,bass:0},
+ 4:{root:52,sc:'pent',bpm:104,prog:[0,2,3,1],pad:'triangle',lp:1000,pl:'triangle',plLp:2400,div:4,pat:'rand',dens:.7,bass:1},
+ 5:{root:48,sc:'minor',bpm:88,prog:[0,6,5,6],pad:'sawtooth',lp:520,pl:'triangle',plLp:1500,div:2,pat:'updown',dens:.6,bass:1},
+ 6:{root:55,sc:'major',bpm:100,prog:[0,4,5,3],pad:'triangle',lp:1400,pl:'sine',plLp:3600,div:4,pat:'up',dens:.75,bass:1},
+ 7:{root:46,sc:'mixo',bpm:92,prog:[0,6,3,4],pad:'sine',lp:1000,pl:'triangle',plLp:2200,div:2,pat:'updown',dens:.6,bass:1},
+ 8:{root:50,sc:'major',bpm:108,prog:[0,5,3,4],pad:'triangle',lp:1500,pl:'sine',plLp:3800,div:4,pat:'up',dens:.8,bass:1},
+ 9:{root:57,sc:'minor',bpm:76,prog:[0,3,6,4],pad:'sine',lp:900,pl:'sine',plLp:3000,div:2,pat:'rand',dens:.5,bass:0,bell:1}
+};
+function rng(seed){let s=seed>>>0||1;return()=>{s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;return s/4294967296}}
+const degM=(P,i)=>{const sc=SC[P.sc];return P.root+sc[i%sc.length]+12*Math.floor(i/sc.length)};
+function barDur(P){return 4*60/P.bpm}
+function scheduleBar(G,dest,ch,k,t){const P=PRE[ch]||PRE[1],R2=rng(ch*977+k*131+7),bd=barDur(P),deg=P.prog[k%P.prog.length],c=G.ctx;
+ const chord=[0,2,4,6].map(o=>degM(P,deg+o));
+ /* pad */
+ chord.slice(0,3).forEach((m,i)=>{[0,1].forEach(dt=>{const o=c.createOscillator(),e=c.createGain(),f=c.createBiquadFilter();o.type=P.pad;o.frequency.value=mf(m);o.detune.value=(dt?7:-6)+i*2;f.type='lowpass';f.frequency.value=P.lp;
+  e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(.05,t+bd*.35);e.gain.setValueAtTime(.05,t+bd*.7);e.gain.linearRampToValueAtTime(0,t+bd+.9);o.connect(f);f.connect(e);e.connect(dest);o.start(t);o.stop(t+bd+1)})});
+ /* bass */
+ if(P.bass){[0,2].forEach(b=>{const bt=t+b*bd/4;tone(G,bt,{f:mf(chord[0]-12),d:bd/4*1.6,g:.16,type:'triangle',lp:380,a:.01,dest})})}
+ /* arpeggio */
+ const n=P.div*4;for(let i=0;i<n;i++){if(R2()>P.dens)continue;let idx;const arr=[chord[0],chord[1],chord[2],chord[3],chord[0]+12,chord[1]+12];
+  if(P.pat==='up')idx=i%arr.length;else if(P.pat==='updown'){const q=i%10;idx=q<6?q:10-q-0}else idx=Math.floor(R2()*arr.length);
+  const m=arr[Math.min(idx,arr.length-1)]+(P.pat==='rand'&&R2()<.2?12:0),pt=t+i*bd/n,vel=.5+R2()*.5;
+  tone(G,pt,{f:mf(m),d:P.bell?.9:.32,g:.075*vel,type:P.pl,lp:P.plLp,a:.004,dest});
+  if(P.bell&&R2()<.4)tone(G,pt,{f:mf(m)*2.76,d:.5,g:.025*vel,a:.002,dest})}}
+/* ---------- live ---------- */
+function ensure(){if(A.silent)return false;if(!A.ctx){try{const C=window.AudioContext||window.webkitAudioContext;A.ctx=new C();A.G=graph(A.ctx)}catch(e){return false}}if(A.ctx.state==='suspended')A.ctx.resume();return true}
+A.unlock=()=>{ensure()};
+A.setVol=v=>{A.vol=v;if(A.G)A.G.master.gain.value=v};
+A.play=(name,v=1)=>{if(A.log)A.log.push({n:name,t:performance.now()-A.t0,v});if(!A.sfxOn||!ensure())return;const f=SFX[name];if(f)try{f(A.G,A.ctx.currentTime+.012,v)}catch(e){}};
+function stopCur(fade=1.6){const cur=A.cur;if(!cur)return;const now=A.ctx.currentTime;cur.g.gain.cancelScheduledValues(now);cur.g.gain.setValueAtTime(cur.g.gain.value,now);cur.g.gain.linearRampToValueAtTime(0,now+fade);setTimeout(()=>{try{cur.g.disconnect()}catch(e){}},fade*1000+300);A.cur=null;clearInterval(A.timer)}
+A.music=ch=>{if(A.log)A.log.push({m:ch,t:performance.now()-A.t0});A.wantCh=ch;if(!A.musicOn||!ensure())return;if(A.cur&&A.cur.ch===ch)return;stopCur(1.8);if(ch==null)return;
+ const c=A.ctx,g=c.createGain();g.gain.setValueAtTime(0,c.currentTime);g.gain.linearRampToValueAtTime(1,c.currentTime+2.2);g.connect(A.G.musicBus);
+ const P=PRE[ch]||PRE[1],cur=A.cur={ch,g,s0:c.currentTime+.05,k:0};
+ const pump=()=>{if(A.cur!==cur)return;const horizon=c.currentTime+1.2;while(cur.s0+cur.k*barDur(P)<horizon){scheduleBar(A.G,g,ch,cur.k,cur.s0+cur.k*barDur(P));cur.k++}};
+ pump();A.timer=setInterval(pump,250)};
+A.setMusicOn=on=>{A.musicOn=on;if(!on)stopCur(.8);else if(A.wantCh!=null){const w=A.wantCh;A.cur=null;A.music(w)}};
+A.stopAll=()=>{if(A.ctx)stopCur(.6)};
+/* ---------- offline render of a recorded log ---------- */
+A.renderChunk=async(log,w0,w1,sr=44100,tail=3)=>{const len=Math.ceil((w1-w0+tail)*sr),ctx=new OfflineAudioContext(2,len,sr),G=graph(ctx);G.master.gain.value=.85;
+ const segs=[];let curM=null;log.filter(e=>e.m!==undefined).sort((a,b)=>a.t-b.t).forEach(e=>{if(curM)curM.e=e.t/1000;curM=e.m==null?null:{ch:e.m,s:e.t/1000,e:Infinity};if(curM)segs.push(curM)});
+ for(const s of segs){const P=PRE[s.ch]||PRE[1],bd=barDur(P),end=Math.min(s.e,w1+tail),mg=ctx.createGain();const a0=s.s-w0;if(end<w0||s.s>w1+tail)continue;
+  if(a0<0)mg.gain.setValueAtTime(1,0);else{mg.gain.setValueAtTime(0,a0);mg.gain.linearRampToValueAtTime(1,a0+2.2)}if(isFinite(s.e)){mg.gain.setValueAtTime(1,Math.max(0,s.e-w0-.2));mg.gain.linearRampToValueAtTime(0,Math.max(0,s.e-w0)+1.6)}mg.connect(G.musicBus);
+  for(let k=0;s.s+k*bd<end;k++){const ts=s.s+k*bd-w0;if(ts+bd+1<0||ts>len/sr)continue;scheduleBar(G,mg,s.ch,k,Math.max(0,ts))}}
+ for(const e of log){if(!e.n)continue;const t=e.t/1000-w0;if(t<-1||t>len/sr)continue;const f=SFX[e.n];if(f)try{f(G,Math.max(0,t),e.v??1)}catch(er){}}
+ return ctx.startRendering()};
+return A})();
+
 </script>
 <script>
 (()=>{
@@ -729,6 +869,8 @@ const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]).replace('.','�
 const sv=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},gt=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
 const gBy=Object.fromEntries(GROUPS.map(g=>[g.id,g]));
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const RENDER=/[?&]render=1/.test(location.search);
+if(RENDER){document.body.classList.add('rl');AUD.silent=true;AUD.log=[]}
 const root=document.documentElement,tb=$('#theme');
 function setTheme(t){root.dataset.theme=t;tb.textContent=t==='light'?'☀️':'🌙';sv('cfTheme',t)}
 setTheme(gt('cfTheme')||'dark');tb.onclick=()=>setTheme(root.dataset.theme==='light'?'dark':'light');
@@ -755,7 +897,7 @@ function avatar(a,mood){const sk=SK[a.sk||0];mood=mood||a.mood||'neutral';
  s+=(MOUTH[mood]||MOUTH.neutral)+'</svg>';return s}
 
 /* ---------- DSL stage engine ---------- */
-const cam=$('#cam'),stg=$('#stg');let els={},seq=0;
+const cam=$('#cam'),stg=$('#stg');let els={},lastPop=0;
 function draw(e,init){const p=e.__p,s=e.style,k=p.k;
  if(p.fs!==undefined)s.fontSize=p.fs+'cqw';
  if(k==='t'||k==='b'){if(e.__av){if(p.mood!==e.__mood){e.__mood=p.mood;e.__in.innerHTML=avatar(e.__av,p.mood)}s.width=p.fs*1.05+'cqw';s.height=p.fs*1.26+'cqw'}else if(p.txt!==undefined&&e.__in.textContent!==p.txt)e.__in.textContent=p.txt}
@@ -770,100 +912,137 @@ function put(id,p,anim){if(p===null)return;let e=els[id];
   if(p.k==='t'&&AV[p.txt]){e.__av=AV[p.txt];e.classList.add('av');e.__mood=undefined;e.__p.mood=e.__p.mood||e.__av.mood||'neutral'}
   else if(p.k==='t'&&p.fs>=6&&/[\u{1F300}-\u{1FAFF}☀-➿]/u.test(p.txt||''))e.classList.add('em');
   e.style.setProperty('--d',(-Math.random()*4).toFixed(2)+'s');cam.appendChild(e);els[id]=e;
-  if(anim){draw(e,true);e.getBoundingClientRect()}draw(e,false)}
+  if(anim){draw(e,true);e.getBoundingClientRect();const n=performance.now();if(n-lastPop>140&&p.o!==0){lastPop=n;AUD.play(Math.random()<.5?'pop':'pop2',.6)}}draw(e,false)}
  else{Object.assign(e.__p,p);draw(e,false)}}
 const clearCam=()=>{cam.innerHTML='';els={}};
 function rebuild(sc,j,anim){cam.classList.add('inst');clearCam();for(let k=0;k<j;k++)for(const [id,p] of Object.entries(sc[k][1]))put(id,p,false);cam.getBoundingClientRect();cam.classList.remove('inst');for(const [id,p] of Object.entries(sc[j][1]))put(id,p,anim)}
 function stepPhase(sc,j){for(const [id,p] of Object.entries(sc[j][1]))put(id,p,true)}
 
-/* ---------- audio ---------- */
-const AU={ctx:null,on:false,m:null,init(){if(this.ctx)return;try{const c=this.ctx=new (window.AudioContext||window.webkitAudioContext)(),g=c.createGain();g.gain.value=0;g.connect(c.destination);this.m=g;
-  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.connect(g);
-  [110,164.81,220,277.18].forEach((f,i)=>{const o=c.createOscillator();o.type=i%2?'sine':'triangle';o.frequency.value=f;o.detune.value=(i-1.5)*6;const og=c.createGain();og.gain.value=.5/(i+1.5);o.connect(og);og.connect(lp);o.start();
-   const l=c.createOscillator(),lg=c.createGain();l.frequency.value=.05+i*.03;lg.gain.value=.25;l.connect(lg);lg.connect(og.gain);l.start()})}catch(e){}},
- set(v){this.on=v;if(v){this.init();if(this.ctx){this.ctx.resume();this.m.gain.cancelScheduledValues(0);this.m.gain.linearRampToValueAtTime(.09,this.ctx.currentTime+1.5)}}else if(this.ctx)this.m.gain.linearRampToValueAtTime(0,this.ctx.currentTime+.6)},
- whoosh(){if(!this.on||!this.ctx)return;try{const c=this.ctx,n=c.createBufferSource(),b=c.createBuffer(1,c.sampleRate*.8,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);n.buffer=b;const f=c.createBiquadFilter();f.type='bandpass';f.Q.value=1.2;f.frequency.setValueAtTime(300,c.currentTime);f.frequency.exponentialRampToValueAtTime(2600,c.currentTime+.7);const g=c.createGain();g.gain.value=.12;n.connect(f);f.connect(g);g.connect(c.destination);n.start()}catch(e){}}};
-
 /* ---------- speech ---------- */
-const TTS={on:false,ok:'speechSynthesis' in window,speak(t,rate,done){if(!this.on||!this.ok){done&&done();return false}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t),v=speechSynthesis.getVoices().find(v=>/^fa/i.test(v.lang));if(v){u.voice=v;u.lang=v.lang}else u.lang='fa-IR';u.rate=rate;u.onend=u.onerror=()=>done&&done();speechSynthesis.speak(u);return true}catch(e){done&&done();return false}},stop(){if(this.ok)try{speechSynthesis.cancel()}catch(e){}}};
+const TTS={on:false,ok:!RENDER&&'speechSynthesis' in window,speak(t,rate,done){if(!this.on||!this.ok){done&&done();return false}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t),v=speechSynthesis.getVoices().find(v=>/^fa/i.test(v.lang));if(v){u.voice=v;u.lang=v.lang}else u.lang='fa-IR';u.rate=rate;u.onend=u.onerror=()=>done&&done();speechSynthesis.speak(u);return true}catch(e){done&&done();return false}},stop(){if(this.ok)try{speechSynthesis.cancel()}catch(e){}}};
+
+/* ---------- sound cues per scene (mechanism beats) ---------- */
+const SFXM={1:['pop','whoosh','buzz','chime'],2:['pop','whoosh','gavel','chime'],3:['pop','think','murmur','chime'],4:['think','gavel','pop','buzz','chime'],5:['pop','ping','buzz','chime'],6:['pop','glass','rumble','chime'],7:['pop','alarm','rumble','chime'],8:['pop','whoosh','think','chime'],9:['heart','pop','think','chime'],10:['pop','buzz','think','chime'],11:['pop','stamp','buzz','chime'],12:['pop','whoosh','think','chime'],13:['paper','alarm','pop','chime'],14:['pop','think','buzz','chime'],15:['click','pop','ping','chime'],16:['pop','think','pop','chime'],17:['pop','murmur','buzz','chime'],18:['pop','whoosh','buzz','chime'],19:['pop','buzz','tick','chime'],20:['pop','pop2','stamp','chime'],21:['ping','ping','whoosh','chime'],22:['paper','pop','pop2','chime'],23:['coin','pop','think','chime'],24:['pop','stamp','pop2','chime'],25:['cash','gavel','pop','chime'],26:['tick','tock','buzz','chime'],27:['tick','boom','buzz','chime'],28:['pop','dice','gavel','chime'],29:['pop','glass','sparkle','chime'],30:['pop','think','pop2','chime'],31:['pop','murmur','buzz','chime'],32:['pop','pop2','buzz','chime'],33:['shutter','pop','sparkle','chime'],34:['paper','static','pop','chime'],35:['pop','pop2','pop','chime'],36:['pop','pop2','think','chime']};
 
 /* ---------- film ---------- */
 const cards=$('#cards');
-const S={i:0,b:0,playing:false,speed:1,cc:true,beats:[],tm:null,t0:0,dur:0,started:false,prevType:'',waitSpeech:false,spDone:true,tmDone:true};
-const beatsOf=i=>{const p=PAT[i],c=CASES[p.n];return[{t:'title',cap:`خطای شناختی شمارهٔ ${fa(p.n)}: ${p.fa}`,d:4200},{t:'def',cap:p.d},{t:'case',cap:c.narr},{t:'tie',cap:c.tie},...p.sc.map((s,j)=>({t:'m',j,cap:s[0]})),{t:'review',cap:'بازبینی: '+p.r}]};
+const S={i:0,b:0,playing:false,speed:1,cc:true,beats:[],tm:null,t0:0,dur:0,started:false,prevType:'',spDone:true,tmDone:true,busy:false,typeTm:null,wTms:[]};
+const rngS=n=>{let s=n*2654435761>>>0||1;return()=>{s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;return s/4294967296}};
+function chkOpts(p){const r=rngS(p.n),same=PAT.filter(x=>x.g===p.g&&x.n!==p.n),oth=PAT.filter(x=>x.g!==p.g);const d=[];while(d.length<2){const pool=same.length>d.length?same:oth;const c=pool[Math.floor(r()*pool.length)];if(!d.includes(c))d.push(c)}
+ const a=[p,...d];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const beatsOf=(i,intro)=>{const p=PAT[i],c=CASES[p.n],g=gBy[p.g],a=[];
+ if(intro)a.push({t:'intro',cap:'فیلم خطاهای شناختی',d:7200});
+ if(i===0||PAT[i-1].g!==p.g)a.push({t:'chapter',cap:`فصل ${fa(g.id)}: ${g.n}`,d:5200});
+ a.push({t:'title',cap:`خطای شناختی شمارهٔ ${fa(p.n)}: ${p.fa}`,d:4400},{t:'def',cap:p.d},{t:'case',cap:c.narr},{t:'tie',cap:c.tie});
+ p.sc.forEach((s,j)=>a.push({t:'m',j,cap:s[0]}));
+ a.push({t:'chk',cap:'پرسش سریع: این مثال کدام الگوست؟',d:12500},{t:'review',cap:'بازبینی: '+p.r});
+ return a};
 const durOf=b=>b.d||Math.max(3800,Math.min(17000,2800+b.cap.length*62));
-function kin(el,text,dur,base){const w=text.split(/\s+/),step=Math.min(240,dur*.6/w.length);if(base){const k=text.length>170?Math.max(.62,Math.pow(170/text.length,.6)):1;el.style.fontSize=(base*k).toFixed(2)+'cqw'}el.className=(el.className||'')+' kw';el.innerHTML=w.map((x,i)=>`<span style="animation-delay:${Math.round(i*step)}ms">${esc(x)}</span>`).join('')}
+function clearType(){clearInterval(S.typeTm);S.wTms.forEach(clearTimeout);S.wTms=[]}
+function kin(el,text,dur,base,snd){const w=text.split(/\s+/),step=Math.min(240,dur*.6/w.length);if(base){const k=text.length>170?Math.max(.62,Math.pow(170/text.length,.6)):1;el.style.fontSize=(base*k).toFixed(2)+'cqw'}
+ el.className=(el.className||'')+' kw';el.innerHTML=w.map((x,i)=>`<span style="animation-delay:${Math.round(i*step)}ms">${esc(x)}</span>`).join('');
+ if(snd)w.forEach((x,i)=>S.wTms.push(setTimeout(()=>AUD.play('click',.45),Math.round(i*step))))}
+function typeIn(el,text,dur,base,done){if(base){const k=text.length>170?Math.max(.62,Math.pow(170/text.length,.6)):1;el.style.fontSize=(base*k).toFixed(2)+'cqw'}
+ const n=text.length,step=Math.max(14,Math.min(52,dur*.58/n));let k=0;el.textContent='';el.classList.add('typing');
+ S.typeTm=setInterval(()=>{k++;el.textContent=text.slice(0,k);const ch=text[k-1];if(ch===' ')AUD.play('space',.55);else AUD.play('key',.55+Math.random()*.4);
+  if(k>=n){clearInterval(S.typeTm);el.classList.remove('typing');done&&done()}},step)}
 function showCard(html,after){[...cards.children].forEach(c=>{c.classList.remove('in');c.classList.add('out');setTimeout(()=>c.remove(),650)});if(!html)return null;const d=document.createElement('div');d.className='cd';d.innerHTML=html;cards.appendChild(d);d.getBoundingClientRect();d.classList.add('in');after&&after(d);return d}
 const headCard=(ic,t)=>`<div class="hd"><i>${ic}</i>${t}</div>`;
+const later=(ms,f)=>S.wTms.push(setTimeout(f,ms/S.speed));
 function render(b,p,c,g,dur){
- if(b.t==='title'){cam.classList.add('off');showCard(`<div class="c-title"><div class="ghost">${fa(p.n)}</div><i class="ring"></i><i class="ring"></i><div class="ico">${p.ic}</div><small>${FAMS[g.fam]}</small><h2>${p.fa}</h2><h3>${p.en}</h3><span class="gchip">${g.n}</span></div>`)}
- else if(b.t==='def'){cam.classList.add('off');showCard(`<div class="c-card">${headCard('📘','تعریف')}<p id="kt"></p></div>`,d=>kin($('#kt',d),p.d,dur,3.1))}
- else if(b.t==='case'){cam.classList.add('off');const real=c.k==='real';
+ cam.style.opacity=b.t==='m'?'':(b.t==='review'?'.2':'');
+ if(b.t==='intro'){cam.classList.add('off');AUD.music(1);AUD.play('swell');later(2300,()=>AUD.play('boom'));later(3000,()=>AUD.play('sparkle',.7));
+  showCard(`<div class="c-title"><div class="ghost" style="font-size:30cqw">36</div><i class="ring"></i><i class="ring"></i><div class="ico">🎬</div><small>${FAMS[1]} · ${FAMS[2]}</small><h2>خطاهای شناختی</h2><h3>Cognitive Errors</h3><span class="gchip">۳۶ صحنه · ۳۶ پرونده · ۹ فصل</span></div>`)}
+ else if(b.t==='chapter'){cam.classList.add('off');AUD.music(g.id);AUD.play('whoosh',.8);later(500,()=>AUD.play('boom',.8));
+  const dots=GROUPS.map(x=>`<i style="background:${x.id<=g.id?x.col:'#ffffff30'}"></i>`).join('');const cnt=PAT.filter(x=>x.g===g.id).length;
+  showCard(`<div class="c-chap"><div class="ghost">${fa(g.id)}</div><small>${FAMS[g.fam]}</small><h2>فصل ${fa(g.id)}</h2><h3>${g.n}</h3><div class="dots">${dots}</div><span class="gchip">${fa(cnt)} خطا در این فصل</span></div>`)}
+ else if(b.t==='title'){cam.classList.add('off');AUD.play('whoosh',.5);later(900,()=>AUD.play('pop',.8));
+  showCard(`<div class="c-title"><div class="ghost">${fa(p.n)}</div><i class="ring"></i><i class="ring"></i><div class="ico">${p.ic}</div><small>${FAMS[g.fam]}</small><h2>${p.fa}</h2><h3>${p.en}</h3><span class="gchip">${g.n}</span></div>`)}
+ else if(b.t==='def'){cam.classList.add('off');showCard(`<div class="c-card">${headCard('📘','تعریف')}<p id="kt"></p></div>`,d=>typeIn($('#kt',d),p.d,dur,3.1))}
+ else if(b.t==='case'){cam.classList.add('off');const real=c.k==='real';AUD.play('paper');later(950,()=>AUD.play(real?'stamp':'pop2'));
   const left=real?`<div class="paper"><div class="stamp">پروندهٔ واقعی</div><div class="mast">ARCHIVE · ${c.yr}</div><h4>${esc(c.head)}</h4><div class="rule"></div><div class="src">منبع: ${esc(c.src)}</div></div>`:`<div class="feed"><div class="stamp" style="left:2cqw;top:-2cqw">روایت نمادین</div><div class="who"><i></i><span>پست نمونه · ساختگی برای آموزش</span></div><h4>${esc(c.head)}</h4><div class="src">${esc(c.src)}</div></div>`;
-  showCard(`<div class="c-case ${real?'':'sym'}">${left}<div class="side"><div class="badges"><span>${c.yr}</span><span class="${real?'r':'s'}">${real?'مستند':'نمادین'}</span></div><p id="kt"></p></div></div>`,d=>kin($('#kt',d),c.narr,dur,2.65))}
- else if(b.t==='tie'){cam.classList.add('off');showCard(`<div class="c-card">${headCard('🔗','پیوند با الگو')}<p id="kt"></p><span class="pat">${p.ic} ${p.fa}</span></div>`,d=>kin($('#kt',d),c.tie,dur,3.1))}
- else if(b.t==='review'){cam.classList.remove('off');cam.style.opacity='.2';showCard(`<div class="c-card rev">${headCard('✅','بازبینی')}<p id="kt"></p></div>`,d=>kin($('#kt',d),p.r,dur,3.1))}
- else{cam.style.opacity='';cam.classList.remove('off');showCard(null);
-  if(S.prevType==='m')stepPhase(p.sc,b.j);else rebuild(p.sc,b.j,true)}}
+  showCard(`<div class="c-case ${real?'':'sym'}">${left}<div class="side"><div class="badges"><span>${c.yr}</span><span class="${real?'r':'s'}">${real?'مستند':'نمادین'}</span></div><p id="kt"></p></div></div>`,d=>kin($('#kt',d),c.narr,dur,2.65,true))}
+ else if(b.t==='tie'){cam.classList.add('off');AUD.play('ping',.7);showCard(`<div class="c-card">${headCard('🔗','پیوند با الگو')}<p id="kt"></p><span class="pat">${p.ic} ${p.fa}</span></div>`,d=>kin($('#kt',d),c.tie,dur,3.1,true))}
+ else if(b.t==='chk'){cam.classList.add('off');const o=chkOpts(p);AUD.play('swell',.5);
+  showCard(`<div class="c-card chk">${headCard('🤔','پرسش سریع: این مثال کدام الگوست؟')}<p class="ex" id="kt"></p><div class="opts">${o.map((x,i)=>`<div class="op" data-ok="${x.n===p.n?1:0}"><b>${'ابج'[i]}</b>${x.fa}</div>`).join('')}</div><div class="cnt"><i></i><i></i><i></i></div></div>`,d=>{kin($('#kt',d),p.x,dur*.5,2.5);const ops=$$('.op',d),cn=$$('.cnt i',d);ops.forEach((e,i)=>later(2600+i*450,()=>{e.classList.add('show');AUD.play('pop',.7)}));
+   cn.forEach((e,i)=>later(6200+i*900,()=>{e.classList.add('on');AUD.play('tick',.8)}));
+   later(9300,()=>{ops.forEach(e=>e.classList.add(e.dataset.ok==='1'?'ok':'dim'));AUD.play('chime')})})}
+ else if(b.t==='review'){cam.classList.remove('off');cam.style.opacity='.2';
+  showCard(`<div class="c-card rev">${headCard('✅','بازبینی')}<p id="kt"></p></div>`,d=>typeIn($('#kt',d),p.r,dur,3.1,()=>AUD.play('chime',.8)))}
+ else{cam.classList.remove('off');showCard(null);
+  if(S.prevType==='m')stepPhase(p.sc,b.j);else rebuild(p.sc,b.j,true);
+  const f=(SFXM[p.n]||[])[b.j];if(f)later(80,()=>AUD.play(f,.9))}}
 function camMove(dur){const sc=1+Math.random()*.045,x=(Math.random()-.5)*2,y=(Math.random()-.5)*1.4;cam.style.transitionDuration=dur+'ms,600ms';cam.style.transform=`scale(${sc}) translate(${x}%,${y}%)`}
 function setCap(b){const cp=$('#cp');cp.innerHTML='';const span=document.createElement('span');cp.appendChild(span);
  if(!S.cc){span.textContent='';return}
- if(b.t==='m'||b.t==='title'){const w=b.cap.split(/\s+/);span.className='kw';span.innerHTML=w.map((x,i)=>`<span style="animation-delay:${Math.min(i*70,1600)}ms">${esc(x)}</span>`).join('')}
- else span.textContent=b.t==='def'?'تعریف':b.t==='case'?'پروندهٔ مستند / روایت':b.t==='tie'?'پیوند با الگو':'بازبینی'}
+ if(b.t==='m'||b.t==='title'||b.t==='chapter'||b.t==='intro'){const w=b.cap.split(/\s+/);span.className='kw';span.innerHTML=w.map((x,i)=>`<span style="animation-delay:${Math.min(i*70,1600)}ms">${esc(x)}</span>`).join('')}
+ else span.textContent={def:'تعریف',case:'پروندهٔ مستند / روایت',tie:'پیوند با الگو',chk:'پرسش سریع',review:'بازبینی'}[b.t]||''}
 function hud(){const p=PAT[S.i],g=gBy[p.g];stg.style.setProperty('--gc',g.col);$('#hudL').textContent=`صحنهٔ ${fa(p.n)} از ${fa(PAT.length)}`;$('#hudR').textContent=g.n;
  $('#info').textContent=`صحنه ${fa(p.n)} · بخش ${fa(S.b+1)} از ${fa(S.beats.length)}`;
  $$('#strip i').forEach((x,k)=>{x.classList.toggle('cur',k===S.i);x.classList.toggle('done',k<S.i)});
  $$('.sc').forEach((x,k)=>x.classList.toggle('cur',k===S.i));
  const c=CASES[p.n];$('#now').innerHTML=`<h3><span class="b ${c.k==='real'?'r':'s'}">${c.k==='real'?'پروندهٔ واقعی':'روایت نمادین'}</span>${p.ic} ${fa(p.n)}. ${p.fa} <small dir="ltr">${p.en}</small></h3><div><b>«${esc(c.head)}»</b> <small>(${c.yr})</small></div><small>منبع: ${esc(c.src)}</small><div>${esc(c.narr)}</div><div><a href="Cognitive-Errors-Animated-Lesson.html#e-${p.n}">باز کردن این الگو در جزوهٔ تعاملی (با بخش «امتحان کن») ↗</a></div>`}
-function clearTimers(){clearTimeout(S.tm);S.tm=null}
+function clearTimers(){clearTimeout(S.tm);S.tm=null;clearType()}
 function runBeat(){const b=S.beats[S.b],p=PAT[S.i],c=CASES[p.n],g=gBy[p.g];if(!b)return;const dur=durOf(b)/S.speed;S.dur=dur;S.t0=performance.now();
- render(b,p,c,g,dur);S.prevType=b.t==='m'?'m':b.t;setCap(b);hud();camMove(dur);
+ clearTimers();render(b,p,c,g,dur);S.prevType=b.t==='m'?'m':b.t;setCap(b);hud();camMove(dur);
  const pb=$('#pb');pb.style.transition='none';pb.style.transform=`scaleX(${(S.b)/S.beats.length})`;pb.getBoundingClientRect();pb.style.transition=`transform ${dur}ms linear`;pb.style.transform=`scaleX(${(S.b+1)/S.beats.length})`;
- S.tmDone=false;S.spDone=true;clearTimers();
+ S.tmDone=false;S.spDone=true;
  const adv=()=>{if(S.tmDone&&S.spDone&&S.playing)next()};
  S.tm=setTimeout(()=>{S.tmDone=true;adv()},dur);
  if(TTS.on&&S.playing){S.spDone=false;TTS.speak(b.cap,S.speed,()=>{S.spDone=true;adv()})}}
 function next(){if(S.busy)return;if(S.b<S.beats.length-1){S.b++;runBeat()}else if(S.i<PAT.length-1)gotoScene(S.i+1,true);else end()}
-function end(){S.playing=false;clearTimers();TTS.stop();upd();cam.classList.add('off');showCard(`<div class="c-end"><h2>پایان 🎬</h2><p>۳۶ خطای شناختی را دیدی. حالا مشاهده را از تفسیر جدا کن و برگهٔ بازبینی را برای یک موقعیت واقعی پر کن.</p></div>`);$('#cp').textContent='پایان فیلم'}
-function gotoScene(i,wipe){if(S.busy)return;i=Math.max(0,Math.min(PAT.length-1,i));const go=()=>{S.i=i;S.b=0;S.beats=beatsOf(i);S.prevType='';cam.style.transition='none';cam.style.transform='';cam.classList.remove('off');cam.style.opacity='';clearCam();cam.getBoundingClientRect();runBeat()};
+function recap(){return `<div class="c-end"><h2>پایان 🎬</h2><p>۳۶ خطای شناختی را دیدی. مشاهده را از تفسیر جدا کن و برگهٔ بازبینی را برای یک موقعیت واقعی پر کن.</p><div class="rc">${PAT.map((p,i)=>`<span style="--c:${gBy[p.g].col};animation-delay:${i*60}ms" title="${p.fa}">${p.ic}</span>`).join('')}</div><small>توسعه‌دهنده: لطفی‌فر</small></div>`}
+function end(){S.playing=false;clearTimers();TTS.stop();upd();cam.classList.add('off');showCard(recap());AUD.play('chime');AUD.play('swell',.6);setTimeout(()=>AUD.play('sparkle'),1800);setTimeout(()=>AUD.play('sparkle',.7),2800);AUD.music(null);$('#cp').textContent='پایان فیلم';window.__renderDone=true}
+function gotoScene(i,wipe,intro){if(S.busy)return;i=Math.max(0,Math.min(PAT.length-1,i));
+ const go=()=>{S.i=i;S.b=0;S.beats=beatsOf(i,intro);S.prevType='';cam.style.transition='none';cam.style.transform='';cam.classList.remove('off');cam.style.opacity='';clearCam();cam.getBoundingClientRect();AUD.music(PAT[i].g);runBeat()};
  clearTimers();TTS.stop();S.b=0;
- if(wipe&&S.started){const w=$('#wipe');stg.style.setProperty('--gc',gBy[PAT[i].g].col);AU.whoosh();S.busy=true;try{w.animate([{clipPath:'circle(0% at 50% 50%)'},{clipPath:'circle(150% at 50% 50%)'}],{duration:520,easing:'ease-in',fill:'forwards'})}catch(e){}
+ if(wipe&&S.started){const w=$('#wipe');stg.style.setProperty('--gc',gBy[PAT[i].g].col);AUD.play('whoosh',.8);S.busy=true;try{w.animate([{clipPath:'circle(0% at 50% 50%)'},{clipPath:'circle(150% at 50% 50%)'}],{duration:520,easing:'ease-in',fill:'forwards'})}catch(e){}
   setTimeout(()=>{go();try{w.animate([{clipPath:'circle(150% at 50% 50%)'},{clipPath:'circle(0% at 50% 50%)'}],{duration:560,easing:'ease-out',fill:'forwards'})}catch(e){}},540);setTimeout(()=>{S.busy=false},1150)}
  else go()}
 function upd(){$('#pp').textContent=S.playing?'⏸':'▶'}
-function play(){if(!S.started){S.started=true;$('#big').classList.add('gone');S.i=S.i||0;gotoScene(S.i,false)}S.playing=true;upd();
- if(S.tmDone&&S.spDone){/* between beats */next();return}
+function begin(){AUD.unlock();AUD.musicOn=gt('cfMusic')!=='0';AUD.sfxOn=gt('cfSfx')!=='0';syncAudUI();S.started=true;$('#big').classList.add('gone');gotoScene(S.i,false,S.i===0)}
+function play(){if(!S.started){begin();S.playing=true;upd();return}S.playing=true;upd();AUD.unlock();
+ if(S.tmDone&&S.spDone){next();return}
  const left=Math.max(900,S.dur-(performance.now()-S.t0));clearTimers();S.tm=setTimeout(()=>{S.tmDone=true;if(S.playing)next()},left)}
-function pause(){S.playing=false;clearTimers();TTS.stop();upd()}
-$('#big').onclick=()=>{play()};
-$('#pp').onclick=()=>{if(!S.started)play();else if(S.playing)pause();else{S.playing=true;upd();const left=Math.max(900,S.dur-(performance.now()-S.t0));clearTimers();S.tm=setTimeout(()=>{S.tmDone=true;next()},left)}};
-$('#ps').onclick=()=>{S.started=true;$('#big').classList.add('gone');const was=S.playing;S.playing=was;gotoScene(S.i-1,true);if(!was)setTimeout(()=>{pause()},700)};
-$('#ns2').onclick=()=>{S.started=true;$('#big').classList.add('gone');const was=S.playing;gotoScene(S.i+1,true);if(!was)setTimeout(()=>{pause()},700)};
-$('#nb').onclick=()=>{if(S.busy)return;if(!S.started){play();return}const was=S.playing;if(S.b<S.beats.length-1){S.b++;runBeat()}else next();if(!was)pause()};
-$('#pb2').onclick=()=>{if(!S.started)return;const was=S.playing;if(S.b>0){S.b--;S.prevType='';runBeat()}else if(S.i>0){gotoScene(S.i-1,true)}if(!was)setTimeout(pause,50)};
+function pause(){S.playing=false;clearTimers();TTS.stop();AUD.setMusicOn(false);upd()}
+function resumeAud(){AUD.setMusicOn(gt('cfMusic')!=='0')}
+$('#big').onclick=()=>{S.playing=true;begin();upd()};
+$('#pp').onclick=()=>{if(!S.started){S.playing=true;begin();upd()}else if(S.playing)pause();else{resumeAud();S.playing=true;upd();const left=Math.max(900,S.dur-(performance.now()-S.t0));clearTimers();S.tm=setTimeout(()=>{S.tmDone=true;next()},left)}};
+const jump=(f,wipe)=>{if(S.busy)return;if(!S.started){S.playing=false;begin();}const was=S.playing;f();if(!was)setTimeout(pause,700)};
+$('#ps').onclick=()=>jump(()=>gotoScene(S.i-1,true));
+$('#ns2').onclick=()=>jump(()=>gotoScene(S.i+1,true));
+$('#nb').onclick=()=>{if(S.busy)return;if(!S.started){S.playing=true;begin();upd();return}const was=S.playing;if(S.b<S.beats.length-1){S.b++;runBeat()}else next();if(!was)pause()};
+$('#pb2').onclick=()=>{if(!S.started||S.busy)return;const was=S.playing;if(S.b>0){S.b--;S.prevType='';runBeat()}else if(S.i>0)gotoScene(S.i-1,true);if(!was)setTimeout(pause,50)};
 $('#spd').onchange=e=>{S.speed=+e.target.value};
 $('#cc').onclick=e=>{S.cc=!S.cc;e.target.classList.toggle('on',S.cc);if(S.started)setCap(S.beats[S.b])};
 $('#nar').onclick=e=>{if(!TTS.ok){alert('این مرورگر روایت صوتی ندارد.');return}TTS.on=!TTS.on;e.target.classList.toggle('on',TTS.on);if(!TTS.on)TTS.stop()};
-$('#mus').onclick=e=>{AU.set(!AU.on);e.target.classList.toggle('on',AU.on)};
+function syncAudUI(){$('#mus').classList.toggle('on',AUD.musicOn);$('#sfx').classList.toggle('on',AUD.sfxOn)}
+$('#mus').onclick=()=>{AUD.unlock();AUD.setMusicOn(!AUD.musicOn);sv('cfMusic',AUD.musicOn?'1':'0');syncAudUI()};
+$('#sfx').onclick=()=>{AUD.sfxOn=!AUD.sfxOn;sv('cfSfx',AUD.sfxOn?'1':'0');syncAudUI()};
+$('#vol').oninput=e=>{AUD.setVol(+e.target.value);sv('cfVol',e.target.value)};
+const sv0=gt('cfVol');if(sv0){$('#vol').value=sv0;AUD.vol=+sv0}
 $('#fs').onclick=()=>{const pl=$('#player');if(document.fullscreenElement)document.exitFullscreen();else if(pl.requestFullscreen)pl.requestFullscreen()};
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&S.playing)pause()});
+if(!RENDER)document.addEventListener('visibilitychange',()=>{if(document.hidden&&S.playing)pause()});
 addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key===' '&&S.started){e.preventDefault();$('#pp').click()}else if(e.key==='ArrowLeft')$('#ns2').click();else if(e.key==='ArrowRight')$('#ps').click();else if(e.key==='f'||e.key==='F')$('#fs').click()});
 
 /* strip, grid, scenario */
-const strip=$('#strip');PAT.forEach((p,k)=>{const i=document.createElement('i');i.style.setProperty('--sc',gBy[p.g].col);i.title=`${fa(p.n)}. ${p.fa}`;i.onclick=()=>{S.started=true;$('#big').classList.add('gone');S.playing=true;upd();gotoScene(k,true)};strip.appendChild(i)});
-const gridc=$('#gridc');PAT.forEach((p,k)=>{const g=gBy[p.g],c=CASES[p.n];const b=document.createElement('button');b.className='sc';b.style.setProperty('--gc',g.col);b.innerHTML=`<span class="n">${fa(p.n)}</span><span class="i">${p.ic}</span><b>${p.fa}</b><em>${c.k==='real'?'🟢 پروندهٔ واقعی':'🟡 روایت نمادین'}</em>`;b.onclick=()=>{$('#film').scrollIntoView();S.started=true;$('#big').classList.add('gone');S.playing=true;upd();gotoScene(k,true)};gridc.appendChild(b)});
-const TL={title:'عنوان',def:'تعریف',case:'پرونده',tie:'پیوند',m:'انیمیشن',review:'بازبینی'};
-function mdScenario(){let o='# سناریوی فیلم خطاهای شناختی\n\n';GROUPS.forEach(g=>{o+=`\n## فصل ${g.id}: ${g.n}\n`;PAT.filter(p=>p.g===g.id).forEach(p=>{const c=CASES[p.n];o+=`\n### صحنهٔ ${p.n}: ${p.fa} (${p.en})\n- نوع پرونده: ${c.k==='real'?'پروندهٔ واقعی':'روایت نمادین (ساختگی برای آموزش)'}\n- تیتر: ${c.head} (${c.yr})\n- منبع: ${c.src}\n- روایت: ${c.narr}\n- پیوند با الگو: ${c.tie}\n- تعریف: ${p.d}\n`;p.sc.forEach((s,j)=>{o+=`- انیمیشن ${j+1}: ${s[0]}\n`});o+=`- بازبینی: ${p.r}\n`})});return o}
+const startAt=k=>{$('#film').scrollIntoView();S.i=k;S.playing=true;if(!S.started){begin()}else gotoScene(k,true);upd()};
+const strip=$('#strip');PAT.forEach((p,k)=>{const i=document.createElement('i');i.style.setProperty('--sc',gBy[p.g].col);i.title=`${fa(p.n)}. ${p.fa}`;i.onclick=()=>startAt(k);strip.appendChild(i)});
+const gridc=$('#gridc');PAT.forEach((p,k)=>{const g=gBy[p.g],c=CASES[p.n];const b=document.createElement('button');b.className='sc';b.style.setProperty('--gc',g.col);b.innerHTML=`<span class="n">${fa(p.n)}</span><span class="i">${p.ic}</span><b>${p.fa}</b><em>${c.k==='real'?'🟢 پروندهٔ واقعی':'🟡 روایت نمادین'}</em>`;b.onclick=()=>startAt(k);gridc.appendChild(b)});
+function mdScenario(){let o='# سناریوی فیلم خطاهای شناختی\n\n';GROUPS.forEach(g=>{o+=`\n## فصل ${g.id}: ${g.n}\n`;PAT.filter(p=>p.g===g.id).forEach(p=>{const c=CASES[p.n];o+=`\n### صحنهٔ ${p.n}: ${p.fa} (${p.en})\n- نوع پرونده: ${c.k==='real'?'پروندهٔ واقعی':'روایت نمادین (ساختگی برای آموزش)'}\n- تیتر: ${c.head} (${c.yr})\n- منبع: ${c.src}\n- روایت: ${c.narr}\n- پیوند با الگو: ${c.tie}\n- تعریف: ${p.d}\n- مثال و پرسش سریع: ${p.x}\n`;p.sc.forEach((s,j)=>{o+=`- انیمیشن ${j+1}: ${s[0]}\n`});o+=`- بازبینی: ${p.r}\n`})});return o}
 const scn=$('#scn');GROUPS.forEach(g=>{const h=document.createElement('div');h.className='tg';h.style.cssText='margin:12px 0 2px;font-size:14px';h.textContent=`فصل ${fa(g.id)}: ${g.n}`;scn.appendChild(h);PAT.filter(p=>p.g===g.id).forEach(p=>{const c=CASES[p.n],d=document.createElement('details');
- d.innerHTML=`<summary><span class="no">${fa(p.n)}</span>${p.ic} ${p.fa} <small style="color:var(--muted);font-weight:400;direction:ltr">${p.en}</small></summary><div class="bd"><div class="case ${c.k==='real'?'':'s'}"><div class="tg">${c.k==='real'?'پروندهٔ واقعی':'روایت نمادین'} · ${c.yr}</div><b>«${esc(c.head)}»</b><div>${esc(c.narr)}</div><small>منبع: ${esc(c.src)}</small><div><b>پیوند:</b> ${esc(c.tie)}</div></div><div class="tg">ترتیب بخش‌های صحنه</div><ol><li>عنوان</li><li><b>تعریف:</b> ${esc(p.d)}</li><li>پروندهٔ مستند / روایت و پیوند با الگو</li>${p.sc.map(s=>`<li><b>انیمیشن:</b> ${esc(s[0])}</li>`).join('')}<li><b>بازبینی:</b> ${esc(p.r)}</li></ol></div>`;scn.appendChild(d)})});
+ d.innerHTML=`<summary><span class="no">${fa(p.n)}</span>${p.ic} ${p.fa} <small style="color:var(--muted);font-weight:400;direction:ltr">${p.en}</small></summary><div class="bd"><div class="case ${c.k==='real'?'':'s'}"><div class="tg">${c.k==='real'?'پروندهٔ واقعی':'روایت نمادین'} · ${c.yr}</div><b>«${esc(c.head)}»</b><div>${esc(c.narr)}</div><small>منبع: ${esc(c.src)}</small><div><b>پیوند:</b> ${esc(c.tie)}</div></div><div class="tg">ترتیب بخش‌های صحنه</div><ol><li>عنوان</li><li><b>تعریف:</b> ${esc(p.d)}</li><li>پروندهٔ مستند / روایت و پیوند با الگو</li>${p.sc.map(s=>`<li><b>انیمیشن:</b> ${esc(s[0])}</li>`).join('')}<li><b>پرسش سریع:</b> ${esc(p.x)}</li><li><b>بازبینی:</b> ${esc(p.r)}</li></ol></div>`;scn.appendChild(d)})});
 $('#scCopy').onclick=e=>{const t=mdScenario(),ok=()=>{e.target.textContent='✓ کپی شد';setTimeout(()=>e.target.textContent='📋 کپی سناریو',1500)};(navigator.clipboard?navigator.clipboard.writeText(t).then(ok):Promise.reject()).catch(()=>{const x=document.createElement('textarea');x.value=t;x.style.cssText='position:fixed;opacity:0';document.body.appendChild(x);x.select();try{document.execCommand('copy')&&ok()}catch(_){}x.remove()})};
 $('#scDl').onclick=()=>{const b=new Blob(['﻿'+mdScenario()],{type:'text/markdown;charset=utf-8'}),u=URL.createObjectURL(b),l=document.createElement('a');l.href=u;l.download='cognitive-errors-film-scenario.md';l.click();setTimeout(()=>URL.revokeObjectURL(u),2000)};
-if(!TTS.ok)$('#nar').remove();
-/* poster: show title card of scene 1 behind the play button */
-S.beats=beatsOf(0);hud();(function poster(){const p=PAT[0],g=gBy[p.g];cam.classList.add('off');showCard(`<div class="c-title"><div class="ghost">${fa(p.n)}</div><i class="ring"></i><i class="ring"></i><div class="ico">🎬</div><small>${FAMS[1]} · ${FAMS[2]}</small><h2>خطاهای شناختی</h2><h3>Cognitive Errors</h3><span class="gchip">۳۶ صحنه</span></div>`)})();
+if(!TTS.ok)$('#nar')&&$('#nar').remove();
+/* poster */
+S.beats=beatsOf(0,true);hud();(function poster(){cam.classList.add('off');showCard(`<div class="c-title"><div class="ghost" style="font-size:30cqw">36</div><i class="ring"></i><i class="ring"></i><div class="ico">🎬</div><small>${FAMS[1]} · ${FAMS[2]}</small><h2>خطاهای شناختی</h2><h3>Cognitive Errors</h3><span class="gchip">۳۶ صحنه</span></div>`)})();
+syncAudUI();
 window.__film={S,gotoScene,runBeat,beatsOf,render,PATs:PAT};
-const dh=location.hash.match(/^#s-(\d+)$/);if(dh){const k=+dh[1]-1;if(PAT[k]){S.i=k;S.beats=beatsOf(k);hud()}}
+window.__render={start(){AUD.t0=performance.now();AUD.log.length=0;S.speed=1;S.playing=true;begin();upd();return performance.timeOrigin+AUD.t0},get log(){return AUD.log},get done(){return !!window.__renderDone}};
+const dh=location.hash.match(/^#s-(\d+)$/);if(dh){const k=+dh[1]-1;if(PAT[k]){S.i=k;S.beats=beatsOf(k,k===0);hud()}}
 })();
+
 </script>
 </body>
 </html>
