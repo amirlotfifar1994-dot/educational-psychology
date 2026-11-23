@@ -4,100 +4,156 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>اختلالات یادگیری | درس تعاملی</title>
-<meta name="description" content="درس تعاملی اختلالات یادگیری (جلسات ۱ تا ۸) با انیمیشن، نقشهٔ ارزیابی، وکسلر، فلش‌کارت و آزمون">
+<meta name="description" content="درس تعاملی اختلالات یادگیری (جلسات ۱ تا ۸) با آزمایشگاه‌های متحرک حسی-حرکتی، آزمون و فلش‌کارت">
 <meta name="theme-color" content="#080a1a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧩%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080a1a;--card:#121639;--card-s:#161b48;--line:#ffffff1c;--ink:#eef0ff;--muted:#a9b0d8;
---a1:#8b5cf6;--a2:#22d3ee;--a3:#ff6bb5;--a4:#5eead4;--a5:#ffc861;--bad:#ff6b8b;--good:#4ade80;color-scheme:dark}
-:root[data-theme=light]{--bg:#f3f1ff;--card:#fff;--card-s:#f6f4ff;--line:#2a22731f;--ink:#1b1840;--muted:#575a85;
---a1:#6d3fe0;--a2:#0a6f8a;--a3:#c4217c;--a4:#0a7566;--a5:#8f5a00;--bad:#d62c55;--good:#16a34a;color-scheme:light}
+:root{--bg:#080a1a;--card:#121639;--card-s:#1a2050;--line:#ffffff1f;--ink:#eef0ff;--muted:#a9b0d8;
+--a1:#8b5cf6;--a2:#22d3ee;--a3:#ff6bb5;--a4:#5eead4;--a5:#ffc861;--bad:#ff6b8b;--good:#4ade80;--skin:#f2c9a0;color-scheme:dark}
+:root[data-theme=light]{--bg:#f3f1ff;--card:#fff;--card-s:#f1eeff;--line:#2a22731f;--ink:#1b1840;--muted:#575a85;
+--a1:#6d3fe0;--a2:#0a6f8a;--a3:#c4217c;--a4:#0a7566;--a5:#8f5a00;--bad:#d62c55;--good:#16a34a;--skin:#e8b98c;color-scheme:light}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:16px;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;font-size:1rem;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 600px at 85% -5%,#8b5cf633,transparent 60%),radial-gradient(800px 600px at 5% 40%,#22d3ee22,transparent 60%),radial-gradient(900px 700px at 70% 105%,#ff6bb522,transparent 60%),var(--bg)}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 :focus-visible{outline:2px solid var(--a2);outline-offset:3px}
-#bar{position:fixed;top:0;right:0;height:4px;width:0;z-index:50;background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3))}
-nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 94%,transparent);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
-nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:6px;padding:8px 16px;overflow-x:auto;scrollbar-width:none}
-nav .in::-webkit-scrollbar{display:none}
-nav b{white-space:nowrap;font-weight:900;background:linear-gradient(90deg,var(--a2),var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent;margin-inline-end:auto;padding-inline-end:12px}
-nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14px;padding:4px 12px;border-radius:99px;transition:.25s}
-nav a:hover{color:var(--ink);background:var(--line)}
-nav a.on{color:#fff;background:linear-gradient(135deg,var(--a1),var(--a3))}
-#theme{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);flex:none}
-.hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;padding:60px 20px;overflow:hidden}
+#bar{position:fixed;top:0;right:0;height:4px;width:0;z-index:60;background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3))}
+nav.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+nav.top .in{max-width:1320px;margin:auto;display:flex;align-items:center;gap:8px;padding:8px 16px}
+nav.top b{white-space:nowrap;font-weight:900;background:linear-gradient(90deg,var(--a2),var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ib{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);flex:none;font-size:13px;font-weight:700;background:var(--card);transition:.2s}
+.ib:hover{border-color:var(--a2);color:var(--a2)}
+[hidden]{display:none!important}
+#hlb{position:relative}#hlc{position:absolute;top:-4px;left:-4px;min-width:18px;height:18px;border-radius:9px;background:var(--a3);color:#fff;font-size:11px;line-height:18px;padding:0 4px}
+mark.hl{background:color-mix(in srgb,var(--hc) 45%,transparent);color:inherit;border-radius:4px;padding:1px 0;cursor:pointer;box-decoration-break:clone;-webkit-box-decoration-break:clone;transition:.2s}
+mark.hl:hover{background:color-mix(in srgb,var(--hc) 70%,transparent)}
+#hltb{position:absolute;z-index:90;display:flex;gap:6px;align-items:center;padding:6px 10px;background:var(--card);border:1px solid var(--line);border-radius:99px;box-shadow:0 12px 40px #0009;animation:fade .2s}
+#hltb button{width:26px;height:26px;border-radius:50%;border:2px solid #ffffff55;font-size:13px;line-height:1;transition:.15s}
+#hltb button:hover{transform:scale(1.2)}#hltb button[data-x]{background:var(--card-s);border-color:var(--line)}
+#hld{position:fixed;top:60px;left:12px;width:min(390px,calc(100vw - 24px));max-height:calc(100vh - 76px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 70px #000a;padding:14px 16px;z-index:85;animation:fade .25s}
+#hld .hh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+#hld h5{color:var(--a2);font-size:13px;margin:12px 0 4px}
+#hld .hi{display:flex;gap:8px;align-items:flex-start;padding:8px 10px;border-radius:12px;background:var(--card-s);margin-bottom:6px;cursor:pointer;font-size:13.5px;line-height:1.8;transition:.2s}
+#hld .hi:hover{outline:1px solid var(--a2)}#hld .hi i{flex:none;width:10px;height:10px;border-radius:50%;margin-top:9px}
+#hld .hi span{flex:1}#hld .hi button{flex:none;opacity:.6}#hld .hi button:hover{opacity:1}
+#hld .he{color:var(--muted);font-size:14px;padding:10px 4px}
+.sw{position:relative;flex:1;max-width:420px;margin-inline-start:auto}
+#q{width:100%;padding:7px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:14px;outline:none;transition:.2s}
+#q:focus{border-color:var(--a2);box-shadow:0 0 0 4px #22d3ee22}
+#qr{position:absolute;top:calc(100% + 8px);right:0;left:0;max-height:60vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 60px #0008;padding:6px;z-index:80}
+#qr a{display:block;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:14px;cursor:pointer;line-height:1.7}
+#qr a:hover{background:var(--card-s)}#qr small{color:var(--a2);display:block;font-size:12px}#qr mark{background:#ffc86155;color:inherit;border-radius:4px}
+.ov{max-width:1320px;margin:0 auto;padding:10px 18px 0}
+.ov h2{font-size:26px;font-weight:900;margin-bottom:4px}.ov>p{color:var(--muted);margin-bottom:16px}
+.ovg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.oc{position:relative;display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;overflow:hidden;transition:.3s}
+.oc:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--ac)}
+.oc:after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;left:-40px;bottom:-60px;background:var(--ac);opacity:.12;transition:.4s}
+.oc:hover{transform:translateY(-5px);border-color:var(--ac)}.oc:hover:after{transform:scale(1.5);opacity:.2}
+.oc .n{font-size:13px;color:var(--ac);font-weight:800}.oc h3{font-size:17px;margin:2px 0 6px;line-height:1.6}
+.oc .tg{display:flex;flex-wrap:wrap;gap:4px}.oc .tg span{font-size:11.5px;padding:0 9px;border-radius:99px;background:var(--card-s);color:var(--muted)}
+.oc .st{position:absolute;top:12px;left:14px;font-size:12px;color:var(--good)}
+.resume{display:inline-flex;margin-top:16px}
+.pn{display:flex;justify-content:space-between;gap:10px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;color:var(--ink);padding:10px 18px;border-radius:14px;background:var(--card);border:1px solid var(--line);transition:.2s;font-size:14px}
+.pn a:hover{border-color:var(--a2);color:var(--a2)}
+@media(max-width:700px){.ring{display:none}#fm,#fp{display:none}}
+@media print{nav.top,aside,.hero,.ov,.tabs,.lab,.fc,.fcn,.pn,#quiz,#fcs,#conf,#bar,[data-read]{display:none!important}
+ body{background:#fff;color:#000;font-size:12pt}body:before{display:none}.layout{display:block}
+ .panel{display:block!important;animation:none}[data-p="1"]{display:none!important}
+ details.k .b{display:block!important;color:#222}details.k{border:0;background:none}.card,.tip,.warn{background:none;border:1px solid #bbb;color:#000}
+ section.sess{page-break-before:always;padding-top:0}.no{background:#444!important;box-shadow:none}*{color:#000!important}}
+.ring{font-size:13px;color:var(--muted);white-space:nowrap}
+.hero{position:relative;min-height:80vh;display:grid;place-items:center;text-align:center;padding:60px 20px;overflow:hidden}
 #net{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
 .tag{display:inline-block;padding:6px 18px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--a2);font-size:14px;animation:float 4s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-8px)}}
 .hero h1{font-size:clamp(40px,8vw,96px);font-weight:900;line-height:1.25;margin:22px 0 14px;background:linear-gradient(110deg,var(--a2),var(--a1) 35%,var(--a3) 65%,var(--a5));background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
 @keyframes shine{to{background-position:-240% 0}}
-.hero p.sub{max-width:660px;margin:auto;color:var(--muted);font-size:clamp(16px,2.2vw,20px)}
-.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:32px 0}
-.stat{padding:12px 24px;border-radius:18px;background:var(--card);border:1px solid var(--line);min-width:110px}
-.stat b{display:block;font-size:30px;font-weight:900;color:var(--a4)}.stat span{font-size:13px;color:var(--muted)}
-.cta{display:inline-flex;padding:13px 32px;border-radius:99px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--a1),var(--a3));box-shadow:0 10px 40px #8b5cf666;text-decoration:none;transition:.3s}
-.cta:hover{transform:translateY(-4px) scale(1.04)}
-main{max-width:1100px;margin:auto;padding:0 18px 80px}
-section{padding:56px 0 8px}
-.sh{display:flex;align-items:center;gap:14px;margin-bottom:6px}
-.sh .no{font-size:54px;font-weight:900;line-height:1;color:var(--a1);opacity:.35}
-.sh h2{font-size:clamp(24px,4vw,36px);font-weight:900}
-.date{color:var(--a2);font-size:13px;margin-bottom:6px}
-.lead{color:var(--muted);margin-bottom:22px;max-width:760px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;transition:.3s}
-.card:hover{transform:translateY(-3px);border-color:var(--a1)}
-.card h3{font-size:17px;margin-bottom:4px;color:var(--a4)}
-.card p,.card li{color:var(--muted);font-size:15px}
-.card ul{padding-inline-start:20px}
+.hero p.sub{max-width:680px;margin:auto auto 28px;color:var(--muted);font-size:clamp(16px,2.2vw,20px)}
+.cta{display:inline-flex;padding:13px 32px;border-radius:99px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--a1),var(--a3));box-shadow:0 10px 40px #8b5cf666;text-decoration:none;transition:.3s;margin:4px}
+.cta:hover{transform:translateY(-4px) scale(1.04)}.cta.s{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.credits{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:30px;color:var(--muted);font-size:14px}
+.credits b{color:var(--ink)}
+.layout{max-width:1320px;margin:auto;display:grid;grid-template-columns:260px 1fr;gap:28px;padding:0 18px}
+aside{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 80px);overflow:auto;padding:22px 0;scrollbar-width:thin}
+aside h4{font-size:12px;color:var(--muted);letter-spacing:.04em;margin:14px 8px 6px;font-weight:600}
+aside a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--muted);font-size:14px;padding:7px 10px;border-radius:12px;transition:.2s;border:1px solid transparent}
+aside a:hover{background:var(--card);color:var(--ink)}
+aside a.on{background:var(--card);border-color:var(--a1);color:var(--ink)}
+aside a i{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--card-s);font-size:12px;font-weight:800;color:var(--a2)}
+aside a.done i{background:var(--good);color:#04210f}
+main{min-width:0;padding-bottom:80px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}aside{display:none}}
+section.sess{padding:44px 0 0;scroll-margin-top:60px}
+.sbar{display:flex;align-items:flex-start;gap:16px;margin-bottom:10px}
+.no{flex:none;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:26px;font-weight:900;color:#0b0d24;background:linear-gradient(135deg,var(--ac,var(--a1)),color-mix(in srgb,var(--ac,var(--a1)) 50%,#fff));box-shadow:0 8px 28px color-mix(in srgb,var(--ac,var(--a1)) 45%,transparent)}
+section.sess .sbar{padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.tabs button.on{color:var(--ac,var(--a2));border-color:var(--ac,var(--a2))}
+section.sess{--ac:var(--a1)}
+.lab{box-shadow:0 14px 40px -24px #000a}
+.lab>h3:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ac,var(--a2));margin-inline-end:10px;box-shadow:0 0 12px var(--ac,var(--a2))}
+.sbar h2{font-size:clamp(22px,3.6vw,32px);font-weight:900;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
+.pill{font-size:12.5px;padding:2px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+.pill.d{color:var(--a2)}
+.lead{color:var(--muted);margin:6px 0 16px;max-width:820px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:18px;overflow-x:auto;scrollbar-width:none}
+.tabs button{padding:9px 20px;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap;transition:.2s}
+.tabs button:hover{color:var(--ink)}
+.tabs button.on{color:var(--a2);border-color:var(--a2)}
+.panel{display:none;animation:fade .45s}.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 details.k{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
 details.k summary{cursor:pointer;padding:12px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
 details.k summary:after{content:"＋";color:var(--a2);transition:.3s}
 details.k[open] summary:after{transform:rotate(45deg)}
 details.k .b{padding:0 18px 14px;color:var(--muted);font-size:15px}
-.tip{border-inline-start:4px solid var(--a5);background:color-mix(in srgb,var(--a5) 12%,transparent);padding:10px 16px;border-radius:12px;margin:14px 0;font-size:15px}
+details.k .b p{margin-bottom:6px}details.k .b ul{padding-inline-start:20px}
+.tip,.warn{border-inline-start:4px solid var(--a5);background:color-mix(in srgb,var(--a5) 12%,transparent);padding:10px 16px;border-radius:12px;margin:12px 0;font-size:15px}
 .warn{border-inline-start-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,transparent)}
-.box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;margin:18px 0}
-.box h3{margin-bottom:10px}
-.btn{padding:8px 18px;border-radius:99px;border:1px solid var(--line);background:var(--card-s);transition:.25s;font-size:14px}
-.btn:hover{border-color:var(--a2);color:var(--a2)}
-.btn.p{background:linear-gradient(135deg,var(--a1),var(--a3));color:#fff;border:0}
-.btn.on{background:var(--a1);color:#fff;border-color:var(--a1)}
-/* stepper */
-.steps{display:flex;gap:0;flex-wrap:wrap;justify-content:center;margin:10px 0 16px;position:relative}
-.step{flex:1;min-width:110px;text-align:center;cursor:pointer;padding:6px 4px}
-.step i{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 6px;border-radius:50%;background:var(--card-s);border:2px solid var(--line);font-style:normal;font-size:24px;transition:.4s}
+.lab{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:22px}
+.lab>h3{font-size:19px;margin-bottom:2px}
+.lab>p.d{color:var(--muted);font-size:14px;margin-bottom:12px}
+.lg{display:grid;grid-template-columns:minmax(240px,1fr) minmax(240px,1fr);gap:18px;align-items:center}
+@media(max-width:720px){.lg{grid-template-columns:1fr}}
+.lab svg{width:100%;height:auto;display:block;max-height:340px}
+svg .ln{stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+svg .hd{fill:var(--card-s);stroke:var(--ink);stroke-width:4}
+svg .sk{fill:var(--skin)}
+svg .fl{fill:var(--a2)}
+svg .tx{fill:var(--muted);font-size:12px;font-family:inherit}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;align-items:center}
+.btn,.chip{padding:7px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card-s);transition:.2s;font-size:14px}
+.btn:hover,.chip:hover{border-color:var(--a2);color:var(--a2)}
+.btn.p{background:linear-gradient(135deg,var(--a1),var(--a3));color:#fff;border:0}.btn.p:hover{color:#fff;filter:brightness(1.1)}
+.chip.on,.btn.on{background:var(--a1);color:#fff;border-color:var(--a1)}
+.out{margin-top:10px;padding:12px 16px;border-radius:14px;background:var(--card-s);border:1px dashed var(--line);font-size:15px;min-height:60px}
+.out b{color:var(--a4)}
+.meter{height:12px;border-radius:99px;background:var(--card-s);overflow:hidden;margin:6px 0;position:relative}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a2),var(--a3));transition:width .5s}
+input[type=range]{width:100%;accent-color:var(--a1)}
+select{font:inherit;padding:6px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card-s);color:var(--ink)}
+.steps{display:flex;flex-wrap:wrap;justify-content:center;margin:6px 0 12px}
+.step{flex:1;min-width:100px;text-align:center;cursor:pointer;padding:6px 4px}
+.step i{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 4px;border-radius:50%;background:var(--card-s);border:2px solid var(--line);font-style:normal;font-size:22px;transition:.4s}
 .step small{display:block;font-size:12.5px;color:var(--muted);line-height:1.5}
 .step.on i{border-color:var(--a2);background:linear-gradient(135deg,var(--a1),var(--a2));transform:scale(1.18);box-shadow:0 0 24px #22d3ee66}
 .step.done i{border-color:var(--good)}
-.pt{min-height:96px;transition:.3s}
-.pt .t{color:var(--a2);font-weight:800}
-/* chips */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
-.chip{padding:6px 14px;border-radius:12px;background:var(--card-s);border:1px solid var(--line);font-size:14px;cursor:pointer;transition:.25s}
-.chip:hover{border-color:var(--a2)}.chip.on{background:var(--a1);color:#fff;border-color:var(--a1);transform:scale(1.05)}
-.out{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--card-s);min-height:70px;border:1px dashed var(--line)}
-.out b{color:var(--a4)}
-/* sense svg */
-.sense{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:620px){.sense{grid-template-columns:1fr}}
-.sbox{padding:14px;border-radius:16px;border:2px solid var(--line);cursor:pointer;transition:.3s;text-align:center}
-.sbox:hover,.sbox.on{border-color:var(--a3);transform:translateY(-3px)}
-.sbox .em{font-size:30px}
-/* meter */
-.meter{height:14px;border-radius:99px;background:var(--card-s);overflow:hidden;margin:8px 0}
-.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a2),var(--a3));transition:width .9s cubic-bezier(.2,.8,.2,1)}
-input[type=range]{width:100%;accent-color:var(--a1)}
-/* classify game */
 .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
-.opt{padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card-s);text-align:center;transition:.25s}
+.opt{padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card-s);text-align:center;transition:.2s}
 .opt:hover:not(:disabled){border-color:var(--a2)}.opt.ok{background:#16a34a;color:#fff;border-color:#16a34a}.opt.no{background:#d62c55;color:#fff;border-color:#d62c55}
-/* flashcards */
+.arena{position:relative;height:260px;border-radius:16px;background:var(--card-s);border:1px solid var(--line);overflow:hidden;user-select:none}
+.arena .it{position:absolute;font-size:36px;line-height:1;cursor:pointer;transform:translate(-50%,-50%)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--card-s);border:1px solid var(--line);border-radius:16px;padding:12px 16px}
+.card h4{color:var(--a4);font-size:15px}.card p{color:var(--muted);font-size:14px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:7px 12px;border-radius:12px;background:var(--card-s);border:1px solid var(--line);cursor:pointer;font-size:14.5px;transition:.2s}
+.chk:hover{border-color:var(--a2)}.chk input{margin-top:6px;accent-color:var(--a1)}
 .fc{perspective:900px;height:220px;max-width:480px;margin:auto;cursor:pointer}
 .fc>div{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
 .fc.flip>div{transform:rotateY(180deg)}
@@ -106,199 +162,527 @@ input[type=range]{width:100%;accent-color:var(--a1)}
 .fc .f small{font-weight:400;color:var(--a2);font-size:14px;direction:ltr;margin-top:6px}
 .fc .bk{background:linear-gradient(135deg,var(--a1),var(--a3));color:#fff;transform:rotateY(180deg);font-size:17px}
 .fcn{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
-#conf{position:fixed;inset:0;pointer-events:none;z-index:60}
-.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
-footer{text-align:center;color:var(--muted);padding:40px 16px;font-size:14px}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.finale{padding-top:60px}.finale h2{font-size:28px;font-weight:900;margin-bottom:8px}
+#conf{position:fixed;inset:0;pointer-events:none;z-index:70}
+footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:14px}
+/* animations */
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+@keyframes sway2{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes hop{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-14px)}}
+@keyframes hop2{0%,38%,58%,96%,100%{transform:translateY(0)}45%,90%{transform:translateY(-16px)}}
+@keyframes tiltb{0%,100%{transform:rotate(-11deg)}50%{transform:rotate(11deg)}}
+@keyframes tiltm{0%,100%{transform:rotate(9deg)}50%{transform:rotate(-9deg)}}
+@keyframes swA{0%,100%{transform:rotate(26deg)}50%{transform:rotate(-26deg)}}
+@keyframes swB{0%,100%{transform:rotate(-26deg)}50%{transform:rotate(26deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-3px)}40%{transform:translateX(3px)}60%{transform:translateX(-2px)}80%{transform:translateX(2px)}}
+@keyframes ring{0%,100%{transform:rotate(0)}15%{transform:rotate(14deg)}30%{transform:rotate(-14deg)}45%{transform:rotate(10deg)}60%{transform:rotate(-10deg)}75%{transform:rotate(4deg)}}
+@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.25)}}
+@keyframes bounce{50%{transform:translateY(-8px)}}
+.st1 .man{animation:sway 2.4s ease-in-out infinite}.st2 .man{animation:hop 3s ease-in-out infinite}.st3 .man{animation:hop2 4s ease-in-out infinite}.st4 .man{animation:sway2 1.6s ease-in-out infinite}
+.st5 .boardg{animation:tiltb 2.6s ease-in-out infinite}.st5 .man{animation:tiltm 2.6s ease-in-out infinite}
+.man,.boardg{transform-origin:110px 206px}
+.board{display:none}.st4 .board,.st5 .board{display:block}
+.walk .aA{animation:swA 1.2s ease-in-out infinite}.walk .aB{animation:swB 1.2s ease-in-out infinite}
+.walk .lA{animation:swA 1.2s ease-in-out infinite}.walk .lB{animation:swB 1.2s ease-in-out infinite}
+.walk.same .lA{animation-name:swB}.walk.same .lB{animation-name:swA}
+.limb{transform-box:view-box}
+.shk{animation:shake .35s linear infinite}
+.bell.rg{animation:ring .7s ease-in-out infinite;transform-origin:50% 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div id="bar"></div><canvas id="conf"></canvas>
-<nav><div class="in"><b>🧩 اختلالات یادگیری</b><span id="links" style="display:contents"></span><button id="theme" aria-label="تغییر تم">🌓</button></div></nav>
+<nav class="top"><div class="in"><b>🧩 اختلالات یادگیری</b><div class="sw"><input id="q" type="search" placeholder="جستجو در درسنامه و آزمایشگاه‌ها…  ( / )" autocomplete="off"><div id="qr" hidden></div></div><span class="ring" id="prog">پیشرفت: ۰ از ۸ جلسه</span><button class="ib" id="fm" aria-label="کوچک‌تر">A−</button><button class="ib" id="fp" aria-label="بزرگ‌تر">A+</button><button class="ib" id="hlb" aria-label="هایلایت‌های من" title="هایلایت‌های من">🖍️<span id="hlc" hidden></span></button><button id="theme" class="ib" aria-label="تغییر تم">🌓</button></div></nav>
 
-<header class="hero"><canvas id="net"></canvas>
+<header class="hero" id="top"><canvas id="net"></canvas>
 <div><span class="tag">جزوهٔ درس · جلسات اول تا هشتم</span>
 <h1>اختلالات یادگیری</h1>
-<p class="sub">از اولین تماس تلفنی تا نمرهٔ خرده‌آزمون‌ها؛ ارزیابی، تشخیص افتراقی، مهارت‌های شناختی و نشانه‌های زودهنگام، همراه با بازی، آزمون و فلش‌کارت.</p>
-<div class="stats"><div class="stat"><b>۸</b><span>جلسه</span></div><div class="stat"><b>۲۱</b><span>خرده‌آزمون وکسلر</span></div><div class="stat"><b id="sFc">۰</b><span>فلش‌کارت</span></div><div class="stat"><b id="sQ">۰</b><span>پرسش آزمون</span></div></div>
-<a class="cta" href="#s1">شروع درس ↓</a></div></header>
+<p class="sub">از اولین تماس تلفنی تا نمرهٔ خرده‌آزمون‌ها؛ ارزیابی، تشخیص افتراقی، مهارت‌های شناختی و حسی-حرکتی با آزمایشگاه‌های تعاملی و متحرک.</p>
+<a class="cta" href="#s1">شروع از جلسهٔ ۱ ↓</a><a class="cta s" href="#s3">آزمایشگاه حسی-حرکتی</a>
+<div class="credits"><span>استاد درس: <b>دکتر آقایی</b></span><span>گردآورنده: <b>خانم رشیدی</b></span><span>توسعه‌دهنده: <b>امیر لطفی‌فر</b></span></div></div></header>
 
-<main id="main"></main>
-<footer>این درس‌نامه خلاصهٔ تعاملی جزوهٔ کلاس است و جایگزین جزوه یا منبع رسمی نیست.</footer>
+<section class="ov" id="ov"></section>
+<div class="layout"><aside id="toc"></aside><main id="main"></main></div>
+<footer>استاد درس: دکتر آقایی · گردآورنده: خانم رشیدی · توسعه‌دهنده: امیر لطفی‌فر<br>این درس‌نامه خلاصهٔ تعاملی جزوهٔ کلاس است و جایگزین جزوه یا منبع رسمی نیست؛ ارزیابی دقیق حسی-حرکتی را فرد آموزش‌دیده انجام می‌دهد.</footer>
 
 <script>
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
 const gt=k=>{try{return localStorage.getItem(k)}catch{return null}},sv=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
-
-/* ---------- theme ---------- */
+const rnd=a=>a[Math.random()*a.length|0];
 const root=document.documentElement;
 root.dataset.theme=gt('ldTheme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
 $('#theme').onclick=()=>{const t=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=t;sv('ldTheme',t)};
 
-/* ---------- content ---------- */
+/* ======================= LABS ======================= */
+const LAB={};
+const fig=(id,extra='')=>`<g class="man"><circle class="hd" cx="110" cy="48" r="17"/><path class="ln" d="M110 66V135"/><path class="ln" d="M110 82H56M110 82H164"/><path class="ln" d="M110 135V204"/><path class="ln" d="M110 135H156V172"/>${extra}</g>`;
+
+LAB.stages={t:"مسیر ارزیابی تا تشخیص",d:"روی هر مرحله بزنید؛ مراحل خودکار هم جلو می‌روند.",init(el){
+ const P=[["📞","تماس","اطلاعات اولیه توسط منشی یا فرم: سن و پایه، مدرسه، دارو، سابقهٔ مشاوره."],["📝","تاریخچه","فرم رشد و تحول: بارداری، زایمان، نوزادی، حرکت، زبان."],["👪","والدین","ارزیابی فرزندپروری و انتظار والدین."],["🧒","کودک","بررسی هر سه اسپسیفایر و مؤلفه‌های شناختی دخیل در یادگیری."],["🧠","وکسلر","ابزار کمکی برای توانایی‌های پایه، نه تشخیص مستقیم."],["🎯","تشخیص","تشخیص نهایی و تمایز از فقر محیطی؛ مداخله تا زمان طلایی (کلاس پنجم)."]];
+ el.innerHTML=`<div class="steps"></div><div class="out"></div>`;const st=$('.steps',el),out=$('.out',el);
+ st.innerHTML=P.map((p,i)=>`<div class="step" data-i="${i}" tabindex="0" role="button"><i>${p[0]}</i><small>${p[1]}</small></div>`).join('');
+ const go=i=>{$$('.step',st).forEach((e,k)=>{e.classList.toggle('on',k===i);e.classList.toggle('done',k<i)});out.innerHTML=`<b>${P[i][1]}</b><br>${P[i][2]}`};
+ $$('.step',st).forEach(e=>{e.onclick=()=>go(+e.dataset.i);e.onkeydown=ev=>{if(ev.key==='Enter')go(+e.dataset.i)}});go(0);let k=0;setInterval(()=>{if(el.matches(':hover')||!el.offsetParent)return;k=(k+1)%P.length;go(k)},3600)}};
+
+LAB.classify={t:"بازی: این کودک چه تشخیصی دارد؟",d:"هفت موقعیت را درست دسته‌بندی کنید.",init(el){
+ const O=["SLD خاص","اکتسابی","فقر محیطی","SID","ADHD"];
+ const Q=[["کودکی از بدو تولد در خواندن کند و نادرست است و رشد دیگرش طبیعی بوده.",0],["پس از سقوط از بلندی در ۶ سالگی، کودکی که قبلاً نمرات عادی داشت ناگهان در یادگیری افت کرد.",1],["والدین تحصیلات سیکل دارند، کودک مدرسهٔ ضعیف رفته و فرصت آموزش کافی نداشته.",2],["کودک از لمس برچسب لباس بی‌تاب می‌شود و به صداهای معمولی شدیداً واکنش نشان می‌دهد.",3],["کودک نمی‌نشیند، تکانشی است و در محاسبه به‌خاطر بی‌دقتی اشتباه می‌کند.",4],["پس از غیبت یک‌ساله از مدرسه، کودک دیکته را نمی‌داند.",2],["کودک در درک مفهوم عدد و حل مسئله از ابتدا مشکل پایدار دارد.",0]];
+ let i=0,sc=0;
+ function r(){if(i>=Q.length){el.innerHTML=`<p style="font-size:20px">امتیاز شما: <b style="color:var(--a4)">${fa(sc)} از ${fa(Q.length)}</b></p><button class="btn p" id="cr">↺ دوباره</button>`;$('#cr',el).onclick=()=>{i=0;sc=0;r()};return}
+ el.innerHTML=`<small style="color:var(--a2)">${fa(i+1)} از ${fa(Q.length)}</small><p style="margin:6px 0">${Q[i][0]}</p><div class="opts">${O.map((o,k)=>`<button class="opt" data-k="${k}">${o}</button>`).join('')}</div>`;
+ $$('.opt',el).forEach(x=>x.onclick=()=>{const k=+x.dataset.k;$$('.opt',el).forEach(y=>y.disabled=true);$$('.opt',el)[Q[i][1]].classList.add('ok');if(k===Q[i][1])sc++;else x.classList.add('no');setTimeout(()=>{i++;r()},1200)})}
+ r()}};
+
+LAB.alarm={t:"تمثیل دزدگیر: بیش‌حسی و کم‌حسی",d:"آستانهٔ حساسیت را تنظیم کنید و دو محرک متفاوت بفرستید.",init(el){
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 220 200"><g class="bell" id="bl"><path d="M110 30c-30 0-40 25-40 55v20l-12 16h104l-12-16V85c0-30-10-55-40-55z" class="fl" opacity=".9"/><circle cx="110" cy="136" r="9" fill="var(--a5)"/><rect x="104" y="14" width="12" height="18" rx="5" fill="var(--a5)"/></g><text id="aw" x="110" y="180" text-anchor="middle" class="tx" style="font-size:15px">آماده</text></svg>
+ <div><label>حساسیت دزدگیر: <b id="av">۵</b> از ۱۰ (۱۰ = بیش‌حس)</label><input type="range" id="as" min="1" max="10" value="5"><div class="row"><button class="btn" data-p="2">🐈 گربه رد شد (محرک کم)</button><button class="btn" data-p="8">🥷 سارق (محرک زیاد)</button></div><div class="out" id="ao">یک محرک بفرستید.</div></div></div>`;
+ const s=$('#as',el),bl=$('#bl',el);s.oninput=()=>$('#av',el).textContent=fa(s.value);
+ $$('[data-p]',el).forEach(b=>b.onclick=()=>{const p=+b.dataset.p,th=11-s.value;const ring=p>=th;bl.classList.toggle('rg',ring);$('#aw',el).textContent=ring?'🔔 زنگ خورد!':'ساکت';setTimeout(()=>bl.classList.remove('rg'),1600);
+ $('#ao',el).innerHTML=ring?(p<5?'<b>بیش‌حسی:</b> با محرک بسیار کم هم واکنش داده شد؛ گوش کودک از صدا درد می‌گیرد، تمرکزش افت می‌کند و نوشتن و پردازش داده‌ها کم می‌شود.':'واکنش برای محرک زیاد طبیعی است.'):(p>=5?'<b>کم‌حسی:</b> حتی محرک زیاد درک نشد؛ مثل کودکی که «لیمو» را «بی‌بو» می‌نویسد یا «فیروز» را «پیروز».':'برای محرک کم سکوت، طبیعی است.')})}};
+
+LAB.sidclin={t:"نشانه‌های بالینی SID (چه بپرسیم؟)",d:"یک حس را انتخاب کنید. گزارش والد به‌تنهایی کافی نیست و درمانگر باید خودش بررسی کند.",init(el){
+ const D={"لامسه و پوست":"حساسیت به جنس و تنگی لباس، کش شلوار، درز جوراب و لباس زیر؛ مرتب کردن مدام جوراب؛ حساسیت به خیس شدن بخشی از لباس (با «عاشق آب‌بازی» فرق دارد)؛ ور رفتن با آستین؛ واکنش زیاد یا کم به درد؛ دوست داشتن یا نداشتن بغل. مثال: مادر می‌گوید تگ لباس مشکلی ندارد چون از دو سالگی همه را کنده است؛ این گزارش موثق نیست.","بویایی":"تمییز بویایی (تشخیص بوها) با بیش‌حسی بویایی فرق دارد: کودک می‌تواند بوها را تشخیص دهد اما چون مغز با آن بو ناآشناست مدام می‌گوید «بو می‌دهد، بوی بد می‌آید».","چشایی و بافت غذا":"جدا کردن مواد از غذا (لوبیا، گوشت، عدس، کشمش) و بدش آمدن از میوهٔ پالپ‌دار مربوط به چشایی است. نخوردن غذاهای مخلوط جامد و مایع (سوپ و آش) به حس وضعیت دهان برمی‌گردد. شروع غذای کمکی با غذای مخلوط‌شده از بدغذایی پیشگیری می‌کند.","سر و مو":"حساس به شستن و شانه کردن، آرایشگاه و ماساژ سر. وقتی خودش شانه می‌کند راحت‌تر است چون محرک درونی است (مثل اینکه خودتان را قلقلک ندهید).","درد":"کودکی که زمین می‌خورد و خیلی دردش می‌آید «شلوغ‌بازی» نمی‌کند؛ پردازش درد در او بیشتر است. خندیدن هنگام درد به ODD ربطی ندارد؛ علت‌ها: بیش‌حسی، بازداری هیجانی یا نشناختن و تنظیم نکردن هیجان.","ترس و اضطراب":"کودک بیش‌حس شب صدای لوله و ترانس یخچال را می‌شنود و فکر می‌کند «روح آمده». با تنظیم حس و سپس آموزش شناخت آن، ترس کم می‌شود."};
+ el.innerHTML=`<div class="row">${Object.keys(D).map(k=>`<button class="chip">${k}</button>`).join('')}</div><div class="out">یک مورد را انتخاب کنید.</div>`;
+ $$('.chip',el).forEach(c=>c.onclick=()=>{$$('.chip',el).forEach(x=>x.classList.remove('on'));c.classList.add('on');$('.out',el).innerHTML=`<b>${c.textContent}</b><br>${D[c.textContent]}`})}};
+
+LAB.balance={t:"ارزیابی تعادل: پنج مرحله",d:"مرحله را انتخاب کنید تا حرکت متحرک شود. سپس زمان ایستادن را با سن مقایسه کنید.",init(el){
+ const T=["<b>۱ · ایستا:</b> دو دست باز، یک پا ۹۰ درجه بالا، بدون تلوتلو؛ اول پای راست و بعد چپ. اگر نتواند، احتمالاً مراحل بعد را هم نمی‌تواند.","<b>۲:</b> با همان حالت یک خانه به جلو بپرد و بایستد، بدون گرفتن جایی یا عقب بردن پا؛ روی هر دو پا.","<b>۳:</b> ۳ ثانیه بایستد، بپرد، ۳ ثانیه بایستد و دوباره بپرد.","<b>۴:</b> روی تخته تعادل ثابت با یک پا بایستد.","<b>۵:</b> درمانگر تخته را با پا حرکت می‌دهد و کودک باید با راست کردن خود تعادل را حفظ کند؛ کمی تلوتلو اشکال ندارد. درمانگر باید ابتدا خودش این مرحله را تمرین کرده باشد."];
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 220 240" class="st1" id="bsv"><g class="boardg board"><rect x="45" y="206" width="130" height="9" rx="4" fill="var(--a5)"/><path d="M85 215a25 25 0 0 0 50 0z" fill="var(--a1)"/></g>${fig()}<text class="tx" x="110" y="236" text-anchor="middle">پای راست</text></svg>
+ <div><div class="row">${[1,2,3,4,5].map(i=>`<button class="chip ${i==1?'on':''}" data-s="${i}">مرحله ${fa(i)}</button>`).join('')}</div><div class="out" id="bt">${T[0]}</div>
+ <hr style="border:0;border-top:1px solid var(--line);margin:12px 0"><div class="row"><label>سن:</label><select id="ba"><option value="6">۶ سالگی (حدود ۶ ثانیه)</option><option value="7.5">۷ سالگی (۷ تا ۸ ثانیه)</option><option value="11">۹ سالگی (۱۰ تا ۱۲ ثانیه)</option></select><button class="btn p" id="bgo">▶ شروع زمان‌سنج</button></div><div class="meter"><i id="bm"></i></div><div id="br" style="font-size:14px;color:var(--muted)">زمان ایستادن روی یک پا را بسنجید.</div></div></div>`;
+ const sv=$('#bsv',el);$$('[data-s]',el).forEach(b=>b.onclick=()=>{$$('[data-s]',el).forEach(x=>x.classList.remove('on'));b.classList.add('on');sv.setAttribute('class','st'+b.dataset.s);$('#bt',el).innerHTML=T[b.dataset.s-1]});
+ let run=0,t0,iv;$('#bgo',el).onclick=function(){if(!run){run=1;t0=performance.now();this.textContent='■ توقف (پا زمین آمد)';iv=setInterval(()=>{const e=(performance.now()-t0)/1000,ex=+$('#ba',el).value;$('#bm',el).style.width=Math.min(100,e/(ex*1.6)*100)+'%';$('#br',el).textContent=`${fa(e.toFixed(1))} ثانیه`},100)}else{run=0;clearInterval(iv);this.textContent='▶ شروع زمان‌سنج';const e=(performance.now()-t0)/1000,ex=+$('#ba',el).value;$('#br',el).innerHTML=e>=ex?`<b style="color:var(--good)">${fa(e.toFixed(1))} ثانیه؛ به زمان مورد انتظار رسید.</b>`:`<b style="color:var(--bad)">${fa(e.toFixed(1))} ثانیه؛ کمتر از زمان مورد انتظار.</b> مراحل بعد را هم با دقت ارزیابی کنید.`}}}};
+
+LAB.proprio={t:"حس وضعیت: «گردوشکستن» با چشم باز و بسته",d:"راه رفتن روی خط با برخورد پاشنه به پنجه، بدون نگاه کردن به زمین. چشم‌ها را ببندید و حس وضعیت را ضعیف کنید.",init(el){
+ el.innerHTML=`<svg viewBox="0 0 420 120" id="pg"><line x1="20" y1="70" x2="400" y2="70" stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 6"/><g id="pfs"></g><text class="tx" x="210" y="112" text-anchor="middle" id="pt">آماده</text></svg>
+ <div class="row"><button class="chip on" id="pe">👁️ چشم باز</button><button class="chip" id="pc">🙈 چشم بسته</button><button class="chip" id="pw">حس وضعیت ضعیف</button><button class="btn p" id="pgo">▶ شروع</button></div><div class="out" id="po">پاشنهٔ هر قدم باید دقیقاً به پنجهٔ قدم قبلی بخورد.</div>`;
+ let closed=0,weak=0;const set=()=>{$('#pe',el).classList.toggle('on',!closed);$('#pc',el).classList.toggle('on',closed)};
+ $('#pe',el).onclick=()=>{closed=0;set()};$('#pc',el).onclick=()=>{closed=1;set()};$('#pw',el).onclick=function(){weak=!weak;this.classList.toggle('on',weak)};
+ $('#pgo',el).onclick=()=>{const g=$('#pfs',el);g.innerHTML='';let i=0,miss=0;const iv=setInterval(()=>{if(i>=8){clearInterval(iv);$('#pt',el).textContent=miss?`${fa(miss)} قدم از ${fa(8)} به پنجه نخورد`:'همهٔ قدم‌ها دقیق بود';$('#po',el).innerHTML=miss?'<b>ضعف حس وضعیت:</b> کودک وقتی نگاه می‌کند ممکن است درست انجام دهد، اما بدون دیدن، تجسم بدن از دست می‌رود. برای هر مشکل پلن درمان نوشته می‌شود.':'<b>طبیعی:</b> بدون دیدن هم وضعیت پاها در ذهن تجسم می‌شود.';return}
+ const bad=closed&&weak&&Math.random()<.75?(Math.random()<.5?1:-1)*(10+Math.random()*16):(closed?(Math.random()-.5)*4:0);if(Math.abs(bad)>6)miss++;
+ const x=28+i*44+(i%2?0:0),y=i%2?58:82;g.insertAdjacentHTML('beforeend',`<g transform="translate(${x+bad},${y})" style="opacity:0;transition:.4s"><ellipse cx="0" cy="0" rx="17" ry="8" fill="var(--a1)"/><circle cx="-12" cy="0" r="4" fill="var(--a3)"/></g>`);requestAnimationFrame(()=>{g.lastChild.style.opacity=1});i++},520)}}};
+
+LAB.posture={t:"وضعیت بدن هنگام نوشتن (نقاط حساس)",d:"روی نقطه‌های روی شکل بزنید تا ببینید هر نشانه به کدام مهارت اشاره دارد.",init(el){
+ const H={n:["گردن و چشم چرخیده","با دست راست می‌نویسد اما گردن را می‌چرخاند و با چشم چپ نگاه می‌کند: هماهنگی چشم و دست ضعیف و مهارت عضلات درشت پایین است."],p:["دفتر چرخیده","چرخاندن کاغذ زیر دست و چرخش تنه نشانهٔ ضعف هماهنگی و عضلات درشت است."],w:["مچ شکسته","مچ به سمت بالا شکسته و از بالا می‌نویسد؛ یعنی مهارت عضلات ظریف و درشت هر دو پایین است."],g:["فشار زیاد بر مداد","فشار بیش از حد یعنی حس عمق (میزان مناسب فشار) را ندارد و اطلاعات حسگرهای درونی غلط است. دست زود درد می‌گیرد و توان به خاطر سپردن هم کم می‌شود."]};
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 260 220"><g transform="rotate(-8 130 190)"><rect x="40" y="170" width="190" height="14" rx="4" fill="var(--a5)"/></g><g transform="rotate(14 150 150)"><rect x="95" y="128" width="90" height="46" rx="4" fill="var(--card-s)" stroke="var(--ink)" stroke-width="2"/></g><circle class="hd" cx="90" cy="50" r="20" transform="rotate(20 90 50)"/><path class="ln" d="M96 70L120 130"/><path class="ln" d="M110 92L160 150"/><path class="ln" d="M160 150l-8 -22M160 150l14 -10"/>
+ <g class="hot" data-k="n"><circle cx="90" cy="32" r="11" fill="var(--bad)" opacity=".9"/></g><g class="hot" data-k="p"><circle cx="135" cy="118" r="11" fill="var(--a2)" opacity=".9"/></g><g class="hot" data-k="w"><circle cx="160" cy="150" r="11" fill="var(--a5)" opacity=".9"/></g><g class="hot" data-k="g"><circle cx="178" cy="140" r="11" fill="var(--a3)" opacity=".9"/></g></svg>
+ <div><div class="out" id="ho">یک نقطهٔ رنگی را انتخاب کنید.</div><div class="warn">چنین کودکی ممکن است اختلال یادگیری نداشته باشد، یا هم SLD و هم ضعف حرکتی داشته باشد. باید تفکیک شود که مشکل فقط حرکتی است یا آن‌قدر شدید که یادگیری را مختل کرده است.</div></div></div>`;
+ $$('.hot',el).forEach(h=>{h.style.cursor='pointer';h.onclick=()=>{const d=H[h.dataset.k];$('#ho',el).innerHTML=`<b>${d[0]}</b><br>${d[1]}`;$$('.hot circle',el).forEach(c=>c.setAttribute('r',11));h.firstChild.setAttribute('r',15)}})}};
+
+LAB.lateral={t:"آزمون لوله: برتری جانبی چشم",d:"نتیجهٔ مشاهده را انتخاب کنید تا تفسیر و نوع مداخله را ببینید.",init(el){
+ const D=[["لوله جلوی چشم راست، چشم چپ بسته","برتری جانبی راست درست شکل گرفته است (ممکن است در زمان نوشتن درست کار نکند)."],["لوله جلوی چشم راست، چشم چپ باز","راست است اما چپ باز است؛ هنوز غالب نشده و هر دو چشم با هم نگاه می‌کنند. می‌نویسیم: برتری شکل نگرفته."],["لوله جلوی چشم چپ، چشم راست بسته","برتری جانبی چپ است."],["لوله جلوی چشم چپ، چشم راست باز","باز هم برتری جانبی شکل نگرفته است."]];
+ el.innerHTML=`<p style="color:var(--muted);font-size:14px;margin-bottom:6px">لوله را به دست کودک نمی‌دهیم؛ خودش برمی‌دارد و از آن به نشانه‌ای دور نگاه می‌کند. گوش: شیء صدادار کنار گوش. پا: توپ دقیقاً وسط دو پا و ضربه زدن.</p><div class="row">${D.map((d,i)=>`<button class="chip" data-i="${i}">${d[0]}</button>`).join('')}</div><div class="out">یک حالت را انتخاب کنید.</div>
+ <div class="grid3" style="margin-top:10px"><div class="card"><h4>برتری شکل نگرفته</h4><p>در تمام روز و هر فعالیتی (حتی تلویزیون و تبلت) چشم غیرغالب بسته شود.</p></div><div class="card"><h4>فقط هنگام نوشتن مخالف است</h4><p>تمرین‌های هماهنگی چشم و دست: نقاشی، مشق، انداختن ماکارونی در سوراخ‌های آبکش وارونه با یک چشم بسته، زدن توپ با راکت.</p></div></div>`;
+ $$('.chip',el).forEach(c=>c.onclick=()=>{$$('.chip',el).forEach(x=>x.classList.remove('on'));c.classList.add('on');$('.out',el).innerHTML=D[c.dataset.i][1]})}};
+
+LAB.eye={t:"آی‌موومنت: دنبال کردن مداد با چشم",d:"حالت‌ها را عوض کنید و تفاوت حرکت گردن و پرش چشم را ببینید.",init(el){
+ const M={ok:"<b>طبیعی:</b> چشم روان دنبال می‌کند و گردن ثابت است.",neck:"<b>همراه با حرکت گردن:</b> حرکت چشم از گردن تفکیک نشده؛ می‌نویسیم «آی‌موومنت شکل نگرفته؛ همراه با حرکت گردن».",jump:"<b>همراه با پرش:</b> چشم می‌پرد و نمی‌تواند روان دنبال کند؛ تمرکز پایین می‌آید. پرش می‌تواند چپ-راست، بالا-پایین یا دورانی باشد و در ADHD هم دیده می‌شود.",jas:"<b>آزمون جاسری:</b> دست‌های درمانگر دو طرف سر است؛ اگر با سر ثابت چشم دنبال کند مشکلی نیست و فقط روی تفکیک کار می‌شود، اما اغلب چشم می‌پرد."};
+ el.innerHTML=`<svg viewBox="0 0 400 230"><g id="hd"><ellipse cx="200" cy="90" rx="110" ry="80" fill="var(--card-s)" stroke="var(--ink)" stroke-width="3"/><ellipse cx="155" cy="85" rx="30" ry="19" fill="#fff" stroke="var(--ink)"/><ellipse cx="245" cy="85" rx="30" ry="19" fill="#fff" stroke="var(--ink)"/><circle id="p1" cx="155" cy="85" r="9" fill="#222"/><circle id="p2" cx="245" cy="85" r="9" fill="#222"/><path d="M165 130q35 22 70 0" stroke="var(--ink)" stroke-width="3" fill="none"/></g><g id="hands" style="opacity:0"><rect x="60" y="50" width="22" height="90" rx="10" class="sk" stroke="var(--ink)"/><rect x="318" y="50" width="22" height="90" rx="10" class="sk" stroke="var(--ink)"/></g><line x1="80" y1="200" x2="320" y2="200" stroke="var(--line)" stroke-width="2"/><g id="pen"><rect x="-5" y="170" width="10" height="52" rx="2" fill="var(--a5)"/><path d="M-5 170L0 158L5 170z" fill="var(--a3)"/></g></svg>
+ <div class="row"><button class="chip on" data-m="ok">طبیعی</button><button class="chip" data-m="neck">گردن همراه</button><button class="chip" data-m="jump">پرش چشم</button><button class="chip" data-m="jas">جاسری</button></div><div class="out" id="eo">${M.ok}</div>`;
+ let mode='ok',hold=0,hx=0,hy=0,nt=0;$$('[data-m]',el).forEach(b=>b.onclick=()=>{mode=b.dataset.m;$$('[data-m]',el).forEach(x=>x.classList.toggle('on',x===b));$('#eo',el).innerHTML=M[mode];$('#hands',el).style.opacity=mode==='jas'?1:0});
+ let last=0;function loop(ts){if(!el.isConnected)return;if(el.offsetParent){const t=ts/1000,px=200+110*Math.sin(t*1.3),dx=(px-200)/110;$('#pen',el).setAttribute('transform',`translate(${px},0)`);let ox=dx*12,oy=0,hdx=0,hr=0;
+ if(mode==='neck'){hdx=dx*26;hr=dx*8;ox=dx*4}
+ if(mode==='jump'||mode==='jas'){if(ts-last>420){last=ts;hx=ox+(Math.random()-.5)*26;hy=Math.random()<.35?(Math.random()-.5)*14:0}ox=hx;oy=hy}
+ $('#hd',el).setAttribute('transform',`translate(${hdx},0) rotate(${hr} 200 90)`);[['#p1',155],['#p2',245]].forEach(([s,c])=>{const e=$(s,el);e.setAttribute('cx',c+ox);e.setAttribute('cy',85+oy)})}requestAnimationFrame(loop)}requestAnimationFrame(loop)}};
+
+LAB.nose={t:"نوز تو فینگر (بازی سرعت پردازش)",d:"ابتدا روی بینی، سپس روی انگشت درمانگر بزنید؛ انگشت هر بار جابه‌جا می‌شود. (نمایش آموزشی، نه آزمون بالینی)",init(el){
+ el.innerHTML=`<div class="arena" id="na"><div class="it" id="nn" style="left:50%;top:86%">🙂</div><div class="it" id="nt" style="display:none">☝️</div></div><div class="row"><button class="btn p" id="ng">▶ شروع</button><span id="ns" style="color:var(--muted);font-size:14px">${fa(6)} جابه‌جایی انگشت</span></div><div class="out" id="no">برای مشکل‌دار: «انگشتش را یک بار می‌زند و می‌گذارد؛ وقتی انگشت درمانگر جابه‌جا می‌شود دیگر نمی‌زند یا انگشتش همان جا می‌ماند» یعنی کند است یا نمی‌تواند موقعیت را تعقیب کند.</div>`;
+ const nn=$('#nn',el),nt=$('#nt',el);let st=0,n=0,tt=[],t0=0;
+ const show=()=>{nt.style.display='block';nt.style.left=(15+Math.random()*70)+'%';nt.style.top=(12+Math.random()*50)+'%';t0=performance.now();nn.style.animation='';nt.style.animation='pulse 1s infinite'};
+ $('#ng',el).onclick=()=>{st=1;n=0;tt=[];nt.style.display='none';nn.style.animation='pulse 1s infinite';$('#ns',el).textContent='روی بینی بزنید'};
+ nn.onclick=()=>{if(st===1){st=2;nn.style.animation='';show();$('#ns',el).textContent='حالا انگشت درمانگر'}};
+ nt.onclick=()=>{if(st!==2)return;tt.push(performance.now()-t0);n++;nt.style.display='none';if(n>=6){st=0;const a=tt.reduce((x,y)=>x+y,0)/tt.length;$('#ns',el).textContent=`میانگین زمان تعقیب: ${fa(Math.round(a))} میلی‌ثانیه`}else{st=1;nn.style.animation='pulse 1s infinite';$('#ns',el).textContent=`${fa(n)} از ${fa(6)} · دوباره بینی`}}}};
+
+LAB.ball={t:"هماهنگی چشم و دست با توپ (۵ مرحله)",d:"مرحله را انتخاب کنید تا مسیر توپ و دست‌های درگیر متحرک شود.",init(el){
+ const S=[["راست → راست","با دست راست بیندازد و بگیرد. با توپ شیطونک بیش از دو بار نگرفتن یعنی حس عمق مشکل دارد؛ شدت پرتاب را نمی‌تواند تشخیص دهد.",['R','R']],["چپ → چپ","با دست چپ بیندازد و با دست چپ بگیرد.",['L','L']],["راست → چپ","با دست راست بیندازد و با دست چپ بگیرد.",['R','L']],["چپ → راست","با دست چپ بیندازد و با دست راست بگیرد.",['L','R']],["راکت","توپ پرتاب می‌شود و کودک اول با دست راست و سپس با چپ ضربه می‌زند. برای سنجش دقیق، یک چشم بسته می‌شود (دست راست: چشم راست بسته، چپ باز).",['T','R']]];
+ el.innerHTML=`<svg viewBox="0 0 400 220"><text class="tx" x="80" y="210" text-anchor="middle">دست راست</text><text class="tx" x="320" y="210" text-anchor="middle">دست چپ</text><text style="font-size:40px" x="80" y="180" text-anchor="middle">🖐️</text><text style="font-size:40px" x="320" y="180" text-anchor="middle">🖐️</text><text id="rk" style="font-size:36px;display:none" x="80" y="120" text-anchor="middle">🏓</text><circle id="bl" r="11" fill="var(--a3)" cx="80" cy="150"/></svg><div class="row">${S.map((s,i)=>`<button class="chip ${i?'':'on'}" data-i="${i}">مرحله ${fa(i+1)}</button>`).join('')}</div><div class="out" id="bo"></div>`;
+ let cur=0,t0=performance.now();const X={R:80,L:320,T:200};
+ const pick=i=>{cur=i;t0=performance.now();$$('[data-i]',el).forEach(x=>x.classList.toggle('on',+x.dataset.i===i));$('#bo',el).innerHTML=`<b>${S[i][0]}</b><br>${S[i][1]}`;$('#rk',el).style.display=i===4?'block':'none'};
+ $$('[data-i]',el).forEach(b=>b.onclick=()=>pick(+b.dataset.i));pick(0);
+ (function f(ts){if(!el.isConnected)return;if(el.offsetParent){const [a,b]=S[cur][2],u=((ts-t0)/1700)%1,x0=X[a],x1=X[b],x=x0+(x1-x0)*u,y=a==='T'?(40+110*u):(150-110*Math.sin(Math.PI*u));$('#bl',el).setAttribute('cx',a===b?x0+Math.sin(u*Math.PI*2)*0:x);$('#bl',el).setAttribute('cy',a===b?150-110*Math.sin(Math.PI*u):y);if(a===b)$('#bl',el).setAttribute('cx',x0)}requestAnimationFrame(f)})(0)}};
+
+LAB.hemi={t:"هماهنگی دو نیم‌کره: راه رفتن «آدم آهنی»",d:"دست و پای مخالف با هم جلو می‌آیند. حالت هم‌طرف را مقایسه کنید.",init(el){
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 220 240" id="hw" class="walk"><circle class="hd" cx="110" cy="40" r="17"/><path class="ln" d="M110 58V130"/><g class="limb aA" style="transform-origin:110px 76px"><path class="ln" d="M110 76L110 130"/></g><g class="limb aB" style="transform-origin:110px 76px"><path class="ln" d="M110 76L110 130"/></g><g class="limb lA" style="transform-origin:110px 130px"><path class="ln" d="M110 130L110 210"/></g><g class="limb lB" style="transform-origin:110px 130px"><path class="ln" d="M110 130L110 210"/></g></svg>
+ <div><div class="row"><button class="chip on" data-m="">دست و پای مخالف (هماهنگ)</button><button class="chip" data-m="same">دست و پای هم‌طرف (ناهماهنگ)</button></div><div class="out" id="ho">هماهنگی دو نیم‌کره در ریاضیات، استدلال مفهومی و فهمیدن مسئلهٔ خوانده‌شده اثر دارد.</div><div class="tip">وقتی از کودک می‌خواهیم، چون دقت می‌کند ممکن است درست انجام دهد؛ چند دقیقه بعد راه رفتن طبیعی او را ببینید. روش‌های دیگر: حرکت مخالف دو شست، ضربه روی سر هم‌زمان با چرخاندن دست دیگر دور شکم، و کاربرگ تقسیم کاغذ (بالای ۶ سال).</div></div></div>`;
+ $$('[data-m]',el).forEach(b=>b.onclick=()=>{$$('[data-m]',el).forEach(x=>x.classList.toggle('on',x===b));$('#hw',el).setAttribute('class','walk '+b.dataset.m)})}};
+
+LAB.tactile={t:"لامسهٔ سطح بدن: نردبان قلموها",d:"قلمو و نوع پاسخ حسی کودک را انتخاب کنید.",init(el){
+ const B=[["سیلیکونی","کمترین تحریک"],["نرم مویی","بسیار نرم (مثل قلموی رژگونه)"],["کمی زبرتر","آبرنگی کهنه"],["نسبتاً زبر","رنگ روغن"],["زبر","قلموی پلاستیکی رنگ مو"]];
+ const P={typ:["طبیعی","فقط دربارهٔ قلموی زبر می‌گوید «می‌خاراند، دوست ندارم»؛ لامسه به‌درستی دریافت می‌شود.",0],hyper:["بیش‌حس","از لحظهٔ نزدیک شدن قلمو واکنش نشان می‌دهد («ببین ببین!»)، مورمور می‌شود، بدن را جمع می‌کند و تا چند ثانیه تا چند دقیقه بعد هم برطرف نمی‌شود. درمان از نرم‌ترین قلمو شروع می‌شود.",1],hypo:["کم‌حس","قلموی سیلیکونی را اصلاً درک نمی‌کند؛ با زبرترین قلمو پوستش قرمز می‌شود و می‌گوید «خیلی خوبم» و آرام می‌شود. درمان از زبرترین قلموها شروع می‌شود.",2],inh:["بازداری هیجانی","واکنش را مهار می‌کند و می‌گوید «اصلاً درد ندارم»، اما بدن سفت می‌شود و دندان‌ها فشرده می‌شوند. نمی‌توان میزان حساسیت را فهمید.",3]};
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 240 180"><path id="arm" d="M20 90 Q120 50 220 90 L220 130 Q120 100 20 130z" fill="var(--skin)" stroke="var(--ink)" stroke-width="3"/><g id="br" style="transition:transform 1s linear"><rect x="-10" y="-60" width="10" height="46" rx="3" fill="var(--a5)" transform="translate(30,100)"/><path d="M20 40L26 30 32 40z" fill="var(--a3)" transform="translate(-4,50)"/></g><text id="ex" x="120" y="165" text-anchor="middle" style="font-size:20px"></text></svg>
+ <div><div class="row">${B.map((b,i)=>`<button class="chip ${i?'':'on'}" data-b="${i}">${fa(i+1)}. ${b[0]}</button>`).join('')}</div><div class="row">${Object.entries(P).map(([k,v],i)=>`<button class="chip ${i?'':'on'}" data-p="${k}">${v[0]}</button>`).join('')}</div><button class="btn p" id="tgo">🖌️ بکش</button><div class="out" id="to"></div></div></div>`;
+ let b=0,p='typ';const upd=()=>{$$('[data-b]',el).forEach(x=>x.classList.toggle('on',+x.dataset.b===b));$$('[data-p]',el).forEach(x=>x.classList.toggle('on',x.dataset.p===p));$('#to',el).innerHTML=`<b>${B[b][0]}</b> (${B[b][1]})<br>${P[p][1]}`};
+ $$('[data-b]',el).forEach(x=>x.onclick=()=>{b=+x.dataset.b;upd()});$$('[data-p]',el).forEach(x=>x.onclick=()=>{p=x.dataset.p;upd()});upd();
+ $('#tgo',el).onclick=()=>{const arm=$('#arm',el),brs=$('#br',el),ex=$('#ex',el);brs.style.transition='none';brs.style.transform='translateX(0)';
+ const react=p==='hyper'||(p==='typ'&&b===4);const col=(p==='hyper')?'#ff4d6d':(p==='hypo'&&b>=3)?'#ff4d6d':(p==='typ'&&b===4)?'#e88':'var(--skin)';
+ setTimeout(()=>{brs.style.transition='transform 1.1s linear';brs.style.transform='translateX(190px)'},30);
+ if(p==='hyper'){ex.textContent='😣 «ببین ببین!»';arm.classList.add('shk')}
+ setTimeout(()=>{arm.style.fill=col;ex.textContent=p==='hyper'?'😖 مورمور':p==='hypo'?(b>=3?'😌 «خیلی خوبم»':'😐 حس نکرد'):p==='inh'?'😬 «دردم نمی‌آید»':(b===4?'🙁 «می‌خاراند»':'🙂')},1150);
+ setTimeout(()=>{arm.classList.remove('shk');if(p!=='hyper'){arm.style.fill='var(--skin)'}ex.textContent=ex.textContent},p==='hyper'?3500:2600);if(p==='hyper')setTimeout(()=>{arm.style.fill='var(--skin)';ex.textContent=''},6000)}}};
+
+LAB.pressure={t:"لامسهٔ عمق: فشار روی ناحیهٔ شانه (کول)",d:"فشار را به‌تدریج زیاد کنید؛ معیار، فشاری است که نخستین تغییر در کودک دیده می‌شود.",init(el){
+ const P={typ:["طبیعی",55,"🙂","در فشار زیاد می‌گوید «آخ»."],hyper:["بیش‌حس",8,"😣","با کمترین فشار یا حتی پرز لباس بدنش را جمع می‌کند؛ قلقلک و درد."],hypo:["کم‌حس",101,"😌","تا آخرین حد فشار هم درد حس نمی‌کند: «آخ... چه خوب است!»"],inh:["بازداری هیجانی",12,"😬","بدن (لگن به پایین) سفت می‌شود و دندان‌ها فشرده؛ اما می‌گوید «اصلاً درد ندارم، قوی‌ام»."]};
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 220 180"><circle class="hd" cx="110" cy="45" r="22"/><path class="ln" d="M110 67V140"/><path class="ln" d="M60 92Q110 80 160 92"/><g id="fg" style="transition:transform .2s"><circle cx="86" cy="74" r="9" fill="var(--a3)"/><circle cx="100" cy="72" r="9" fill="var(--a3)"/></g><text id="pf" x="110" y="168" text-anchor="middle" style="font-size:30px">🙂</text></svg>
+ <div><div class="row">${Object.entries(P).map(([k,v],i)=>`<button class="chip ${i?'':'on'}" data-p="${k}">${v[0]}</button>`).join('')}</div><label>فشار: <b id="pv">۰</b> از ۱۰۰</label><input type="range" id="pr" min="0" max="100" value="0"><div class="meter"><i id="pm"></i></div><div class="out" id="po"></div></div></div>`;
+ let p='typ';const upd=()=>{const v=+$('#pr',el).value;$('#pv',el).textContent=fa(v);$('#pm',el).style.width=v+'%';$('#fg',el).style.transform=`translateY(${v/12}px)`;const d=P[p];const hit=v>=d[1];$('#pf',el).textContent=hit?d[2]:'🙂';$('#po',el).innerHTML=hit?`<b>${d[0]}:</b> ${d[3]}`:'هنوز تغییری دیده نمی‌شود.'};
+ $$('[data-p]',el).forEach(x=>x.onclick=()=>{p=x.dataset.p;$$('[data-p]',el).forEach(y=>y.classList.toggle('on',y===x));upd()});$('#pr',el).oninput=upd;upd();
+ el.insertAdjacentHTML('beforeend','<div class="warn">تمایز بازداری هیجانی مزمن از کم‌حسی در حس عمق دشوار است؛ در هر دو کودک درد را ابراز نمی‌کند. عبور از بازداری هیجانی زمان می‌برد و هرچه سن بالاتر باشد سخت‌تر است.</div>')}};
+
+LAB.sound={t:"ارزیابی شنیداری: صداهای ناگهانی",d:"صدای کوتاه و ناگهانی بسازید (صدا از بلندگوی شما پخش می‌شود؛ ملایم است).",init(el){
+ const S={"سوت آرام":[880,.25,"sine",.04],"سوت بلند":[1100,.35,"triangle",.1],"بوق":[330,.5,"square",.06],"جغجغه":[1800,.4,"sawtooth",.04]};
+ el.innerHTML=`<div class="row">${Object.keys(S).map(k=>`<button class="btn">🔊 ${k}</button>`).join('')}<button class="btn" id="vac">🧹 جاروبرقی (مناسب نیست)</button></div><div class="row"><span>کودک:</span><button class="chip on" data-p="typ">طبیعی</button><button class="chip" data-p="hyper">بیش‌حس</button><button class="chip" data-p="hypo">کم‌حس</button></div><div class="out" id="so">یک صدا و یک نوع پاسخ را انتخاب کنید.</div>`;
+ let p='typ',ac;$$('[data-p]',el).forEach(x=>x.onclick=()=>{p=x.dataset.p;$$('[data-p]',el).forEach(y=>y.classList.toggle('on',y===x))});
+ const beep=(f,d,w,g)=>{try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),v=ac.createGain();o.type=w;o.frequency.value=f;v.gain.value=g;o.connect(v);v.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch{}};
+ $$('.btn',el).slice(0,4).forEach((b,i)=>b.onclick=()=>{const k=Object.keys(S)[i],a=S[k];beep(...a);const soft=k==='سوت آرام';
+  $('#so',el).innerHTML=p==='hyper'?`<b>بیش‌حس:</b> حتی «${k}» را «روی مخ» می‌داند؛ با باز شدن پنجره یا جیرجیر در هم می‌گوید «آخ».`:p==='hypo'?`<b>کم‌حس:</b> به «${k}» واکنشی نشان نمی‌دهد یا خوشش می‌آید و به کار خود ادامه می‌دهد. برخی از صدای ناگهانی ریسه می‌روند؛ در هر دو حالت حس‌ها تنظیم نیستند.`:soft?'<b>طبیعی:</b> واکنش خاصی ندارد.':`<b>طبیعی:</b> می‌پرد یا نگاه می‌کند، سپس به حالت عادی برمی‌گردد.`});
+ $('#vac',el).onclick=()=>{$('#so',el).innerHTML='<b>مناسب نیست:</b> صداهای طولانی مثل جاروبرقی و سشوار چون مغز به آن‌ها عادت می‌کند، برای سنجش مناسب نیستند.'}}};
+
+LAB.desens={t:"حساسیت‌زدایی تدریجی (نور)",d:"شدت نور را یک پله بالا ببرید، اما زمان را دوباره از کم شروع کنید.",init(el){
+ const plan=[];[16,17].forEach(l=>[2,3,4].forEach(m=>plan.push([l,m])));
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 200 200"><circle id="gl" cx="100" cy="85" r="30" fill="#ffd54a" opacity=".1"/><circle cx="100" cy="85" r="26" fill="#ffe07a" id="bu"/><rect x="88" y="112" width="24" height="16" rx="3" fill="var(--muted)"/><text id="gt" x="100" y="160" text-anchor="middle" class="tx" style="font-size:14px"></text></svg>
+ <div><p style="color:var(--muted);font-size:14px">فرض کنید ۱۵ بیشترین شدتی است که کودک تحمل می‌کند. درمانگر آن را ۱۶ می‌کند اما به‌جای ۱۰ دقیقه، ۲ دقیقه می‌ماند؛ سپس ۳ و بعد ۴ دقیقه.</p><div class="row"><button class="btn p" id="dn">▶ مرحلهٔ بعد</button><button class="btn" id="dr">↺</button></div><div class="meter"><i id="dm"></i></div><div class="out" id="do">شدت فعلی: ۱۵ (حد تحمل)</div></div></div>`;
+ let i=-1,iv;const draw=l=>{$('#gl',el).setAttribute('opacity',(l/20*.8).toFixed(2));$('#gl',el).setAttribute('r',30+l*3);$('#gt',el).textContent='شدت '+fa(l)};draw(15);
+ $('#dn',el).onclick=()=>{clearInterval(iv);i=Math.min(i+1,plan.length-1);const [l,m]=plan[i];draw(l);let s=0;$('#do',el).innerHTML=`مرحلهٔ ${fa(i+1)} از ${fa(plan.length)}: شدت <b>${fa(l)}</b> برای <b>${fa(m)}</b> دقیقه`;iv=setInterval(()=>{s++;$('#dm',el).style.width=Math.min(100,s/(m*3)*100)+'%';if(s>=m*3)clearInterval(iv)},300)};
+ $('#dr',el).onclick=()=>{clearInterval(iv);i=-1;draw(15);$('#dm',el).style.width=0;$('#do',el).textContent='شدت فعلی: ۱۵ (حد تحمل)'}}};
+
+LAB.smell={t:"۴۰۰۰ پایانهٔ بویایی: فعال‌سازی",d:"هر بو بخشی از پایانه‌ها را روشن می‌کند. پایانهٔ روشن‌نشده پیام «بد» می‌دهد.",init(el){
+ const SM=[["🧅","پیاز داغ"],["🌿","سبزی"],["🌶️","ادویه"],["🍲","آش"],["🧴","کرم"]];
+ el.innerHTML=`<div class="grid3" style="grid-template-columns:1fr"><div id="sg" style="display:grid;grid-template-columns:repeat(25,1fr);gap:3px"></div></div><p style="font-size:14px;color:var(--muted);margin:8px 0">۱) کودک را در معرض بو قرار دهید؛ ۲) سپس او را امتحان کنید.</p><div class="row"><b>در معرض:</b>${SM.map((s,i)=>`<button class="chip" data-e="${i}">${s[0]} ${s[1]}</button>`).join('')}</div><div class="row"><b>امتحان:</b>${SM.map((s,i)=>`<button class="btn" data-t="${i}">${s[0]}</button>`).join('')}<button class="btn" id="sr">↺</button></div><div class="out" id="sO">فعال‌سازی: ۰٪</div>`;
+ const g=$('#sg',el);g.innerHTML=Array.from({length:100},(_,i)=>`<i style="aspect-ratio:1;border-radius:50%;background:var(--card-s);border:1px solid var(--line);transition:.4s" data-d="${i}"></i>`).join('');
+ const reg=i=>Array.from({length:20},(_,k)=>i*20+k);let on=new Set;
+ const upd=()=>{$$('[data-d]',el).forEach(d=>{const a=on.has(+d.dataset.d);d.style.background=a?'var(--a4)':'var(--card-s)';d.style.boxShadow=a?'0 0 8px var(--a4)':'none'});$('#sO',el).innerHTML=`فعال‌سازی: <b>${fa(on.size)}٪</b>`};
+ $$('[data-e]',el).forEach(b=>b.onclick=()=>{reg(+b.dataset.e).forEach(x=>on.add(x));upd()});
+ $$('[data-t]',el).forEach(b=>b.onclick=()=>{const i=+b.dataset.t,l=reg(i).filter(x=>on.has(x)).length;$('#sO',el).innerHTML=l>=15?`<b>${SM[i][1]}:</b> بوی آشنا؛ پایانه‌ها فعال شده‌اند و بد شمرده نمی‌شود.`:`<b>${SM[i][1]}:</b> «بو می‌دهد، بوی بد می‌آید!» پایانه‌ها فعال نشده و مغز پیام بد صادر کرده است. (فعال‌سازی ${fa(on.size)}٪)`});
+ $('#sr',el).onclick=()=>{on=new Set;upd()};upd();
+ el.insertAdjacentHTML('beforeend','<div class="tip">امروز غذا آماده از بیرون می‌آید و این نورون‌ها در کودک فعال نمی‌شوند؛ در گذشته پیاز داغ، سبزی و ادویه خانه را پر می‌کرد. درمانگر باید همیشه خوشبوکنندهٔ دهان داشته باشد و عطر زیاد نزند. ابزار ارزیابی: کرم، براده و تراشهٔ مداد، چسب مایع یا ماتیکی و ادویه.</div>')}};
+
+LAB.touchmotor={t:"ادراک لمسی-حرکتی: نوشتن روی پشت",d:"چشم کودک بسته است؛ درمانگر با قلمو روی پشت او می‌نویسد. شما حدس بزنید.",init(el){
+ const G={"۱":"M5 1V13","۲":"M1 3Q5 -1 9 3Q9 6 1 13H9","۳":"M1 2H9L5 6Q10 6 9 10Q5 14 1 11","۷":"M1 1H9L4 13","L":"M2 1V13H9","T":"M1 1H9M5 1V13"};
+ el.innerHTML=`<div class="lg"><svg viewBox="0 0 200 200"><rect x="30" y="20" width="140" height="170" rx="40" fill="var(--skin)" stroke="var(--ink)" stroke-width="3"/><g transform="translate(60 50) scale(8)"><path id="tp" d="" fill="none" stroke="var(--a3)" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></g></svg><div><div class="row"><button class="btn p" id="tn">🖌️ بنویس</button></div><div class="opts" id="to"></div><div class="out" id="tr">این تمرین حس لامسه، گرفتن مداد و فشار دست را هم‌زمان درگیر می‌کند؛ اگر نوع گرفتن مداد یا فشار دست او اشتباه باشد، روی آن هم کار می‌شود.</div></div></div>
+ <div class="grid3" style="margin-top:10px"><div class="card"><h4>تخته تعادل + سطح دون‌دون</h4><p>حس عمق و لامسهٔ کف پا + تعادل (روی یک پا، دست‌ها باز).</p></div><div class="card"><h4>گردوشکستن + شمردن صداها</h4><p>حس وضعیت + یکپارچگی شنیداری.</p></div><div class="card"><h4>گردوشکستن + ۴ کلمه</h4><p>شناختی-حرکتی: حافظه، تمرکز، حرکت.</p></div><div class="card"><h4>آی‌موومنت + میوه با حرف داده‌شده</h4><p>حافظهٔ پایدار، اطلاعات عمومی، آی‌موومنت.</p></div><div class="card"><h4>شیء پنهان در شن</h4><p>حسی-شناختی: لامسه، تجسم دیداری، حافظهٔ تأخیری و توالی.</p></div></div>`;
+ let ans;$('#tn',el).onclick=()=>{const ks=Object.keys(G);ans=rnd(ks);const p=$('#tp',el);p.setAttribute('d',G[ans]);p.style.transition='none';p.style.strokeDashoffset=1;requestAnimationFrame(()=>requestAnimationFrame(()=>{p.style.transition='stroke-dashoffset 2.2s linear';p.style.strokeDashoffset=0}));
+ const o=[ans];while(o.length<4){const x=rnd(ks);if(!o.includes(x))o.push(x)}o.sort(()=>Math.random()-.5);$('#to',el).innerHTML=o.map(x=>`<button class="opt">${x}</button>`).join('');
+ $$('.opt',el).forEach(b=>b.onclick=()=>{$$('.opt',el).forEach(y=>y.disabled=true);b.classList.add(b.textContent===ans?'ok':'no');$$('.opt',el).find(y=>y.textContent===ans).classList.add('ok')})}}};
+
+LAB.attn={t:"توجه انتخابی و بازداری از پاسخ",d:"فقط روی 🔵 بزنید و به محرک‌های مزاحم پاسخ ندهید. سطح سخت‌تر، سریع‌تر است.",init(el){
+ el.innerHTML=`<div class="row"><select id="al"><option value="1400">آسان</option><option value="1000">متوسط</option><option value="650">سخت</option></select><button class="btn p" id="ag">▶ شروع (۲۰ محرک)</button><span id="as" style="font-size:14px;color:var(--muted)"></span></div><div class="arena" id="aa"></div><div class="out" id="ao">تمرین‌ها از آسان به دشوار و با افزودن محرک مزاحم سخت‌تر می‌شوند؛ دقت از توجه می‌آید.</div>`;
+ let run=0;$('#ag',el).onclick=()=>{if(run)return;run=1;const ar=$('#aa',el),sp=+$('#al',el).value;let n=0,hit=0,miss=0,fa_=0,clicked=false,cur=null;
+ const D=['🟥','🔺','🟨','⭐'];
+ const step=()=>{if(cur&&cur.t&&!clicked)miss++;ar.innerHTML='';if(n>=20){run=0;$('#as',el).textContent='';$('#ao',el).innerHTML=`<b>نتیجه:</b> درست ${fa(hit)} · از دست رفته ${fa(miss)} · پاسخ اشتباه به مزاحم ${fa(fa_)}`;return}
+ n++;clicked=false;const t=Math.random()<.45;const em=t?'🔵':rnd(D);cur={t};
+ if(sp<1000)for(let k=0;k<5;k++)ar.insertAdjacentHTML('beforeend',`<div class="it" style="left:${Math.random()*100}%;top:${Math.random()*100}%;font-size:14px;opacity:.35;cursor:default">${rnd(['✦','•','◦'])}</div>`);
+ const e=document.createElement('div');e.className='it';e.textContent=em;e.style.left=(12+Math.random()*76)+'%';e.style.top=(15+Math.random()*70)+'%';e.onclick=()=>{if(clicked)return;clicked=true;if(t)hit++;else fa_++;e.style.opacity=.3};ar.appendChild(e);$('#as',el).textContent=`${fa(n)} از ${fa(20)}`;setTimeout(step,sp)};step()}}};
+
+LAB.memory={t:"حافظه: یادآوری ترتیب سه شکل (فوری و تأخیری)",d:"سه شکل را ببینید و پس از آن (با یا بدون وقفه) به همان ترتیب انتخاب کنید.",init(el){
+ const SH=['🔺','🟦','⭕','⭐','🔶','💚'];
+ el.innerHTML=`<div class="row"><select id="mm"><option value="0">فوری (حافظهٔ کاری)</option><option value="1">تأخیری (پس از وقفه)</option></select><button class="btn p" id="mg">▶ شروع</button></div><div class="arena" style="height:120px;display:grid;place-items:center;font-size:56px" id="ma">؟</div><div class="opts" id="mo"></div><div class="out" id="mr">حافظهٔ کاری (همان لحظه) ≠ حافظهٔ تأخیری (پس از وقفه) ≠ حافظهٔ پایدار (بلندمدت). تقویت تأخیری، پایدار را قوی می‌کند.</div>`;
+ $('#mg',el).onclick=()=>{const seq=SH.slice().sort(()=>Math.random()-.5).slice(0,3),ma=$('#ma',el),mo=$('#mo',el),del=$('#mm',el).value==='1';mo.innerHTML='';let i=0;
+ const showN=()=>{if(i<3){ma.textContent=seq[i++];setTimeout(()=>{ma.textContent='';setTimeout(showN,250)},800)}else{if(del){let s=6;ma.style.fontSize='22px';const iv=setInterval(()=>{ma.textContent=`وقفه… از ${fa(20)} به عقب بشمارید (${fa(s)})`;if(--s<0){clearInterval(iv);ma.style.fontSize='56px';ask()}},1000)}else ask()}};
+ const ask=()=>{ma.textContent='به همان ترتیب انتخاب کنید';ma.style.fontSize='18px';const pick=[];mo.innerHTML=SH.slice().sort(()=>Math.random()-.5).map(x=>`<button class="opt" style="font-size:28px">${x}</button>`).join('');
+ $$('.opt',mo).forEach(b=>b.onclick=()=>{pick.push(b.textContent);b.disabled=true;b.style.opacity=.4;if(pick.length===3){const ok=pick.every((x,k)=>x===seq[k]);ma.style.fontSize='56px';ma.textContent=seq.join(' ');$('#mr',el).innerHTML=ok?'<b style="color:var(--good)">درست بود.</b>':`<b style="color:var(--bad)">ترتیب درست:</b> ${seq.join(' ')}`;}})};
+ showN()}}};
+
+LAB.stroop={t:"بازی رنگ‌های متضاد (شبیه استروپ)",d:"رنگ جوهر واژه را انتخاب کنید، نه معنای آن را.",init(el){
+ const C=[["قرمز","#ef4444"],["آبی","#3b82f6"],["سبز","#22c55e"],["زرد","#eab308"]];
+ el.innerHTML=`<div class="out" style="text-align:center;font-size:44px;font-weight:900" id="sw">؟</div><div class="row" id="so2" style="justify-content:center"></div><div id="ss" style="text-align:center;color:var(--muted);font-size:14px"></div><div style="text-align:center"><button class="btn p" id="sg">▶ شروع</button></div>`;
+ let n=0,ok=0,t0,ink;const next=()=>{if(n>=8){$('#sw',el).textContent='پایان';$('#so2',el).innerHTML='';$('#ss',el).innerHTML=`درست: <b>${fa(ok)}</b> از ${fa(8)} · نام بردن رنگ جوهر واژه‌های رنگی متضاد، بازداری را می‌سنجد.`;return}
+ n++;const w=rnd(C);let c;do{c=rnd(C)}while(c===w);ink=c;const sw=$('#sw',el);sw.textContent=w[0];sw.style.color=c[1];t0=performance.now();$('#so2',el).innerHTML=C.map(x=>`<button class="btn">${x[0]}</button>`).join('');$$('#so2 .btn',el).forEach(b=>b.onclick=()=>{if(b.textContent===ink[0])ok++;next()});$('#ss',el).textContent=`${fa(n)} از ${fa(8)}`};
+ $('#sg',el).onclick=()=>{n=0;ok=0;next()}}};
+
+LAB.genes={t:"باکس ژن (چهار ژن خلق‌وخو)",d:"هر ژن را تنظیم کنید. ژن‌ها تغییر نمی‌کنند؛ آنچه تغییر می‌کند محیط و شیوهٔ رسیدن به خواسته است.",init(el){
+ const G=[["مقاومت","مقاومت به تغییر و پشتکار","زور نسبی می‌زند و رها می‌کند","تا در ماژیک را باز نکند ول نمی‌کند؛ پشت کنکور می‌ماند"],["ترس از خطر","میزان ریسک‌پذیری","ریسک‌پذیری و تجربه‌گری بیشتر","تجربه‌های جدید کمتر؛ ترس‌های غیرمتناسب با سن"],["تنوع‌طلبی","تمایل به فعالیت‌های متنوع","یک رشته تا انتها؛ یک مداد سیاه","چند رشته و کلاس هم‌زمان؛ نقاشی با ۱۵ رنگ"],["وابستگی به پاداش","وابستگی رفتار به تقویت","با یک بار تقویت وابسته نمی‌شود","مدام جایزه می‌خواهد؛ زمینهٔ اعتیاد در بزرگسالی"]];
+ el.innerHTML=`<div class="grid3">${G.map((g,i)=>`<div class="card"><h4>${g[0]}</h4><p>${g[1]}</p><input type="range" min="0" max="100" value="50" data-i="${i}"><p class="gt" style="margin-top:4px"></p></div>`).join('')}</div>
+ <div class="lab" style="margin:14px 0 0;background:var(--card-s)"><h3 style="font-size:16px">شبیه‌ساز: کودک با مقاومت بالا ۲۰ دقیقه گریه می‌کند</h3><div class="row"><button class="btn" id="g1">والد تسلیم می‌شود</button><button class="btn" id="g2">والد تحمل می‌کند</button></div><div class="out" id="gO">یک واکنش را انتخاب کنید.</div></div><div class="tip">تاب‌آوری ژنتیکی نیست؛ مهارتی است که با فرزندپروری ساخته می‌شود. مقاومت ژن است (پشتکار). ژن‌ها را در جلسهٔ اول از دیالوگ والد و کودک ارزیابی کنید.</div>`;
+ const upd=r=>{const g=G[+r.dataset.i],v=+r.value;r.parentNode.querySelector('.gt').innerHTML=v<35?`<b>پایین:</b> ${g[2]}`:v>65?`<b>بالا:</b> ${g[3]}`:'<b>متوسط</b>'};$$('input[type=range]',el).forEach(r=>{r.oninput=()=>upd(r);upd(r)});
+ $('#g1',el).onclick=()=>$('#gO',el).innerHTML='کودک یاد می‌گیرد: «مشکل گریه نبود؛ کم گریه می‌کردم!» و دفعهٔ بعد بیشتر گریه می‌کند.';
+ $('#g2',el).onclick=()=>$('#gO',el).innerHTML='مقاومت همچنان بالاست، اما کودک می‌فهمد این راه نتیجه ندارد؛ نوروپلاستیسیته: مغز راه دیگری (چانه‌زنی، بازی، پرسش) را امتحان می‌کند. مقاومت نه کم می‌شود نه زیاد؛ جای درست می‌نشیند.'}};
+
+LAB.pyr={t:"هرم محیط و پله‌های مهارت کودک",d:"روی هر پله بزنید. والدین معمولاً برای پلهٔ بالا (ارتباطی) می‌آیند، اما مشکل اصلی اغلب پایین‌تر است.",init(el){
+ const L=[["۴ · مهارت‌های ارتباطی","معمولاً والدین برای این بخش مراجعه می‌کنند، اما مشکل اصلی جای دیگری است.","var(--a3)"],["۳ · مهارت‌های شناختی","توجه، دقت و حافظه (دیداری و شنیداری)، تجسم فضایی و دیداری، استدلال استقرایی.","var(--a2)"],["۲ · مهارت‌های حرکتی","تعادل، وضعیت، هماهنگی عضلات ظریف و درشت، گرفتن مداد، هماهنگی دو نیم‌کره، چشم و دست، آی‌موومنت، نوز تو فینگر.","var(--a5)"],["۱ · مهارت‌های حسی","اختلال یکپارچگی حسی یا عدم تنظیم حواس؛ پایهٔ همه.","var(--a4)"]];
+ el.innerHTML=`<div id="py" style="display:flex;flex-direction:column;align-items:center;gap:6px">${L.map((l,i)=>`<button class="btn" data-i="${i}" style="width:${52+i*16}%;border-radius:14px;border:2px solid ${l[2]};padding:10px">${l[0]}</button>`).join('')}</div><div class="out" id="py2" style="margin-top:12px">یک پله را انتخاب کنید.</div><div class="grid3" style="margin-top:12px"><div class="card"><h4>هرم محیط (۳ بخش)</h4><p>۱) مهارت والدینی (سبک فرزندپروری)، ۲) رابطهٔ والد و کودک (دلبستگی، اضطراب‌های تحولی)، ۳) مهارت‌های خود کودک.</p></div><div class="card"><h4>خلق‌وخو = باکس ژن + فرزندپروری</h4><p>«کودک ذاتاً سخت است و کاری نمی‌شود کرد» را نمی‌گوییم؛ محیط را می‌توان تغییر داد.</p></div></div>`;
+ $$('#py .btn',el).forEach(b=>b.onclick=()=>{const i=+b.dataset.i;$$('#py .btn',el).forEach(x=>x.style.background='');b.style.background=`color-mix(in srgb,${L[i][2]} 25%,transparent)`;$('#py2',el).innerHTML=`<b>${L[i][0]}</b><br>${L[i][1]}`})}};
+
+LAB.signs={t:"فهرست نشانه‌های زودهنگام",d:"موارد مشاهده‌شده را تیک بزنید؛ با یک نشانه تشخیص گذاشته نمی‌شود.",init(el){
+ const S=["صحبت‌کردن متناسب با سن (مثلاً ۵ ساله با بیش از ۲–۳ حرف اشتباه)","درک کلامی (نمی‌داند «کمد» چیست)","یادآوری لغات خاص هنگام صحبت («چیز… چیز…»)","یادآوری آنچه شنیده","مشارکت در بازی‌های ریتم‌دار","یادآوری الفبا","دنبال کردن دستورالعمل متناسب با سن","تلفظ درست هنگام صحبت","یادآوری داستان‌ها","استفاده درست از لغات و فکر کردن از قبل","لباس پوشیدن","تشخیص رنگ‌ها","تشخیص جهت‌ها","کپی کردن طرح‌ها و رنگ‌ها","شمارش"];
+ el.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">${S.map(s=>`<label class="chk"><input type="checkbox"><span>${s}</span></label>`).join('')}</div><div class="meter"><i id="sm"></i></div><div class="out" id="sO"></div>`;
+ const upd=()=>{const n=$$('input:checked',el).length;$('#sm',el).style.width=n/S.length*100+'%';$('#sO',el).innerHTML=n===0?'نشانه‌ای انتخاب نشده.':n===1?`<b>یک نشانه کافی نیست.</b> دستور مبهم والدین، اضطراب (من‌من)، لکنت یا ADHD ممکن است همین نشانه را بدهند؛ ذهن درمانگر باید «چهار-پنج شاخه» شود و پرسشگری آغاز گردد.`:`<b>${fa(n)} نشانه:</b> الگوی چندنشانه‌ای بیشتر به ارزیابی کامل می‌ارزد؛ اما تشخیص نهایی همچنان به تشخیص افتراقی، ملاک‌های DSM و بررسی فرزندپروری وابسته است.`};
+ $$('input',el).forEach(i=>i.onchange=upd);upd();
+ el.insertAdjacentHTML('beforeend','<div class="warn">دستور مبهم یا زنجیره‌ای والدین («تلویزیون را خاموش کن، بشقاب را بینداز، جورابت را دربیاور…») کودک را ناتوان نشان می‌دهد؛ در این حالت اختلال یادگیری نیست. چهرهٔ درمانگر هم باید مهربان بماند؛ کوچک‌ترین واکنش منفی مشکلی به مشکلات کودک اضافه می‌کند.</div>')}};
+
+LAB.funnel={t:"قیف تشخیص افتراقی",d:"چهار مرحله که پیش از تشخیص SLD باید گذرانده شود.",init(el){
+ const P=[["🏫","فرصت و کیفیت آموزش","آیا کودک فرصت کافی داشته؟ تعداد کلاس‌ها، غیبت‌های طولانی و آموزش مناسب و باکیفیت متناسب با سن."],["🔎","رد نقص‌ها","بینایی و شنوایی، محدودیت زبانی، هوش یا سایر اختلالات عصبی-رشدی، مشکلات هیجانی، حرکتی و گفتاری."],["🧪","پاسخ به درمان","اگر با اصلاح مهارت‌های حسی-حرکتی از هفتهٔ دوم تغییر دیده شود (بهتر نوشتن، کم شدن فشار دست)، فقط مشکل حرکتی بوده و ممکن است فقر محیطی یا مادر کنترل‌گر مانع شکل‌گیری مهارت‌ها شده باشد."],["🎯","SLD","پس از رد شدن عوامل بالا و مطابقت با ملاک‌های DSM، اختلال یادگیری خاص (با اسپسیفایر) مطرح می‌شود؛ ممکن است همراه با اختلال ترکیبی باشد."]];
+ el.innerHTML=`<div class="steps"></div><div class="out"></div>`;const st=$('.steps',el),out=$('.out',el);
+ st.innerHTML=P.map((p,i)=>`<div class="step" data-i="${i}" tabindex="0" role="button"><i>${p[0]}</i><small>${p[1]}</small></div>`).join('');
+ const go=i=>{$$('.step',st).forEach((e,k)=>{e.classList.toggle('on',k===i);e.classList.toggle('done',k<i)});out.innerHTML=`<b>${P[i][1]}</b><br>${P[i][2]}`};$$('.step',st).forEach(e=>e.onclick=()=>go(+e.dataset.i));go(0)}};
+
+LAB.wech={t:"نقشهٔ وکسلر (۲۱ خرده‌آزمون در ۳ بخش)",d:"بخش را انتخاب کنید و روی هر خرده‌آزمون بزنید. وکسلر ابزار تشخیص SLD نیست و پس از درمان دوباره گرفته نمی‌شود.",init(el){
+ const W={"بخش الف · اصلی (۱۰) · هوش‌بهر کلی":[["طراحی با مکعب","ساختن تصویر الگو با مکعب‌های رنگی (استدلال فضایی)"],["شباهت‌ها","بیان وجه اشتراک دو مفهوم کلامی (استدلال مفهومی)"],["استدلال ماتریس","انتخاب پاسخ درست برای الگوی تصویری ناقص (استقرایی)"],["فراخنای ارقام","گفتن اعداد به جلو، عقب و به ترتیب"],["رمزنویسی","تطبیق نمادها با اعداد طبق کلید (سرعت پردازش)"],["خزانه لغات","تعریف واژه‌ها و مثال زدن"],["تشخیص وزن‌ها","مقایسهٔ وزن اجسام؛ استدلال کمی"],["معماهای بصری","انتخاب قطعه‌های لازم برای کامل کردن معما"],["فراخنای تصویر","به خاطر سپردن توالی تصاویر"],["نمادیابی","شناسایی نماد هدف در مجموعه نمادها"]],
+ "بخش ب · تکمیلی (۱۱–۱۶)":[["اطلاعات","پاسخ به پرسش‌های عمومی"],["مفاهیم تصویری","انتخاب تصاویر دارای ویژگی مشترک"],["توالی حرف و عدد","تکرار توالی شنیداری اعداد و حروف"],["خط‌زنی","علامت‌گذاری سریع نمادهای هدف"],["محاسبه","حل مسائل ریاضی ذهنی"]],
+ "بخش ج · مکمل (۵) برای SLD و ADHD":[["سواد سرعت نام‌گذاری","نام بردن سریع اشیا و نمادها"],["مقدار سرعت نام‌گذاری","نام بردن سریع کمیت‌ها"],["ترجمهٔ فوری نمادها","یادآوری فوری تطابق نماد و مفهوم"],["ترجمهٔ تأخیری نمادها","یادآوری تأخیری تطابق نماد و مفهوم"],["ترجمهٔ بازشناسی نماد","بازشناسی تطابق نماد و مفهوم"]]};
+ const ks=Object.keys(W);el.innerHTML=`<div class="row" id="wt">${ks.map((k,i)=>`<button class="btn" data-i="${i}">${k}</button>`).join('')}</div><div class="row" id="wc"></div><div class="out" id="wo">یک خرده‌آزمون را انتخاب کنید.</div>
+ <hr style="border:0;border-top:1px solid var(--line);margin:14px 0"><h3 style="font-size:16px">شبیه‌ساز تمرین سرعت پردازش</h3><p style="color:var(--muted);font-size:14px">زمان هدف را مرحله‌به‌مرحله و چند ثانیه‌ای کم کنید؛ تمرین روزانهٔ خانه ضروری است و جملات تأکیدی عملکرد را معکوس می‌کند.</p><label>زمان هر مرحله: <b id="spV">۶۰</b> ثانیه</label><input type="range" id="sp" min="0" max="12" value="0"><div class="meter"><i id="spM"></i></div><div id="spT" style="color:var(--muted);font-size:14px"></div>`;
+ function show(i){$$('#wt .btn',el).forEach((b,k)=>b.classList.toggle('on',k===i));const L=W[ks[i]];$('#wc',el).innerHTML=L.map((x,k)=>`<button class="chip" data-k="${k}">${x[0]}</button>`).join('');$$('#wc .chip',el).forEach(c=>c.onclick=()=>{$$('#wc .chip',el).forEach(x=>x.classList.remove('on'));c.classList.add('on');$('#wo',el).innerHTML=`<b>${L[+c.dataset.k][0]}</b><br>${L[+c.dataset.k][1]}`})}
+ $$('#wt .btn',el).forEach(b=>b.onclick=()=>show(+b.dataset.i));show(0);
+ const sp=$('#sp',el);const u=()=>{const v=+sp.value;$('#spV',el).textContent=fa(60-v*5);$('#spM',el).style.width=(v/12*100)+'%';$('#spT',el).textContent=v===0?'شروع تمرین':v<12?`${fa(v)} مرحله کاهش`:'به زمان هدف رسیدید.'};sp.oninput=u;u()}};
+
+LAB.dsm={t:"ملاک‌های تشخیصی DSM",d:"روی هر ملاک بزنید.",init(el){
+ const D=[["خواندن دشوار، کند یا نادرست","نشانه‌های خواندن: دشوار، کند، نادرست."],["اشکال در ارتباط و استدلال","اشکال در ارتباط، استدلال، توالی یا عمق مطالب."],["هجی","مشکل در هجی کردن یا متفاوت خواندن از آنچه نوشته شده."],["بیان نوشتاری","اشکالات متعدد در بیان نوشتاری یا سازمان‌دهی ضعیف جمله‌ها."],["ریاضیات","اشکال در یادگیری مفاهیم ریاضی."],["مدت، سطح سنی و زمان آغاز","بررسی مدت، سطح سنی و زمان شروع مشکل."]];
+ el.innerHTML=`<div class="row">${D.map(d=>`<button class="chip">${d[0]}</button>`).join('')}</div><div class="out">یک ملاک را انتخاب کنید.</div><div class="tip">۱۸ نشانهٔ مرتبط با ADHD است نه SLD؛ در DSM لازم نیست همهٔ نشانه‌ها باشد و حداقل چند مورد از تعدادی مشخص کافی است. SID در DSM نیامده است. آینه‌نویسی، وارونه‌نویسی، خرچنگ‌قورباغه‌نویسی و ریزنویسی هر یک به‌تنهایی نشانهٔ SLD نیستند.</div>`;
+ $$('.chip',el).forEach((c,i)=>c.onclick=()=>{$$('.chip',el).forEach(x=>x.classList.remove('on'));c.classList.add('on');$('.out',el).innerHTML=`<b>${D[i][0]}</b><br>${D[i][1]}`})}};
+
+/* ======================= CONTENT ======================= */
+const li=a=>'<ul>'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
 const S=[
-{t:"فرایند ارزیابی و تشخیص",d:"۳ مهر ۱۴۰۵",l:"ارزیابی از قبل از ورود مراجع به کلینیک شروع می‌شود؛ هرچه این مرحله دقیق‌تر باشد، درمانگر در اتاق اضطراب کمتری دارد.",
- k:[["اطلاعات اولیه (تماس تلفنی)","سن و تحصیلات والدین، سن و پایهٔ تحصیلی کودک (سن ≠ پایه؛ ممکن است جهشی، دیرتر یا تکرار پایه باشد)، نام مدرسه، سابقهٔ مراجعه به مشاور، مصرف دارو و علت مراجعه در یک خط. منشی فقط ثبت می‌کند و مصاحبهٔ بالینی نمی‌کند."],
- ["هشدار: فرضیه، نه تشخیص","اطلاعات پیش از جلسه فقط برای ساختن فرضیه است. درمانگر نباید با این ذهنیت وارد شود که «باید ثابت کنم کودک اضطراب دارد»."],
- ["دارو در روز ارزیابی","کودک ADHD در روز ارزیابی دارو نمی‌خورد، چون دارو عملکرد اجرایی را تنظیم می‌کند و درمانگر شدت واقعی نشانه‌ها را نمی‌بیند. نوجوان ۱۶–۱۷ ساله دارو را مصرف می‌کند و می‌آید؛ قطع دارو بر انتقال‌دهنده‌های عصبی اثر می‌گذارد و می‌تواند به پرخاشگری برسد."],
- ["فرم تاریخچهٔ رشد و تحول","سن والدین در بارداری، بارداری خواسته یا برنامه‌ریزی‌شده، زایمان (سر موعد یا زودرس، طبیعی یا سزارین)، مشکلات دوران نوزادی، مهدکودک و دلبستگی، نقاط عطف حرکتی، خودیاری و آموزش توالت، تحول کلام و زبان، و خواستهٔ والدین از کلینیک."],
- ["زمان طلایی","بیشترین اثربخشی مداخله برای SLD تا کلاس پنجم است؛ هرچه مراجعه دیرتر باشد مشکل مزمن‌تر و درمان سخت‌تر می‌شود."],
- ["فقر محیطی یا SLD؟","مشکل یادگیری ناشی از فقر محیطی یا فرزندپروری (ناتوانی یادگیری) با اختلال یادگیری خاص که از بدو تولد عصبی-رشدی است فرق دارد. باید پیش از تشخیص بررسی شود."]]},
-{t:"خواندن، نوشتن و ریاضیات",d:"۱۰ مهر ۱۴۰۵",l:"SLD سه اسپسیفایر دارد: خواندن، نوشتن و ریاضیات. پیش از تشخیص باید عوامل دیگر رد شوند.",
- k:[["تعریف SLD","اختلال عصبی-رشدی که فرد از بدو تولد دارد و با نقص پایدار در خواندن، نوشتن یا ریاضی همراه است."],
- ["خواندن (Dyslexia)","نقص در درست خواندن، سرعت، فصاحت و درک مطلب. چون کمتر دیده می‌شود، کمتر تشخیص داده می‌شود."],
+{t:"فرایند ارزیابی و تشخیص",d:"۳ مهر ۱۴۰۵",tags:["ارزیابی","تاریخچهٔ رشد","ADHD","زمان طلایی"],l:"ارزیابی از قبل از ورود مراجع به کلینیک شروع می‌شود؛ هرچه این مرحله دقیق‌تر باشد، درمانگر در اتاق اضطراب کمتری دارد.",
+ k:[["هدف درس","چند مهارت اساسی: ارزیابی (گفت‌وگو با والدین، پرسش‌ها، بررسی رشد)، تشخیص و درمان. دانشجو چه معلم، چه مشاور مدرسه یا درمانگر باید بتواند تشخیص درست بدهد. در طول ترم فیلم‌های کوتاه درمانی نشان می‌دهد پلن چگونه نوشته و بازی چگونه طراحی می‌شود."],
+ ["اطلاعات اولیه (تماس تلفنی)",li(["سن و تحصیلات والدین: سیکل بودن والدین احتمال فقر محیطی را بالا می‌برد و فهم گفت‌وگوهای درمانگر را کمی کم می‌کند.","سن و پایهٔ تحصیلی کودک: سن ≠ پایه؛ ممکن است جهشی، یک سال دیرتر یا با تکرار پایه باشد.","نام مدرسه یا مهدکودک: مدرسه‌های سخت‌گیر یا سهل‌گیر پیش‌فرضی دربارهٔ اثر مدرسه می‌دهد.","سابقهٔ مراجعه به مشاور و تعداد جلسات؛ مثال: چهار بار برای اضطراب، هر بار یک جلسه.","مصرف دارو؛ شرح‌حال کلی در یک خط؛ جای خواب کودک و جدا شدن از والد.","منشی مصاحبهٔ بالینی نمی‌کند و فقط ثبت می‌کند."])+'<div class="warn">این اطلاعات فقط برای ساختن فرضیه است، نه تشخیص.</div>'],
+ ["دارو در روز ارزیابی",li(["کودک ADHD دارو نمی‌خورد: دارو عملکرد اجرایی را تنظیم می‌کند و درمانگر ممکن است اشتباهاً نتیجه بگیرد مشکلی نیست؛ باید شدت نقص توجه، تکانشگری و بیش‌تحرکی را ببیند.","نوجوان ۱۶–۱۷ ساله دارو را مصرف می‌کند و می‌آید؛ قطع دارو بر انتقال‌دهنده‌های عصبی اثر می‌گذارد و می‌تواند به پرخاشگری ببرد.","داروهای دیگر (مثلاً ضداضطراب) بسته به هم‌پوشانی اضطراب و اختلال یادگیری بررسی می‌شوند."])],
+ ["فرم تاریخچهٔ رشد و تحول",li(["سن والدین در بارداری، بارداری خواسته یا برنامه‌ریزی‌شده","زایمان: سر موعد یا زودرس، طبیعی یا سزارین؛ مشکلات دوران نوزادی (مثل کولیک)","مهدکودک، پرستار و دلبستگی","نقاط عطف رشد حرکتی، مهارت‌های خودیاری و آموزش توالت (بی‌اختیاری ادرار اولیه و ثانویه)","تحول کلام و زبان","خواستهٔ والدین و انتظار از کلینیک"])],
+ ["اصول جلسات ADHD","ساختار جلسهٔ ۴۵ دقیقه‌ای، پیش‌آگهی ADHD با درمان دارویی و توان‌بخشی، و نقش فناوری و بازی‌های دیجیتال در کودکان بیش‌فعال بحث شد."],
+ ["ارزیابی در اتاق درمان",li(["ارزیابی والد: فرزندپروری","بررسی هر سه حیطهٔ اختلال یادگیری خاص (Specifiers)","مؤلفه‌های شناختی دخیل در یادگیری","ارزیابی کودک و تشخیص نهایی","ابزار کمکی: آزمون هوش وکسلر"])],
+ ["زمان طلایی","بیشترین اثربخشی مداخله برای SLD تا کلاس پنجم است؛ هرچه خانواده دیرتر مراجعه کند، مشکل مزمن‌تر و درمان دشوارتر می‌شود."],
+ ["فقر محیطی یا SLD؟","مشکل یادگیری ناشی از فقر محیطی یا فرزندپروری (ناتوانی یادگیری) با اختلال یادگیری خاص که از بدو تولد عصبی-رشدی است فرق دارد. باید پیش از تشخیص بررسی شود."]],
+ labs:["stages","classify"],rec:["ارزیابی پیش از کلینیک (تماس و فرم) + کلینیک (تاریخچه، والد، کودک) + وکسلر.","اطلاعات اولیه فقط فرضیه می‌سازد.","کودک ADHD در روز ارزیابی دارو نمی‌خورد؛ نوجوان ۱۶–۱۷ می‌خورد.","زمان طلایی مداخله: تا کلاس پنجم.","SLD عصبی-رشدی است؛ ناتوانی یادگیری ناشی از فقر محیطی اکتسابی است."]},
+
+{t:"خواندن، نوشتن و ریاضیات",d:"۱۰ مهر ۱۴۰۵",tags:["SLD","اسپسیفایرها","SID","مهارت حرکتی"],l:"SLD سه اسپسیفایر دارد. پیش از تشخیص باید عوامل دیگر رد شوند و ضعف حسی و حرکتی بررسی شود.",
+ k:[["تعریف SLD و سه تکلیف","اختلال عصبی-رشدی که فرد از بدو تولد دارد و با نقص پایدار در خواندن، نوشتن یا ریاضی همراه است. «ناتوانی یادگیری» مشکل اکتسابی ناشی از فقر محیطی یا فرزندپروری است."],
+ ["خواندن (Dyslexia)","نقص در درست خواندن، سرعت، فصاحت و درک مطلب. چون کمتر دیده می‌شود، کمتر تشخیص داده می‌شود. درک مطلب را باید از درک شوخی که به دانش رشد وابسته است جدا کرد."],
  ["نوشتن (Dysgraphia)","نقص در هجی، دستور زبان، نقطه‌گذاری، شفافیت و دست‌خط."],
  ["ریاضیات (Dyscalculia)","نقص در درک مفهوم عدد، معادلات، قواعد و حل مسئله؛ باید از اشتباه ناشی از ADHD در محاسبه جدا شود."],
- ["رد کردن عوامل دیگر","اضطراب، سوگ و فقدان، مهاجرت، غیبت‌های طولانی و نقص در آموزش پایه، شیوهٔ فرزندپروری، استرس‌ها، ضعف فیزیولوژیک و کم‌توانی ذهنی."],
- ["SID","اختلال یکپارچگی حسی: ناتوانی مغز در پردازش درست اطلاعات حسی. حسگرهای دور (بینایی، شنوایی، بویایی، چشایی، لامسه) و حسگرهای نزدیک (تعادل، حس عمق، حس وضعیت)؛ بیش‌حسی و کم‌حسی."],
- ["مهارت‌های حرکتی","تعادل، حس وضعیت، هماهنگی‌ها، برتری جانبی و وضعیت بدنی هنگام نوشتن در یادگیری نقش دارند."]]},
-{t:"ارزیابی حرکتی و تشخیص افتراقی",d:"۱۵ مهر ۱۴۰۵",l:"تمایز «مشکل در یادگیری» از «اختلال یادگیری»، بررسی فرصت و کیفیت آموزش، و ارزیابی‌های حرکتی.",
- k:[["فرصت و کیفیت آموزش","آیا کودک فرصت کافی برای آموزش داشته؟ تعداد کلاس‌ها، غیبت‌های طولانی، دوزبانگی زودهنگام و کیفیت آموزش متناسب با سن بررسی می‌شود."],
- ["رد نقص‌های دیگر","مشکلات بینایی و شنوایی، محدودیت زبانی، اختلال هوش یا سایر اختلالات عصبی-رشدی، مشکلات هیجانی و روانی، مشکلات حرکتی و گفتاری."],
- ["اختلال ترکیبی و همبودی","Mixed Disorder یعنی هم‌زمانی چند مشکل (مثلاً اضطراب + SLD + SID). Comorbidity مثلاً دیسلکسیا و دیسگرافیا با هم."],
- ["برتری جانبی","غالب بودن دست، چشم، گوش و پا؛ هر سه برای چشم، گوش و پا سنجیده می‌شوند."],
- ["آزمون‌های حرکتی","نوز تو فینگر (هماهنگی حرکتی و سرعت پردازش)، آی‌موومنت (دنبال کردن شیء با چشم بدون حرکت گردن)، هماهنگی دو دست، چشم و دست، دو نیم‌کره، حس وضعیت و تعادل."],
- ["درمان‌ها","بازی‌درمانی کودک‌محور (CCPT)، شناختی-رفتاری (CBPT)، PCIT و CPRT. نوروفیدبک درمان اصلی SLD نیست و tDCS فقط کمک‌درمان است."]]},
-{t:"مهارت‌های شناختی و خواندن",d:"۲۲ مهر ۱۴۰۵",l:"خواندن بر توجه، دقت، حافظه و تمییز دیداری و شنیداری تکیه دارد.",
- k:[["مؤلفه‌ها","توجه: پاسخ به محرک. دقت: توجه به جزئیات. حافظه: نگهداری جزئیات و ترتیب. تمرکز: تداوم توجه."],
- ["تمییز","تمییز شنیداری پایهٔ تشخیص حروف هم‌آواست؛ تمییز دیداری حاصل توجه و دقت است."],
- ["تمرین‌های ارزیابی و تقویت","توجه دیداری و شنیداری، تمییز شنیداری، کدگذاری و حافظهٔ پایدار، دقت و حافظهٔ دیداری، حافظهٔ شنیداری؛ با محرک مزاحم (Distractor) سخت‌تر می‌شوند."],
- ["SLD در برابر ADHD","توجه در این دو متفاوت است؛ در جلسه فیلم «ستاره‌های روی زمین» معرفی شد."],
- ["عوامل محیطی","عوامل آموزشی و عوامل محیطی و فردی در اختلال یادگیری نقش دارند. مفهوم ناتوانی یادگیری پیشینهٔ تاریخی دارد."],
- ["ابزارها","آزمون بندر گشتالت، فراستیگ (ادراک دیداری) و وپمن (تمییز شنیداری)."]]},
-{t:"یکپارچگی حسی و ملاک‌های تشخیصی",d:"۲۹ مهر ۱۴۰۵",l:"آسیب به سر، تحریک حسی در سال‌های اول، ارزیابی SID و ملاک‌های DSM.",
- k:[["نوع عصبی-رشدی در برابر اکتسابی","اختلال یادگیری اکتسابی ناشی از آسیب به سر پس از تولد است و با کاردرمانی قابل بهبود است."],
- ["هزار روز طلایی","هزار روز نخست زندگی دورهٔ حیاتی تحریک حسی است. حساسیت‌زدایی تدریجی یعنی افزایش گام‌به‌گام شدت یا مدت مواجهه با محرک."],
- ["ارزیابی حسی","لامسهٔ سطحی (با قلموهای مختلف)، لامسهٔ عمقی (فشار، ناحیهٔ کول)، بازداری هیجانی، ارزیابی شنیداری، بویایی، ماساژ سر و مقایسهٔ بافت‌ها."],
- ["بیش‌حس و کم‌حس","هایپرسنسیتیو: واکنش شدید به کمترین محرک. هایپوسنسیتیو: واکنش کم یا خوشایند بودن تحریک."],
- ["ملاک‌های DSM","خواندن دشوار، کند یا نادرست؛ اشکال در ارتباط، استدلال، توالی یا عمق مطالب؛ مشکل در هجی؛ اشکالات بیان نوشتاری؛ اشکال در مفاهیم ریاضی؛ و در پایان بررسی مدت، سطح سنی و زمان آغاز."],
- ["منابع اطلاعات","مصاحبه، مشاهده و آزمون؛ مثل وکسلر، وپمن، لینکلن-اوزرتسکی (رشد حرکتی) و کانرز (پرسشنامهٔ ADHD)."]]},
-{t:"وکسلر و توانایی‌های شناختی",d:"۱۳ آبان ۱۴۰۵",l:"SLD خاص با اکتسابی فرق دارد و وکسلر ابزار تشخیص SLD نیست، بلکه توانایی‌های پایه را برای نوشتن پلن می‌سنجد.",
- k:[["خاص در برابر اکتسابی","SLD عصبی-رشدی و از بدو تولد است. اکتسابی پس از آسیب به سر در کودکی با عملکرد پیشین نرمال ایجاد می‌شود و خط اول درمانش کاردرمانی است."],
- ["پیش‌آگهی","زمین‌خوردن‌ها و ضربه‌های مکرر سر در سنین پایین می‌تواند پیش‌آگهی باشد و والدین اغلب از آن بی‌خبرند."],
- ["وکسلر","۲۱ خرده‌آزمون در سه بخش. پس از درمان برای سنجش پیشرفت دوباره گرفته نمی‌شود."],
- ["سرعت پردازش","با کاهش تدریجی زمان (چند ثانیه در هر مرحله) تمرین می‌شود و تمرین روزانهٔ خانه ضروری است."],
- ["پلن درمانی","گام‌به‌گام، کدگذاری‌شده و ادغامی (حس + حرکت + شناخت)، زیر نظر سوپروایزر و بازبینی پس از هر ۴ جلسه."],
- ["نکتهٔ امتحانی","تفاوت SLD خاص و اکتسابی؛ تعداد خرده‌آزمون‌ها (۲۱) و بخش‌ها؛ تعریف اصطلاحات توانایی‌های شناختی؛ تحلیل بازی‌ها و طراحی بازی برای هر توانایی."]]},
-{t:"توجه، حافظه، ادراک و تفکر",d:"۲۰ آبان ۱۴۰۵",l:"پرورش مهارت‌های شناختی از ساده به دشوار و دو گزارش موردی (کیان ۸ ساله و دانیال ۷ ساله).",
- k:[["توجه","اولویت با توجه است. تمرین‌ها از آسان به دشوار: توجه انتخابی، بازداری از پاسخ، محرک مزاحم، بازی‌های چندحسی."],
- ["حافظه","تأخیری، پایدار، دیداری، شنیداری، لمسی-حرکتی. اول حافظهٔ تأخیری کار می‌شود. یادآوری ترتیب سه شکل نمونه‌ای از تمرین است."],
- ["ادراک","ادراک لمسی و «حس»، ادراک دیداری و ادراک شنیداری."],
- ["تفکر","شباهت‌ها و تفاوت‌ها، بیان مفهوم، حل مسئله، طبقه‌بندی و بازی رنگ‌های متضاد (شبیه آزمون استروپ)."],
- ["بویایی و SID","حدود ۴۰۰۰ پایانهٔ بویایی دارد؛ هر کودک دارای SID لزوماً اختلال یادگیری ندارد. حساسیت‌زدایی منظم و تدریجی مسیر عصبی می‌سازد."],
- ["آموزهٔ مصاحبه","از دری که مراجع باز می‌کند وارد نشوید؛ در گزارش دانیال تحلیل استاد اضطراب بود، نه افسردگی."]]},
-{t:"ادراک لمسی و نشانه‌های زودهنگام",d:"۲۷ آبان ۱۴۰۵",l:"ساختمان روانی کودک، ادراک لمسی-حرکتی و ۱۶ نشانهٔ زودهنگام اختلال یادگیری.",
- k:[["ساختمان روانی","باکس ژن (چهار ژن خلق‌وخو)، هرم محیط و پله‌های مهارت‌های کودک."],
- ["ادراک لمسی-حرکتی","تخته تعادل، ترکیب‌های حسی-حرکتی، شناختی-حرکتی و حسی-شناختی، و تشخیص شکل از راه لمس."],
- ["پرورش مهارت‌های زبانی و حرکتی","تمرین‌های توجه و دقت تک‌محوره نیستند و چند مهارت را هم‌زمان درگیر می‌کنند."],
- ["نشانه‌های زودهنگام","درست صحبت کردن، درک کلامی، یادآوری لغات خاص، یادآوری آنچه شنیده، بازی‌های ریتم‌دار، الفبا، دنبال کردن دستورها، تلفظ، داستان‌ها، لباس پوشیدن، رنگ‌ها و جهت‌ها."],
- ["گزارش موردی دنیا","نوجوان ۱۳ ساله؛ مرور همهٔ مباحث در یک پرونده."]]}
+ ["سطوح شدت","SLD دارای سطوح شدت (طیف) است."],
+ ["تشخیص افتراقی: ۷ عامل",li(["اضطراب","سوگ و فقدان","مهاجرت","غیبت‌های طولانی و نقص در آموزش پایه","شیوهٔ فرزندپروری","عوامل استرس‌زا","ضعف فیزیولوژیک و کم‌توانی ذهنی"])],
+ ["اختلال دلبستگی واکنشی","اختلالی در DSM مرتبط با شکل نگرفتن پیوند دلبستگی اولیه؛ با سازگاری اجتماعی پایین و تحریک‌پذیری بالا. در پرسش و پاسخ آغاز جلسه مطرح شد."],
+ ["SID: اختلال یکپارچگی حسی",li(["سنسورها اطلاعات را از محیط می‌گیرند، مغز پردازش می‌کند و به شکل هیجان یا رفتار بروز می‌دهد؛ در SID این فرایند مشکل دارد.","حسگرهای دور: بینایی، شنوایی، بویایی، چشایی، لامسه. حسگرهای نزدیک: تعادل، حس عمق، حس وضعیت.","در دو سطح: بیش‌حسی و کم‌حسی. SID در DSM نیامده است.","مثال حسگرهای دور: تگ لباس، موی گردن، عطر، بوی شوینده، صدای ماژیک روی تخته."])],
+ ["مهارت‌های حرکتی","مهارت‌های حرکتی همان عملکرد اجرایی مغز هستند و اگر درست شکل نگرفته باشند یادگیری را مختل می‌کنند: تعادل، حس وضعیت، هماهنگی‌ها (چشم-دست، چشم-پا، دو نیم‌کره، عضلات ظریف و درشت، دو پا، دو دست، دست و پا) و برتری جانبی."],
+ ["پرسش‌های پایانی",li(["۱۸ نشانهٔ تشخیصی مربوط به ADHD است نه SLD.","نشانهٔ مشترک (مثلاً جا انداختن نقطه) در ADHD، اضطراب، SLD و ضعف شناختی دیده می‌شود؛ ذهن درمانگر باید چند شاخه شود.","فقر محیطی به‌تنهایی SLD نمی‌سازد اما در کودک دارای SLD آن را آشکارتر می‌کند.","خندیدن هنگام درد به ODD ربطی ندارد؛ علت‌ها: بیش‌حسی، بازداری هیجانی، تنظیم نشدن هیجان (قلقلک و درد یک ناحیهٔ مغز را فعال می‌کنند)."])],
+ ["هوش مصنوعی و سقراط","جایگاه هوش مصنوعی در تشخیص و درمان مطرح شد. پرسشگری سقراطی: پرسش‌های پیاپی و هدفمند بر پایهٔ دانش تشخیصی درمانگر."]],
+ labs:["alarm","sidclin","balance","posture"],rec:["سه اسپسیفایر: خواندن، نوشتن، ریاضیات.","۷ عامل افتراقی: اضطراب، سوگ، مهاجرت، غیبت، فرزندپروری، استرس، ضعف فیزیولوژیک.","SID: حسگر دور/نزدیک؛ بیش‌حس/کم‌حس؛ در DSM نیست.","تعادل ۵ مرحله دارد؛ ۶ سالگی ≈ ۶ ثانیه، ۷ سالگی ۷–۸، ۹ سالگی ۱۰–۱۲.","گزارش والد دربارهٔ حس‌ها کافی نیست؛ درمانگر خودش بررسی می‌کند."]},
+
+{t:"ارزیابی حرکتی و تشخیص افتراقی",d:"۱۵ مهر ۱۴۰۵",tags:["برتری جانبی","آی‌موومنت","هماهنگی","همبودی"],l:"تمایز «مشکل در یادگیری» از «اختلال یادگیری»، بررسی فرصت و کیفیت آموزش و بستهٔ ارزیابی عضلات درشت.",
+ k:[["مرور و مسیر یادگیری","مرور جلسات پیشین و مسیر یادگیری مهارت‌های ارزیابی و درمان؛ اضطراب و سوگ، دوزبانگی یا چندزبانگی زودهنگام و مدرسه نرفتن‌های طولانی در ادامهٔ عوامل مداخله‌گر مطرح شد."],
+ ["فرصت و کیفیت آموزش","آیا کودک فرصت کافی داشته؟ تعداد کلاس‌ها و اختلالات چندگانه (Mixed Disorders)، و آموزش مناسب و باکیفیت متناسب با سن."],
+ ["رد نقص‌ها",li(["مشکلات بینایی و شنوایی","محدودیت زبانی و ناآشنایی با زبان آموزش","اختلال هوش یا سایر اختلالات عصبی-رشدی","مشکلات هیجانی و روانی","نقش مشکلات حرکتی و گفتاری؛ زبان بیانی (کودک «خام» صحبت می‌کند، دایرهٔ لغات ضعیف، «من‌من») قطعاً درک مطلب شفاهی را هم مختل می‌کند."])],
+ ["اختلال ترکیبی و همبودی","Mixed Disorder: هم‌زمانی چند اختلال (مثلاً اضطراب + SLD + SID). Comorbidity: مثلاً دیسلکسیا و دیسگرافیا با هم."],
+ ["مهارت حرکتی دست در نوشتن","مشاهدهٔ گرفتن مداد، شکستن مچ، چرخش گردن و دفتر و فشار دست. آسان‌گیر مداد برای اصلاح نحوهٔ گرفتن در کودکان بزرگ‌تر."],
+ ["بستهٔ ارزیابی عضلات درشت: ۶ محور",li(["تعادل","وضعیت","هماهنگی دو نیم‌کره","هماهنگی چشم و دست","هماهنگی هر دو دست (تراش و پیچ و مهره)","آی‌موومنت و نوز تو فینگر"])+'<p>همهٔ آزمون‌ها حداکثر یک جلسه و نیم؛ اگر کودک مقاومت نداشته باشد با مصاحبه در یک جلسه هم ممکن است.</p>'],
+ ["درمان‌ها","بازی‌درمانی کودک‌محور (CCPT)، شناختی-رفتاری (CBPT)، درمان تعاملی والد-کودک (PCIT) و درمان رابطهٔ والد-کودک (CPRT). نوروفیدبک درمان اصلی SLD نیست (مسیر عصبی عمیق نمی‌سازد) و tDCS صرفاً کمک‌درمان است."],
+ ["پایداری مشکلات","بررسی می‌شود که مشکل تحصیلی پایدار است یا نه؛ پاسخ به درمان از هفتهٔ دوم نشانهٔ مشکل صرفاً حرکتی است."]],
+ labs:["lateral","eye","nose","ball","hemi","proprio","funnel"],rec:["برتری جانبی: چشم (لوله)، گوش (شیء صدادار)، پا (توپ وسط دو پا).","آی‌موومنت: بدون حرکت گردن؛ جاسری؛ پرش چپ-راست، بالا-پایین یا دورانی.","نوز تو فینگر: سرعت پردازش + هماهنگی حرکتی.","توپ: ۵ مرحله؛ بیش از دو بار نگرفتن = ضعف حس عمق.","نوروفیدبک درمان اصلی نیست."]},
+
+{t:"مهارت‌های شناختی و خواندن",d:"۲۲ مهر ۱۴۰۵",tags:["توجه","دقت","حافظه","تمییز"],l:"خواندن بر توجه، دقت، حافظه و تمییز دیداری و شنیداری تکیه دارد. هر تمرین چند مهارت را هم‌زمان درگیر می‌کند.",
+ k:[["تعریف مهارت‌های پایه",li(["توجه: پاسخ به یک محرک (چشمی، کلامی یا لمسی)","دقت: توجه به جزئیات یک محرک","حافظه: به خاطر سپردن جزئیات، شامل توالی و ترتیب","تمرکز: تداوم توجه","تمییز شنیداری: افتراق صداها؛ پایهٔ تشخیص حروف هم‌آوا","تمییز دیداری: افتراق جزئیات دیداری؛ حاصل توجه و دقت"])],
+ ["ریشه‌های مشکل در خواندن","مؤلفه‌های اسپسیفایر خواندن و ریشه‌های آن (رمزگشایی: بازشناسی دیداری حروف و واژه‌ها و تبدیل آن‌ها به آوا و کلمهٔ معنادار) مرور شد."],
+ ["تمرین‌های ارزیابی و تقویت",li(["توجه دیداری و شنیداری","تمییز شنیداری","کدگذاری و حافظهٔ پایدار","دقت دیداری و حافظهٔ دیداری","حافظهٔ شنیداری؛ حافظهٔ دیداری تأخیری","محرک مزاحم (Distractor) برای دشوار کردن تمرین"])],
+ ["مرور اسپسیفایر نوشتن","دیکته‌نویسی به عنوان نمونه مرور شد."],
+ ["SLD و ADHD","توجه در این دو متفاوت است. فیلم «ستاره‌های روی زمین» معرفی شد."],
+ ["نکات بالینی",li(["تعریف و ویژگی‌ها","اهمیت پلن کمکی هدفمند","شرایط تشخیص","شیوع و همبودی‌ها","هدف و محتوای ارزیابی: برنامهٔ یکپارچه"])],
+ ["پیشینه و عوامل محیطی","پیشینهٔ تاریخی مفهوم ناتوانی یادگیری؛ عوامل آموزشی و عوامل محیطی و فردی. سرآمد (Gifted) و کم‌توانی ذهنی تشخیص‌های جدا از SLD‌اند."],
+ ["ابزارها","آزمون بندر گشتالت (دیداری-حرکتی)، فراستیگ (ادراک دیداری)، وپمن (تمییز شنیداری). پاپت: عروسک نمایشی برای گروه‌های سنی پایین."]],
+ labs:["attn","memory"],rec:["توجه ≠ دقت ≠ تمرکز ≠ حافظه.","تمییز شنیداری → حروف هم‌آوا.","محرک مزاحم تمرین را دشوار می‌کند.","بندر گشتالت، فراستیگ، وپمن."]},
+
+{t:"یکپارچگی حسی و ملاک‌های تشخیصی",d:"۲۹ مهر ۱۴۰۵",tags:["SID","آسیب به سر","حساسیت‌زدایی","DSM"],l:"آسیب به سر، تحریک حسی در سال‌های اول زندگی، ارزیابی دقیق حسی در اتاق درمان و ملاک‌های DSM.",
+ k:[["اختلال یادگیری اکتسابی","ناشی از آسیب به سر پس از تولد، با کاردرمانی قابل بهبود. اختلال یادگیری عصبی-رشدی با آن فرق دارد."],
+ ["هزار روز طلایی","هزار روز نخست زندگی؛ باید تمام محرک‌ها (شنیداری، بویایی، دیداری و…) فعال شوند و کودک رنگ‌ها و صداهای متفاوت را تجربه کند. باور نادرست: نشان دادن کارت سیاه‌وسفید به نوزاد؛ هدف تقویت بینایی است و این کارت‌ها نیاز را برآورده نمی‌کنند."],
+ ["تحریک دیداری","لامپ‌هایی با شدت متغیر برای تجربهٔ فضای روشن، نیمه‌روشن و تاریک. حساسیت‌زدایی تدریجی: شدت را کمی بالا ببرید اما زمان را از ۲ دقیقه شروع کنید."],
+ ["تحریک شنیداری","کودک باید با انواع صداها آشنا شود. امروز «آرام راه برو، خوابیده» رایج است و گوش با صداها آشنا نمی‌شود؛ کودک بیش‌حس با دو بوق می‌گوید «آی گوشم!»."],
+ ["تحریک بویایی","حدود ۴۰۰۰ نورون بویایی؛ هر نورون فعال‌نشده پیام «بد» می‌دهد. غذای آماده از بیرون این نورون‌ها را فعال نمی‌کند و بدغذایی بیشتر می‌شود."],
+ ["ارزیابی حسی",li(["پرسش از والد: بغل، درد، خیسی، لمس سر، بوها، صدای ناگهانی.","لامسهٔ سطح: ۵ یا ۶ قلمو از سیلیکونی تا زبر؛ خشک و خیس.","لامسهٔ عمق: فشار روی ناحیهٔ کول (شانه)؛ معیار نخستین تغییر.","بازداری هیجانی؛ ارزیابی شنیداری با صدای ناگهانی؛ ارزیابی سر؛ ارزیابی بویایی.","ارزیابی دقیق را فرد آموزش‌دیده انجام می‌دهد."])+'<p>اگزمای شدید از بدو تولد اغلب با بیش‌حسی لامسهٔ سطح بدن همراه است.</p>'],
+ ["زبان و رشد اجتماعی-عاطفی","بخش زیادی از مغز به فک، دهان، زبان و حنجره اختصاص دارد؛ خزانهٔ لغات ضعیف (مثلاً نتوانستن گفتن مترادف «ناراحت») یادگیری را سخت می‌کند چون ساختارهای قبلی به اطلاعات جدید وصل می‌شوند. اضطراب و رشد اجتماعی-عاطفی و عوامل فیزیولوژیک و ژنتیک هم دخیل‌اند."],
+ ["ملاک‌های DSM","شش محور: نشانه‌های خواندن، ارتباط و استدلال، هجی، بیان نوشتاری، ریاضیات و مدت/سطح سنی/زمان آغاز."],
+ ["هم‌پوشانی و سایر پرسش‌ها",li(["هم‌پوشانی اختلال یادگیری و اوتیسم","اختلال یادگیری در بزرگسالی","کودکی که دیرتر به مدرسه می‌رود","حضور در اتاق درمان: سوپرویژن و کارورزی (کمک‌درمانگر)","سالاد کلمات (Word Salad) با مشکل ارتباط کلمات در SLD فرق دارد"])],
+ ["منابع اطلاعات","وکسلر، وپمن (تمییز شنیداری)، لینکلن-اوزرتسکی (رشد حرکتی)، کانرز (ADHD)."]],
+ labs:["tactile","pressure","sound","desens","smell","dsm"],rec:["اکتسابی: آسیب سر، کاردرمانی خط اول.","هزار روز طلایی؛ ۴۰۰۰ پایانهٔ بویایی.","لامسهٔ سطح: قلمو؛ لامسهٔ عمق: ناحیهٔ کول؛ ملاک: نخستین تغییر.","بیش‌حس از نرم‌ترین قلمو شروع، کم‌حس از زبرترین.","جاروبرقی و سشوار برای سنجش شنیداری مناسب نیستند."]},
+
+{t:"وکسلر و توانایی‌های شناختی",d:"۱۳ آبان ۱۴۰۵",tags:["وکسلر","اکتسابی","سرعت پردازش","پلن درمانی"],l:"وکسلر ابزار تشخیص SLD نیست؛ توانایی‌های پایه را برای نوشتن پلن می‌سنجد.",
+ k:[["خاص در برابر اکتسابی","SLD عصبی-رشدی و از بدو تولد است. اکتسابی پس از آسیب به سر در کودکی با عملکرد پیشین نرمال ایجاد می‌شود و خط اول درمانش کاردرمانی است. سی‌تی‌اسکن میزان آسیب را نشان می‌دهد."],
+ ["پیش‌آگهی","زمین‌خوردن‌ها و ضربه‌های مکرر سر در سنین پایین می‌تواند پیش‌آگهی باشد و والدین اغلب از آن بی‌خبرند. آسیب به سر در سنین بالاتر هم بررسی می‌شود."],
+ ["وکسلر: جایگاه و کاربرد","ابزار تشخیص نیست؛ گروه‌های سنی دارد؛ پس از درمان برای ارزیابی پیشرفت دوباره گرفته نمی‌شود؛ اجرا در جلسهٔ ارزیابی."],
+ ["ساختار ۲۱ خرده‌آزمون","بخش الف: ۱۰ اصلی (هوش‌بهر کلی). بخش ب: تکمیلی (۱۱ تا ۱۶). بخش ج: مکمل برای SLD و ADHD (۵ خرده‌مقیاس)."],
+ ["سرعت پردازش","اصل کاهش تدریجی زمان؛ کندی در آماده شدن و عوامل دیگر؛ افراد همیشه شتاب‌زده (اضطراب فراگیر GAD می‌تواند پشت شتاب‌زدگی باشد). تمرین روزانهٔ خانه ضروری است."],
+ ["توانایی‌های شناختی (واژه‌نامهٔ استاد)",li(["استدلال فضایی: درک روابط اشیا در فضا (جا دادن غذا در ظرف، پارک)","تجسم دیداری-فضایی","استدلال مفهومی (کارت‌های متضاد، طبقه‌بندی)","استدلال استقرایی: کشف قاعده از نمونه‌ها","حل مسئلهٔ غیرکلامی","استدلال دیداری و سازماندهی ادراکی","انعطاف‌پذیری شناختی","سرعت پردازش واژگانی (دسترسی واژگانی)","بازشناسی حافظه","انتخاب پاسخ درست بین گزینه‌ها: توجه انتخابی، بازداری و حافظهٔ کاری"])],
+ ["نمونه پلن درمانی","گام‌به‌گام، کدگذاری‌شده و ادغامی (مثلاً ادغام حواس + تعادل)؛ هر مهارت مرحله‌به‌مرحله سخت‌تر و با مهارت‌های دیگر ترکیب می‌شود. نوشتن پلن کلی حدود ۲ ساعت؛ جزئیات جلسه‌به‌جلسه در دستورالعمل؛ بازبینی سوپروایزر پس از هر ۴ جلسه. پلن اضطراب روشن‌تر است؛ پلن ADHD و SLD زمان‌برتر."],
+ ["پرسش و پاسخ پایانی","برای کار با اختلال یادگیری باید دورهٔ تربیت درمانگر گذراند؛ بازی‌درمانی عادی برای کودکان اوتیستیک مناسب نیست. اگر درمان زود شروع شود و مداخلهٔ تخصصی (گفتار، کاردرمانی) هم باشد، ممکن است ۱ تا ۲ سال طول بکشد. دربارهٔ ادعای تشخیص اسکیزوفرنی در نوجوان: رفتارهای بالینی را ببینید و با خانواده صحبت کنید؛ چهرهٔ خنثی و همدلی درمانگر مهم است."]],
+ labs:["wech","dsm_skip"],rec:["۲۱ خرده‌آزمون: الف ۱۰ + ب (۱۱–۱۶) + ج (۵).","وکسلر تشخیص SLD نیست و پس از درمان تکرار نمی‌شود.","سرعت پردازش: کاهش تدریجی زمان + تمرین روزانه.","امتحان: تعریف ۲–۳ اصطلاح، تحلیل سه بازی، طراحی دو بازی برای یک توانایی."]},
+
+{t:"توجه، حافظه، ادراک و تفکر",d:"۲۰ آبان ۱۴۰۵",tags:["پرورش مهارت","گزارش موردی","مصاحبه"],l:"پرورش مهارت‌های شناختی از آسان به دشوار و دو گزارش موردی (کیان ۸ ساله و دانیال ۷ ساله).",
+ k:[["مرور و تمایز SID از SLD","آیا هر کودک دارای SID اختلال یادگیری دارد؟ خیر. ارزیابی بویایی در اتاق درمان و حساسیت‌زدایی در بینایی، شنوایی و بویایی با تمرین روزانه و تدریجی مسیر عصبی می‌سازد."],
+ ["پرورش توجه و دقت",li(["اولویت با توجه است.","تمرین‌های توجه دیداری: از آسان به دشوار؛ توجه شنیداری؛ سخت‌تر کردن تدریجی؛ بازی‌های چندحسی؛ تمرین‌های دقت.","توجه انتخابی: پاسخ به محرک هدف و متوقف کردن محرک‌های مزاحم. بازداری از پاسخ: پاسخ ندادن به محرک‌های غیرهدف."])],
+ ["پرورش حافظه","انواع: تأخیری، پایدار (بلندمدت)، دیداری، شنیداری، لمسی-حرکتی. اول حافظهٔ تأخیری؛ جدایی حافظهٔ دیداری و شنیداری؛ یادآوری ترتیب سه شکل."],
+ ["گزارش موردی کیان (۸ ساله)","پرسش‌های آموزشی و تشخیص افتراقی: آیا کودک وسواس دارد؟ پاسخ منفی (در جلسهٔ ۸ هم مرور شد) و پلن درمان نوشته شد."],
+ ["پرورش ادراک","ادراک لمسی و «حس»، ادراک دیداری (افتراق و درک آنچه دیده می‌شود)، ادراک شنیداری (درک معنا و بازنمایی ذهنی)."],
+ ["پرورش تفکر","شباهت‌ها و تفاوت‌ها، بیان مفهوم (سامرایز: خلاصه با کلمات خود مراجع؛ پارافرایز: با کلمات درمانگر)، حل مسئله (تشخیص موضوع، خواسته، بررسی راهکارها، انتخاب بهترین)، طبقه‌بندی و بازی رنگ‌های متضاد شبیه استروپ."],
+ ["گزارش موردی دانیال (۷ ساله)","درسی دربارهٔ مصاحبه: از دری که مراجع باز می‌کند وارد نشوید. تحلیل استاد: اضطراب، نه افسردگی. اضطراب می‌تواند با دندان‌قروچه (Bruxism)، فرزندپروری ناسازگار و تاب‌آوری پایین همراه باشد؛ بازسازی شناختی برای اضطراب فکری."]],
+ labs:["attn","memory","stroop"],rec:["اولویت با توجه است؛ بیش از ۹۵٪ تمرین‌ها چندمحوره‌اند.","حافظهٔ کاری ≠ تأخیری ≠ پایدار.","سامرایز با کلمات مراجع؛ پارافرایز با کلمات درمانگر.","کیان: وسواس نبود؛ دانیال: اضطراب، نه افسردگی."]},
+
+{t:"ادراک لمسی و نشانه‌های زودهنگام",d:"۲۷ آبان ۱۴۰۵",tags:["ساختمان روانی","لمسی-حرکتی","نشانه‌های زودهنگام"],l:"ساختمان روانی کودک (باکس ژن، هرم محیط، پله‌های مهارت)، ادراک لمسی-حرکتی و نشانه‌های زودهنگام.",
+ k:[["ساختمان روانی کودک","درمانگر با تمام اجزای آن سروکار دارد: باکس ژن (چهار ژن غیرقابل تغییر) در پایین، هرم وارونهٔ محیط روی آن، و پله‌های مهارت کودک (حسی، حرکتی، شناختی، ارتباطی) بالای هرم. فرزندپروری در کنار ژن‌ها خلق‌وخو را می‌سازد."],
+ ["باکس ژن","مقاومت (مقاومت به تغییر و پشتکار)، ترس از خطر (ریسک‌پذیری)، تنوع‌طلبی، وابستگی به پاداش (ژن اعتیاد در بزرگسالی). نه می‌شود پایین یا بالایشان برد؛ اما محیط را می‌شود تغییر داد."],
+ ["پرسش و پاسخ دربارهٔ ژن‌ها",li(["تاب‌آوری ≠ مقاومت؛ تاب‌آوری مهارت و سرمایهٔ روانی ناشی از فرزندپروری است.","نوروپلاستیسیته ژن را تغییر نمی‌دهد اما شیوهٔ رسیدن به خواسته را عوض می‌کند.","تمثیل بخاری: مقاومت را فرزندپروری جهت می‌دهد.","اضطراب و کمال‌گرایی بخش ژنتیکی دارند و فعال شدنشان با فرزندپروری است."])],
+ ["ادراک لمسی-حرکتی","تحریک هم‌زمان یک حس و یک حرکت: تخته تعادل (صاف روی دو نیم‌دایره، گرد دون‌دون، نیم‌دایره‌های پیلاتس)، «گردوشکستم» با شمردن صداها، نوشتن حرف یا عدد روی پشت با قلمو."],
+ ["ترکیب‌های شناختی-حرکتی و حسی-شناختی","شناختی-حرکتی: گردوشکستن + ۴ کلمه؛ آی‌موومنت + میوه با حرف داده‌شده. حسی-شناختی: شیء پنهان در شن؛ سپس سه وسیله و یادآوری ترتیب لمس."],
+ ["پرورش مهارت‌های زبانی و حرکتی","زبان شفاهی دریافتی (دایرهٔ لغات، فهم مفاهیم) و زبان بیانی؛ تکلم‌های تخصصی به گفتاردرمانگر و حرکتی‌های تخصصی به کاردرمانگر ارجاع می‌شود: «ما همه‌چیزتوان و همه‌چیزدان نیستیم.»"],
+ ["۱۶ نشانهٔ زودهنگام","صحبت، درک کلامی، یادآوری لغات، یادآوری شنیده‌ها، بازی ریتم‌دار (حس + حرکت + حافظه)، الفبا، دستورالعمل، تلفظ، داستان، استفاده از لغات، لباس پوشیدن، رنگ، جهت، کپی طرح، شمارش. با یک نشانه تشخیص گذاشته نمی‌شود."],
+ ["گزارش موردی دنیا (۱۳ ساله)","پروندهٔ پایانی که همهٔ مباحث را جمع می‌کند و تکلیف جلسهٔ بعد: نوشتن پرسش‌ها و فرضیه‌ها دربارهٔ پرونده. «چرا این درس برای هر درمانگری لازم است؟» نیز بحث شد."]],
+ labs:["genes","pyr","touchmotor","signs"],rec:["باکس ژن: مقاومت، ترس از خطر، تنوع‌طلبی، وابستگی به پاداش.","هرم محیط: مهارت والدینی، رابطهٔ والد-کودک، مهارت‌های کودک.","پله‌ها: حسی ← حرکتی ← شناختی ← ارتباطی.","لمسی-حرکتی = یک حس + یک حرکت هم‌زمان.","با یک نشانهٔ زودهنگام تشخیص گذاشته نمی‌شود."]}
 ];
+// labs that fall in skip list
+LAB.dsm_skip={t:"",d:"",init(){}};
 
-/* ---------- build sections ---------- */
-const main=$('#main'),links=$('#links');
+/* ======================= BUILD ======================= */
+const main=$('#main'),toc=$('#toc');
+const AC=['#8b5cf6','#22d3ee','#ff6bb5','#5eead4','#ffc861','#60a5fa','#f472b6','#34d399'];
+let read=[];try{read=JSON.parse(gt('ldRead')||'[]')}catch{}
+toc.innerHTML=`<h4>جلسه‌ها</h4>`+S.map((s,i)=>`<a href="#s${i+1}" data-i="${i}" class="${read.includes(i)?'done':''}"><i>${fa(i+1)}</i><span>${s.t}</span></a>`).join('')+`<h4>مرور</h4><a href="#fcs"><i>🃏</i><span>فلش‌کارت‌ها</span></a><a href="#sheet"><i>📌</i><span>برگهٔ مرور امتحان</span></a><a href="#quiz"><i>✅</i><span>آزمون نهایی</span></a>`;
+function prog(){const n=read.length;$('#prog').textContent=`پیشرفت: ${fa(n)} از ${fa(S.length)} جلسه`;$$('#toc a[data-i]').forEach(a=>a.classList.toggle('done',read.includes(+a.dataset.i)))}
 S.forEach((s,i)=>{
- const id='s'+(i+1);
- links.insertAdjacentHTML('beforeend',`<a href="#${id}">${fa(i+1)}</a>`);
- let extra='';
- if(i===0)extra=`<div class="box"><h3>مسیر ارزیابی (روی هر مرحله بزنید)</h3><div class="steps" id="stp"></div><div class="out pt" id="stpOut"></div></div>`;
- if(i===1)extra=`<div class="box"><h3>بازی: این کودک چه تشخیصی دارد؟</h3><div id="cls"></div></div>`;
- if(i===2)extra=`<div class="box"><h3>برتری جانبی: کدام را می‌سنجیم؟</h3><div class="chips" id="lat"></div><div class="out" id="latOut">یک مورد را انتخاب کنید.</div></div>`;
- if(i===3)extra=`<div class="box"><h3>خواندن بر چه چیزی بنا شده؟</h3><div class="chips" id="rd"></div><div class="out" id="rdOut">یک لایه را انتخاب کنید.</div></div>`;
- if(i===4)extra=`<div class="box"><h3>حس‌های دور و نزدیک</h3><div class="sense" id="sen"></div><div class="out" id="senOut">یک گروه را انتخاب کنید.</div></div>`;
- if(i===5)extra=`<div class="box"><h3>نقشهٔ وکسلر (۲۱ خرده‌آزمون در ۳ بخش)</h3><div class="chips" id="wxTabs"></div><div class="chips" id="wxChips"></div><div class="out" id="wxOut">یک خرده‌آزمون را انتخاب کنید.</div>
- <hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><h3>شبیه‌ساز تمرین سرعت پردازش</h3><p style="color:var(--muted);font-size:14px">زمان هدف را هر مرحله چند ثانیه کم کنید.</p>
- <label>زمان هر مرحله: <b id="spV">۶۰</b> ثانیه</label><input type="range" id="sp" min="0" max="12" value="0"><div class="meter"><i id="spM"></i></div><div id="spT" style="color:var(--muted);font-size:14px"></div></div>`;
- main.insertAdjacentHTML('beforeend',`<section id="${id}" class="reveal"><div class="sh"><span class="no">${fa(i+1)}</span><h2>${s.t}</h2></div><div class="date">${s.d}</div><p class="lead">${s.l}</p>${extra}<div>${s.k.map(([a,b])=>`<details class="k"><summary>${a}</summary><div class="b">${b}</div></details>`).join('')}</div></section>`);
+ const labs=s.labs.filter(l=>LAB[l]&&LAB[l].t);
+ main.insertAdjacentHTML('beforeend',`<section class="sess" id="s${i+1}" data-i="${i}" style="--ac:${AC[i]}"><div class="sbar"><div class="no">${fa(i+1)}</div><div><h2>${s.t}</h2><div class="meta"><span class="pill d">${s.d}</span><span class="pill">⏱ حدود ${fa(Math.max(3,Math.round(s.k.map(x=>x[1]).join('').length/700)))} دقیقه + آزمایشگاه</span>${s.tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div></div></div><p class="lead">${s.l}</p>
+ <div class="tabs"><button class="on" data-t="0">📖 درسنامه</button>${labs.length?`<button data-t="1">🔬 آزمایشگاه (${fa(labs.length)})</button>`:''}<button data-t="2">⚡ مرور سریع</button></div>
+ <div class="panel on" data-p="0">${s.k.map(([a,b],j)=>`<details class="k" id="k${i}-${j}"><summary>${a}</summary><div class="b">${b.startsWith('<')?b:'<p>'+b+'</p>'}</div></details>`).join('')}</div>
+ <div class="panel" data-p="1"></div>
+ <div class="panel" data-p="2"><div class="card"><h4>نکته‌های کلیدی</h4>${li(s.rec)}</div><div class="row" style="margin-top:12px"><button class="btn p" data-read="${i}">${read.includes(i)?'✓ خوانده‌شد':'علامت‌گذاری به‌عنوان خوانده‌شده'}</button></div></div><div class="pn">${i>0?`<a href="#s${i}">→ ${S[i-1].t}</a>`:'<span></span>'}${i<S.length-1?`<a href="#s${i+2}">${S[i+1].t} ←</a>`:'<a href="#fcs">فلش‌کارت‌ها ←</a>'}</div></section>`);
+ const sec=$('#s'+(i+1)),tabs=$$('.tabs button',sec),panels=$$('.panel',sec);let built=0;
+ tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.classList.toggle('on',x===b));panels.forEach(p=>p.classList.toggle('on',p.dataset.p===b.dataset.t));if(b.dataset.t==='1'&&!built)buildLabs()});
+ function buildLabs(){built=1;const p=$('[data-p="1"]',sec);labs.forEach(l=>{const d=document.createElement('div');d.className='lab';d.innerHTML=`<h3>${LAB[l].t}</h3><p class="d">${LAB[l].d}</p><div class="body"></div>`;p.appendChild(d);try{LAB[l].init($('.body',d))}catch(e){console.error(l,e)}})}
+ sec._build=()=>{if(labs.length&&!built)buildLabs()};
+ $('[data-read]',sec).onclick=function(){const k=+this.dataset.read,x=read.indexOf(k);if(x<0)read.push(k);else read.splice(x,1);sv('ldRead',JSON.stringify(read));this.textContent=read.includes(k)?'✓ خوانده‌شد':'علامت‌گذاری به‌عنوان خوانده‌شده';prog();if(read.length===S.length)confetti()}
 });
-main.insertAdjacentHTML('beforeend',`<section id="fcs" class="reveal"><div class="sh"><span class="no">🃏</span><h2>فلش‌کارت واژه‌نامه</h2></div><p class="lead">کارت را بزنید تا برگردد. «بلدم» یا «دوباره» را انتخاب کنید.</p><div class="fc" id="fc"><div><div class="f"></div><div class="bk"></div></div></div><div class="fcn"><button class="btn" id="fcA">↺ دوباره</button><button class="btn p" id="fcK">✓ بلدم</button></div><p style="text-align:center;color:var(--muted);margin-top:10px" id="fcI"></p></section>
-<section id="quiz" class="reveal"><div class="sh"><span class="no">✅</span><h2>آزمون نهایی</h2></div><div class="meter"><i id="qb"></i></div><div class="box" id="qBox"></div></section>`);
-links.insertAdjacentHTML('beforeend','<a href="#fcs">کارت‌ها</a><a href="#quiz">آزمون</a>');
+prog();
 
-/* ---------- stepper (session 1) ---------- */
-(()=>{const P=[["📞","تماس","اطلاعات اولیه توسط منشی یا فرم: سن و پایه، مدرسه، دارو، سابقهٔ مشاوره."],["📝","تاریخچه","فرم رشد و تحول: بارداری، زایمان، نوزادی، حرکت، زبان."],["👪","والدین","ارزیابی فرزندپروری و انتظار والدین."],["🧒","کودک","بررسی هر سه اسپسیفایر و مؤلفه‌های شناختی دخیل در یادگیری."],["🧠","وکسلر","ابزار کمکی برای توانایی‌های پایه، نه تشخیص مستقیم."],["🎯","تشخیص","تشخیص نهایی و تمایز از فقر محیطی؛ مداخله تا زمان طلایی (کلاس پنجم)."]];
- const st=$('#stp'),out=$('#stpOut');
- st.innerHTML=P.map((p,i)=>`<div class="step" data-i="${i}" tabindex="0" role="button"><i>${p[0]}</i><small>${p[1]}</small></div>`).join('');
- const go=i=>{$$('.step',st).forEach((e,k)=>{e.classList.toggle('on',k===i);e.classList.toggle('done',k<i)});out.innerHTML=`<span class="t">${P[i][1]}</span><br>${P[i][2]}`};
- $$('.step',st).forEach(e=>{e.onclick=()=>go(+e.dataset.i);e.onkeydown=ev=>{if(ev.key==='Enter')go(+e.dataset.i)}});go(0);
- let k=0;const iv=setInterval(()=>{if(st.matches(':hover'))return;k=(k+1)%P.length;go(k)},3500);})();
-
-/* ---------- classify game (session 2) ---------- */
-(()=>{const O=["SLD خاص","اکتسابی","فقر محیطی","SID","ADHD"];
-const Q=[["کودکی از بدو تولد در خواندن کند و نادرست است و رشد دیگرش طبیعی بوده.",0],["پس از سقوط از بلندی در ۶ سالگی، کودکی که قبلاً نمرات عادی داشت ناگهان در یادگیری افت کرد.",1],["والدین تحصیلات سیکل دارند، کودک مدرسهٔ ضعیف رفته و فرصت آموزش کافی نداشته.",2],["کودک از لمس برچسب لباس بی‌تاب می‌شود و به صداهای معمولی شدیداً واکنش نشان می‌دهد.",3],["کودک نمی‌نشیند، تکانشی است و در محاسبه به‌خاطر بی‌دقتی اشتباه می‌کند.",4],["پس از غیبت یک‌ساله از مدرسه، کودک دیکته را نمی‌داند.",2],["کودک در درک مفهوم عدد و حل مسئله از ابتدا مشکل پایدار دارد.",0]];
- let i=0,sc=0;const b=$('#cls');
- function r(){if(i>=Q.length){b.innerHTML=`<p style="font-size:20px">امتیاز شما: <b style="color:var(--a4)">${fa(sc)} از ${fa(Q.length)}</b></p><button class="btn p" id="cr">↺ دوباره</button>`;$('#cr').onclick=()=>{i=0;sc=0;r()};return}
- b.innerHTML=`<small style="color:var(--a2)">${fa(i+1)} از ${fa(Q.length)}</small><p style="margin:6px 0">${Q[i][0]}</p><div class="opts">${O.map((o,k)=>`<button class="opt" data-k="${k}">${o}</button>`).join('')}</div>`;
- $$('.opt',b).forEach(x=>x.onclick=()=>{const k=+x.dataset.k;$$('.opt',b).forEach(y=>y.disabled=true);$$('.opt',b)[Q[i][1]].classList.add('ok');if(k===Q[i][1])sc++;else x.classList.add('no');setTimeout(()=>{i++;r()},1200)})}
- r()})();
-
-/* ---------- generic chip explorer ---------- */
-function chipsExplorer(boxId,outId,items){const bx=$(boxId),out=$(outId);bx.innerHTML=items.map((x,i)=>`<button class="chip" data-i="${i}">${x[0]}</button>`).join('');
- $$('.chip',bx).forEach(c=>c.onclick=()=>{$$('.chip',bx).forEach(x=>x.classList.remove('on'));c.classList.add('on');const x=items[+c.dataset.i];out.innerHTML=`<b>${x[0]}</b><br>${x[1]}`})}
-chipsExplorer('#lat','#latOut',[["چشم","برتری جانبی چشم در کنار گوش و پا سنجیده می‌شود."],["گوش","برتری جانبی گوش؛ بخشی از ارزیابی برتری جانبی."],["پا","برتری جانبی پا."],["نوز تو فینگر","لمس متناوب بینی و انگشت درمانگر؛ هماهنگی حرکتی و سرعت پردازش."],["آی‌موومنت","دنبال کردن شیء متحرک با چشم و تفکیک حرکت چشم از گردن."]]);
-chipsExplorer('#rd','#rdOut',[["توجه و حافظه","پایهٔ خواندن؛ بدون توجه و نگهداری ترتیب، رمزگشایی دشوار می‌شود."],["رمزگشایی","بازشناسی دیداری حروف و واژه‌ها و تبدیل آن‌ها به آوا و کلمهٔ معنادار."],["تمییز شنیداری","افتراق صداها؛ پایهٔ تشخیص حروف هم‌آوا."],["تمییز دیداری","افتراق جزئیات دیداری؛ حاصل توجه و دقت."],["درک","دریافت معنای متن؛ باید از درک شوخی که به دانش رشد وابسته است تفکیک شود."]]);
-
-/* ---------- senses (session 5) ---------- */
-(()=>{const D={d:["👁️","حسگرهای دور","بینایی، شنوایی، بویایی، چشایی و لامسه. ارزیابی لامسه شامل سطح بدن (قلمو) و عمق بدن (فشار) است."],n:["⚖️","حسگرهای نزدیک","تعادل، حس عمق و حس وضعیت؛ حس وضعیت یعنی درک موقعیت بدن در فضا و بر کارکرد اجرایی و ریاضی اثر دارد."]};
- $('#sen').innerHTML=Object.entries(D).map(([k,v])=>`<div class="sbox" data-k="${k}"><div class="em">${v[0]}</div><b>${v[1]}</b></div>`).join('');
- $$('.sbox').forEach(e=>e.onclick=()=>{$$('.sbox').forEach(x=>x.classList.remove('on'));e.classList.add('on');$('#senOut').innerHTML=`<b>${D[e.dataset.k][1]}</b><br>${D[e.dataset.k][2]}<br><br><b>بیش‌حس:</b> واکنش شدید به کمترین محرک. <b>کم‌حس:</b> واکنش کم یا خوشایند بودن تحریک.`})})();
-
-/* ---------- wechsler ---------- */
-(()=>{const W={"بخش الف · اصلی (۱۰)":[["طراحی با مکعب","ساختن تصویر الگو با مکعب‌های رنگی"],["شباهت‌ها","بیان وجه اشتراک دو مفهوم کلامی"],["استدلال ماتریس","انتخاب پاسخ درست برای الگوی تصویری ناقص"],["فراخنای ارقام","گفتن اعداد به جلو، عقب و به ترتیب"],["رمزنویسی","تطبیق نمادها با اعداد طبق کلید"],["خزانه لغات","تعریف واژه‌ها و مثال زدن"],["تشخیص وزن‌ها","مقایسهٔ وزن اجسام؛ استدلال کمی"],["معماهای بصری","انتخاب قطعه‌های لازم برای کامل کردن معما"],["فراخنای تصویر","به خاطر سپردن توالی تصاویر"],["نمادیابی","شناسایی نماد هدف در مجموعه نمادها"]],
-"بخش ب · تکمیلی (۱۱–۱۶)":[["اطلاعات","پاسخ به پرسش‌های عمومی"],["مفاهیم تصویری","انتخاب تصاویر دارای ویژگی مشترک"],["توالی حرف و عدد","تکرار توالی شنیداری اعداد و حروف"],["خط‌زنی","علامت‌گذاری سریع نمادهای هدف"],["محاسبه","حل مسائل ریاضی ذهنی"]],
-"بخش ج · مکمل (SLD و ADHD)":[["سرعت نام‌گذاری","نام بردن سریع اشیا، نمادها یا کمیت‌ها"],["ترجمهٔ نمادها","یادآوری فوری، تأخیری یا بازشناسی تطابق نماد و مفهوم"],["توجه انتخابی","توجه به محرک هدف و نادیده گرفتن بقیه"],["بازداری از پاسخ","پاسخ ندادن به محرک‌های غیرهدف"]]};
- const tabs=$('#wxTabs'),chips=$('#wxChips'),out=$('#wxOut'),ks=Object.keys(W);
- tabs.innerHTML=ks.map((k,i)=>`<button class="btn" data-i="${i}">${k}</button>`).join('');
- function show(i){$$('.btn',tabs).forEach((b,k)=>b.classList.toggle('on',k===i));const L=W[ks[i]];chips.innerHTML=L.map((x,k)=>`<button class="chip" data-k="${k}">${x[0]}</button>`).join('');$$('.chip',chips).forEach(c=>c.onclick=()=>{$$('.chip',chips).forEach(x=>x.classList.remove('on'));c.classList.add('on');out.innerHTML=`<b>${L[+c.dataset.k][0]}</b><br>${L[+c.dataset.k][1]}`});out.textContent='یک خرده‌آزمون را انتخاب کنید.'}
- $$('.btn',tabs).forEach(b=>b.onclick=()=>show(+b.dataset.i));show(0);
- const sp=$('#sp');function u(){const v=+sp.value,t=60-v*5;$('#spV').textContent=fa(t);$('#spM').style.width=(v/12*100)+'%';$('#spT').textContent=v===0?'شروع تمرین':v<12?`${fa(v)} مرحله کاهش؛ تمرین روزانه در خانه ضروری است.`:'به زمان هدف رسیدید.'}
- sp.oninput=u;u()})();
-
-/* ---------- flashcards ---------- */
-const FC=[["اختلال یادگیری خاص","SLD","اختلال عصبی-رشدی همراه فرد از بدو تولد با نقص پایدار در خواندن، نوشتن یا ریاضی"],["اختلال یکپارچگی حسی","SID","ناتوانی مغز در پردازش و سازمان‌دهی درست اطلاعات حسی"],["اختلال هماهنگی رشدی","DCD","نقص در هماهنگی حرکتی متناسب با سن"],["زمان طلایی","Golden Time","دورهٔ بیشترین اثربخشی مداخله؛ برای SLD تا کلاس پنجم"],["حس وضعیت","Proprioception","درک موقعیت بدن در فضا؛ مؤثر بر کارکرد اجرایی و ریاضی"],["ناتوانی یادگیری","Learning Disability","مشکل یادگیری اکتسابی ناشی از فقر محیطی یا فرزندپروری، بدون اختلال از بدو تولد"],["پرسشگری سقراطی","Socratic Questioning","پرسش‌های پیاپی و هدفمند بر پایهٔ دانش تشخیصی درمانگر"],["حسگرهای دور","Distal Senses","بینایی، شنوایی، بویایی، چشایی و لامسه"],["حسگرهای نزدیک","Proximal Senses","تعادل، حس عمق و حس وضعیت"],["بیش‌حسی","Hyper-reactivity","دریافت و پردازش محرک‌ها بیش از حد معمول"],["کم‌حسی","Hypo-reactivity","دریافت محرک‌ها کمتر از حد معمول"],["برتری جانبی","Laterality","غالب بودن دست، چشم، گوش و پای یک سمت بدن"],["رمزگشایی","Decoding","بازشناسی دیداری حروف و واژه‌ها و تبدیل به آوا و کلمهٔ معنادار"],["اختلال ترکیبی","Mixed Disorder","وجود هم‌زمان چند اختلال یا مشکل"],["همبودی","Comorbidity","وجود هم‌زمان دو اختلال؛ مانند دیسلکسیا و دیسگرافیا"],["نوروفیدبک","Neurofeedback","به عنوان درمان اصلی SLD مناسب نیست؛ مسیر عصبی عمیق نمی‌سازد"],["توجه","Attention","پاسخ به یک محرک از طریق چشمی، کلامی یا لمسی"],["دقت","Accuracy","توجه به جزئیات یک محرک"],["حافظه","Memory","به خاطر سپردن جزئیات یک محرک، شامل توالی و ترتیب"],["تمرکز","Concentration","باقی ماندن و تداوم توجه"],["تمییز شنیداری","Auditory Discrimination","افتراق صداها؛ پایهٔ تشخیص حروف هم‌آوا"],["محرک مزاحم","Distractor","محرکی که برای دشوار کردن تمرین افزوده می‌شود"],["اختلال یادگیری اکتسابی","Acquired Learning Disorder","مشکل یادگیری ناشی از آسیب به سر پس از تولد که با کاردرمانی قابل بهبود است"],["هزار روز طلایی","First 1000 Days","هزار روز نخست زندگی؛ دورهٔ حیاتی تحریک حسی"],["حساسیت‌زدایی تدریجی","Graded Desensitization","افزایش تدریجی شدت یا مدت مواجهه با محرک"],["لامسهٔ عمق بدن","Deep Pressure","پاسخ به فشار؛ از ناحیهٔ کول سنجیده می‌شود"],["بازداری هیجانی","Emotional Inhibition","ابراز نکردن درد یا هیجان در اثر باورهای تربیتی"],["سوپرویژن","Supervision","نظارت درمانگر باتجربه بر کار درمانی"],["فراخنای ارقام","Digit Span","گفتن اعداد به جلو، عقب و به ترتیب"],["رمزنویسی","Coding","تطبیق نمادها با اعداد طبق کلید"],["توجه انتخابی","Selective Attention","توجه به محرک هدف و نادیده گرفتن بقیه"],["بازداری از پاسخ","Response Inhibition","پاسخ ندادن به محرک‌های غیرهدف"],["آزمون استروپ","Stroop Test","نام بردن رنگ جوهر واژه‌های رنگی متضاد؛ سنجش بازداری"],["بازسازی شناختی","Cognitive Restructuring","اصلاح شناخت معیوب در اضطراب‌های فکری"],["تاب‌آوری","Resilience","ظرفیت تحمل فشار"],["پارافرایز","Paraphrase","بیان مفهوم با کلمات درمانگر"],["سامرایز","Summarize","خلاصه‌سازی با کلمات خود مراجع"]];
+/* ======================= FLASHCARDS / SHEET / QUIZ ======================= */
+const FC=[["اختلال یادگیری خاص","SLD","اختلال عصبی-رشدی همراه فرد از بدو تولد با نقص پایدار در خواندن، نوشتن یا ریاضی"],["اختلال یکپارچگی حسی","SID","ناتوانی مغز در پردازش و سازمان‌دهی درست اطلاعات حسی"],["اختلال هماهنگی رشدی","DCD","نقص در هماهنگی حرکتی متناسب با سن"],["زمان طلایی","Golden Time","دورهٔ بیشترین اثربخشی مداخله؛ برای SLD تا کلاس پنجم"],["حس وضعیت","Proprioception","توانایی تجسم و آگاهی از وضعیت بدن بدون دیدن آن"],["ناتوانی یادگیری","Learning Disability","مشکل یادگیری اکتسابی ناشی از فقر محیطی یا فرزندپروری، بدون اختلال از بدو تولد"],["پرسشگری سقراطی","Socratic Questioning","پرسش‌های پیاپی و هدفمند بر پایهٔ دانش تشخیصی درمانگر"],["حسگرهای دور","Distal Senses","بینایی، شنوایی، بویایی، چشایی و لامسه"],["حسگرهای نزدیک","Proximal Senses","تعادل، حس عمق و حس وضعیت"],["بیش‌حسی","Hyper-reactivity","دریافت و پردازش محرک‌ها بیش از حد معمول"],["کم‌حسی","Hypo-reactivity","دریافت محرک‌ها کمتر از حد معمول"],["برتری جانبی","Laterality","غالب بودن دست، چشم، گوش و پای یک سمت بدن"],["نوز تو فینگر","Nose to Finger","آزمون هماهنگی حرکتی و سرعت پردازش با لمس متناوب بینی و انگشت درمانگر"],["آی‌موومنت","Eye Movement","دنبال کردن شیء متحرک با چشم و تفکیک حرکت چشم از گردن"],["رمزگشایی","Decoding","بازشناسی دیداری حروف و واژه‌ها و تبدیل به آوا و کلمهٔ معنادار"],["اختلال ترکیبی","Mixed Disorder","وجود هم‌زمان چند اختلال یا مشکل"],["همبودی","Comorbidity","وجود هم‌زمان دو اختلال؛ مانند دیسلکسیا و دیسگرافیا"],["نوروفیدبک","Neurofeedback","به عنوان درمان اصلی SLD مناسب نیست؛ مسیر عصبی عمیق نمی‌سازد"],["توجه","Attention","پاسخ به یک محرک از طریق چشمی، کلامی یا لمسی"],["دقت","Accuracy","توجه به جزئیات یک محرک"],["حافظه","Memory","به خاطر سپردن جزئیات یک محرک، شامل توالی و ترتیب"],["تمرکز","Concentration","باقی ماندن و تداوم توجه"],["تمییز شنیداری","Auditory Discrimination","افتراق صداها؛ پایهٔ تشخیص حروف هم‌آوا"],["محرک مزاحم","Distractor","محرکی که برای دشوار کردن تمرین افزوده می‌شود"],["اختلال یادگیری اکتسابی","Acquired Learning Disorder","مشکل یادگیری ناشی از آسیب به سر پس از تولد که با کاردرمانی قابل بهبود است"],["هزار روز طلایی","First 1000 Days","هزار روز نخست زندگی؛ دورهٔ حیاتی تحریک حسی"],["حساسیت‌زدایی تدریجی","Graded Desensitization","افزایش تدریجی شدت یا مدت مواجهه با محرک"],["لامسهٔ عمق بدن","Deep Pressure","پاسخ به فشار؛ از ناحیهٔ کول سنجیده می‌شود"],["بازداری هیجانی","Emotional Inhibition","ابراز نکردن درد یا هیجان در اثر باورهای تربیتی"],["سوپرویژن","Supervision","نظارت درمانگر باتجربه بر کار درمانی"],["فراخنای ارقام","Digit Span","گفتن اعداد به جلو، عقب و به ترتیب"],["رمزنویسی","Coding","تطبیق نمادها با اعداد طبق کلید"],["توجه انتخابی","Selective Attention","توجه به محرک هدف و نادیده گرفتن بقیه"],["بازداری از پاسخ","Response Inhibition","پاسخ ندادن به محرک‌های غیرهدف"],["آزمون استروپ","Stroop Test","نام بردن رنگ جوهر واژه‌های رنگی متضاد؛ سنجش بازداری"],["بازسازی شناختی","Cognitive Restructuring","اصلاح شناخت معیوب در اضطراب‌های فکری"],["تاب‌آوری","Resilience","ظرفیت تحمل فشار؛ مهارتی که با فرزندپروری ساخته می‌شود"],["پارافرایز","Paraphrase","بیان مفهوم با کلمات درمانگر"],["سامرایز","Summarize","خلاصه‌سازی با کلمات خود مراجع"],["باکس ژن","Gene Box","چهار ژن خلق‌وخو: مقاومت، ترس از خطر، تنوع‌طلبی، وابستگی به پاداش"],["ادراک لمسی-حرکتی","Tactile-Kinesthetic","تحریک هم‌زمان یک حس و یک حرکت"]];
+main.insertAdjacentHTML('beforeend',`<section class="finale" id="fcs"><h2>🃏 فلش‌کارت‌های واژه‌نامه</h2><p class="lead">کارت را بزنید تا برگردد.</p><div class="fc" id="fc"><div><div class="f"></div><div class="bk"></div></div></div><div class="fcn"><button class="btn" id="fcA">↺ دوباره</button><button class="btn p" id="fcK">✓ بلدم</button></div><p style="text-align:center;color:var(--muted);margin-top:10px" id="fcI"></p></section>
+<section class="finale" id="sheet"><h2>📌 برگهٔ مرور امتحان</h2><div class="grid3"><div class="card"><h4>سؤال‌های محتمل (جلسهٔ ۶)</h4>${li(["تفاوت SLD خاص و اکتسابی","تعداد خرده‌آزمون‌های وکسلر (۲۱) و بخش‌ها","تعریف اصطلاحات توانایی‌های شناختی","تحلیل بازی‌ها و طراحی بازی برای هر توانایی"])}</div><div class="card"><h4>حفظی‌های ارزیابی</h4>${li(["۶ محور عضلات درشت","۵ مرحلهٔ تعادل","۴ ژن خلق‌وخو","۴ پلهٔ مهارت","۷ عامل افتراقی","۱۶ نشانهٔ زودهنگام"])}</div><div class="card"><h4>خطاهای رایج</h4>${li(["۱۸ نشانه مال ADHD است نه SLD","وکسلر تشخیص نیست","نوروفیدبک درمان اصلی نیست","تاب‌آوری ژنتیکی نیست","با یک نشانه تشخیص نمی‌دهیم"])}</div></div></section>
+<section class="finale" id="quiz"><h2>✅ آزمون نهایی</h2><div class="meter"><i id="qb"></i></div><div class="lab" id="qBox"></div></section>`);
 (()=>{const fc=$('#fc'),f=$('.f',fc),bk=$('.bk',fc);let order=FC.map((_,i)=>i).sort(()=>Math.random()-.5),pos=0,known=+(gt('ldKnown')||0);
  function show(){fc.classList.remove('flip');const c=FC[order[pos%order.length]];setTimeout(()=>{f.innerHTML=`${c[0]}<small>${c[1]}</small>`;bk.textContent=c[2]},180);$('#fcI').textContent=`کارت ${fa(pos%order.length+1)} از ${fa(FC.length)} · بلدم: ${fa(known)}`}
- fc.onclick=()=>fc.classList.toggle('flip');
- $('#fcA').onclick=()=>{pos++;show()};$('#fcK').onclick=()=>{known++;sv('ldKnown',known);pos++;show()};show()})();
-$('#sFc').textContent=fa(FC.length);
+ fc.onclick=()=>fc.classList.toggle('flip');$('#fcA').onclick=()=>{pos++;show()};$('#fcK').onclick=()=>{known++;sv('ldKnown',known);pos++;show()};show()})();
 
-/* ---------- quiz ---------- */
 const Q=[["اختلال یادگیری خاص چگونه تعریف می‌شود؟",["اختلال عصبی-رشدی از بدو تولد با نقص پایدار در خواندن، نوشتن یا ریاضی","مشکل ناشی از آسیب به سر در ۱۰ سالگی","افت تحصیلی ناشی از غیبت طولانی","نقص ناشی از فقر محیطی"],0],
 ["کودک ADHD در روز ارزیابی چه می‌کند؟",["دارو می‌خورد","دارو نمی‌خورد تا شدت واقعی نشانه‌ها دیده شود","هرگز ارزیابی نمی‌شود","فقط پرسشنامه پر می‌کند"],1],
-["بازهٔ «زمان طلایی» مداخله برای SLD تا کِی است؟",["کلاس پنجم","کلاس دوازدهم","پیش از دبستان","بزرگسالی"],0],
-["خط اول درمان اختلال یادگیری اکتسابی کدام است؟",["نوروفیدبک","کاردرمانی","فقط دارو","بازی‌درمانی PCIT"],1],
+["«زمان طلایی» مداخله برای SLD تا کِی است؟",["کلاس پنجم","کلاس دوازدهم","پیش از دبستان","بزرگسالی"],0],
+["خط اول درمان اختلال یادگیری اکتسابی کدام است؟",["نوروفیدبک","کاردرمانی","فقط دارو","PCIT"],1],
 ["وکسلر چند خرده‌آزمون دارد؟",["۱۰","۱۶","۲۱","۳۰"],2],
-["وکسلر در SLD چه جایگاهی دارد؟",["ابزار مستقیم تشخیص","سنجش توانایی‌های پایه برای نوشتن پلن","جایگزین مصاحبه","برای ارزیابی پیشرفت پس از درمان تکرار می‌شود"],1],
-["حس وضعیت (Proprioception) چیست؟",["حس چشایی","درک موقعیت بدن در فضا","درک شنیداری","حافظهٔ دیداری"],1],
+["وکسلر در SLD چه جایگاهی دارد؟",["ابزار مستقیم تشخیص","سنجش توانایی‌های پایه برای نوشتن پلن","جایگزین مصاحبه","پس از درمان تکرار می‌شود"],1],
+["حس وضعیت (Proprioception) چیست؟",["حس چشایی","آگاهی از وضعیت بدن بدون دیدن آن","درک شنیداری","حافظهٔ دیداری"],1],
 ["حسگرهای نزدیک کدام‌اند؟",["بینایی و شنوایی","تعادل، حس عمق و حس وضعیت","بویایی و چشایی","فقط لامسه"],1],
 ["«نوز تو فینگر» چه چیزی را می‌سنجد؟",["بینایی","هماهنگی حرکتی و سرعت پردازش","حافظهٔ شنیداری","تمییز رنگ"],1],
 ["آی‌موومنت چیست؟",["حرکت دادن گردن","دنبال کردن شیء متحرک با چشم و تفکیک آن از حرکت گردن","آزمون تعادل","حافظهٔ دیداری"],1],
+["چشم راست جلوی لوله، چشم چپ باز؛ تفسیر؟",["برتری راست درست شکل گرفته","برتری هنوز شکل نگرفته","برتری چپ","هیچ‌کدام"],1],
 ["نوروفیدبک دربارهٔ SLD چه جایگاهی دارد؟",["درمان اصلی مناسب","به عنوان درمان اصلی مناسب نیست","فقط برای ریاضی","جایگزین بازی‌درمانی"],1],
 ["«هزار روز طلایی» یعنی:",["هزار روز نخست زندگی؛ دورهٔ حیاتی تحریک حسی","هزار روز مدرسه","هزار روز درمان","هزار ساعت تمرین"],0],
-["تمییز شنیداری چه کاری را پایه‌ریزی می‌کند؟",["تشخیص حروف هم‌آوا","تشخیص رنگ","تعادل","نوشتن خط"],0],
+["کودکی با بیش‌حسی لامسه از چه قلمویی شروع درمان می‌شود؟",["زبرترین","نرم‌ترین","هیچ","رنگ روغن"],1],
+["کودک کم‌حس با زبرترین قلمو چه می‌گوید؟",["دردناک است","خیلی خوبم","می‌خاراند","دوست ندارم"],1],
 ["رمزگشایی (Decoding) یعنی:",["حل معما","بازشناسی حروف و واژه‌ها و تبدیل آن‌ها به آوا و کلمه","حفظ شعر","تقویت حافظه"],1],
-["کودک تازه‌مهاجر با زبان آموزش آشنا نیست؛ پیش از تشخیص SLD چه باید کرد؟",["بلافاصله SLD تشخیص داد","محدودیت زبانی و مهاجرت را به عنوان عامل مداخله‌گر رد کرد","ADHD تشخیص داد","درمان را آغاز کرد"],1],
+["تازه‌مهاجر آشنا با زبان آموزش نیست؛ پیش از تشخیص SLD چه باید کرد؟",["بلافاصله SLD تشخیص داد","محدودیت زبانی و مهاجرت را به عنوان عامل مداخله‌گر رد کرد","ADHD تشخیص داد","درمان را آغاز کرد"],1],
 ["پلن درمانی اختلال یادگیری پس از چند جلسه بازبینی می‌شود؟",["۱","۴","۲۰","۱۰۰"],1],
-["نوروفیدبک و tDCS چه نقشی دارند؟",["نوروفیدبک درمان اصلی نیست؛ tDCS فقط کمک‌درمان است","هر دو درمان اصلی‌اند","هر دو ممنوع‌اند","هر دو تشخیصی‌اند"],0],
+["ژن «وابستگی به پاداش» در بزرگسالی به چه مرتبط است؟",["هیچ چیز","زمینهٔ اعتیاد","هوش","ریاضی"],1],
+["تاب‌آوری چیست؟",["ژن","مهارتی که با فرزندپروری ساخته می‌شود","همان مقاومت","همان تنوع‌طلبی"],1],
 ["در گزارش موردی دانیال، تحلیل استاد چه بود؟",["افسردگی","اضطراب، نه افسردگی","وسواس","اسکیزوفرنی"],1],
-["کدام یک از «نشانه‌های زودهنگام» است؟",["یادآوری الفبا و دنبال کردن دستورها","داشتن دوست زیاد","علاقه به ورزش","کم‌خوابی"],0]];
-$('#sQ').textContent=fa(Q.length);
-(()=>{const box=$('#qBox'),qb=$('#qb');let i=0,sc=0;
- function r(){if(i>=Q.length){qb.style.width='100%';const best=Math.max(+(gt('ldBest')||0),sc);sv('ldBest',best);box.innerHTML=`<div style="text-align:center;padding:16px"><div style="font-size:64px">${sc>=16?'🏆':sc>=11?'🎉':'💪'}</div><div style="font-size:44px;font-weight:900;color:var(--a4)">${fa(sc)} / ${fa(Q.length)}</div><p style="color:var(--muted)">بهترین نتیجه: ${fa(best)}</p><button class="btn p" id="ag">↺ دوباره</button></div>`;$('#ag').onclick=()=>{i=0;sc=0;r()};if(sc>=11)confetti();return}
+["ادراک لمسی-حرکتی یعنی:",["تحریک هم‌زمان یک حس و یک حرکت","فقط حرکت","فقط لمس","حافظهٔ تأخیری"],0],
+["ملاک‌های ۱۸ نشانه‌ای متعلق به کدام است؟",["SLD","ADHD","SID","اوتیسم"],1],
+["دستور مبهم و زنجیره‌ای والدین و ناتوانی کودک در اجرای آن، نشانهٔ چیست؟",["اختلال یادگیری","لزوماً اختلال یادگیری نیست","اسکیزوفرنی","ODD"],1],
+["گردوشکستن چه چیزی را ارزیابی می‌کند؟",["بینایی","حس وضعیت و تعادل","حافظهٔ شنیداری","برتری گوش"],1],
+["محرک مزاحم (Distractor) چه کاری می‌کند؟",["تمرین را دشوار می‌کند","تمرین را آسان می‌کند","پاسخ را نشان می‌دهد","حذف می‌شود"],0],
+["کدام یک برای سنجش شنیداری مناسب نیست؟",["سوت","بوق","جاروبرقی","جغجغه"],2],
+["سامرایز (Summarize) چیست؟",["بیان مفهوم با کلمات درمانگر","خلاصه‌سازی با کلمات خود مراجع","حل مسئله","طبقه‌بندی"],1],
+["حافظهٔ تأخیری چیست؟",["به یاد آوردن پس از وقفه","همان لحظه","فقط شنیداری","بلندمدت"],0]];
+(()=>{if(1)return;const box=$('#qBox'),qb=$('#qb');let i=0,sc=0;
+ function r(){if(i>=Q.length){qb.style.width='100%';const best=Math.max(+(gt('ldBest')||0),sc);sv('ldBest',best);box.innerHTML=`<div style="text-align:center;padding:16px"><div style="font-size:64px">${sc>=Q.length*.8?'🏆':sc>=Q.length*.55?'🎉':'💪'}</div><div style="font-size:44px;font-weight:900;color:var(--a4)">${fa(sc)} / ${fa(Q.length)}</div><p style="color:var(--muted)">بهترین نتیجه: ${fa(best)}</p><button class="btn p" id="ag">↺ دوباره</button></div>`;$('#ag').onclick=()=>{i=0;sc=0;r()};if(sc>=Q.length*.55)confetti();return}
  qb.style.width=i/Q.length*100+'%';const [q,o0,a0]=Q[i];const ord=o0.map((_,k)=>k).sort(()=>Math.random()-.5);const o=ord.map(k=>o0[k]),a=ord.indexOf(a0);
  box.innerHTML=`<small style="color:var(--a2)">پرسش ${fa(i+1)} از ${fa(Q.length)}</small><h3 style="margin:6px 0">${q}</h3><div style="display:grid;gap:8px">${o.map((t,k)=>`<button class="opt" data-k="${k}" style="text-align:right">${t}</button>`).join('')}</div>`;
  $$('.opt',box).forEach(b=>b.onclick=()=>{const k=+b.dataset.k;$$('.opt',box).forEach(x=>x.disabled=true);$$('.opt',box)[a].classList.add('ok');if(k===a)sc++;else b.classList.add('no');setTimeout(()=>{i++;r()},1100)})}
  r()})();
 function confetti(){const cv=$('#conf'),c=cv.getContext('2d');cv.width=innerWidth;cv.height=innerHeight;const P=Array.from({length:150},()=>({x:innerWidth/2,y:innerHeight*.6,vx:(Math.random()-.5)*16,vy:-Math.random()*17-4,c:['#8b5cf6','#22d3ee','#ff6bb5','#5eead4','#ffc861'][Math.random()*5|0],r:Math.random()*6+3,a:1}));(function f(){c.clearRect(0,0,cv.width,cv.height);let al=false;P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.a-=.008;if(p.a>0){al=true;c.globalAlpha=p.a;c.fillStyle=p.c;c.fillRect(p.x,p.y,p.r,p.r*1.6)}});if(al)requestAnimationFrame(f);else c.clearRect(0,0,cv.width,cv.height)})()}
 
-/* ---------- scroll: progress, reveal, active nav ---------- */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
-$$('.reveal').forEach(e=>io.observe(e));
-const navA=$$('nav a'),secs=navA.map(a=>$(a.getAttribute('href')));
-addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%';let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=i});navA.forEach((a,i)=>a.classList.toggle('on',i===cur))},{passive:true});
+/* ===== new quiz with wrong-answer review ===== */
+(()=>{const box=$('#qBox'),qb=$('#qb');let wrong=[];try{wrong=JSON.parse(gt('ldWrong')||'[]')}catch{}
+ let list=[],i=0,sc=0,mode='all';
+ function start(m){mode=m;list=(m==='wrong'?wrong.filter(x=>x<Q.length):Q.map((_,k)=>k)).sort(()=>Math.random()-.5);i=0;sc=0;r()}
+ function end(){qb.style.width='100%';const total=list.length;if(mode==='all'){const b=Math.max(+(gt('ldBest')||0),sc);sv('ldBest',b)}
+ box.innerHTML=`<div style="text-align:center;padding:16px"><div style="font-size:64px">${sc>=total*.8?'🏆':sc>=total*.55?'🎉':'💪'}</div><div style="font-size:44px;font-weight:900;color:var(--a4)">${fa(sc)} / ${fa(total)}</div><p style="color:var(--muted)">بهترین نتیجهٔ آزمون کامل: ${fa(gt('ldBest')||0)} · اشتباه‌های ذخیره‌شده: ${fa(wrong.length)}</p><div class="row" style="justify-content:center"><button class="btn p" id="qa">↺ آزمون کامل</button>${wrong.length?`<button class="btn" id="qw">🔁 مرور اشتباه‌ها (${fa(wrong.length)})</button>`:''}</div></div>`;
+ $('#qa').onclick=()=>start('all');const w=$('#qw');if(w)w.onclick=()=>start('wrong');if(sc>=total*.55&&total>3)confetti()}
+ function r(){if(i>=list.length){end();return}qb.style.width=i/list.length*100+'%';const qi=list[i],[q,o0,a0]=Q[qi];const ord=o0.map((_,k)=>k).sort(()=>Math.random()-.5),o=ord.map(k=>o0[k]),a=ord.indexOf(a0);
+ box.innerHTML=`<small style="color:var(--a2)">${mode==='wrong'?'مرور اشتباه‌ها · ':''}پرسش ${fa(i+1)} از ${fa(list.length)}</small><h3 style="margin:6px 0">${q}</h3><div style="display:grid;gap:8px">${o.map((t,k)=>`<button class="opt" data-k="${k}" style="text-align:right">${t}</button>`).join('')}</div>`;
+ $$('.opt',box).forEach(b=>b.onclick=()=>{const k=+b.dataset.k;$$('.opt',box).forEach(x=>x.disabled=true);$$('.opt',box)[a].classList.add('ok');if(k===a){sc++;if(mode==='wrong'){wrong=wrong.filter(x=>x!==qi)}}else{b.classList.add('no');if(!wrong.includes(qi))wrong.push(qi)}sv('ldWrong',JSON.stringify(wrong));setTimeout(()=>{i++;r()},1200)})}
+ start('all')})();
 
-/* ---------- hero network ---------- */
+/* ===== overview map + resume ===== */
+(()=>{const ov=$('#ov');const last=+(gt('ldLast')||-1);
+ ov.innerHTML=`<h2>نقشهٔ درس</h2><p>هشت جلسه؛ روی هر کارت بزنید. تیک سبز یعنی جلسه را خوانده‌اید.</p><div class="ovg">${S.map((s,i)=>`<a class="oc" href="#s${i+1}" style="--ac:${AC[i]}" data-i="${i}"><div class="n">جلسهٔ ${fa(i+1)} · ${s.d}</div><h3>${s.t}</h3><div class="tg">${s.tags.map(t=>`<span>${t}</span>`).join('')}</div><span class="st"></span></a>`).join('')}</div>${last>=0&&last<S.length?`<a class="cta resume" href="#s${last+1}">▶ ادامه از جلسهٔ ${fa(last+1)}</a>`:''}`;
+ window.ovUpd=()=>$$('.oc',ov).forEach(c=>c.querySelector('.st').textContent=read.includes(+c.dataset.i)?'✓ خوانده‌شد':'');ovUpd()})();
+const _prog=prog;prog=function(){_prog();window.ovUpd&&ovUpd()};
+
+/* ===== search ===== */
+(()=>{const strip=h=>h.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();const nz=s=>s.replace(/[يى]/g,'ی').replace(/ك/g,'ک').replace(/[‌]/g,' ').toLowerCase();
+ const idx=[];S.forEach((s,i)=>{s.k.forEach(([a,b],j)=>idx.push({i,j,type:'k',title:a,text:strip(b),n:nz(a+' '+strip(b))}));s.labs.filter(l=>LAB[l]&&LAB[l].t).forEach(l=>idx.push({i,type:'lab',title:'🔬 '+LAB[l].t,text:LAB[l].d,n:nz(LAB[l].t+' '+LAB[l].d)}))});
+ FC.forEach(c=>idx.push({type:'fc',title:'🃏 '+c[0]+' ('+c[1]+')',text:c[2],n:nz(c.join(' '))}));
+ const q=$('#q'),qr=$('#qr');
+ q.oninput=()=>{const v=nz(q.value.trim());if(v.length<2){qr.hidden=true;return}const ts=v.split(/\s+/);const hit=idx.filter(x=>ts.every(t=>x.n.includes(t))).slice(0,12);
+  qr.hidden=false;qr.innerHTML=hit.length?hit.map((h,k)=>{let sn=h.text;const p=nz(sn).indexOf(ts[0]);if(p>40)sn='… '+sn.slice(p-30);sn=sn.slice(0,130);return `<a data-k="${k}"><small>${h.type==='fc'?'واژه‌نامه':'جلسهٔ '+fa(h.i+1)}</small><b>${h.title}</b><br><span style="color:var(--muted)">${sn}</span></a>`}).join(''):'<a style="color:var(--muted)">نتیجه‌ای پیدا نشد</a>';
+  $$('a[data-k]',qr).forEach(a=>a.onclick=()=>{const h=hit[+a.dataset.k];qr.hidden=true;
+   if(h.type==='fc'){$('#fcs').scrollIntoView();return}
+   const sec=$('#s'+(h.i+1));if(h.type==='lab'){const t=$('.tabs button[data-t="1"]',sec);t&&t.click();sec.scrollIntoView();return}
+   $('.tabs button[data-t="0"]',sec).click();const d=$('#k'+h.i+'-'+h.j);d.open=true;d.scrollIntoView({block:'center'});d.style.outline='2px solid var(--a5)';setTimeout(()=>d.style.outline='',2200)})};
+ document.addEventListener('click',e=>{if(!e.target.closest('.sw'))qr.hidden=true});
+ document.addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();q.focus()}if(e.key==='Escape'){qr.hidden=true;q.blur()}})})();
+
+/* ===== font size, print, remember position, flashcard keys ===== */
+(()=>{let fs=+(gt('ldFs')||100);const ap=()=>root.style.fontSize=fs+'%';ap();
+ $('#fp').onclick=()=>{fs=Math.min(130,fs+5);sv('ldFs',fs);ap()};$('#fm').onclick=()=>{fs=Math.max(85,fs-5);sv('ldFs',fs);ap()};
+
+ document.addEventListener('keydown',e=>{if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))return;if(e.key==='ArrowLeft'){$('#fcK')&&0}if(e.key===' '&&$('#fcs').getBoundingClientRect().top<innerHeight*.5&&$('#fcs').getBoundingClientRect().bottom>innerHeight*.3){e.preventDefault();$('#fc').click()}})})();
+
+/* ===== highlighter ===== */
+(()=>{const COL={y:'#ffd54a',g:'#4ade80',p:'#ff6bb5',b:'#38bdf8'};
+ let H=[];try{H=JSON.parse(gt('ldHL')||'[]')}catch{}
+ const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+ $$('details.k .b').forEach(b=>b.dataset.hid=b.parentNode.id);
+ $$('.panel[data-p="2"] .card').forEach((c,i)=>c.dataset.hid='r'+(+c.closest('section.sess').dataset.i)+'_'+i);
+ const cont=id=>$(`[data-hid="${id}"]`);
+ const texts=c=>{const w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),a=[];let n;while(n=w.nextNode())a.push(n);return a};
+ function wrap(h){const c=cont(h.c);if(!c)return;let pos=0;for(const n of texts(c)){const len=n.nodeValue.length,s=Math.max(h.s,pos),e=Math.min(h.e,pos+len);if(s<e){const r=document.createRange();r.setStart(n,s-pos);r.setEnd(n,e-pos);const m=document.createElement('mark');m.className='hl';m.dataset.id=h.id;m.style.setProperty('--hc',COL[h.k]);r.surroundContents(m)}pos+=len}}
+ function unwrap(id){$$(`mark.hl[data-id="${id}"]`).forEach(m=>{const p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize()})}
+ const save=()=>{sv('ldHL',JSON.stringify(H));const c=$('#hlc');c.hidden=!H.length;c.textContent=fa(H.length);if(!dr.hidden)render()};
+ H.forEach(wrap);
+ /* toolbar */
+ const tb=document.createElement('div');tb.id='hltb';tb.hidden=true;tb.innerHTML=Object.keys(COL).map(k=>`<button data-k="${k}" style="background:${COL[k]}" aria-label="هایلایت"></button>`).join('')+'<button data-x="1" aria-label="حذف">🗑️</button>';document.body.appendChild(tb);
+ tb.onmousedown=e=>e.preventDefault();
+ let cur=null;
+ function place(r){tb.hidden=false;const w=tb.offsetWidth;const top=r.top<70?r.bottom+scrollY+8:r.top+scrollY-46;tb.style.top=top+'px';tb.style.left=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2))+'px';$('[data-x]',tb).style.display=cur.t==='old'?'':'none'}
+ function onSel(){setTimeout(()=>{const s=getSelection();if(!s||s.isCollapsed||!s.rangeCount)return;const r=s.getRangeAt(0);const n=r.commonAncestorContainer;const c=(n.nodeType===1?n:n.parentNode).closest('[data-hid]');if(!c)return;
+  const p1=document.createRange();p1.selectNodeContents(c);p1.setEnd(r.startContainer,r.startOffset);const a=p1.toString().length;const txt=r.toString();const b=a+txt.length;if(txt.trim().length<2)return;
+  cur={t:'new',c:c.dataset.hid,s:a,e:b,txt:txt.trim(),ses:+c.closest('section.sess').dataset.i};place(r.getBoundingClientRect())},12)}
+ const cl=(e,s)=>e.target&&e.target.closest&&e.target.closest(s);
+ document.addEventListener('mouseup',e=>{if(!cl(e,'#hltb,#hld'))onSel()});document.addEventListener('touchend',e=>{if(!cl(e,'#hltb,#hld'))onSel()});
+ document.addEventListener('mousedown',e=>{if(!cl(e,'#hltb'))tb.hidden=true});
+ document.addEventListener('click',e=>{const m=cl(e,'mark.hl');if(m&&getSelection().isCollapsed){cur={t:'old',id:m.dataset.id};place(m.getBoundingClientRect())}});
+ tb.onclick=e=>{const b=e.target.closest('button');if(!b||!cur)return;
+  if(b.dataset.x){unwrap(cur.id);H=H.filter(h=>h.id!==cur.id);save();tb.hidden=true;return}
+  const k=b.dataset.k;if(cur.t==='new'){const h={id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),c:cur.c,s:cur.s,e:cur.e,k,txt:cur.txt.slice(0,220),ses:cur.ses};H.push(h);wrap(h);getSelection().removeAllRanges()}
+  else{const h=H.find(x=>x.id===cur.id);if(h){h.k=k;$$(`mark.hl[data-id="${h.id}"]`).forEach(m=>m.style.setProperty('--hc',COL[k]))}}
+  save();tb.hidden=true};
+ /* drawer */
+ const dr=document.createElement('div');dr.id='hld';dr.hidden=true;document.body.appendChild(dr);
+ function render(){dr.innerHTML=`<div class="hh"><b>🖍️ هایلایت‌های من (${fa(H.length)})</b><button class="ib" id="hx" aria-label="بستن">✕</button></div>`+(H.length?S.map((s,i)=>{const l=H.filter(h=>h.ses===i);return l.length?`<h5>جلسهٔ ${fa(i+1)} · ${s.t}</h5>`+l.map(h=>`<div class="hi" data-id="${h.id}"><i style="background:${COL[h.k]}"></i><span>${esc(h.txt)}</span><button data-d="${h.id}" aria-label="حذف">🗑️</button></div>`).join(''):''}).join(''):'<p class="he">در درسنامه یا مرور سریع، متنی را با ماوس یا انگشت انتخاب کنید؛ نوار رنگی هایلایت ظاهر می‌شود. ذخیره‌ها در همین مرورگر می‌مانند.</p>')+(H.length?`<div class="row" style="margin-top:10px"><button class="btn" id="hcp">📋 کپی همه</button><button class="btn" id="hpr">🖨️ چاپ</button><button class="btn" id="hcl">پاک کردن همه</button></div>`:'')}
+ $('#hlb').onclick=e=>{e.stopPropagation();dr.hidden=!dr.hidden;if(!dr.hidden)render()};
+ document.addEventListener('click',e=>{if(!dr.hidden&&!cl(e,'#hld,#hlb'))dr.hidden=true});
+ dr.onclick=e=>{const t=e.target;if(t.closest('#hx')){dr.hidden=true;return}
+  const d=t.closest('[data-d]');if(d){const id=d.dataset.d;unwrap(id);H=H.filter(h=>h.id!==id);save();return}
+  if(t.closest('#hcl')){if(confirm('همهٔ هایلایت‌ها پاک شوند؟')){H.forEach(h=>unwrap(h.id));H=[];save()}return}
+  if(t.closest('#hcp')){const tx=S.map((s,i)=>{const l=H.filter(h=>h.ses===i);return l.length?`جلسهٔ ${i+1} · ${s.t}\n`+l.map(h=>'• '+h.txt).join('\n'):''}).filter(Boolean).join('\n\n');try{navigator.clipboard.writeText(tx);t.closest('#hcp').textContent='✓ کپی شد'}catch{}return}
+  if(t.closest('#hpr')){$$('details.k').forEach(x=>x.open=true);print();return}
+  const it=t.closest('.hi');if(it){const m=$(`mark.hl[data-id="${it.dataset.id}"]`);if(!m)return;const sec=m.closest('section.sess'),pn=m.closest('.panel');const tab=$(`.tabs button[data-t="${pn?pn.dataset.p:0}"]`,sec);tab&&tab.click();const dt=m.closest('details');if(dt)dt.open=true;dr.hidden=true;setTimeout(()=>{m.scrollIntoView({block:'center'});m.style.outline='2px solid var(--a5)';setTimeout(()=>m.style.outline='',2200)},60)}};
+ save();
+})();
+
+/* ======================= SCROLL ======================= */
+const tl=$$('#toc a'),secs=tl.map(a=>$(a.getAttribute('href')));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%';let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*.35)cur=i});tl.forEach((a,i)=>a.classList.toggle('on',i===cur));if(cur>=0&&cur<S.length)sv('ldLast',cur)},{passive:true});
+
+/* hero network */
 (()=>{const cv=$('#net'),c=cv.getContext('2d');let W,H,pts=[];const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
  function size(){const d=devicePixelRatio||1;W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;c.setTransform(d,0,0,d,0,0);pts=Array.from({length:Math.min(70,W*H/14000|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
  addEventListener('resize',size);size();
