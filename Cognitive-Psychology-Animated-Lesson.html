@@ -341,6 +341,21 @@ mark.hlt.flash{animation:hlflash 1.8s ease-out}
 /* reduced-motion: only calm the purely decorative loops; interactive demos must keep working
    (many Windows setups report "reduce" by default, which previously froze everything) */
 @media(prefers-reduced-motion:reduce){.hero h1,.hero .tag,.cta:after,.scroll-hint:after,.arr,.spot,.stat{animation:none!important}}
+/*CREDITS-START*/
+.md-credits{max-width:900px;margin:44px auto 36px;padding:20px 18px;border:1px solid var(--line,#ddd);border-radius:22px;background:var(--panel,var(--card,#fff));text-align:center;color:var(--muted,#667);font-size:14px;box-shadow:0 8px 26px -18px #000}
+.md-credits .tag{font-weight:800;color:var(--ink,inherit);font-size:15px;margin-bottom:12px}.md-credits .tag small{display:block;font-weight:400;color:var(--muted,#667);font-size:12.5px;margin-top:2px}
+.md-credits .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.md-credits .row>div{flex:1 1 170px;max-width:260px;padding:10px 14px;border-radius:14px;background:var(--soft,var(--card-s,#f3f3f3));border:1px solid var(--line,#ddd)}
+.md-credits .row small{display:block;font-size:12px;color:var(--muted,#667);margin-bottom:2px}
+.md-credits .row b{font-size:15px;color:var(--accent,var(--a2,#09645e));font-weight:800}
+.md-credits .src{margin-top:12px;font-size:12.5px}
+@media print{.md-credits{break-inside:avoid;box-shadow:none}}
+/*CREDITS-END*/
+/*RESP-FIX*/
+nav .n1{min-width:0}nav .n1 b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1 1 auto}
+@media(max-width:520px){nav .n1{gap:6px;padding-inline:12px}#hlbtn span,#glbtn span{display:none}#hlbtn,#glbtn{padding:0 10px}}
+.ro{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+/*END-RESP-FIX*/
 </style>
 </head>
 <body>
@@ -646,7 +661,7 @@ mark.hlt.flash{animation:hlflash 1.8s ease-out}
 <p class="f-tag">جزوهٔ تعاملی روان‌شناسی شناختی پیشرفته<br><small>مرور تصویری و تعاملی جلسات اول تا ششم، برای یادگیری عمیق‌تر</small></p>
 <div class="credits">
   <div class="prof"><small>استاد درس</small><b>دکتر فریبرز درتاج</b></div>
-  <div class="team"><span>گردآورندهٔ اطلاعات: <b>خانم رشیدی</b></span><span>توسعه‌دهنده: <b>لطفی‌فر</b></span></div>
+  <div class="team"><span>گردآورندهٔ اطلاعات: <b>خانم رشیدی</b></span><span>توسعه‌دهنده: <b>امیر لطفی‌فر</b></span></div>
 </div>
 <small class="src">منبع: کتاب روان‌شناسی شناختی، دکتر فریبرز درتاج</small></footer>
 <button id="top" aria-label="بالا">↑</button>
