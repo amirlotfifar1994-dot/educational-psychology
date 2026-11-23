@@ -340,6 +340,24 @@ mark.hlt.flash{animation:hlflash 1.8s ease-out}
 .eft i.neg{right:50%;background:linear-gradient(270deg,var(--bad),var(--a3))}
 .efr b{font-variant-numeric:tabular-nums;direction:ltr;text-align:center}
 @media(max-width:560px){.efr{grid-template-columns:1fr 46px}.efr .eft{grid-column:1/-1;grid-row:2}}
+.sprog{display:flex;align-items:center;gap:12px;margin-top:14px;max-width:420px;font-size:13px;color:var(--muted)}
+.sprog .sb{flex:1;height:8px;border-radius:9px;background:var(--line);overflow:hidden}
+.sprog .sb i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--a4),var(--a2));transition:width .6s}
+.card.eng:after{content:"✓";position:absolute;top:14px;left:16px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a4),var(--a2));color:#06231f;font-weight:900;font-size:13px}
+.dsn{direction:ltr;text-align:center;font-size:clamp(30px,6vw,48px);font-weight:900;letter-spacing:.18em;padding:18px;border-radius:16px;background:var(--card-s);color:var(--a4)}
+.navbtn{flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px;white-space:nowrap;transition:.25s}
+.navbtn:hover{color:var(--ink);border-color:var(--a2);background:#22d3ee1f}
+#glpanel{position:fixed;top:0;bottom:0;left:0;width:min(400px,100vw);z-index:66;background:var(--card);border-inline-end:1px solid var(--line);box-shadow:20px 0 60px #0006;transform:translateX(-105%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+#glpanel.open{transform:none}
+#glpanel header{padding:16px 18px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+#glpanel .top{display:flex;justify-content:space-between;align-items:center}
+#glpanel h3{font-size:20px;font-weight:900}
+#glpanel .x{width:34px;height:34px;border-radius:50%;background:var(--line)}
+#glpanel input{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card-s);color:var(--ink);font:inherit;font-size:14px;width:100%}
+#glpanel .list{overflow-y:auto;padding:12px 16px 24px;flex:1}
+#glpanel .it{padding:10px 14px;border-radius:14px;background:var(--card-s);border:1px solid var(--line);margin:8px 0}
+#glpanel .it b{color:var(--a2)}#glpanel .it p{font-size:14px;margin:2px 0 0}
+#glpanel .empty{text-align:center;color:var(--muted);padding:40px 10px}
 textarea:focus-visible{outline:2px solid var(--a2)}
 
 </style>
@@ -362,7 +380,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
     <p class="sub">از تعریف کیمبل و یادگیری پنهانِ تولمن تا جعبهٔ معمای ثورندایک و جعبهٔ اسکینر. هر مفهوم را فقط نخوان؛ آزمایشش کن، تقویتش کن و ببین رفتار چطور شکل می‌گیرد!</p>
     <div class="stats">
       <div class="stat"><b data-n="6">۰</b><span>جلسهٔ درسی</span></div>
-      <div class="stat"><b data-n="21">۰</b><span>تعامل زنده</span></div>
+      <div class="stat"><b data-n="26">۰</b><span>تعامل زنده</span></div>
       <div class="stat"><b data-n="16">۰</b><span>پرسش آزمون</span></div>
     </div>
     <a class="cta" href="#s1">شروع یادگیری ↓</a>
@@ -373,7 +391,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 <main>
 <section class="ses" id="s1">
   <div class="ses-head reveal"><span class="no">۱</span><small>جلسهٔ 1</small><h2>جایگاه یادگیری و تعریف آن</h2>
-  <p>شخصیت، سازگاری و روان‌درمانی همه بر یادگیری سوارند. تعریف کیمبل می‌گوید یادگیری یعنی «تغییر نسبتاً پایدار در توان رفتاری که در اثر تجربهٔ تقویت‌شده پدید می‌آید».</p></div>
+  <p>شخصیت، سازگاری و روان‌درمانی همه بر یادگیری سوارند. تعریف کیمبل می‌گوید یادگیری یعنی «تغییر نسبتاً پایدار در توان رفتاری که در اثر تجربهٔ تقویت‌شده پدید می‌آید».</p><div class="sprog" data-s="1"><div class="sb"><i></i></div><span></span></div></div>
   <div class="grid">
 
     <div class="card c6 reveal"><h3><i>🔍</i>آیا این «یادگیری» است؟</h3>
@@ -399,6 +417,12 @@ textarea:focus-visible{outline:2px solid var(--a2)}
       <div class="note ok">در تعریف کیمبل «تقویت‌شده» یعنی دیدگاه رفتاری؛ شناخت‌گرایان این قید را کم‌رنگ‌تر می‌بینند.</div>
     </div>
 
+    <div class="card c reveal"><h3><i>🔢</i>ظرفیت حافظهٔ کوتاه‌مدت و تقطیع</h3>
+      <p class="lead">ارقام را چند ثانیه ببین و از حافظه بنویس؛ هر بار یک رقم بیشتر. سپس «تقطیع» را روشن کن و ظرفیتت را دوباره بسنج.</p>
+      <div class="btns"><button class="btn" id="dsC">تقطیع: خاموش</button><span class="pill" id="dsB">بهترین: —</span></div><div id="ds"></div>
+      <div class="note">حافظهٔ کوتاه‌مدت ظرفیت محدودی (حدود ۷±۲ واحد) دارد؛ <b>تقطیع</b> ارقام را به واحدهای معنادار گروه‌بندی می‌کند و ظرفیت مؤثر را بالا می‌برد.</div>
+    </div>
+
     <div class="card c reveal"><h3><i>📝</i>مرور مفاهیم جلسه</h3>
       <ul class="keys"><li><b>تعریف کیمبل (۱۹۶۱):</b> تغییر نسبتاً پایدار در توان رفتاری (رفتار بالقوه) در اثر تجربه یا تمرین تقویت‌شده.</li><li>تغییرات گذرا (خستگی، دارو، قهوه)، رسش و بازتاب‌ها یادگیری نیستند.</li><li>حافظهٔ کوتاه‌مدت، بلندمدت و کاری سه بخش حافظه‌اند؛ پایداری نسبی یعنی گذر از کوتاه‌مدت به بلندمدت.</li><li>یادگیری با <b>عملکرد</b> یکی نیست؛ تولمن با ماز نشان داد یادگیری می‌تواند پنهان بماند.</li><li>تعریف‌های جدید یادگیری را به <b>سازگاری</b> با محیط (و هوش) نزدیک می‌کنند.</li></ul>
     </div>
@@ -408,7 +432,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 
 <section class="ses" id="s2">
   <div class="ses-head reveal"><span class="no">۲</span><small>جلسهٔ 2</small><h2>پیاژه، نظریه‌ها و روش پژوهش</h2>
-  <p>طرحواره چگونه ساخته می‌شود؟ چرا دانشِ امروز زود کهنه می‌شود؟ و پژوهش طولی با عرضی چه فرقی دارد؟</p></div>
+  <p>طرحواره چگونه ساخته می‌شود؟ چرا دانشِ امروز زود کهنه می‌شود؟ و پژوهش طولی با عرضی چه فرقی دارد؟</p><div class="sprog" data-s="2"><div class="sb"><i></i></div><span></span></div></div>
   <div class="grid">
 
     <div class="card c reveal"><h3><i>🧩</i>طرحواره: جذب یا انطباق؟</h3>
@@ -448,7 +472,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 
 <section class="ses" id="s3">
   <div class="ses-head reveal"><span class="no">۳</span><small>جلسهٔ 3</small><h2>تاریخچه، انتقال و حافظه</h2>
-  <p>از نزاع افلاطون و ارسطو تا هجاهای بی‌معنای ابینگهاوس و روش مطالعهٔ PQ4R: ریشهٔ علمی مطالعهٔ یادگیری.</p></div>
+  <p>از نزاع افلاطون و ارسطو تا هجاهای بی‌معنای ابینگهاوس و روش مطالعهٔ PQ4R: ریشهٔ علمی مطالعهٔ یادگیری.</p><div class="sprog" data-s="3"><div class="sb"><i></i></div><span></span></div></div>
   <div class="grid">
 
     <div class="card c6 reveal"><h3><i>🏛️</i>این جمله از کیست؟</h3>
@@ -478,6 +502,11 @@ textarea:focus-visible{outline:2px solid var(--a2)}
       <div class="btns"><button class="btn p" id="pqPlay">▶ پخش</button></div>
     </div>
 
+    <div class="card c6 reveal"><h3><i>🔀</i>کدام نظریهٔ انتقال یادگیری؟</h3>
+      <p class="lead">سه نظریه به ترتیب تاریخی: انضباط صوری، عناصر همانند، فراشناختی.</p>
+      <div id="tr"></div>
+    </div>
+
     <div class="card c reveal"><h3><i>📝</i>مرور مفاهیم جلسه</h3>
       <ul class="keys"><li>افلاطون: خرد ارثی و کشف با درون‌نگری؛ <b>ارسطو:</b> دانش نتیجهٔ تجربهٔ حسی؛ لاک: لوح سفید.</li><li>گال: قوای ذهنی در جاهای خاصی از مغز؛ پیامد منفی: جمجمه‌شناسی و <b>انضباط صوری</b>.</li><li>سه نظریهٔ انتقال: انضباط صوری، عناصر همانند (ثورندایک) و نظریه‌های فراشناختی.</li><li>ابینگهاوس: هجای بی‌معنا، منحنی یادداری، <b>پرآموزی</b> و یادگیری معنادار.</li><li>فراموشی ابتدا تند و بعد کند است؛ بیشترین افت در ۲۴ ساعت اول.</li></ul>
     </div>
@@ -487,7 +516,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 
 <section class="ses" id="s4">
   <div class="ses-head reveal"><span class="no">۴</span><small>جلسهٔ 4</small><h2>مکاتب نخست و ثورندایک</h2>
-  <p>وونت، تیچنر، جیمز و واتسون؛ و بعد گربه‌ای در جعبهٔ معما که یادگیری را گام‌به‌گام نشان می‌دهد.</p></div>
+  <p>وونت، تیچنر، جیمز و واتسون؛ و بعد گربه‌ای در جعبهٔ معما که یادگیری را گام‌به‌گام نشان می‌دهد.</p><div class="sprog" data-s="4"><div class="sb"><i></i></div><span></span></div></div>
   <div class="grid">
 
     <div class="card c reveal"><h3><i>🏫</i>چهار مکتب نخست</h3>
@@ -520,6 +549,21 @@ textarea:focus-visible{outline:2px solid var(--a2)}
       </div>
     </div>
 
+    <div class="card c reveal"><h3><i>🐀</i>آلبرت کوچک: شرطی‌سازی ترس</h3>
+      <p class="lead">واتسون ترس را در کودکی ۹ تا ۱۱ ماهه شرطی کرد. موش را با صدای بلند جفت کن، بعد آن را تنها نشان بده و تعمیم ترس را ببین.</p>
+      <div class="grid" style="gap:18px"><div class="c6">
+        <div class="pia-stage"><div class="pia-child"><div class="pia-av" id="alB">👶</div><div class="pia-say" id="alSay">آلبرت با موش سفید بازی می‌کند 🙂</div></div><div class="pia-seen" id="alO">🐀</div></div>
+        <div class="btns"><button class="btn p" id="alP">🐀+🔊 جفت‌سازی</button><button class="btn" id="alT">🐀 موش تنها</button><button class="btn" id="alE">🔇 خاموشی</button><button class="btn" id="alR">↺</button></div>
+        <div style="display:flex;justify-content:space-between;font-size:14px"><span>ترس شرطی‌شده</span><b id="alV">۰٪</b></div><div class="gauge"><i id="alG"></i></div>
+        <div class="note" id="alN"><b>محرک غیرشرطی:</b> صدای بلند ← <b>پاسخ غیرشرطی:</b> ترس. <b>محرک شرطی:</b> موش سفید (پیش‌تر خنثی).</div></div>
+        <div class="c6"><b>تعمیم ترس به اشیای مشابه</b><div id="alGen" style="margin-top:10px"></div><p style="color:var(--muted);font-size:13px">هرچه شیء به موش سفید شبیه‌تر باشد، ترس بیشتری تعمیم می‌یابد (خرگوش، سگ، پالتوی پشمی، ماسک بابانوئل).</p></div></div>
+    </div>
+
+    <div class="card c6 reveal d1"><h3><i>🌱</i>رسش، رشد یا تحول؟</h3>
+      <p class="lead">سه اصطلاح مرتبط با قانون آمادگی را از هم جدا کن.</p>
+      <div id="mg"></div>
+    </div>
+
     <div class="card c reveal"><h3><i>📝</i>مرور مفاهیم جلسه</h3>
       <ul class="keys"><li>وونت: <b>اراده‌گرایی</b> (لایپزیک ۱۸۷۹)؛ تیچنر: <b>ساخت‌گرایی</b>؛ جیمز/انجل/دیویی: <b>کارکردگرایی</b>؛ واتسون: <b>رفتارگرایی</b>.</li><li>واتسون موضوع روان‌شناسی را از هوشیاری به <b>رفتار</b> تغییر داد (آلبرت کوچک).</li><li>نظریهٔ <b>پیوندگرایی:</b> یادگیری = پیوند محرک–پاسخ؛ سه اصل: افزایشی، بدون واسطهٔ اندیشه، یکسانی در گونه‌ها.</li><li>سه قانون اصلی: آمادگی، تمرین، اثر؛ پنج مفهوم ثانویه.</li><li><b>رسش</b> (بلوغ مستقل از یادگیری)، <b>رشد</b> (تغییر بدنی/کمّی)، <b>تحول</b> (بدنی همراه با روان‌شناختی).</li></ul>
     </div>
@@ -529,7 +573,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 
 <section class="ses" id="s5">
   <div class="ses-head reveal"><span class="no">۵</span><small>جلسهٔ 5</small><h2>تجدیدنظر ثورندایک و ورود به اسکینر</h2>
-  <p>پس از ۱۹۳۰ ثورندایک چه چیزی را عوض کرد؟ اسکینر دو نوع رفتار و دو نوع شرطی‌سازی را از هم جدا می‌کند.</p></div>
+  <p>پس از ۱۹۳۰ ثورندایک چه چیزی را عوض کرد؟ اسکینر دو نوع رفتار و دو نوع شرطی‌سازی را از هم جدا می‌کند.</p><div class="sprog" data-s="5"><div class="sb"><i></i></div><span></span></div></div>
   <div class="grid">
 
     <div class="card c6 reveal"><h3><i>⚡</i>پاسخ‌گر یا کنشگر؟</h3>
@@ -560,7 +604,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 
 <section class="ses" id="s6">
   <div class="ses-head reveal"><span class="no">۶</span><small>جلسهٔ 6</small><h2>شرطی‌سازی کنشگر اسکینر</h2>
-  <p>جعبهٔ اسکینر، شکل‌دهی رفتار، خاموشی و بازگشت خودبه‌خودی، محرک تمیزی و انواع تقویت‌کننده.</p></div>
+  <p>جعبهٔ اسکینر، شکل‌دهی رفتار، خاموشی و بازگشت خودبه‌خودی، محرک تمیزی و انواع تقویت‌کننده.</p><div class="sprog" data-s="6"><div class="sb"><i></i></div><span></span></div></div>
   <div class="grid">
 
     <div class="card c reveal"><h3><i>🐭</i>شکل‌دهی رفتار در جعبهٔ اسکینر</h3>
@@ -598,6 +642,13 @@ textarea:focus-visible{outline:2px solid var(--a2)}
       <div id="rn"></div>
     </div>
 
+    <div class="card c6 reveal d1"><h3><i>⏳</i>محرومیت: دو تعریف عملیاتی</h3>
+      <p class="lead">پیش از آزمایش، حیوان باید از تقویت‌کننده محروم شود تا انگیزه داشته باشد.</p>
+      <label style="font-size:14px">تعریف زمانی — ساعت بدون آب/غذا: <b id="dpH"></b></label><input type="range" id="dpHr" min="0" max="30" value="4"><div class="gauge"><i id="dpGH"></i></div>
+      <label style="font-size:14px">تعریف وزنی — کاهش وزن بدن: <b id="dpW"></b></label><input type="range" id="dpWr" min="0" max="25" value="3"><div class="gauge"><i id="dpGW"></i></div>
+      <div class="note" id="dpN"></div>
+    </div>
+
     <div class="card c reveal"><h3><i>📝</i>مرور مفاهیم جلسه</h3>
       <ul class="keys"><li><b>جعبهٔ اسکینر:</b> کف توری، ظرف غذا، اهرم و لامپ؛ محرومیت (۲۰٪ کاهش وزن یا حدود ۲۴ ساعت).</li><li><b>شکل‌دهی</b> = تقویت رفتارهای نزدیک به هدف (تقریب‌های متوالی).</li><li>خاموشی در اسکینر = بازگشت به <b>خط پایه</b>؛ بازگشت خودبه‌خودی نشان می‌دهد یادگیری پاک نشده است.</li><li>محرک تمیزی (S<sup>D</sup>) وقوع تقویت را خبر می‌دهد؛ همهٔ S<sup>D</sup>ها تقویت‌کنندهٔ ثانویه‌اند.</li><li>تقویت‌کنندهٔ <b>اولیه</b> (آب، غذا)، <b>ثانویه</b> (خنثای همراه با یک اولیه)، <b>تعمیم‌یافته</b> (همراه با بیش از یک اولیه).</li><li>تقویت مثبت: افزودن مطلوب؛ تقویت منفی: حذف آزارنده با رفتار؛ هر دو رفتار را افزایش می‌دهند.</li></ul>
     </div>
@@ -607,6 +658,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 
 <section class="ses" id="rev">
   <div class="ses-head reveal"><span class="no">✦</span><small>مرور نهایی</small><h2>فلش‌کارت و آزمون</h2><p>کارت‌ها را بچرخان، بعد خودت را بسنج.</p></div>
+  <div class="card c reveal" id="dash" style="margin-bottom:26px"><h3><i>📊</i>پیشرفت تو</h3><div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><div class="ro" id="dashT">۰٪</div><div id="dashB" style="flex:1;min-width:240px"></div></div><div class="btns"><span class="pill" id="dashQ">بهترین نتیجهٔ آزمون: —</span><button class="btn" id="dashR">↺ پاک کردن پیشرفت</button></div></div>
   <div class="deck reveal" id="deck"></div>
   <div class="card c reveal" style="margin-top:30px"><h3><i>🏆</i>آزمون ۱۶ پرسشی</h3>
     <div class="qbar"><i id="qb"></i></div><div id="quiz"></div></div>
@@ -614,7 +666,7 @@ textarea:focus-visible{outline:2px solid var(--a2)}
 </main>
 
 <footer>ساخته‌شده از روی جزوهٔ جلسات اول تا ششم · با ❤️ برای یادگیری عمیق‌تر<br>
-<span class="credits"><span>💻 توسعه‌دهنده: <b>لطفی‌فر</b></span><span>👨‍🏫 استاد درس: <b>دکتر فریبرز درتاج</b></span></span>
+<span class="credits"><span>👩‍🎓 گردآورندهٔ اطلاعات: <b>خانم رشیدی</b></span><span>💻 توسعه‌دهنده: <b>امیر لطفی‌فر</b></span><span>👨‍🏫 استاد درس: <b>دکتر فریبرز درتاج</b></span></span>
 <small>منبع درسی: روان‌شناسی یادگیری (انتشارات دانشگاه علامه طباطبایی)</small></footer>
 <button id="top" aria-label="بالا">↑</button>
 <script>
@@ -928,6 +980,81 @@ mcq($('#rn'),[
  ['برای رفتار نامناسب، چیزی که کودک می‌خواهد از او گرفته می‌شود و رفتار کم می‌شود.',2,'<b>تنبیه:</b> آنچه رفتار را <b>کاهش</b> می‌دهد؛ تقویت‌کننده هیچ‌وقت رفتار را کم نمی‌کند.'],
  ['غذا دیگر پس از فشار اهرم نمی‌آید و فشار اهرم کم‌کم به سطح اولیه برمی‌گردد.',3,'<b>خاموشی:</b> قطع تقویت؛ در نظریهٔ اسکینر بازگشت رفتار به خط پایه.']
 ],['تقویت مثبت','تقویت منفی','تنبیه','خاموشی'],'کلید: تقویت مثبت و منفی هر دو رفتار را افزایش می‌دهند.');
+
+/* ===== S1: digit span / chunking ===== */
+(()=>{const r=$('#ds'),cb=$('#dsC'),bb=$('#dsB');let L=4,best=0,chunk=false,tm;
+const fmt=d=>chunk?d.replace(/(\d{3})(?=\d)/g,'$1 '):d;
+cb.onclick=()=>{chunk=!chunk;cb.textContent='تقطیع: '+(chunk?'روشن':'خاموش');cb.classList.toggle('on',chunk);L=4;intro()};
+function intro(){clearTimeout(tm);r.innerHTML=`<div class="btns"><button class="btn p" id="dsGo">▶ شروع (${fa(L)} رقم)</button></div>`;$('#dsGo').onclick=show}
+function show(){const d=Array.from({length:L},()=>Math.floor(Math.random()*10)).join('');const sec=1.2+L*.4;
+ r.innerHTML=`<div class="dsn">${fmt(d)}</div><div class="qbar"><i id="dsBar" style="width:100%;transition:width ${sec}s linear"></i></div>`;
+ requestAnimationFrame(()=>{const b=$('#dsBar');if(b)b.style.width='0'});tm=setTimeout(()=>ask(d),sec*1000)}
+function ask(d){r.innerHTML=`<p style="margin-bottom:8px">رقم‌ها را بنویس:</p><input id="dsI" inputmode="numeric" dir="ltr" autocomplete="off" style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--card-s);color:var(--ink);font:inherit;font-size:20px;letter-spacing:.12em"><div class="btns"><button class="btn p" id="dsOk">ثبت</button></div>`;
+ const i=$('#dsI');i.focus&&i.focus();const go=()=>{const ok=i.value.replace(/\D/g,'')===d;
+  if(ok){best=Math.max(best,L);bb.textContent='بهترین: '+fa(best)+' رقم';L++;r.innerHTML=`<div class="note ok">✅ درست! ${fa(L-1)} رقم. مرحلهٔ بعد: ${fa(L)} رقم…</div>`;tm=setTimeout(show,900)}
+  else{r.innerHTML=`<div class="note warn">❌ درست: <b dir="ltr">${fmt(d)}</b><br>ظرفیت این دور: <b>${fa(L-1)}</b> رقم ${chunk?'(با تقطیع)':'(بدون تقطیع)'}.</div><div class="btns"><button class="btn p" id="dsAg">↺ دوباره</button></div>`;L=4;$('#dsAg').onclick=intro}};
+ $('#dsOk').onclick=go;i.onkeydown=e=>{if(e.key==='Enter')go()}}
+intro()})();
+
+/* ===== S3: transfer theories ===== */
+mcq($('#tr'),[
+ ['برای آماده‌سازی افراد، باید ذهنشان را با حفظ کردن همه‌چیز «ورزش» داد.',0,'<b>انضباط صوری (ورزش روانی)</b> — برخاسته از روان‌شناسی قوای ذهنی (گال).'],
+ ['انتقال یادگیری وقتی رخ می‌دهد که موقعیت جدید و قدیم عناصر مشترک داشته باشند.',1,'<b>عناصر همانند</b> — نظریهٔ ثورندایک.'],
+ ['کسی که یاد گرفته «چگونه یاد بگیرد» در همهٔ درس‌ها نمرهٔ بالا می‌گیرد، بی‌آنکه عنصر مشترکی در کار باشد.',2,'<b>نظریه‌های فراشناختی</b> — یادگیری دربارهٔ یادگیری؛ قدرت تبیینی بالاتر.'],
+ ['تقویت «قوای ذهنی» مثل ماهیچه با تمرین سخت؛ نقدش: آموزش را سخت و ناکارآمد می‌کند.',0,'<b>انضباط صوری</b> — نخستین نظریه در انتقال یادگیری.']
+],['انضباط صوری','عناصر همانند','فراشناختی'],'ترتیب تاریخی: انضباط صوری ← عناصر همانند ← فراشناختی.');
+
+/* ===== S4: maturation / growth / development ===== */
+mcq($('#mg'),[
+ ['کودکی را قنداق می‌کنند و می‌کوشند راه رفتن یادش بدهند؛ در ۶ ماهگی راه نمی‌رود.',0,'<b>رسش:</b> تغییر قطعی و حتمی که تابع یادگیری نیست (راه رفتن، کنترل توالت، حرف زدن).'],
+ ['ثبت سن دندان درآوردن، قد و وزن کودک در مرکز بهداشت.',1,'<b>رشد (Growth):</b> فقط تغییرات بدنی و کمّی.'],
+ ['نوجوانی که مدام جلوی آینه صفات ثانویهٔ جنسی‌اش را با یک آرمان مقایسه می‌کند.',2,'<b>تحول (Development):</b> تغییر بدنی همراه با واکنش روان‌شناختی.'],
+ ['کنترل ادرار و مدفوع و آغاز گفتار در کودک.',0,'<b>رسش:</b> انتظار نداشته باش پیش از رسش اتفاق بیفتد؛ این یعنی تمرین بی‌اثر نیست، بلکه زودهنگام است.']
+],['رسش','رشد (Growth)','تحول (Development)'],'رسش، رشد و تحول سه واژهٔ مرتبط با قانون آمادگی‌اند.');
+
+/* ===== S4: Little Albert ===== */
+(()=>{let f=0,n=0,fl=null;const B=$('#alB'),O=$('#alO'),say=$('#alSay'),g=$('#alG'),v=$('#alV'),nt=$('#alN'),gen=$('#alGen');
+const OBJ=[['🐀','موش سفید (محرک شرطی)',1],['🐰','خرگوش',.8],['🐶','سگ',.6],['🧥','پالتوی پشمی',.5],['🎅','ماسک بابانوئل',.45],['🧱','بلوک چوبی (نامشابه)',.05]];
+gen.innerHTML=OBJ.map(o=>`<div class="efr" style="grid-template-columns:150px 1fr 46px"><span>${o[0]} ${o[1]}</span><div class="eft"><i class="pos" style="left:0;width:0"></i></div><b>۰٪</b></div>`).join('');
+const rows=$$('.efr',gen);
+function upd(){const p=Math.round(f*100);g.style.width=p+'%';g.style.background=f>.6?'var(--bad)':f>.25?'var(--a5)':'var(--good)';v.textContent=fa(p)+'٪';
+ rows.forEach((r,i)=>{const x=Math.round(f*OBJ[i][2]*100);$('i',r).style.width=x+'%';$('b',r).textContent=fa(x)+'٪'});
+ B.textContent=f>.5?'😭':f>.2?'😟':'👶';say.textContent=f>.5?'گریه می‌کند و از موش دور می‌شود!':f>.2?'کمی مضطرب است…':'با موش سفید بازی می‌کند 🙂'}
+$('#alP').onclick=()=>{n++;f+=(1-f)*.32;O.textContent='🐀';say.textContent='🔊 صدای بلند و ناگهانی پشت سر!';B.textContent='😱';nt.innerHTML=`<b>جفت‌سازی ${fa(n)}:</b> موش (CS) همراه با صدا (UCS)؛ پس از چند بار، موش به‌تنهایی ترس برمی‌انگیزد.`;setTimeout(upd,700)};
+$('#alT').onclick=()=>{nt.innerHTML=f>.25?'<b>پاسخ شرطی:</b> موش به‌تنهایی ترس را فرا می‌خواند؛ ترس به اشیای پشمالوی مشابه هم <b>تعمیم</b> یافته است.':'هنوز جفت‌سازی کافی نبوده؛ موش خنثی است.';upd()};
+$('#alE').onclick=()=>{f*=.65;nt.innerHTML='<b>خاموشی:</b> موش بدون صدا ارائه می‌شود و ترس کم‌کم فروکش می‌کند.';upd()};
+$('#alR').onclick=()=>{f=0;n=0;nt.innerHTML='<b>محرک غیرشرطی:</b> صدای بلند ← <b>پاسخ غیرشرطی:</b> ترس. <b>محرک شرطی:</b> موش سفید (پیش‌تر خنثی).';upd()};
+upd()})();
+
+/* ===== S6: deprivation ===== */
+(()=>{const h=$('#dpHr'),w=$('#dpWr');function upd(){const a=+h.value,b=+w.value;$('#dpH').textContent=fa(a)+' ساعت';$('#dpW').textContent=fa(b)+'٪';
+ const gh=$('#dpGH'),gw=$('#dpGW');gh.style.width=Math.min(100,a/23*100)+'%';gw.style.width=Math.min(100,b/20*100)+'%';
+ const rh=a>=23,rw=b>=20;$('#dpN').className='note '+(rh||rw?'ok':'warn');
+ $('#dpN').innerHTML=(rh?'✅ تعریف زمانی: ۲۳ تا ۲۴ ساعت رسید. ':'⏱ تعریف زمانی: هنوز ۲۳ تا ۲۴ ساعت نشده. ')+'<br>'+(rw?'✅ تعریف وزنی: وزن به ۸۰٪ وزن اولیه رسید (۲۰٪ کاهش).':'⚖️ تعریف وزنی: کاهش وزن ۲۰٪ لازم است.')}
+h.oninput=w.oninput=upd;upd()})();
+
+/* ===== progress tracking + dashboard ===== */
+(()=>{let done={};try{done=JSON.parse(gt('lrnAct')||'{}')}catch(e){}
+const ses=$$('section.ses').filter(s=>/^s\d$/.test(s.id)),NT=ses.map(s=>$('.ses-head h2',s).textContent);
+const cards=ses.map(s=>$$('.grid > .card',s).filter(c=>!c.querySelector('ul.keys')));
+function upd(){let tot=0,dn=0;
+ ses.forEach((s,i)=>{const c=cards[i],k=c.filter(x=>x.dataset.pid&&done[x.dataset.pid]).length;tot+=c.length;dn+=k;const p=$('.sprog',s);if(p){$('i',p).style.width=(c.length?k/c.length*100:0)+'%';$('span',p).textContent=`تعامل‌ها: ${fa(k)} از ${fa(c.length)}`+(k===c.length?' ✓':'')}});
+ const T=$('#dashT');if(T){T.textContent=fa(Math.round(dn/tot*100))+'٪';$('#dashB').innerHTML=ses.map((s,i)=>{const c=cards[i],k=c.filter(x=>done[x.dataset.pid]).length,p=Math.round(k/c.length*100);return `<div class="efr" style="grid-template-columns:200px 1fr 70px"><span style="font-size:13px">جلسه ${fa(i+1)} · ${NT[i]}</span><div class="eft" style="background:var(--line)"><i class="pos" style="left:0;width:${p}%"></i></div><b>${fa(k)}/${fa(c.length)}</b></div>`}).join('');
+ const bs=+(gt('lrnBest')||0);$('#dashQ').textContent='بهترین نتیجهٔ آزمون: '+(bs?fa(bs)+' از '+fa(Q_N):'—')}}
+const Q_N=16;
+cards.forEach((c,i)=>c.forEach((x,j)=>{x.dataset.pid='s'+(i+1)+'-'+j;if(done[x.dataset.pid])x.classList.add('eng');
+ const mark=()=>{if(x.classList.contains('eng'))return;x.classList.add('eng');done[x.dataset.pid]=1;sv('lrnAct',JSON.stringify(done));upd()};x.addEventListener('click',mark);x.addEventListener('input',mark)}));
+const R=$('#dashR');if(R)R.onclick=()=>{if(confirm('پیشرفت تعامل‌ها پاک شود؟')){done={};sv('lrnAct','{}');$$('.card.eng').forEach(x=>x.classList.remove('eng'));upd()}};
+const rv=$('#rev');if(rv)rv.addEventListener('click',()=>setTimeout(upd,1300));
+upd()})();
+
+/* ===== glossary drawer ===== */
+(()=>{const G=[['کیمبل — یادگیری','تغییر نسبتاً پایدار در توان رفتاری در اثر تجربه یا تمرین تقویت‌شده'],['توان رفتاری','رفتار بالقوه؛ ممکن است هنوز در عمل نشان داده نشده باشد'],['رسش','تغییر قطعی رشد که تابع یادگیری نیست'],['رشد (Growth)','تغییرات بدنی و کمّی'],['تحول (Development)','تغییر بدنی همراه با تغییر روان‌شناختی'],['یادگیری پنهان','یادگیری بدون تقویت که بعداً با ورود انگیزه آشکار می‌شود (تولمن)'],['طرحواره','طرح مقدماتی اشیا در ذهن کودک (پیاژه)'],['جذب','پاسخ به موقعیت تازه با ساخت شناختی قبلی'],['انطباق','تغییر یا ساخت طرحوارهٔ جدید'],['پژوهش طولی','پیگیری یک گروه ثابت در طول زمان'],['پژوهش عرضی','مقایسهٔ گروه‌های مختلف در یک مقطع'],['لوح سفید','ذهن کودک هنگام تولد (لاک)'],['روان‌شناسی قوای ذهنی','قوای ذهنی در جاهای خاصی از مغز (گال)'],['انتقال یادگیری','به‌کار بردن آموخته‌ها در موقعیتی غیر از موقعیت یادگیری'],['انضباط صوری','ورزش روانی؛ نخستین نظریهٔ انتقال'],['منحنی یادداری','منحنی فراموشی؛ افت ابتدا تند و بعد کند (ابینگهاوس)'],['پرآموزی','مطالعه بیش از مقدار لازم برای تسلط'],['هجای بی‌معنا','واحد سه‌حرفی بی‌معنا برای مطالعهٔ حافظه'],['PQ4R','پیش‌خوانی، سؤال، خواندن، تفکر، از حفظ گفتن، مرور'],['تقطیع','گروه‌بندی اطلاعات در واحدهای معنادار برای افزایش ظرفیت حافظه'],['وونت','اراده‌گرایی؛ آزمایشگاه لایپزیک ۱۸۷۹'],['واتسون','رفتارگرایی؛ موضوع روان‌شناسی = رفتار'],['پیوندگرایی','یادگیری = پیوند محرک–پاسخ (ثورندایک)'],['قانون آمادگی','آموزش باید با آمادگی و توان یادگیرنده متناسب باشد'],['قانون تمرین','استفاده پیوند را قوی و عدم استفاده آن را ضعیف می‌کند'],['قانون اثر','پیامد خوشنودکننده پیوند را قوی و آزارنده آن را ضعیف می‌کند'],['پاسخ‌های چندگانه','امتحان کردن پاسخ‌های متوالی تا رسیدن به نتیجه'],['آمایه','آمادگی‌هایی که یادگیرنده با خود به موقعیت می‌آورد'],['برتری عناصر','فقط عناصر برجستهٔ محیط بر رفتار اثر می‌گذارند'],['انتقال تداعی','پاسخ به یک محرک به محرک همراه آن منتقل می‌شود'],['تعلق‌پذیری','عناصر تداعی باید به هم «تعلق» داشته باشند، نه فقط مجاور باشند'],['رفتار پاسخ‌گر','رفتار ایجادشده با محرک مشخص پیشایند'],['رفتار کنشگر','رفتار صادرشده از ارگانیسم، کنترل‌شده با پیامد'],['شکل‌دهی','تقویت تقریب‌های متوالی به رفتار هدف'],['خاموشی','قطع تقویت؛ در اسکینر بازگشت به خط پایه'],['بازگشت خودبه‌خودی','بازگشت پاسخ خاموش‌شده پس از استراحت'],['محرک تمیزی (S^D)','محرکی که وقوع تقویت را خبر می‌دهد'],['تقویت‌کنندهٔ اولیه','مرتبط با بقا؛ بدون یادگیری ارزش دارد (آب، غذا)'],['تقویت‌کنندهٔ ثانویه','محرک خنثای جفت‌شده با یک تقویت‌کنندهٔ اولیه'],['تقویت‌کنندهٔ تعمیم‌یافته','محرک جفت‌شده با بیش از یک تقویت‌کنندهٔ اولیه (مثل پول)'],['تقویت مثبت','افزودن محرک مطلوب؛ رفتار را افزایش می‌دهد'],['تقویت منفی','حذف محرک آزارنده با رفتار؛ رفتار را افزایش می‌دهد'],['تنبیه','آنچه رفتار را کاهش می‌دهد']];
+const btn=document.createElement('button');btn.id='glbtn';btn.className='navbtn';btn.innerHTML='<i>📚</i><span>واژه‌نامه</span>';const n1=$('nav .n1');if(n1)n1.insertBefore(btn,$('#theme'));else document.body.appendChild(btn);
+const pan=document.createElement('aside');pan.id='glpanel';pan.innerHTML='<header><div class="top"><h3>📚 واژه‌نامهٔ یادگیری</h3><button class="x" aria-label="بستن">✕</button></div><input type="search" placeholder="جست‌وجوی اصطلاح…"></header><div class="list"></div>';document.body.appendChild(pan);
+const L=$('.list',pan),I=$('input',pan);const norm=t=>t.replace(/ي/g,'ی').replace(/ك/g,'ک').toLowerCase();
+const draw=()=>{const q=norm(I.value.trim());const it=G.filter(g=>!q||norm(g[0]+' '+g[1]).includes(q));L.innerHTML=it.length?it.map(g=>`<div class="it"><b>${g[0]}</b><p>${g[1]}</p></div>`).join(''):'<div class="empty">اصطلاحی پیدا نشد.</div>'};
+btn.onclick=()=>{pan.classList.toggle('open');draw()};$('.x',pan).onclick=()=>pan.classList.remove('open');I.oninput=draw;addEventListener('keydown',e=>{if(e.key==='Escape')pan.classList.remove('open')})})();
 
 /* ===== highlighter: select text in the notes to mark it; review everything in the side panel ===== */
 (()=>{
