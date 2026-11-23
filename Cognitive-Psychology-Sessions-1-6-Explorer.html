@@ -299,10 +299,147 @@ mark{border-radius:5px;padding:0 3px}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.hero:before{animation:none}.rv{opacity:1;transform:none;transition:none}*{scroll-behavior:auto!important}}
 @media print{#totop{display:none!important}.rv{opacity:1;transform:none}.hero:before{animation:none}}
+/*MODERN-START*/
+:root{--hero-a:#241a6e;--hero-b:#7c5cff;}
+/* ===== Modern layer: design tokens, theme system, refined frames ===== */
+:root{--r:18px;--r-sm:12px;--hero-a:#113f3a;--hero-b:#1a9c88;--ease:cubic-bezier(.2,.8,.2,1);--shadow:0 12px 34px -16px color-mix(in srgb,var(--accent) 38%,#000);--shadow-s:0 4px 14px -8px color-mix(in srgb,var(--accent) 30%,#000);--grad:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 45%,#f06eb0))}
+:root[data-theme=dark]{--hero-a:#0c2a27;--hero-b:#1b8f7e}
+:root[data-theme=sepia]{--base:#f3ead6;--panel:#fcf6e8;--ink:#3a2e1c;--muted:#6c5a42;--line:#e3d6b8;--accent:#8a4b12;--soft:#f1e3c3;--key:#ffe7a1;--keyink:#5a3b00;--hero-a:#5a3612;--hero-b:#b8742a;color-scheme:light}
+:root[data-theme=ocean]{--base:#edf4fb;--panel:#ffffff;--ink:#112538;--muted:#486178;--line:#d3e2f0;--accent:#0b5cad;--soft:#e0edfa;--key:#fff0b8;--keyink:#5c4200;--hero-a:#0a3763;--hero-b:#2a8fe0;color-scheme:light}
+:root[data-theme=violet]{--base:#f4f1fb;--panel:#ffffff;--ink:#221a3a;--muted:#5a5078;--line:#e0d9f0;--accent:#5b34c4;--soft:#ece5fb;--key:#fff0b8;--keyink:#5c4200;--hero-a:#291a60;--hero-b:#8a5cf0;color-scheme:light}
+:root[data-theme=rose]{--base:#fbf0f3;--panel:#ffffff;--ink:#3a1522;--muted:#7a4a5c;--line:#f0d8e0;--accent:#b3204f;--soft:#fbe2ea;--key:#fff0b8;--keyink:#5c4200;--hero-a:#650d31;--hero-b:#e0508a;color-scheme:light}
+:root[data-theme=midnight]{--base:#000000;--panel:#0d0e13;--ink:#eceff6;--muted:#9aa3b8;--line:#22242d;--accent:#7dd3fc;--soft:#0f2230;--key:#3a2f10;--keyink:#ffe08a;--hero-a:#04070f;--hero-b:#0c4a6e;--shadow:0 12px 34px -16px #000;color-scheme:dark}
+html{scroll-behavior:smooth}
+body{font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;background:radial-gradient(1000px 520px at 88% -8%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 62%),radial-gradient(800px 520px at -5% 32%,color-mix(in srgb,var(--accent) 8%,transparent),transparent 62%),var(--base);background-attachment:fixed;line-height:1.8}
+*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--accent) 55%,transparent) transparent}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
+button,a,summary{transition:background-color .2s,border-color .2s,color .2s,box-shadow .25s,transform .25s var(--ease)}
+/* top bar */
+.top{background:color-mix(in srgb,var(--panel) 78%,transparent)!important;-webkit-backdrop-filter:saturate(1.5) blur(16px);backdrop-filter:saturate(1.5) blur(16px);box-shadow:0 8px 28px -20px #000;border-bottom:1px solid var(--line)}
+.top strong{font-weight:900;font-size:1.05rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top button,.top a.control,.top .top-link,.reader-options summary{border-radius:99px!important}
+.top .top-link{padding:5px 12px;background:var(--soft);font-weight:700}
+.top .top-link:hover{text-decoration:none;box-shadow:var(--shadow-s);transform:translateY(-1px)}
+.top button:hover,.reader-options summary:hover{border-color:var(--accent);transform:translateY(-1px)}
+.progress{height:3px!important;background:var(--grad)!important;box-shadow:0 0 10px color-mix(in srgb,var(--accent) 60%,transparent)}
+#theme{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--accent)}
+.theme-pop{position:absolute;inset-inline-end:max(16px,calc((100vw - 1420px)/2));top:calc(100% + 8px);z-index:20;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow);width:min(330px,calc(100vw - 24px));animation:mdpop .25s var(--ease)}
+.theme-pop[hidden]{display:none}
+.theme-pop h4{margin:0 0 10px;font-size:14px;color:var(--muted)}
+.theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.theme-opt{display:grid;gap:6px;justify-items:center;padding:8px 4px;border:1px solid var(--line);border-radius:14px;background:var(--base);font-size:12px;cursor:pointer}
+.theme-opt i{display:block;width:34px;height:34px;border-radius:50%;border:2px solid var(--panel);box-shadow:0 0 0 1px var(--line)}
+.theme-opt:hover{transform:translateY(-2px);border-color:var(--accent)}
+.theme-opt[aria-pressed=true]{border-color:var(--accent);background:var(--soft);font-weight:800;color:var(--accent)}
+.theme-pop p{margin:10px 0 0;font-size:12px;color:var(--muted)}
+@keyframes mdpop{from{opacity:0;transform:translateY(-8px) scale(.97)}}
+/* hero */
+.hero{background:linear-gradient(135deg,var(--hero-a),color-mix(in srgb,var(--hero-a) 60%,#000))!important;border-radius:30px!important;box-shadow:var(--shadow);border:1px solid color-mix(in srgb,var(--hero-b) 40%,transparent)}
+.hero:before{background:radial-gradient(ellipse at 12% 85%,var(--hero-b),transparent 62%),radial-gradient(ellipse at 96% 0%,color-mix(in srgb,var(--hero-b) 45%,#fff),transparent 55%)!important;opacity:.7}
+.hero h1{background:linear-gradient(100deg,#fff 20%,color-mix(in srgb,var(--hero-b) 35%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-actions a{border-radius:99px!important;padding:9px 18px!important;backdrop-filter:blur(6px)}
+.hero-actions a:hover{transform:translateY(-2px);filter:none;box-shadow:0 10px 24px -10px #000a}
+.hero-mosaic>div{border-radius:18px;box-shadow:0 14px 30px -14px #000}
+@keyframes mddrift{to{transform:scale(1.12) translate(-2%,2%)}}
+/* frames */
+.sidebar,.card,.path,.guided,.visual-card,.lesson-deck a,.study-status,.paths,.personal-highlights,.lesson-map,.catalog-header input,.topic-search-results,.topic,.page,.embedded-figure,.infographic,.table-wrap,.worked-example{border-radius:var(--r)}
+.sidebar{box-shadow:var(--shadow-s);border-color:var(--line)}
+.sidebar a{border-radius:9px}
+.sidebar a:hover,.sidebar a.active{background:var(--soft);color:var(--accent)}
+.sidebar details[open]>summary{color:var(--accent)}
+.sidebar input,.catalog-header input{border-radius:99px!important;padding-inline:14px}
+.card,.visual-card,.lesson-deck a,.path{box-shadow:var(--shadow-s)}
+.card:hover,.visual-card:hover,.lesson-deck a:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--accent)}
+.lesson-deck a{position:relative;overflow:hidden}
+.lesson-deck a:before{content:"";position:absolute;inset-inline:0;top:0;height:3px;background:var(--grad);z-index:1;opacity:0;transition:opacity .25s}
+.lesson-deck a:hover:before{opacity:1}
+.lesson-deck img{transition:transform .6s var(--ease)}.lesson-deck a:hover img{transform:scale(1.07)}
+.chapter>header{position:relative;overflow:hidden;box-shadow:var(--shadow-s);border:1px solid var(--line)!important}
+.chapter>header:before{content:"";position:absolute;inset-inline:0;top:0;height:5px;background:var(--grad)}
+/* Persian typography: never use negative tracking or tight line-height (breaks cursive joins, clips gradient text) */
+h1,h2,h3,h4,h5,.hero h1,.studio-hero h1,.chapter h2,.top strong,.lesson-deck h2,.visual-gallery h2,.paths h2,.catalog h2{letter-spacing:0!important}
+.hero h1,.studio-hero h1{line-height:1.4!important;padding-block:.08em}
+.top strong{line-height:1.6;padding-block:.1em}
+body{font-synthesis:none;text-rendering:optimizeLegibility}
+html,body{overflow-x:clip}
+.lesson-label{display:inline-block;padding:3px 14px;border-radius:99px;background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 25%,var(--line))}
+.keys mark{border-radius:99px!important;padding:3px 11px!important;border:1px solid color-mix(in srgb,var(--keyink) 15%,transparent)}
+.diagram span{border-radius:99px}
+.session-progress progress{border-radius:9px;overflow:hidden}
+/* topics */
+.topic{border-inline-start:4px solid transparent;box-shadow:var(--shadow-s)}
+.topic:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));border-inline-start-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.topic[open]{border-inline-start-color:var(--accent);box-shadow:var(--shadow)}
+.topic summary{transition:background .2s}.topic summary:hover{background:color-mix(in srgb,var(--soft) 70%,transparent)}
+.topic summary:after{width:28px;height:28px;border-radius:50%;background:var(--soft);display:grid;place-items:center;top:12px;line-height:1;font-size:18px}
+.topic[open]>summary{background:linear-gradient(90deg,var(--soft),transparent)}
+.topic-heading h3{font-weight:800}
+.subtopics a{border-radius:99px;padding:3px 11px}
+.topic-tools button,.filter,.catalog-actions button{border-radius:99px!important;padding:5px 13px}
+.topic-tools button:hover,.filter:hover,.catalog-actions button:hover{border-color:var(--accent);transform:translateY(-1px)}
+.topic-related a{border-radius:14px}
+.topic .text-content h4{border-image:linear-gradient(90deg,var(--accent),transparent) 1}
+/* content */
+.callout{border-radius:16px!important;border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));border-inline-start-width:5px;box-shadow:var(--shadow-s)}
+.callout h5:before{margin-inline-end:7px;font-size:1.05em}
+.callout.example h5:before{content:'🧪'}.callout.definition h5:before{content:'📖'}.callout.note h5:before{content:'📌'}
+.callout.definition{border-inline-start-color:var(--accent)}
+.table-wrap{box-shadow:var(--shadow-s);border-color:var(--line)}
+.table-wrap th{background:linear-gradient(180deg,var(--soft),color-mix(in srgb,var(--soft) 60%,var(--panel)));font-weight:800;white-space:nowrap}
+.table-wrap tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 45%,var(--panel))}
+.table-wrap tr:hover td{background:var(--soft)}
+.table-wrap td:first-child{font-weight:700}
+.embedded-figure{box-shadow:var(--shadow-s);background:color-mix(in srgb,var(--soft) 55%,var(--panel))}
+.embedded-figure img{border-radius:12px}
+.worked-example{box-shadow:var(--shadow-s);overflow:hidden}
+.page{box-shadow:var(--shadow-s)}
+.list-item{border-radius:10px}
+.list-bullet{color:var(--accent)}
+/* floating top button + reveal */
+#mdTop{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--grad);color:#fff;font-size:20px;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(12px);z-index:15}
+#mdTop.show{opacity:1;pointer-events:auto;transform:none}
+#mdTop:hover{transform:translateY(-3px) scale(1.06)}
+.js-modern .m-rev{opacity:0;transform:translateY(16px)}
+.js-modern .m-rev.m-in{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+@media(prefers-reduced-motion:reduce){.hero:before{animation:none}.js-modern .m-rev{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(max-width:820px){.theme-pop{inset-inline-end:10px}.top{gap:6px}.top .top-link{display:none}}
+@media print{.theme-pop,#mdTop{display:none!important}body{background:#fff!important}.js-modern .m-rev{opacity:1!important;transform:none!important}}
+
+/* ===== fixes: bidi separator, mobile top bar, popover, touch targets ===== */
+.mt{display:flex!important;align-items:center;flex-wrap:wrap;gap:0 7px}
+.mt i{display:inline-block;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55;flex:none}
+@media(max-width:700px){
+ .top{flex-wrap:nowrap!important;gap:6px!important}
+ .top .top-link{display:none!important}
+ .top strong{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .reader-options{position:static!important}
+ .reader-size{position:absolute!important;inset-inline:12px!important;top:calc(100% + 6px)!important;width:auto!important;justify-content:center;flex-wrap:wrap}
+ .top button,.reader-options summary,#theme{min-height:38px}
+ .top #menu{flex:none}
+}
+@media(max-width:700px),(pointer:coarse){
+ .topic-tools button,.subtopics a,.filter,.catalog-actions button,.keys a,.search-box button,.review-plan button,.path summary,.guided summary,.lesson-map>summary,.sidebar summary{min-height:40px;display:inline-flex;align-items:center}
+ .subtopics a{padding:6px 14px}
+ .sidebar li a,.sidebar nav>a{min-height:40px;align-items:center}
+ .topic summary{min-height:48px}
+ .topic-related a{min-height:48px}
+}
+
+/*MODERN-END*/
+/*CREDITS-START*/
+.md-credits{max-width:900px;margin:44px auto 36px;padding:20px 18px;border:1px solid var(--line,#ddd);border-radius:22px;background:var(--panel,var(--card,#fff));text-align:center;color:var(--muted,#667);font-size:14px;box-shadow:0 8px 26px -18px #000}
+.md-credits .tag{font-weight:800;color:var(--ink,inherit);font-size:15px;margin-bottom:12px}.md-credits .tag small{display:block;font-weight:400;color:var(--muted,#667);font-size:12.5px;margin-top:2px}
+.md-credits .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.md-credits .row>div{flex:1 1 170px;max-width:260px;padding:10px 14px;border-radius:14px;background:var(--soft,var(--card-s,#f3f3f3));border:1px solid var(--line,#ddd)}
+.md-credits .row small{display:block;font-size:12px;color:var(--muted,#667);margin-bottom:2px}
+.md-credits .row b{font-size:15px;color:var(--accent,var(--a2,#09645e));font-weight:800}
+.md-credits .src{margin-top:12px;font-size:12.5px}
+@media print{.md-credits{break-inside:avoid;box-shadow:none}}
+/*CREDITS-END*/
 </style></head>
 <body class="edition-design"><header class="top"><button id="menu" type="button" aria-controls="sidebar" aria-expanded="false">فهرست</button><strong>روان‌شناسی شناختی</strong><a href="#catalog" class="top-link">مباحث و جست‌وجو</a><details class="reader-options" id="reader-options"><summary aria-label="اندازهٔ متن مطالعه">اندازهٔ متن</summary><div class="reader-size" role="group" aria-label="اندازهٔ متن مطالعه"><button type="button" data-size="compact" aria-pressed="false">کوچک</button><button type="button" data-size="normal" aria-pressed="true">معمولی</button><button type="button" data-size="large" aria-pressed="false">درشت</button></div></details><button id="theme" type="button" aria-pressed="false">حالت تاریک</button></header>
 <div class="layout" id="start"><aside class="sidebar" id="sidebar"><h2>فهرست موضوعی</h2><nav aria-label="جلسه‌ها و مباحث"><a href="#paths">مسیرهای مطالعه</a><a href="#review-plan">مرور فعال</a><a href="#my-highlights">هایلایت‌های من</a><a href="#visual-examples">مثال‌های تصویری</a><details class="glossaries"><summary>خودارزیابی جلسه‌ها</summary><ul><li><a href="#mabhas-1-32">جلسهٔ اول</a></li><li><a href="#mabhas-2-35">جلسهٔ دوم</a></li><li><a href="#mabhas-3-21">جلسهٔ سوم</a></li><li><a href="#mabhas-4-23">جلسهٔ چهارم</a></li><li><a href="#mabhas-5-35">جلسهٔ پنجم</a></li><li><a href="#mabhas-6-31">جلسهٔ ششم</a></li></ul></details><details><summary><span>هوش، یادگیری و رشد مغز</span></summary><a class="sidebar-overview" href="#s1">نمای کلی جلسهٔ اول</a><ul><li><a href="#mabhas-1-1">مقدمه</a></li><li><a href="#mabhas-1-2">توزیع طبیعی (نرمال) هوش</a></li><li><a href="#mabhas-1-4">رابطهٔ هوش و پیشرفت تحصیلی از دیدگاه بلوم</a></li><li><a href="#mabhas-1-9">نقد جداسازی دانش‌آموزان و اهمیت دورهٔ ابتدایی</a></li><li><a href="#mabhas-1-10">آیا هوش قابل افزایش است؟</a></li><li><a href="#mabhas-1-14">منابع درس و سرفصل‌های روان‌شناسی شناختی</a></li><li><a href="#mabhas-1-18">اهمیت علوم شناختی: پنج علم برتر</a></li><li><a href="#mabhas-1-19">یادگیری در بدو تولد و دوران طلایی</a></li><li><a href="#mabhas-1-25">رشد مغز، سیناپس‌ها و هرس سیناپسی</a></li><li><a href="#mabhas-1-30">تکلیف جلسهٔ آینده</a></li><li><a href="#mabhas-1-31">مرور مفاهیم کلیدی</a></li><li><a href="#mabhas-1-32">پرسش‌های خودارزیابی</a></li></ul></details><details><summary><span>زبان، شبیه‌سازی و شناخت</span></summary><a class="sidebar-overview" href="#s2">نمای کلی جلسهٔ دوم</a><ul><li><a href="#mabhas-2-1">مقدمه</a></li><li><a href="#mabhas-2-2">مرور جلسهٔ قبل: هزار روز نخست زندگی</a></li><li><a href="#mabhas-2-6">زبان‌آموزی و زمان مناسب شروع زبان دوم</a></li><li><a href="#mabhas-2-7">شبیه‌سازی (Simulation)</a></li><li><a href="#mabhas-2-19">تعریف و حوزه‌های روان‌شناسی شناختی</a></li><li><a href="#mabhas-2-30">نکات تکمیلی مطرح‌شده در کلاس</a></li><li><a href="#mabhas-2-33">تکالیف و اطلاعیه‌ها</a></li><li><a href="#mabhas-2-34">مرور مفاهیم کلیدی</a></li><li><a href="#mabhas-2-35">پرسش‌های خودارزیابی</a></li></ul></details><details><summary><span>کاربردهای علوم شناختی و استرس</span></summary><a class="sidebar-overview" href="#s3">نمای کلی جلسهٔ سوم</a><ul><li><a href="#mabhas-3-1">مقدمه</a></li><li><a href="#mabhas-3-2">علوم شناختی و زیرشاخه‌های آن</a></li><li><a href="#mabhas-3-3">علوم شناختی به چه کاری می‌آید؟ چهار کاربرد</a></li><li><a href="#mabhas-3-8">تاریخچه و علوم اعصاب شناختی</a></li><li><a href="#mabhas-3-16">استرس و رویدادهای فشارزای زندگی</a></li><li><a href="#mabhas-3-17">پرسش‌وپاسخ‌های پایان کلاس</a></li><li><a href="#mabhas-3-20">مرور مفاهیم کلیدی</a></li><li><a href="#mabhas-3-21">پرسش‌های خودارزیابی</a></li></ul></details><details><summary><span>اندازه‌گیری و تصویربرداری مغز</span></summary><a class="sidebar-overview" href="#s4">نمای کلی جلسهٔ چهارم</a><ul><li><a href="#mabhas-4-1">مقدمه</a></li><li><a href="#mabhas-4-2">مرور جلسهٔ قبل: نواحی مغز و نظریه‌های کارکرد مغز</a></li><li><a href="#mabhas-4-3">روش‌های اندازه‌گیری در علوم اعصاب شناختی</a></li><li><a href="#mabhas-4-9">توجه، تمرکز و هیپنوتیزم</a></li><li><a href="#mabhas-4-12">مغزنگاری مغناطیسی (MEG)</a></li><li><a href="#mabhas-4-13">روش‌های تحریک یا بازداری نورون‌ها</a></li><li><a href="#mabhas-4-17">روش‌های تصویربرداری از مغز</a></li><li><a href="#mabhas-4-21">اطلاعیه‌ها</a></li><li><a href="#mabhas-4-22">مرور مفاهیم کلیدی</a></li><li><a href="#mabhas-4-23">پرسش‌های خودارزیابی</a></li></ul></details><details><summary><span>سلول‌ها، امواج و روش‌های بررسی مغز</span></summary><a class="sidebar-overview" href="#s5">نمای کلی جلسهٔ پنجم</a><ul><li><a href="#mabhas-5-1">مقدمه</a></li><li><a href="#mabhas-5-2">مغز: هنوز یک «جعبهٔ سیاه»</a></li><li><a href="#mabhas-5-5">تقسیم‌بندی‌های مغز</a></li><li><a href="#mabhas-5-10">سلول‌های مغز</a></li><li><a href="#mabhas-5-16">دسته‌بندی روش‌های بررسی مغز</a></li><li><a href="#mabhas-5-17">EEG و امواج مغزی</a></li><li><a href="#mabhas-5-20">نقشهٔ مغزی (QEEG)</a></li><li><a href="#mabhas-5-27">تحریک مغناطیسی مکرر فراجمجمه‌ای (rTMS)</a></li><li><a href="#mabhas-5-32">نوبل پزشکی ۲۰۲۶: کنترل نورون‌ها با نور (اپتوژنتیک)</a></li><li><a href="#mabhas-5-33">اطلاعیه‌ها</a></li><li><a href="#mabhas-5-34">مرور مفاهیم کلیدی</a></li><li><a href="#mabhas-5-35">پرسش‌های خودارزیابی</a></li></ul></details><details><summary><span>ادراک و خطاهای ادراکی</span></summary><a class="sidebar-overview" href="#s6">نمای کلی جلسهٔ ششم</a><ul><li><a href="#mabhas-6-1">مقدمه</a></li><li><a href="#mabhas-6-2">مرور جلسهٔ پیش</a></li><li><a href="#mabhas-6-3">تعریف ادراک</a></li><li><a href="#mabhas-6-5">محل پردازش اطلاعات حواس در مغز</a></li><li><a href="#mabhas-6-6">از شیء خارجی تا محرک مجاور</a></li><li><a href="#mabhas-6-10">مراحل ادراک در حواس مختلف</a></li><li><a href="#mabhas-6-15">دو شیوهٔ پردازش: پایین به بالا و بالا به پایین</a></li><li><a href="#mabhas-6-19">خطای ادراکی در زندگی روزمره: شهادت شاهدان</a></li><li><a href="#mabhas-6-20">خطای پونزو و رابطهٔ آن با قشر بینایی</a></li><li><a href="#mabhas-6-23">نظریهٔ استنباط ناخودآگاه هلمهولتز</a></li><li><a href="#mabhas-6-24">اشاره‌ای به رویکرد گشتالت</a></li><li><a href="#mabhas-6-25">ادراک در اجتماع: آزمایش‌های شریف و اَش</a></li><li><a href="#mabhas-6-29">تکالیف و برنامهٔ جلسهٔ آینده</a></li><li><a href="#mabhas-6-30">مرور مفاهیم کلیدی</a></li><li><a href="#mabhas-6-31">پرسش‌های خودارزیابی</a></li></ul></details><details class="other-guides"><summary>جزوه‌های دیگر</summary><ul><li><a href="Learning-Psychology-Sessions-1-6-Illustrated.html">روان‌شناسی یادگیری</a></li><li><a href="Learning-Disorders-Sessions-1-8-Explorer.html">اختلالات یادگیری</a></li></ul></details></nav></aside>
-<main><header class="hero studio-hero"><div class="hero-copy"><p>جزوهٔ درس · جلسات اول تا ششم</p><h1>روان‌شناسی شناختی</h1><p>از تفاوت‌های هوش و یادگیری تا پردازش و خطاهای ادراکی</p><div class="hero-actions"><a href="#paths">کاوش از یک پرسش</a><a href="#catalog">مرور مباحث</a></div></div><div class="hero-mosaic" aria-hidden="true"><img data-art="5" width="385" height="385" loading="lazy" decoding="async" alt=""><img data-art="2" width="385" height="385" loading="lazy" decoding="async" alt=""><img data-art="6" width="385" height="385" loading="lazy" decoding="async" alt=""></div></header><nav class="lesson-deck" aria-labelledby="deck-title"><h2 id="deck-title">جلسه‌ها</h2><ul><li><a href="#s1"><img data-art="1" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small>جلسهٔ ۱ · ۱۲ مبحث</small><strong>هوش، یادگیری و رشد مغز</strong></div></a></li><li><a href="#s2"><img data-art="2" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small>جلسهٔ ۲ · ۹ مبحث</small><strong>زبان، شبیه‌سازی و شناخت</strong></div></a></li><li><a href="#s3"><img data-art="3" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small>جلسهٔ ۳ · ۸ مبحث</small><strong>کاربردهای علوم شناختی و استرس</strong></div></a></li><li><a href="#s4"><img data-art="4" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small>جلسهٔ ۴ · ۱۰ مبحث</small><strong>اندازه‌گیری و تصویربرداری مغز</strong></div></a></li><li><a href="#s5"><img data-art="5" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small>جلسهٔ ۵ · ۱۲ مبحث</small><strong>سلول‌ها، امواج و روش‌های بررسی مغز</strong></div></a></li><li><a href="#s6"><img data-art="6" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small>جلسهٔ ۶ · ۱۵ مبحث</small><strong>ادراک و خطاهای ادراکی</strong></div></a></li></ul></nav>
+<main><header class="hero studio-hero"><div class="hero-copy"><p>جزوهٔ درس · جلسات اول تا ششم</p><h1>روان‌شناسی شناختی</h1><p>از تفاوت‌های هوش و یادگیری تا پردازش و خطاهای ادراکی</p><div class="hero-actions"><a href="#paths">کاوش از یک پرسش</a><a href="#catalog">مرور مباحث</a></div></div><div class="hero-mosaic" aria-hidden="true"><img data-art="5" width="385" height="385" loading="lazy" decoding="async" alt=""><img data-art="2" width="385" height="385" loading="lazy" decoding="async" alt=""><img data-art="6" width="385" height="385" loading="lazy" decoding="async" alt=""></div></header><nav class="lesson-deck" aria-labelledby="deck-title"><h2 id="deck-title">جلسه‌ها</h2><ul><li><a href="#s1"><img data-art="1" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small class="mt"><span>جلسهٔ ۱</span><i></i><span>۱۲ مبحث</span></small><strong>هوش، یادگیری و رشد مغز</strong></div></a></li><li><a href="#s2"><img data-art="2" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small class="mt"><span>جلسهٔ ۲</span><i></i><span>۹ مبحث</span></small><strong>زبان، شبیه‌سازی و شناخت</strong></div></a></li><li><a href="#s3"><img data-art="3" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small class="mt"><span>جلسهٔ ۳</span><i></i><span>۸ مبحث</span></small><strong>کاربردهای علوم شناختی و استرس</strong></div></a></li><li><a href="#s4"><img data-art="4" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small class="mt"><span>جلسهٔ ۴</span><i></i><span>۱۰ مبحث</span></small><strong>اندازه‌گیری و تصویربرداری مغز</strong></div></a></li><li><a href="#s5"><img data-art="5" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small class="mt"><span>جلسهٔ ۵</span><i></i><span>۱۲ مبحث</span></small><strong>سلول‌ها، امواج و روش‌های بررسی مغز</strong></div></a></li><li><a href="#s6"><img data-art="6" width="385" height="385" loading="lazy" decoding="async" alt=""><div><small class="mt"><span>جلسهٔ ۶</span><i></i><span>۱۵ مبحث</span></small><strong>ادراک و خطاهای ادراکی</strong></div></a></li></ul></nav>
 <div class="explore-panel"><section class="study-status" aria-labelledby="status-title"><h2 id="status-title">پیشرفت مطالعه</h2><a class="continue" id="resume" hidden>ادامهٔ مطالعه</a><p id="status-text" aria-live="polite"></p><progress id="progress" aria-label="پیشرفت مطالعه"></progress></section>
 <section class="review-plan" id="review-plan" aria-labelledby="review-heading"><div class="review-lead"><div><h2 id="review-heading">مرور فعال</h2><p id="review-status" aria-live="polite">برای شروع، یک مبحث را به صف مرور اضافه کنید.</p></div><button type="button" id="start-review" hidden>شروع مرور</button></div><ul id="review-due" aria-label="مباحث آمادهٔ مرور"></ul><details id="review-later" hidden><summary>مرورهای برنامه‌ریزی‌شده <span id="review-later-count"></span></summary><ul id="review-upcoming"></ul></details></section><section class="personal-highlights" id="my-highlights" aria-labelledby="highlights-heading"><h2 id="highlights-heading">هایلایت‌های من</h2><p id="highlight-status" aria-live="polite">بخشی از متن یک مبحث را انتخاب کن و «هایلایت» را بزن.</p><ul id="highlight-list"></ul></section><section class="paths" id="paths"><h2>مسیرهای اکتشافی</h2><div class="path-grid"><details class="path"><summary>آموزش چگونه می‌تواند تفاوت عملکرد را کم کند؟</summary><ol><li><a href="#mabhas-1-4">رابطهٔ هوش و پیشرفت تحصیلی از دیدگاه بلوم</a></li><li><a href="#mabhas-2-2">مرور جلسهٔ قبل: هزار روز نخست زندگی</a></li><li><a href="#mabhas-3-3">علوم شناختی به چه کاری می‌آید؟ چهار کاربرد</a></li></ol></details><details class="path"><summary>شناخت را چطور مشاهده و اندازه‌گیری کنیم؟</summary><ol><li><a href="#mabhas-3-8">تاریخچه و علوم اعصاب شناختی</a></li><li><a href="#mabhas-4-3">روش‌های اندازه‌گیری در علوم اعصاب شناختی</a></li><li><a href="#mabhas-5-20">نقشهٔ مغزی (QEEG)</a></li></ol></details><details class="path"><summary>ساختار مغز چه ارتباطی با پردازش اطلاعات دارد؟</summary><ol><li><a href="#mabhas-1-25">رشد مغز، سیناپس‌ها و هرس سیناپسی</a></li><li><a href="#mabhas-5-10">سلول‌های مغز</a></li><li><a href="#mabhas-6-5">محل پردازش اطلاعات حواس در مغز</a></li></ol></details><details class="path"><summary>چرا برداشت ما همیشه با محرک فیزیکی برابر نیست؟</summary><ol><li><a href="#mabhas-6-6">از شیء خارجی تا محرک مجاور</a></li><li><a href="#mabhas-6-15">دو شیوهٔ پردازش: پایین به بالا و بالا به پایین</a></li><li><a href="#mabhas-6-20">خطای پونزو و رابطهٔ آن با قشر بینایی</a></li><li><a href="#mabhas-6-25">ادراک در اجتماع: آزمایش‌های شریف و اَش</a></li></ol></details></div></section></div>
 <section class="visual-gallery" id="visual-examples" aria-labelledby="gallery-title"><h2 id="gallery-title">مثال‌ها و نمایش‌های تصویری</h2><div class="visual-grid"><a class="visual-card" href="#ex-1"><div class="visual-card-photo"><img data-art="1" width="385" height="385" loading="lazy" decoding="async" alt=""></div><div class="visual-card-text"><small>دیدن شکل توزیع</small><strong>آزمایش سکه‌ها</strong></div></a><a class="visual-card" href="#ex-2"><div class="visual-card-photo"><img data-art="2" width="385" height="385" loading="lazy" decoding="async" alt=""></div><div class="visual-card-text"><small>شبیه‌سازی فرایندی</small><strong>تمرین ذهنی ورزشکار</strong></div></a><a class="visual-card" href="#ex-3"><div class="visual-card-photo"><img data-art="3" width="385" height="385" loading="lazy" decoding="async" alt=""></div><div class="visual-card-text"><small>فعال‌سازی دانش پیشین</small><strong>مرور کوتاه پیش از درس</strong></div></a><a class="visual-card" href="#ex-4"><div class="visual-card-photo"><img data-art="4" width="385" height="385" loading="lazy" decoding="async" alt=""></div><div class="visual-card-text"><small>اندازه‌گیری فعالیت الکتریکی</small><strong>کلاه EEG در پژوهش</strong></div></a><a class="visual-card" href="#ex-5"><div class="visual-card-photo"><img data-art="5" width="385" height="385" loading="lazy" decoding="async" alt=""></div><div class="visual-card-text"><small>ساختار سلول عصبی</small><strong>نمای نزدیک از نورون</strong></div></a><a class="visual-card" href="#ex-6"><div class="visual-card-photo"><img data-art="6" width="385" height="385" loading="lazy" decoding="async" alt=""></div><div class="visual-card-text"><small>اثر نشانه‌های عمق</small><strong>دو خط برابر در خطای پونزو</strong></div></a></div></section>
@@ -833,7 +970,7 @@ drawReview();
   sync();new MutationObserver(sync).observe(button,{attributes:true,attributeFilter:['aria-pressed']});
  }
 })();
-</script><style>.site-credits{max-width:1420px;margin:10px auto 0;padding:34px 20px 46px;text-align:center;border-top:1px solid var(--line);color:var(--muted)}.site-credits .tag{font-weight:900;font-size:18px;background:linear-gradient(90deg,var(--accent),#ff6bb5);-webkit-background-clip:text;background-clip:text;color:transparent}.site-credits .tag small{display:block;font-weight:400;font-size:13.5px;-webkit-text-fill-color:var(--muted);margin-top:2px}.site-credits .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:18px 0 10px}.site-credits .row div{padding:10px 22px;border-radius:16px;background:var(--panel);border:1px solid var(--line);min-width:190px}.site-credits .row small{display:block;font-size:12.5px;color:var(--muted)}.site-credits .row b{color:var(--ink);font-size:16px}.site-credits .src{font-size:12.5px}@media print{.site-credits{break-inside:avoid}}</style><footer class="site-credits"><div class="tag">جزوهٔ روان‌شناسی شناختی پیشرفته<small>مرورگر تعاملی جلسات اول تا ششم</small></div><div class="row"><div><small>استاد درس</small><b>دکتر فریبرز درتاج</b></div><div><small>گردآورندهٔ اطلاعات</small><b>خانم رشیدی</b></div><div><small>توسعه‌دهنده</small><b>لطفی‌فر</b></div></div><div class="src">منبع: کتاب روان‌شناسی شناختی، دکتر فریبرز درتاج</div></footer><script>
+</script><style>.site-credits{max-width:1420px;margin:10px auto 0;padding:34px 20px 46px;text-align:center;border-top:1px solid var(--line);color:var(--muted)}.site-credits .tag{font-weight:900;font-size:18px;background:linear-gradient(90deg,var(--accent),#ff6bb5);-webkit-background-clip:text;background-clip:text;color:transparent}.site-credits .tag small{display:block;font-weight:400;font-size:13.5px;-webkit-text-fill-color:var(--muted);margin-top:2px}.site-credits .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:18px 0 10px}.site-credits .row div{padding:10px 22px;border-radius:16px;background:var(--panel);border:1px solid var(--line);min-width:190px}.site-credits .row small{display:block;font-size:12.5px;color:var(--muted)}.site-credits .row b{color:var(--ink);font-size:16px}.site-credits .src{font-size:12.5px}@media print{.site-credits{break-inside:avoid}}</style><footer class="site-credits md-credits"><div class="tag">جزوهٔ روان‌شناسی شناختی پیشرفته<small>مرورگر تعاملی جلسات اول تا ششم</small></div><div class="row"><div><small>استاد درس</small><b>دکتر فریبرز درتاج</b></div><div><small>گردآورندهٔ اطلاعات</small><b>خانم رشیدی</b></div><div><small>توسعه‌دهنده</small><b>امیر لطفی‌فر</b></div></div><div class="src">منبع: کتاب روان‌شناسی شناختی، دکتر فریبرز درتاج</div></footer><script>
 /* polish layer: scroll reveal, header shadow, back-to-top */
 (()=>{
 const top=document.querySelector('.top');
@@ -848,4 +985,39 @@ if('IntersectionObserver' in window){
 }
 })();
 </script>
+<!--MODERN-JS--><script>
+/* modern layer: theme picker, scroll reveal, back-to-top */
+(()=>{
+const root=document.documentElement,KEY='learning-theme2';
+const T=[['light','روشن','#f2f6f4','#09645e'],['sepia','کاغذی','#f3ead6','#8a4b12'],['ocean','اقیانوس','#edf4fb','#0b5cad'],['violet','بنفش','#f4f1fb','#5b34c4'],['rose','رز','#fbf0f3','#b3204f'],['dark','تاریک','#101b1b','#8cddcc'],['midnight','نیمه‌شب','#000000','#7dd3fc']];
+const get=k=>{try{return localStorage.getItem(k)}catch(e){return null}},put=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const old=document.getElementById('theme');if(!old)return;
+const btn=document.createElement('button');btn.id='theme';btn.type='button';btn.setAttribute('aria-haspopup','true');btn.setAttribute('aria-expanded','false');old.replaceWith(btn);
+const pop=document.createElement('div');pop.className='theme-pop';pop.hidden=true;pop.setAttribute('role','dialog');pop.setAttribute('aria-label','انتخاب تم');
+pop.innerHTML='<h4>🎨 تم نمایش</h4><div class="theme-grid">'+T.map(t=>`<button type="button" class="theme-opt" data-t="${t[0]}" aria-pressed="false"><i style="background:linear-gradient(135deg,${t[2]} 50%,${t[3]} 50%)"></i>${t[1]}</button>`).join('')+'</div><p>انتخاب تو ذخیره می‌شود. کلید <b>T</b> تم‌ها را یکی‌یکی عوض می‌کند.</p>';
+const bar=document.querySelector('.top')||document.body;bar.appendChild(pop);
+const meta=document.querySelector('meta[name=theme-color]')||Object.assign(document.head.appendChild(document.createElement('meta')),{name:'theme-color'});
+function apply(n,save){const t=T.find(x=>x[0]===n)||T[0];root.dataset.theme=t[0];btn.innerHTML='<span aria-hidden="true">🎨</span> '+t[1];meta.content=t[2];
+ pop.querySelectorAll('.theme-opt').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===t[0]));if(save)put(KEY,t[0])}
+let init=get(KEY);if(!init){const o=get('learning-theme');init=o||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}
+apply(init,false);
+const close=()=>{pop.hidden=true;btn.setAttribute('aria-expanded','false')};
+function place(){const r=btn.getBoundingClientRect(),b=bar.getBoundingClientRect(),w=Math.min(330,innerWidth-24);let x=r.left+r.width/2-w/2-b.left;x=Math.max(12-b.left,Math.min(innerWidth-w-12-b.left,x));pop.style.insetInlineEnd='auto';pop.style.left=x+'px';pop.style.right='auto';pop.style.top=(r.bottom-b.top+8)+'px'}
+btn.onclick=e=>{e.stopPropagation();pop.hidden=!pop.hidden;btn.setAttribute('aria-expanded',String(!pop.hidden));if(!pop.hidden)place()};
+addEventListener('resize',()=>{if(!pop.hidden)place()});
+pop.addEventListener('click',e=>{const b=e.target.closest('.theme-opt');if(b)apply(b.dataset.t,true)});
+document.addEventListener('click',e=>{if(!pop.hidden&&!pop.contains(e.target))close()});
+addEventListener('keydown',e=>{if(e.key==='Escape')close();if((e.key==='t'||e.key==='T'||e.key==='ه')&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!/INPUT|TEXTAREA|SELECT/.test((e.target.tagName||''))&&!e.target.isContentEditable){const i=T.findIndex(x=>x[0]===root.dataset.theme);apply(T[(i+1)%T.length][0],true)}});
+/* scroll reveal */
+root.classList.add('js-modern');
+const els=[...document.querySelectorAll('.lesson-deck li,.path,.visual-card,.chapter>header,.topic-shell,.study-status,.paths')];
+els.forEach(e=>e.classList.add('m-rev'));
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('m-in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -6% 0px',threshold:.05});els.forEach(e=>io.observe(e))}else els.forEach(e=>e.classList.add('m-in'));
+/* back to top */
+const up=document.createElement('button');up.id='mdTop';up.type='button';up.setAttribute('aria-label','بازگشت به بالا');up.textContent='↑';document.body.appendChild(up);
+up.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+addEventListener('scroll',()=>up.classList.toggle('show',scrollY>800),{passive:true});
+})();
+
+</script><!--/MODERN-JS-->
 </body></html>
