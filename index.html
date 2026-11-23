@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ذهن‌نگار | فهرست جزوه‌ها</title>
+<style>
+:root{--bg:#070b1a;--card:rgba(20,26,52,.62);--text:#e9edff;--mute:#9aa6d1;--line:rgba(140,160,255,.18)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 700px at 80% -10%,#1b2160 0%,transparent 60%),radial-gradient(900px 600px at 0% 100%,#3a1457 0%,transparent 55%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;line-height:1.8;overflow-x:hidden}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:56px 18px 80px}
+header{text-align:center;margin-bottom:44px}
+.logo{font-size:3rem;filter:drop-shadow(0 0 18px #7c8cff);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+h1{margin:6px 0 4px;font-size:clamp(1.8rem,5vw,2.8rem);background:linear-gradient(90deg,#8fa2ff,#e08bff,#6fe3ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mute);margin:0}
+.search{margin:22px auto 0;max-width:380px;position:relative}
+.search input{width:100%;padding:11px 18px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);font:inherit;outline:none;backdrop-filter:blur(8px);transition:.25s}
+.search input:focus{border-color:#8fa2ff;box-shadow:0 0 0 4px rgba(143,162,255,.15)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;perspective:1000px}
+.card{--c:#8fa2ff;position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;backdrop-filter:blur(14px);cursor:pointer;transition:transform .15s ease,border-color .3s,box-shadow .3s,opacity .3s;transform-style:preserve-3d;overflow:hidden;outline:none}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 30%,transparent),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before,.card.open::before{opacity:1}
+.card:hover,.card:focus-visible,.card.open{border-color:var(--c);box-shadow:0 14px 50px -14px var(--c)}
+.card.hide{display:none}
+.head{display:flex;align-items:center;gap:14px;position:relative}
+.ic{flex:none;width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.8rem;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 45%,transparent),transparent);border:1px solid var(--c)}
+.head h2{margin:0;font-size:1.15rem}
+.head small{color:var(--mute)}
+.no{position:absolute;left:0;top:-6px;font-size:2.6rem;font-weight:800;color:var(--c);opacity:.18}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease;position:relative}
+.card.open .panel{grid-template-rows:1fr}
+.panel>div{overflow:hidden}
+.links{display:flex;flex-direction:column;gap:8px;padding-top:16px}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:12px;color:var(--text);text-decoration:none;background:rgba(255,255,255,.06);border:1px solid transparent;transition:.2s}
+.links a:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 22%,transparent);transform:translateX(-4px)}
+.links a span{color:var(--c)}
+.hint{margin-top:14px;font-size:.8rem;color:var(--mute);position:relative}
+.card.empty{opacity:.55}
+.card.empty .hint{display:none}
+.none{padding-top:14px;font-size:.88rem;color:var(--mute)}
+.count{margin-top:12px;font-size:.8rem;color:var(--mute);text-align:center;min-height:1.6em}
+footer{text-align:center;margin-top:40px;color:var(--mute);font-size:.8rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="net"></canvas>
+<div class="wrap">
+  <header>
+    <div class="logo">🧠</div>
+    <h1>فهرست جزوه‌های درسی</h1>
+    <p class="sub">روی هر درس بزنید تا صفحه‌هایش باز شود</p>
+    <div class="search"><input id="q" type="search" placeholder="جستجوی درس…" autocomplete="off"></div>
+  </header>
+  <div class="grid" id="grid"></div>
+  <div class="count" id="count"></div>
+  <footer>کلید‌های ۱ تا ۵ هم درس‌ها را باز می‌کنند</footer>
+</div>
+<script>
+// برای افزودن صفحه‌ی جدید فقط یک ردیف به links اضافه کنید.
+const courses=[
+ {t:"روان‌شناسی شناختی پیشرفته",d:"جلسات ۱ تا ۶",i:"🧠",c:"#8fa2ff",links:[
+  ["مرورگر جلسات","Cognitive-Psychology-Sessions-1-6-Explorer.html"],
+  ["درس متحرک","Cognitive-Psychology-Animated-Lesson.html"]]},
+ {t:"روان‌شناسی یادگیری",d:"جلسات ۱ تا ۶",i:"💡",c:"#6fe3ff",links:[
+  ["مرورگر","Learning-Psychology-Sessions-1-6-Explorer.html"],
+  ["درس متحرک","Learning-Psychology-Animated-Lesson.html"],
+  ["مصور","Learning-Psychology-Sessions-1-6-Illustrated.html"],
+  ["کارت‌ها","Learning-Psychology-Sessions-1-6-Cards.html"],
+  ["متن","Learning-Psychology-Sessions-1-6-Text.html"],
+  ["نسخه‌ی کامل","Learning-Psychology-Sessions-1-6.html"]]},
+ {t:"اختلالات یادگیری",d:"جلسات ۱ تا ۸",i:"🧩",c:"#ff9ad5",links:[
+  ["مرورگر جلسات","Learning-Disorders-Sessions-1-8-Explorer.html"],
+  ["درس متحرک","Learning-Disorders-Animated-Lesson.html"]]},
+ {t:"الگوهای آموزشی",d:"",i:"🎓",c:"#ffd36f",links:[]},
+ {t:"روان‌شناسی تحولی دینی",d:"",i:"🌱",c:"#7dffb0",links:[]}
+];
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+const grid=document.getElementById("grid");
+grid.innerHTML=courses.map((c,i)=>`
+<div class="card ${c.links.length?"":"empty"}" style="--c:${c.c}" tabindex="0" role="button" aria-expanded="false" data-i="${i}" data-name="${c.t}">
+  <div class="no">${fa(i+1)}</div>
+  <div class="head"><div class="ic">${c.i}</div><div><h2>${c.t}</h2><small>${c.d||"&nbsp;"}</small></div></div>
+  <div class="panel"><div>${c.links.length
+    ?`<div class="links">${c.links.map(l=>`<a href="${l[1]}">${l[0]}<span>←</span></a>`).join("")}</div>`
+    :`<div class="none">صفحه‌ای برای این درس اضافه نشده است.</div>`}</div></div>
+  <div class="hint">${c.links.length?`${fa(c.links.length)} صفحه · برای باز کردن بزنید`:""}</div>
+</div>`).join("");
+const cards=[...grid.children];
+function toggle(card){
+  const was=card.classList.contains("open");
+  cards.forEach(x=>{x.classList.remove("open");x.setAttribute("aria-expanded","false")});
+  if(!was){card.classList.add("open");card.setAttribute("aria-expanded","true")}
+}
+cards.forEach(card=>{
+  card.addEventListener("click",e=>{if(e.target.closest("a"))return;toggle(card)});
+  card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle(card)}});
+  card.addEventListener("pointermove",e=>{
+    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    card.style.setProperty("--mx",x*100+"%");card.style.setProperty("--my",y*100+"%");
+    card.style.transform=`rotateY(${(x-.5)*-8}deg) rotateX(${(y-.5)*8}deg) translateZ(0)`;
+  });
+  card.addEventListener("pointerleave",()=>card.style.transform="");
+});
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT")return;
+  const n=parseInt(e.key);if(n>=1&&n<=cards.length)toggle(cards[n-1]);
+});
+const q=document.getElementById("q"),cnt=document.getElementById("count");
+q.addEventListener("input",()=>{
+  const v=q.value.trim();let k=0;
+  cards.forEach(c=>{const m=!v||c.dataset.name.includes(v);c.classList.toggle("hide",!m);if(m)k++});
+  cnt.textContent=k?"":"درسی پیدا نشد";
+});
+
+// پس‌زمینه: شبکه‌ی عصبی که به ماوس واکنش نشان می‌دهد
+const cv=document.getElementById("net"),ctx=cv.getContext("2d");
+let W,H,pts=[],mouse={x:-999,y:-999};
+function size(){
+  const d=devicePixelRatio||1;W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+  const n=Math.min(90,Math.floor(W*H/16000));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.8}));
+}
+addEventListener("resize",size);size();
+addEventListener("pointermove",e=>{mouse.x=e.clientX;mouse.y=e.clientY});
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function frame(){
+  ctx.clearRect(0,0,W,H);
+  for(const p of pts){
+    if(!still){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+    const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
+    if(d<140&&!still){p.x+=dx/d*.8;p.y+=dy/d*.8}
+  }
+  for(let i=0;i<pts.length;i++){
+    const a=pts[i];
+    for(let j=i+1;j<pts.length;j++){
+      const b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<130){ctx.strokeStyle=`rgba(143,162,255,${(1-d/130)*.35})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+    }
+    const m=Math.hypot(a.x-mouse.x,a.y-mouse.y);
+    if(m<170){ctx.strokeStyle=`rgba(224,139,255,${(1-m/170)*.6})`;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke()}
+    ctx.fillStyle="rgba(190,200,255,.8)";ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,7);ctx.fill();
+  }
+  if(!still)requestAnimationFrame(frame)
+}
+frame();
+</script>
+</body>
+</html>
