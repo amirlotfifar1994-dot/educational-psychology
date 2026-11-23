@@ -752,18 +752,18 @@ const A=[9,8,7.1,6.3,5.6,4.9,4.3,3.8,3.3,3,2.7,2.5,2.3,2.2,2.1,2,1.9];
 const Bv=[9,8.9,8.9,8.8,8.8,8.7,8.7,8.6,8.6,8.5,2.7,2.5,2.3,2.2,2.1,2,1.9];
 const Ex=Bv.map((v,i)=>i<10?v:1.9+(8.5-1.9)*Math.pow(.78,i-9));
 const x=d=>L+(d-1)/(N-1)*(W-L-R),y=v=>T+(1-v/10)*(H-T-Bt);
-for(let v=0;v<=10;v+=2){el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'var(--line)'},s);const t=el('text',{x:L-8,y:y(v)+4,'text-anchor':'end',fill:'var(--muted)','font-size':12},s);t.textContent=fa(v)}
-for(let d=1;d<=N;d+=2){const t=el('text',{x:x(d),y:H-14,'text-anchor':'middle',fill:'var(--muted)','font-size':12},s);t.textContent=fa(d)}
-const tt=el('text',{x:W/2,y:H-1,'text-anchor':'middle',fill:'var(--muted)','font-size':12},s);tt.textContent='روز';
-const ty=el('text',{x:10,y:T+8,fill:'var(--muted)','font-size':12},s);ty.textContent='خطا';
-el('line',{x1:x(10.5),x2:x(10.5),y1:T,y2:H-Bt,stroke:'var(--a5)','stroke-dasharray':'5 5'},s);
-const fl=el('text',{x:x(10.5)+6,y:T+12,fill:'var(--a5)','font-size':12},s);fl.textContent='شروع غذا برای گروه ب';
+s.setAttribute('direction','ltr');s.style.direction='ltr';
+s.insertAdjacentHTML('beforebegin','<div class="btns" style="margin:4px 0 8px"><span class="pill"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--a4);margin-inline-end:6px"></span>گروه الف: همیشه غذا</span><span class="pill"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--a3);margin-inline-end:6px"></span>گروه ب: غذا از روز ۱۱</span><span class="pill"><span style="display:inline-block;width:14px;border-top:3px dashed var(--a5);margin-inline-end:6px;vertical-align:middle"></span>خط شروع غذا</span></div>');
+for(let v=0;v<=10;v+=2){el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'var(--line)'},s);const t=el('text',{x:L-8,y:y(v)+5,'text-anchor':'end',fill:'var(--muted)','font-size':14},s);t.textContent=fa(v)}
+for(let d=1;d<=N;d+=2){const t=el('text',{x:x(d),y:H-14,'text-anchor':'middle',fill:'var(--muted)','font-size':14},s);t.textContent=fa(d)}
+const tt=el('text',{x:W/2,y:H-1,'text-anchor':'middle',fill:'var(--ink)','font-size':14,'font-weight':700},s);tt.textContent='روز آزمایش';
+const ty=el('text',{x:L-8,y:T-3,'text-anchor':'end',fill:'var(--ink)','font-size':14,'font-weight':700},s);ty.textContent='خطا';
+el('line',{x1:x(10.5),x2:x(10.5),y1:T,y2:H-Bt,stroke:'var(--a5)','stroke-width':2,'stroke-dasharray':'5 5'},s);
+const fl=el('text',{x:W-R-4,y:T+18,'text-anchor':'end',fill:'var(--a5)','font-size':14,'font-weight':700},s);fl.textContent='شروع غذا برای گروه ب';
 const pE=el('path',{fill:'none',stroke:'var(--a5)','stroke-width':3,'stroke-dasharray':'6 6',opacity:0},s);
 const pA=el('path',{fill:'none',stroke:'var(--a4)','stroke-width':4,'stroke-linecap':'round','stroke-linejoin':'round'},s);
 const pB=el('path',{fill:'none',stroke:'var(--a3)','stroke-width':4,'stroke-linecap':'round','stroke-linejoin':'round'},s);
 const dA=el('circle',{r:6,fill:'var(--a4)'},s),dB=el('circle',{r:6,fill:'var(--a3)'},s);
-const lg=(c,tx,yy)=>{el('rect',{x:W-R-170,y:yy-9,width:12,height:12,rx:3,fill:c},s);const t=el('text',{x:W-R-152,y:yy+2,fill:'var(--ink)','font-size':12},s);t.textContent=tx};
-lg('var(--a4)','گروه الف: همیشه غذا',T+34);lg('var(--a3)','گروه ب: غذا از روز ۱۱',T+54);
 const path=(arr,d)=>{let p='';for(let i=0;i<d;i++)p+=(i?'L':'M')+x(i+1)+' '+y(arr[i]);return p};
 function upd(){const d=+sl.value;pA.setAttribute('d',path(A,d));pB.setAttribute('d',path(Bv,d));dA.setAttribute('cx',x(d));dA.setAttribute('cy',y(A[d-1]));dB.setAttribute('cx',x(d));dB.setAttribute('cy',y(Bv[d-1]));
  const showE=ex.classList.contains('on')&&d>10;pE.setAttribute('opacity',showE?1:0);if(showE){let p='';for(let i=9;i<d;i++)p+=(i>9?'L':'M')+x(i+1)+' '+y(Ex[i]);pE.setAttribute('d',p)}
