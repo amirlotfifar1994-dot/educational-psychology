@@ -986,7 +986,7 @@ function render(b,p,c,g,dur){
  setPhoto(b.t==='opening'||b.t==='intro'||b.t==='chapter'?0:p.n);
  cam.style.opacity=b.t==='m'?'':(b.t==='review'?'.2':'');
  if(b.t==='opening'){cam.classList.add('off');AUD.music(1);AUD.play('swell');later(1900,()=>AUD.play('boom'));later(3300,()=>AUD.play('sparkle',.6));
-  showCard(`<div class="c-open"><div class="ghost">🧠</div><small>درس</small><h2>روان‌شناسی شناختی پیشرفته</h2><i class="ln"></i><div class="prof"><span>استاد درس</span><b id="pn"></b></div><div class="crew"><span>گردآورندهٔ اطلاعات: خانم رشیدی</span><span>توسعه‌دهنده: لطفی‌فر</span></div></div>`,d=>later(2800,()=>typeIn($('#pn',d),'دکتر فریبرز درتاج',4200,3.6)))}
+  showCard(`<div class="c-open"><div class="ghost">🧠</div><small>درس</small><h2>روان‌شناسی شناختی پیشرفته</h2><i class="ln"></i><div class="prof"><span>استاد درس</span><b id="pn"></b></div><div class="crew"><span>توسعه‌دهنده: لطفی‌فر</span></div></div>`,d=>later(2800,()=>typeIn($('#pn',d),'دکتر فریبرز درتاج',4200,3.6)))}
  else if(b.t==='intro'){cam.classList.add('off');AUD.music(1);AUD.play('swell');later(2300,()=>AUD.play('boom'));later(3000,()=>AUD.play('sparkle',.7));
   showCard(`<div class="c-title"><div class="ghost" style="font-size:30cqw">36</div><i class="ring"></i><i class="ring"></i><div class="ico">🎬</div><small>${FAMS[1]} · ${FAMS[2]}</small><h2>خطاهای شناختی</h2><h3>Cognitive Errors</h3><span class="gchip">۳۶ صحنه · ۳۶ پرونده · ۹ فصل</span></div>`)}
  else if(b.t==='chapter'){cam.classList.add('off');AUD.music(g.id);AUD.play('whoosh',.8);later(500,()=>AUD.play('boom',.8));
