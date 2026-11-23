@@ -189,6 +189,9 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:14p
 .shk{animation:shake .35s linear infinite}
 .bell.rg{animation:ring .7s ease-in-out infinite;transform-origin:50% 0}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/*RESP-FIX*/
+@media(max-width:560px){.tabs button{padding:9px 11px;font-size:13px;flex:1 1 auto}nav.top .in{gap:6px;padding-inline:12px}nav.top b{font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis}nav.top input{min-width:0;flex:1 1 90px}}
+/*END-RESP-FIX*/
 </style>
 </head>
 <body>
