@@ -287,6 +287,57 @@ mark.hlt.flash{animation:hlflash 1.8s ease-out}
 #hlpanel .it .acts button{width:30px;height:30px;border-radius:9px;background:var(--line)}
 #hlpanel footer{padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
 #hlpanel .empty{text-align:center;color:var(--muted);padding:40px 10px}
+/* ===== brain explorer ===== */
+.bm-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.bm-bar .btns{margin:0;flex:1 1 auto}
+.bm-bar input{padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card-s);color:var(--ink);font:inherit;font-size:14px;min-width:200px}
+.bm-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(290px,1fr);gap:18px;align-items:start}
+@media(max-width:900px){.bm-grid{grid-template-columns:minmax(0,1fr)}}
+.bm-stage{position:relative;border-radius:22px;border:1px solid var(--line);background:radial-gradient(ellipse at 50% 40%,#2a2f78 0%,#10143a 70%);overflow:hidden;box-shadow:inset 0 0 60px #0006}
+:root[data-theme=light] .bm-stage{background:radial-gradient(ellipse at 50% 40%,#3b3f94 0%,#171b4d 75%)}
+#brain{touch-action:manipulation}
+#brain .rg{cursor:pointer;transition:opacity .35s}
+#brain .rg>*{transition:fill-opacity .25s,stroke-opacity .25s,stroke-width .25s}
+#brain .rg:hover>*{fill-opacity:.75;stroke-opacity:1}
+#brain .rg:focus-visible{outline:none}
+#brain .rg:focus-visible>*{stroke:#fff;stroke-width:3}
+#brain .rg.sel>*{stroke:#fff;stroke-width:3;fill-opacity:.85;filter:url(#bmglow)}
+#brain .rg.sel>[data-band]{stroke:#fff;stroke-opacity:.95;filter:url(#bmglow)}
+#brain .rg.dim{opacity:.18}
+#brain .rg.hit>*{animation:bmhit .9s}
+#brain .rg.miss>*{animation:bmmiss .5s}
+@keyframes bmhit{40%{fill-opacity:1;filter:url(#bmglow) brightness(1.6)}}
+@keyframes bmmiss{25%,75%{transform:translateX(5px)}50%{transform:translateX(-5px)}}
+#brain .lbl{fill:#fff;font-size:15px;font-weight:800;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#0b0e2acc;stroke-width:4px;stroke-linejoin:round;transition:opacity .3s}
+#brain.quiz .lbl{opacity:0}
+#brain .cn{fill:none;stroke:#fff;stroke-width:2.5;stroke-dasharray:7 7;stroke-linecap:round;opacity:.9;animation:bmdash 1.1s linear infinite;pointer-events:none;filter:drop-shadow(0 0 4px #fff)}
+@keyframes bmdash{to{stroke-dashoffset:-28}}
+#brain .rip{fill:none;stroke:#fff;stroke-width:3;transform-box:fill-box;transform-origin:center;animation:bmrip 1.6s ease-out infinite;pointer-events:none}
+@keyframes bmrip{from{transform:scale(.2);opacity:.9}to{transform:scale(1.5);opacity:0}}
+#brain .decor{pointer-events:none}
+.bm-tip{position:absolute;z-index:3;pointer-events:none;padding:5px 12px;border-radius:10px;background:#0b0e2aee;color:#fff;font-size:13px;font-weight:700;border:1px solid #ffffff44;transform:translate(-50%,-130%);white-space:nowrap}
+.bm-legend{position:absolute;bottom:8px;right:10px;display:flex;gap:10px;font-size:11px;color:#c9cdf5;pointer-events:none}
+.bm-legend span{display:inline-flex;align-items:center;gap:4px}
+.bm-legend i{width:9px;height:9px;border-radius:50%}
+.bm-info{min-height:230px;padding:18px;border-radius:20px;background:var(--card-s);border:1px solid var(--line);animation:in .4s}
+.bm-info .tag{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.bm-info .tag span{font-size:12px;padding:2px 10px;border-radius:99px;background:var(--line)}
+.bm-info h4{font-size:22px;font-weight:900;line-height:1.5}
+.bm-info h4 small{display:block;font-size:13px;color:var(--muted);font-weight:400;direction:ltr;text-align:right}
+.bm-info p{margin:8px 0;font-size:15px}
+.bm-info .clin{margin:10px 0;padding:10px 14px;border-radius:14px;background:#ff6b8b18;border-inline-start:4px solid var(--bad);font-size:14px}
+.bm-info .rel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:13px;color:var(--muted)}
+.bm-info .rel button,.bm-list button{padding:3px 11px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:13px;transition:.2s}
+.bm-info .rel button:hover,.bm-list button:hover{border-color:var(--a1);transform:translateY(-2px)}
+.bm-info .jmp{margin-top:12px}
+.bm-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.bm-list button{display:inline-flex;align-items:center;gap:6px}
+.bm-list button i{width:9px;height:9px;border-radius:50%}
+.bm-list button.on{background:var(--a1);color:#fff;border-color:transparent}
+.bm-q{font-size:18px;font-weight:800;line-height:1.8}
+@media(max-width:560px){#brain .lbl{font-size:30px;stroke-width:7px;opacity:0}#brain .lbl.sel{opacity:1}.bm-legend{display:none}}
+.bm-prog{height:6px;border-radius:9px;background:var(--line);overflow:hidden;margin:8px 0 12px}
+.bm-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--a1),var(--a3));transition:width .4s}
 /* reduced-motion: only calm the purely decorative loops; interactive demos must keep working
    (many Windows setups report "reduce" by default, which previously froze everything) */
 @media(prefers-reduced-motion:reduce){.hero h1,.hero .tag,.cta:after,.scroll-hint:after,.arr,.spot,.stat{animation:none!important}}
@@ -436,13 +487,18 @@ mark.hlt.flash{animation:hlflash 1.8s ease-out}
       <div class="note warn">دانستن به‌تنهایی رفتار را تغییر نمی‌دهد!</div>
     </div>
 
-    <div class="card c reveal"><h3><i>🗺️</i>نقشهٔ مغز و پروندهٔ بیماران مشهور</h3>
-      <p class="lead">نمای جانبی نیمکره چپ. روی لوب‌ها و نقطه‌های چشمک‌زن کلیک کن.</p>
-      <div class="grid"><div class="c8"><svg id="brain" viewBox="0 0 640 400"></svg></div>
-      <div class="c4"><div class="brain-info" id="brainInfo"><b>یک ناحیه را انتخاب کن</b><br>برای دیدن نقش آن در شناخت.</div></div></div>
+    <div class="card c reveal"><h3><i>🧠</i>نقشهٔ تعاملی مغز</h3>
+      <p class="lead">نمای جانبی نیمکرهٔ چپ. یکی از سه لایه را انتخاب کن، روی هر ناحیه بزن تا کارکرد، پروندهٔ بالینی و ارتباط‌هایش را ببینی؛ بعد خودت را در حالت آزمون بسنج.</p>
+      <div class="bm">
+        <div class="bm-bar"><div class="btns" id="bmLayers"></div><input id="bmQ" type="search" placeholder="جست‌وجوی ناحیه (مثلاً بروکا)…" aria-label="جست‌وجوی ناحیه"><button class="btn p" id="bmQuiz">🎯 حالت آزمون</button></div>
+        <div class="bm-grid">
+          <div class="bm-stage"><svg id="brain" viewBox="0 0 800 520" role="img" aria-label="نقشهٔ مغز"></svg><div id="bmTip" class="bm-tip" hidden></div><div class="bm-legend" id="bmLegend"></div></div>
+          <div class="bm-side"><div class="bm-info" id="bmInfo"></div><div class="bm-list" id="bmList"></div></div>
+        </div>
+      </div>
     </div>
 
-    <div class="card c reveal"><h3><i>⚡</i>مقیاس رویدادهای فشارزا</h3>
+<div class="card c reveal"><h3><i>⚡</i>مقیاس رویدادهای فشارزا</h3>
       <p class="lead">رویدادهای یک‌سال گذشتهٔ زندگی را انتخاب کن؛ این ۴۳ رویداد همان مقیاس سنجش سازگاری مجدد اجتماعی هولمز و راهه (۱۹۶۷، جدول ۳-۶ جزوه) است. جمع نمره‌ها: کمتر از ۱۵۰ = خطر کم، ۱۵۰ تا ۲۹۹ = متوسط، ۳۰۰ یا بیشتر = بالا. رویدادهای مثبت هم فشارزا هستند!</p>
       <div class="grid" id="events" style="gap:10px;max-height:380px;overflow-y:auto;padding:4px"></div>
       <div class="gauge"><i id="gaugeI"></i></div>
@@ -721,23 +777,137 @@ const core=el('circle',{cx:200,cy:170,r:52,fill:'#7c5cff55',stroke:'var(--a1)','
 L.forEach((l,i)=>{const ln=el('line',{x1:200,y1:170,stroke:cols[i],'stroke-opacity':.5,'stroke-width':2},s);const g=el('g',{style:'cursor:pointer'},s);el('circle',{r:38,fill:cols[i],'fill-opacity':.25,stroke:cols[i],'stroke-width':2.5},g);const w=l[0].split(' ');w.forEach((x,k)=>{const tt=el('text',{y:(w.length>1?-2+k*14:4),'text-anchor':'middle',fill:'var(--ink)','font-size':11.5,'font-weight':700},g);tt.textContent=x});g.onclick=()=>{info.innerHTML=`<b>${l[0]}</b> — ${l[1]}`;gs.forEach(o=>o.g.firstChild.setAttribute('stroke-width',2.5));g.firstChild.setAttribute('stroke-width',6)};gs.push({g,ln})});
 const V=watch(s);(function f(t){if(!V.on){requestAnimationFrame(f);return}gs.forEach((o,i)=>{const a=t/9000+i/5*Math.PI*2,x=200+Math.cos(a)*130,y=170+Math.sin(a)*115;o.g.setAttribute('transform',`translate(${x} ${y})`);o.ln.setAttribute('x2',x);o.ln.setAttribute('y2',y)});if(!RM)requestAnimationFrame(f)})(0)})();
 
-/* brain map */
-(()=>{const s=$('#brain'),info=$('#brainInfo');
-const defs=el('defs',{},s),cp=el('clipPath',{id:'bc'},defs);el('path',{d:'M70 215C50 120 150 40 290 38C420 36 540 80 575 175C590 235 540 285 470 285C430 320 360 305 330 285C270 300 210 280 190 270C130 275 85 255 70 215Z'},cp);
-const lobes=[['فرونتال (پیشانی)','#7c5cff','0,0 300,0 255,215 0,230','<b>لوب پیشانی</b><br>تصمیم‌گیری، تنظیم هیجان و برنامه‌ریزی. <b>فینیاس گیج (۱۸۴۸):</b> آسیب این ناحیه ← تغییر شخصیت، تنظیم هیجان و تصمیم‌گیری مختل شد.',115,150],
-['آهیانه','#22d3ee','300,0 470,0 440,170 255,215','<b>لوب آهیانه</b><br>پردازش لامسه (حس‌های بدنی) و یکپارچه‌سازی فضایی.',360,105],
-['پس‌سری','#ff6bb5','470,0 640,0 640,400 430,400 440,170','<b>لوب پس‌سری</b><br>پردازش بینایی (قشر بینایی اولیه).',520,170],
-['گیجگاهی','#5eead4','0,230 255,215 440,170 430,400 0,400','<b>لوب گیجگاهی</b><br>شنوایی و حافظه؛ قشر گیجگاهی زیرین ← تشخیص دیداری اشیا (ادراک‌پریشی اشیا، اولیور ساکس).',110,252]];
-const g=el('g',{'clip-path':'url(#bc)'},s);
-lobes.forEach(([n,c,pts,i,tx,ty])=>{const p=el('polygon',{points:pts,fill:c,'fill-opacity':.45,stroke:'var(--bg)','stroke-width':4,class:'lobe'},g);p.onclick=()=>{$$('.lobe',s).forEach(x=>x.classList.remove('sel'));p.classList.add('sel');info.innerHTML=i};
-const t=el('text',{x:tx,y:ty,'text-anchor':'middle',fill:'var(--ink)','font-weight':800,'font-size':15,'pointer-events':'none'},s);t.textContent=n});
-for(let i=0;i<9;i++)el('path',{d:`M${120+i*50} ${60+(i%3)*30}q25 ${20+i*3} 10 60`,fill:'none',stroke:'#fff','stroke-opacity':.18,'stroke-width':2,'pointer-events':'none'},g);
-el('ellipse',{cx:470,cy:318,rx:70,ry:34,fill:'#ffc86166',stroke:'var(--a5)','stroke-width':2},s);const ct=el('text',{x:470,y:323,'text-anchor':'middle','font-size':13,fill:'var(--ink)','font-weight':700},s);ct.textContent='مخچه';
-const spot=(cx,cy,r,txt,html)=>{const c=el('circle',{cx,cy,r,fill:'#fff',stroke:'#ff2d75','stroke-width':4,class:'spot'},s);const t=el('text',{x:cx,y:cy-r-6,'text-anchor':'middle','font-size':12,fill:'var(--ink)','font-weight':800,'pointer-events':'none'},s);t.textContent=txt;c.onclick=()=>info.innerHTML=html};
-spot(170,225,13,'بروکا','<b>ناحیهٔ بروکا (بیمار «تن»)</b><br>لوب پیشانی چپ ← اختلال <b>تولید</b> گفتار.');
-spot(385,235,13,'ورنیکه','<b>ناحیهٔ ورنیکه</b><br>لوب گیجگاهی چپ ← اختلال <b>درک</b> زبان.');
-spot(300,300,11,'هیپوکامپ','<b>هیپوکامپ</b><br>مرکز حافظهٔ رویدادی؛ آسیب آن ← ناتوانی در ساختن خاطرات جدید.');
-spot(255,262,9,'آمیگدال','<b>آمیگدال</b><br>پردازش هیجان و تهدید (اضطراب، PTSD، GAD).')})();
+/* brain map (interactive explorer) */
+(()=>{
+const s=$('#brain'),info=$('#bmInfo'),list=$('#bmList'),tip=$('#bmTip'),stage=$('.bm-stage'),qin=$('#bmQ');
+const O='M95 255C88 195 138 122 228 92C318 62 432 52 522 68C612 84 692 142 713 226C723 272 707 318 668 336C640 349 600 346 572 340C535 360 470 380 410 376C350 373 300 372 262 358C236 348 226 330 200 326C150 322 100 300 95 255Z';
+const LAY=[['lobes','لوب‌ها'],['areas','نواحی کارکردی'],['deep','زیرقشری و ساقه']];
+const LN={lobes:'لوب',areas:'ناحیهٔ کارکردی',deep:'ساختار زیرقشری'};
+const T_ATLAS='تقسیم‌بندی‌های مغز',T_HIST='تاریخچه و علوم اعصاب شناختی',T_SENSE='محل پردازش اطلاعات حواس در مغز';
+const E=(a,b,rx,ry,r)=>['ellipse',{cx:a,cy:b,rx,ry,transform:r?`rotate(${r} ${a} ${b})`:''}];
+const P=(d,w)=>['path',{d,fill:'none','stroke-width':w,'stroke-linecap':'round','data-band':1}];
+const R=[
+/* lobes */
+{id:'frontal',n:'لوب پیشانی',l:'Frontal lobe',L:'lobes',e:'مغز پیشین · قشر',col:'#7c5cff',clip:1,sh:[['polygon',{points:'0,0 405,0 378,120 345,238 290,268 226,306 0,340'}]],c:[185,200],
+ fn:'برنامه‌ریزی، تصمیم‌گیری، کنترل اجرایی، حرکت و تولید گفتار؛ بسیاری از فعالیت‌های اصلی، آگاهانه و سطح بالای ما.',
+ clin:'فینیاس گیج (۱۸۴۸): آسیب لوب پیشانی ← تغییر شخصیت، اختلال در تنظیم هیجان و تصمیم‌گیری. به همین دلیل بیشتر مداخله‌های TMS روی نواحی پیشانی انجام می‌شود.',
+ jump:T_HIST,conn:['broca','motor','pfc'],q:'کدام لوب مسئول برنامه‌ریزی، تصمیم‌گیری و کنترل اجرایی است؟'},
+{id:'parietal',n:'لوب آهیانه',l:'Parietal lobe',L:'lobes',e:'مغز پیشین · قشر',col:'#22d3ee',clip:1,sh:[['polygon',{points:'405,0 615,0 588,140 560,222 450,244 345,238 378,120'}]],c:[495,135],
+ fn:'پردازش حسی (لامسه)، توجه فضایی، مسیریابی (Navigation) و یکپارچه‌سازی اطلاعات حسی رسیده.',
+ jump:T_ATLAS,conn:['sensory','ppc'],q:'کدام لوب توجه فضایی و مسیریابی را بر عهده دارد؟'},
+{id:'temporal',n:'لوب گیجگاهی',l:'Temporal lobe',L:'lobes',e:'مغز پیشین · قشر',col:'#5eead4',clip:1,sh:[['polygon',{points:'226,306 290,268 345,238 450,244 560,222 610,420 226,420'}]],c:[330,335],
+ fn:'شنوایی، حافظه (هیپوکامپ در این ناحیه است)، پردازش زبان (ناحیهٔ ورنیکه) و تشخیص اشیا.',
+ clin:'آسیب قشر گیجگاهی زیرین ← ادراک‌پریشی اشیا؛ آسیب ناحیهٔ ورنیکه ← اختلال درک زبان؛ آسیب هیپوکامپ ← ناتوانی در ساختن خاطرات جدید.',
+ jump:T_ATLAS,conn:['wernicke','auditory','itc','hippo'],q:'کدام لوب شنوایی را پردازش می‌کند و هیپوکامپ در آن قرار دارد؟'},
+{id:'occipital',n:'لوب پس‌سری',l:'Occipital lobe',L:'lobes',e:'مغز پیشین · قشر',col:'#ff6bb5',clip:1,sh:[['polygon',{points:'615,0 800,0 800,420 610,420 560,222 588,140'}]],c:[665,175],
+ fn:'پردازش اطلاعات بینایی.',jump:T_SENSE,conn:['visual'],q:'کدام لوب پردازش بینایی را انجام می‌دهد؟'},
+{id:'cerebellum',n:'مخچه',l:'Cerebellum',L:'lobes',e:'مغز پسین',col:'#ffc861',sh:[E(588,396,96,50,-12)],c:[588,396],
+ fn:'هماهنگی حرکت، تعادل و مشارکت در برخی عملکردهای شناختی.',jump:T_ATLAS,conn:['motor','brainstem'],q:'کدام ساختار هماهنگی حرکت و تعادل را بر عهده دارد؟'},
+/* functional areas */
+{id:'pfc',n:'قشر پیش‌پیشانی',l:'Prefrontal cortex',L:'areas',e:'لوب پیشانی',col:'#9d8bff',clip:1,sh:[E(150,190,80,98)],c:[150,190],
+ fn:'برنامه‌ریزی، تصمیم‌گیری و کنترل اجرایی؛ بخش بزرگی از «خودِ آگاه» ما اینجاست.',
+ clin:'فینیاس گیج: میلهٔ آهنی از این ناحیه گذشت؛ او زنده ماند اما شخصیت و تنظیم هیجان و تصمیم‌گیری‌اش تغییر کرد. هدف رایج TMS: چپ برای افسردگی (تحریک)، راست برای اضطراب (مهار).',
+ jump:T_HIST,conn:['amygdala','thalamus','hippo'],q:'آسیب کدام ناحیه فینیاس گیج را دچار تغییر شخصیت کرد؟'},
+{id:'motor',n:'قشر حرکتی',l:'Primary motor cortex',L:'areas',e:'لوب پیشانی · شیار پیش‌مرکزی',col:'#7c5cff',clip:1,sh:[P('M372 52C360 120 342 182 310 240',34)],c:[345,140],
+ fn:'آغاز حرکت ارادی (توضیح تکمیلی؛ جزوه «حرکت» را کارکرد لوب پیشانی می‌داند).',jump:T_ATLAS,conn:['broca','bg','cerebellum','sensory'],q:'کدام ناحیهٔ نوار جلوی شیار مرکزی حرکت ارادی را آغاز می‌کند؟'},
+{id:'sensory',n:'قشر حسی-پیکری',l:'Somatosensory cortex',L:'areas',e:'لوب آهیانه · شیار پس‌مرکزی',col:'#22d3ee',clip:1,sh:[P('M416 52C404 120 386 182 354 238',34)],c:[385,140],
+ fn:'دریافت و پردازش لامسه و حس‌های بدنی در لوب آهیانه.',jump:T_SENSE,conn:['thalamus','motor'],q:'کدام ناحیه لامسه و حس‌های بدنی را دریافت می‌کند؟'},
+{id:'ppc',n:'آهیانهٔ خلفی',l:'Posterior parietal cortex',L:'areas',e:'لوب آهیانه',col:'#67e8f9',clip:1,sh:[E(510,140,72,55)],c:[510,140],
+ fn:'توجه فضایی، مسیریابی و یکپارچه‌سازی اطلاعات حسی.',jump:T_ATLAS,conn:['visual','sensory'],q:'کدام ناحیه توجه فضایی و مسیریابی را یکپارچه می‌کند؟'},
+{id:'broca',n:'ناحیهٔ بروکا',l:'Broca\'s area',L:'areas',e:'لوب پیشانی چپ',col:'#ff9ad5',clip:1,sh:[E(254,262,31,23)],c:[254,262],
+ fn:'تولید گفتار.',clin:'بیمار «تن»: آسیب لوب پیشانی چپ ← اختلال در تولید گفتار (زبان‌پریشی بروکا).',jump:T_HIST,conn:['wernicke','motor'],q:'آسیب کدام ناحیه (بیمار «تن») تولید گفتار را مختل می‌کند؟'},
+{id:'wernicke',n:'ناحیهٔ ورنیکه',l:'Wernicke\'s area',L:'areas',e:'لوب گیجگاهی چپ',col:'#ffb86b',clip:1,sh:[E(490,263,36,21)],c:[490,263],
+ fn:'درک زبان.',clin:'آسیب لوب گیجگاهی چپ ← اختلال در درک زبان (زبان‌پریشی ورنیکه).',jump:T_HIST,conn:['broca','auditory'],q:'آسیب کدام ناحیه درک زبان را مختل می‌کند؟'},
+{id:'auditory',n:'قشر شنوایی',l:'Auditory cortex',L:'areas',e:'لوب گیجگاهی',col:'#5eead4',clip:1,sh:[E(402,271,38,16)],c:[402,271],
+ fn:'پردازش شنوایی در لوب گیجگاهی.',jump:T_SENSE,conn:['thalamus','wernicke'],q:'کدام ناحیه اطلاعات شنوایی را در لوب گیجگاهی پردازش می‌کند؟'},
+{id:'visual',n:'قشر بینایی اولیه',l:'Primary visual cortex (V1)',L:'areas',e:'لوب پس‌سری',col:'#ff6bb5',clip:1,sh:[E(690,247,32,64)],c:[690,247],
+ fn:'پردازش اطلاعات بینایی در لوب پس‌سری.',clin:'رابطهٔ اندازهٔ قشر بینایی اولیه با خطای پونزو (شوارتسکوف و سانگ) بررسی شد؛ یافته‌ها متناقض‌اند.',jump:T_SENSE,conn:['itc','ppc','thalamus'],q:'کدام ناحیه قشر بینایی اولیه است؟'},
+{id:'itc',n:'قشر گیجگاهی زیرین',l:'Inferior temporal cortex',L:'areas',e:'لوب گیجگاهی',col:'#34d399',clip:1,sh:[E(402,347,92,22)],c:[402,347],
+ fn:'تشخیص دیداری اشیا.',clin:'ادراک‌پریشی اشیا (اولیور ساکس): ناتوانی در تشخیص دیداری اشیا با سالم بودن لامسه.',jump:T_HIST,conn:['visual'],q:'آسیب کدام ناحیه به ادراک‌پریشی اشیا می‌انجامد؟'},
+/* deep structures */
+{id:'thalamus',n:'تالاموس',l:'Thalamus',L:'deep',e:'مغز پیشین',col:'#ffb86b',sh:[E(412,222,40,26,-8)],c:[412,222],
+ fn:'انتقال و تنظیم بسیاری از اطلاعات حسی.',jump:T_ATLAS,conn:['sensory','auditory','visual','pfc'],q:'کدام ساختار پیام‌های حسی را منتقل و تنظیم می‌کند؟'},
+{id:'hypothalamus',n:'هیپوتالاموس',l:'Hypothalamus',L:'deep',e:'مغز پیشین',col:'#ff8a5c',sh:[E(385,264,19,12)],c:[385,264],
+ fn:'تنظیم هوموستاز، گرسنگی، تشنگی و عملکردهای هورمونی.',jump:T_ATLAS,conn:['thalamus','amygdala'],q:'کدام ساختار گرسنگی، تشنگی و عملکردهای هورمونی را تنظیم می‌کند؟'},
+{id:'bg',n:'عقده‌های قاعده‌ای',l:'Basal ganglia',L:'deep',e:'مغز پیشین',col:'#c084fc',sh:[E(345,205,36,40,10)],c:[345,205],
+ fn:'انتخاب و کنترل حرکت و یادگیری عادتی.',jump:T_ATLAS,conn:['motor','thalamus'],q:'کدام ساختار انتخاب و کنترل حرکت و یادگیری عادتی را برعهده دارد؟'},
+{id:'cc',n:'جسم پینه‌ای',l:'Corpus callosum',L:'deep',e:'مغز پیشین',col:'#94a3ff',sh:[P('M250 192C300 128 480 118 562 198',15)],c:[405,148],
+ fn:'ارتباط میان دو نیمکرهٔ مغز.',jump:T_ATLAS,conn:['frontal','occipital'],q:'کدام ساختار دو نیمکرهٔ مغز را به هم وصل می‌کند؟'},
+{id:'hippo',n:'هیپوکامپ',l:'Hippocampus',L:'deep',e:'مغز پیشین · لوب گیجگاهی',col:'#4ade80',sh:[P('M476 306C444 280 384 284 348 308C330 320 334 338 352 338',17)],c:[410,294],
+ fn:'شکل‌گیری و تثبیت حافظهٔ رویدادی.',clin:'آسیب هیپوکامپ ← ناتوانی در ساختن خاطرات جدید؛ کسانی که مشکل حافظه دارند احتمالاً در هیپوکامپ مشکل دارند.',jump:T_ATLAS,conn:['amygdala','pfc'],q:'کدام ساختار خاطرات رویدادی را شکل می‌دهد و تثبیت می‌کند؟'},
+{id:'amygdala',n:'آمیگدال',l:'Amygdala',L:'deep',e:'مغز پیشین',col:'#ff6b8b',sh:[['circle',{cx:333,cy:325,r:18}]],c:[333,325],
+ fn:'پردازش اهمیت هیجانی و تهدید.',clin:'افراد بسیار مضطرب، با PTSD یا اختلال اضطراب فراگیر (GAD) که اضطرابشان را نمی‌توانند کنترل کنند و تحریک‌پذیرند، احتمالاً در آمیگدال مشکل دارند.',jump:T_ATLAS,conn:['hippo','pfc','hypothalamus'],q:'کدام ساختار اهمیت هیجانی و تهدید را پردازش می‌کند (اضطراب، PTSD)؟'},
+{id:'insula',n:'قشر جزیره‌ای',l:'Insular cortex',L:'deep',e:'مغز پیشین · عمق شیار سیلویوس',col:'#f0abfc',sh:[E(298,252,28,20,-20)],c:[298,252],
+ fn:'پردازش چشایی (جزوه: چشایی در قشر جزیره‌ای).',jump:T_SENSE,conn:['amygdala'],q:'کدام ناحیه چشایی را پردازش می‌کند؟'},
+{id:'olfactory',n:'پیاز بویایی',l:'Olfactory bulb',L:'deep',e:'زیر لوب پیشانی',col:'#86efac',sh:[E(205,334,16,10)],c:[205,334],
+ fn:'پردازش بویایی (جزوه: بویایی در پیاز بویایی).',jump:T_SENSE,conn:['amygdala'],q:'کدام ساختار بویایی را پردازش می‌کند؟'},
+{id:'brainstem',n:'ساقهٔ مغز',l:'Brainstem',L:'deep',e:'مغز میانی و مغز پسین',col:'#cbd5e1',sh:[['path',{d:'M424 372L474 372C486 424 488 472 474 508L440 508C438 462 432 420 424 372Z'}]],c:[455,445],
+ fn:'مغز میانی (تکتوم، تگمنتوم) و مغز پسین (پل مغزی و بصل‌النخاع).',jump:T_ATLAS,conn:['cerebellum','thalamus'],q:'کدام ساختار شامل مغز میانی و پسین (پل و بصل‌النخاع) است؟'}
+];
+const by=Object.fromEntries(R.map(r=>[r.id,r]));
+R.forEach(r=>(r.conn||[]).forEach(t=>{const o=by[t];if(o){o.conn=o.conn||[];if(!o.conn.includes(r.id))o.conn.push(r.id)}}));
+/* svg scaffolding */
+const mk=(t,a,p)=>{const e=el(t,a,p);return e};
+const defs=mk('defs',{},s);
+defs.innerHTML=`<clipPath id="bmcc"><path d="${O}"/></clipPath><filter id="bmglow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><radialGradient id="bmcx" cx="45%" cy="38%" r="70%"><stop offset="0" stop-color="#3a3f9a"/><stop offset="1" stop-color="#1a1d55"/></radialGradient><linearGradient id="bmcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b5a2e"/><stop offset="1" stop-color="#3a2f18"/></linearGradient>`;
+const gD=mk('g',{class:'decor'},s);
+mk('path',{d:'M424 372L474 372C486 424 488 472 474 508L440 508C438 462 432 420 424 372Z',fill:'#4a4f7a','fill-opacity':.55},gD);
+const cb=mk('ellipse',{cx:588,cy:396,rx:96,ry:50,transform:'rotate(-12 588 396)',fill:'url(#bmcb)','fill-opacity':.7,stroke:'#ffc86166','stroke-width':2},gD);
+for(let i=0;i<7;i++)mk('path',{d:`M${505+i*3} ${378+i*8}Q${588} ${370+i*10} ${672-i*2} ${366+i*6}`,fill:'none',stroke:'#ffc86144','stroke-width':1.5,transform:'rotate(-12 588 396)'},gD);
+const gC=mk('g',{id:'bmCortex',style:'transition:opacity .4s'},s);
+mk('path',{d:O,fill:'url(#bmcx)',stroke:'#8b93ff',['stroke-width']:3,'stroke-opacity':.8},gC);
+const gS=mk('g',{'clip-path':'url(#bmcc)',class:'decor'},gC);
+for(let i=0;i<16;i++){const x=130+(i%8)*72,y=95+Math.floor(i/8)*150+(i%3)*14;mk('path',{d:`M${x} ${y}q${26+(i%4)*7} ${-26+(i%5)*8} ${50} ${(i%3)*14-8}t${30} ${26}`,fill:'none',stroke:'#fff','stroke-opacity':.11,'stroke-width':2},gS)}
+[['M402 56C388 120 368 185 335 240'],['M226 306C290 270 380 250 565 218'],['M612 84C600 130 575 180 562 220']].forEach(([d])=>mk('path',{d,fill:'none',stroke:'#fff','stroke-opacity':.3,'stroke-width':2.5,'stroke-dasharray':'2 6','stroke-linecap':'round'},gS));
+const gL=mk('g',{'clip-path':'url(#bmcc)',style:'transition:opacity .4s'},s);
+const gA=mk('g',{'clip-path':'url(#bmcc)'},s);
+const gX=mk('g',{},s);const gK=mk('g',{},s);const gR=mk('g',{},s);const gT=mk('g',{},s);
+R.forEach(r=>{
+ const par=r.L==='lobes'&&r.clip?gL:r.clip?gA:gX;
+ const g=mk('g',{class:'rg',tabindex:0,role:'button','aria-label':r.n,'data-id':r.id},par);r.g=g;
+ r.sh.forEach(([t,a])=>{const at={...a};if(!at.transform)delete at.transform;const band=at.fill==='none';
+  const e=mk(t,at,g);if(band){e.setAttribute('stroke',r.col);e.setAttribute('stroke-opacity',.55)}else{e.setAttribute('fill',r.col);e.setAttribute('fill-opacity',.42);e.setAttribute('stroke',r.col);e.setAttribute('stroke-opacity',.9);e.setAttribute('stroke-width',2)}});
+ const tx=mk('text',{x:r.c[0],y:r.c[1]+5,class:'lbl'},gT);tx.textContent=r.n;r.t=tx;
+ g.addEventListener('click',()=>pick(r.id));
+ g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(r.id)}});
+ g.addEventListener('pointerenter',e=>showTip(r,e));g.addEventListener('pointermove',e=>showTip(r,e));g.addEventListener('pointerleave',()=>tip.hidden=true);
+});
+/* legend + layer buttons */
+$('#bmLegend').innerHTML='<span><i style="background:#7c5cff"></i>پیشانی</span><span><i style="background:#22d3ee"></i>آهیانه</span><span><i style="background:#5eead4"></i>گیجگاهی</span><span><i style="background:#ff6bb5"></i>پس‌سری</span>';
+let layer='lobes',sel=null,quiz=null,q='';
+const lb=$('#bmLayers');LAY.forEach(([k,n])=>{const b=document.createElement('button');b.className='btn';b.dataset.l=k;b.textContent=n;b.onclick=()=>{if(quiz)endQuiz();setLayer(k)};lb.appendChild(b)});
+function showTip(r,e){if(quiz)return;const b=stage.getBoundingClientRect();tip.textContent=r.n;tip.hidden=false;tip.style.left=(e.clientX-b.left)+'px';tip.style.top=(e.clientY-b.top)+'px'}
+function setLayer(k){layer=k;sel=null;$$('.btn',lb).forEach(b=>b.classList.toggle('on',b.dataset.l===k));
+ R.forEach(r=>{const on=r.L===k,ctx=k==='areas'&&r.L==='lobes'&&r.clip;r.g.style.display=(on||ctx)?'':'none';r.g.style.pointerEvents=on?'':'none';r.t.style.display=on?'':'none';r.t.classList.remove('sel');r.g.classList.remove('sel','dim')});
+ gL.style.opacity=k==='lobes'?1:k==='areas'?.2:0;gC.style.opacity=k==='deep'?.35:1;
+ gK.innerHTML='';gR.innerHTML='';tip.hidden=true;qin.value='';q='';renderList();overview()}
+function renderList(){list.innerHTML='';if(quiz)return;R.filter(r=>r.L===layer&&(!q||(r.n+r.l).toLowerCase().includes(q))).forEach(r=>{const b=document.createElement('button');b.innerHTML=`<i style="background:${r.col}"></i>${r.n}`;b.classList.toggle('on',sel===r.id);b.onclick=()=>pick(r.id);list.appendChild(b)})}
+function overview(){if(quiz)return;const t={lobes:'چهار لوب قشر مغز و مخچه را ببین؛ روی هر کدام بزن.',areas:'ناحیه‌های کارکردی: گفتار، حرکت، حس، بینایی و شنوایی. روی هر کدام بزن تا پروندهٔ بالینی و ارتباط‌هایش را ببینی.',deep:'برش داخلی: ساختارهای زیرقشری و ساقه. جزوه می‌گوید دانشجویان علوم تربیتی باید همین‌ها را بشناسند، چون در کار با اضطراب و افسردگی شدید و اثر داروها به کار می‌آید.'}[layer];
+ info.innerHTML=`<div class="tag"><span>${LN[layer]}</span></div><h4>یک ناحیه را انتخاب کن</h4><p>${t}</p><div class="note ok">نگاه امروز به مغز <b>کل‌نگر و شبکه‌ای</b> است (نوروپلاستیسیته)؛ خطوط چشمک‌زن همین ارتباط‌ها را نشان می‌دهند.</div>`}
+function ripple(r){gR.innerHTML='';[0,.55].forEach(d=>{const c=mk('circle',{cx:r.c[0],cy:r.c[1],r:30,class:'rip',style:`animation-delay:${d}s;stroke:${r.col}`},gR)})}
+function links(r){gK.innerHTML='';(r.conn||[]).map(id=>by[id]).filter(o=>o&&o.L===layer).forEach(o=>{const [x1,y1]=r.c,[x2,y2]=o.c,mx=(x1+x2)/2,my=(y1+y2)/2-Math.hypot(x2-x1,y2-y1)*.22;mk('path',{d:`M${x1} ${y1}Q${mx} ${my} ${x2} ${y2}`,class:'cn',style:`stroke:${o.col}`},gK)})}
+function pick(id){const r=by[id];if(quiz){answer(id);return}
+ sel=id;R.forEach(o=>{o.g.classList.toggle('sel',o.id===id);o.t.classList.toggle('sel',o.id===id)});ripple(r);links(r);renderList();tip.hidden=true;
+ const rel=(r.conn||[]).map(x=>by[x]).filter(Boolean);
+ info.innerHTML=`<div class="tag"><span>${LN[r.L]}</span><span>${r.e}</span></div><h4>${r.n}<small>${r.l}</small></h4><p>${r.fn}</p>${r.clin?`<div class="clin">🩺 ${r.clin}</div>`:''}${rel.length?`<div class="rel">ارتباط با:${rel.map(o=>`<button data-go="${o.id}">${o.n}</button>`).join('')}</div>`:''}<button class="btn jmp" data-j="${r.jump}">📖 بخش مرتبط در جزوه</button>`;
+ $$('[data-go]',info).forEach(b=>b.onclick=()=>{const o=by[b.dataset.go];if(o.L!==layer)setLayer(o.L);pick(o.id)});
+ $('.jmp',info).onclick=e=>jumpTo(e.target.dataset.j)}
+function jumpTo(t){const d=$$('details.nt').find(x=>x.querySelector('summary').textContent.includes(t));if(!d)return;d.hidden=false;d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'})}
+qin.oninput=()=>{if(quiz)return;q=qin.value.trim().toLowerCase();R.forEach(r=>{const m=!q||(r.n+r.l).toLowerCase().includes(q);r.g.classList.toggle('dim',!m)});renderList()};
+qin.addEventListener('keydown',e=>{if(e.key==='Enter'&&q){const m=R.find(r=>r.L===layer&&(r.n+r.l).toLowerCase().includes(q));if(m)pick(m.id)}});
+/* quiz */
+function startQuiz(){const pool=R.filter(r=>r.L===layer).sort(()=>Math.random()-.5).slice(0,8);quiz={pool,i:0,score:0,tries:0};s.classList.add('quiz');gK.innerHTML='';gR.innerHTML='';R.forEach(r=>r.g.classList.remove('sel','dim'));$('#bmQuiz').textContent='✕ خروج از آزمون';ask()}
+function endQuiz(){quiz=null;s.classList.remove('quiz');$('#bmQuiz').textContent='🎯 حالت آزمون';R.forEach(r=>r.g.classList.remove('hit','miss'));renderList();overview()}
+function ask(){const Q=quiz;if(Q.i>=Q.pool.length){const f=Q.score,n=Q.pool.length;info.innerHTML=`<div style="text-align:center"><div style="font-size:54px">${f>=n-1?'🏆':f>=n/2?'🎉':'💪'}</div><div class="ro">${fa(f)} / ${fa(n)}</div><p>${f>=n-1?'عالی! نقشهٔ مغز را خوب بلدی.':'یک بار دیگر لایه را مرور کن و دوباره امتحان کن.'}</p><button class="btn p" id="bmAgain">↺ دوباره</button></div>`;if(f>=n-1)confetti();$('#bmAgain').onclick=()=>{const l=layer;endQuiz();startQuiz()};return}
+ Q.tries=0;const r=Q.pool[Q.i];info.innerHTML=`<div class="tag"><span>پرسش ${fa(Q.i+1)} از ${fa(Q.pool.length)}</span><span>امتیاز ${fa(Q.score)}</span></div><div class="bm-prog"><i style="width:${Q.i/Q.pool.length*100}%"></i></div><div class="bm-q">${r.q}</div><p style="color:var(--muted);font-size:13px">روی ناحیهٔ درست در نقشه بزن.</p>`}
+function answer(id){const Q=quiz;if(!Q||Q.busy||Q.i>=Q.pool.length)return;const r=Q.pool[Q.i],g=by[id].g;
+ if(id===r.id){if(Q.tries===0)Q.score++;g.classList.add('hit');Q.busy=1;setTimeout(()=>{g.classList.remove('hit');Q.i++;Q.busy=0;ask()},900)}
+ else{Q.tries++;g.classList.remove('miss');void g.getBoundingClientRect();g.classList.add('miss');
+  if(Q.tries>=2){Q.busy=1;r.g.classList.add('sel');ripple(r);info.insertAdjacentHTML('beforeend',`<div class="note warn">پاسخ درست: <b>${r.n}</b></div>`);setTimeout(()=>{r.g.classList.remove('sel');gR.innerHTML='';Q.i++;Q.busy=0;ask()},1800)}
+  else info.insertAdjacentHTML('beforeend','<div class="note warn" id="bmw">نه، یک بار دیگر امتحان کن.</div>')}}
+$('#bmQuiz').onclick=()=>{quiz?endQuiz():startQuiz()};
+setLayer('lobes');
+})();
 
 /* stress events */
 (()=>{const E=[['مرگ همسر',100],['طلاق',73],['جدایی از همسر (بدون طلاق رسمی)',65],['زندانی شدن',63],['مرگ یکی از اعضای نزدیک خانواده',63],['آسیب یا بیماری شخصی',53],['ازدواج',50],['اخراج از کار',47],['آشتی با همسر',45],['بازنشستگی',45],['تغییر در سلامت یکی از اعضای خانواده',44],['بارداری',40],['مشکلات جنسی',39],['اضافه شدن عضو جدید به خانواده',39],['تغییرات عمده در کسب‌وکار',39],['تغییر در وضعیت مالی',38],['مرگ یک دوست نزدیک',37],['تغییر رشتهٔ شغلی',36],['تغییر در میزان مشاجره با همسر',35],['گرفتن وام یا رهن بزرگ',31],['توقیف ملک یا وام',30],['تغییر در مسئولیت‌های شغلی',29],['ترک خانه توسط فرزند',29],['مشکل با خانوادهٔ همسر',29],['موفقیت فردی برجسته',28],['شروع یا توقف کار همسر',26],['شروع یا پایان تحصیل (قبولی در دانشگاه)',26],['تغییر در شرایط زندگی',25],['تغییر در عادت‌های شخصی',24],['مشکل با رئیس',23],['تغییر در ساعات یا شرایط کار',20],['تغییر محل سکونت',20],['تغییر مدرسه',20],['تغییر در تفریحات',19],['تغییر در فعالیت‌های مذهبی',19],['تغییر در فعالیت‌های اجتماعی',18],['گرفتن وام یا رهن کوچک',17],['تغییر در عادت‌های خواب',16],['تغییر در دفعات دورهمی‌های خانوادگی',15],['تغییر در عادت‌های غذایی',15],['تعطیلات',13],['کریسمس (تعطیلات سال نو)',12],['تخلفات جزئی از قانون',11]];
