@@ -204,6 +204,16 @@ body:has(.image-dialog[open]){overflow:hidden}
 .map-branches:before{background:var(--accent);opacity:.4;left:16.5%;right:16.5%}.map-branch{position:relative}.map-branch:nth-child(-n+3):before{content:'';position:absolute;width:1px;height:8px;background:var(--accent);opacity:.45;top:-10px;inset-inline-start:50%}
 @media(max-width:1030px){.map-branches:before{left:25%;right:25%}.map-branch:nth-child(3):before{display:none}}
 @media(max-width:440px){.map-root:after{inset-inline-start:8px;height:17px}.map-branches{padding-inline-start:19px}.map-branches:before{top:0;bottom:12px;left:auto;right:8px;width:1px;height:auto}.map-branch:nth-child(n):before{content:'';display:block;width:10px;height:1px;inset-inline-start:-11px;top:14px}}
+/*CREDITS-START*/
+.md-credits{max-width:900px;margin:44px auto 36px;padding:20px 18px;border:1px solid var(--line,#ddd);border-radius:22px;background:var(--panel,var(--card,#fff));text-align:center;color:var(--muted,#667);font-size:14px;box-shadow:0 8px 26px -18px #000}
+.md-credits .tag{font-weight:800;color:var(--ink,inherit);font-size:15px;margin-bottom:12px}.md-credits .tag small{display:block;font-weight:400;color:var(--muted,#667);font-size:12.5px;margin-top:2px}
+.md-credits .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.md-credits .row>div{flex:1 1 170px;max-width:260px;padding:10px 14px;border-radius:14px;background:var(--soft,var(--card-s,#f3f3f3));border:1px solid var(--line,#ddd)}
+.md-credits .row small{display:block;font-size:12px;color:var(--muted,#667);margin-bottom:2px}
+.md-credits .row b{font-size:15px;color:var(--accent,var(--a2,#09645e));font-weight:800}
+.md-credits .src{margin-top:12px;font-size:12.5px}
+@media print{.md-credits{break-inside:avoid;box-shadow:none}}
+/*CREDITS-END*/
 /*MODERN-START*/
 :root{--hero-a:#183d31;--hero-b:#3f8f6d;}
 /* ===== Modern layer: design tokens, theme system, refined frames ===== */
@@ -310,7 +320,7 @@ html,body{overflow-x:clip}
 @media(max-width:820px){.theme-pop{inset-inline-end:10px}.top{gap:6px}.top .top-link{display:none}}
 @media print{.theme-pop,#mdTop{display:none!important}body{background:#fff!important}.js-modern .m-rev{opacity:1!important;transform:none!important}}
 
-/* ===== fixes: bidi separator, mobile top bar, popover, touch targets ===== */
+﻿/* ===== fixes: bidi separator, mobile top bar, popover, touch targets ===== */
 .mt{display:flex!important;align-items:center;flex-wrap:wrap;gap:0 7px}
 .mt i{display:inline-block;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55;flex:none}
 @media(max-width:700px){
@@ -329,18 +339,15 @@ html,body{overflow-x:clip}
  .topic summary{min-height:48px}
  .topic-related a{min-height:48px}
 }
+/* RTL alignment + slider chips */
+.topic-tools,.catalog-actions,.hero-actions,.filters,.subtopics{justify-content:flex-start!important}
+.filters,.subtopics{flex-wrap:nowrap!important;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin;-webkit-overflow-scrolling:touch;padding-block:6px!important;cursor:grab;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 6px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 6px),transparent 100%)}
+.filters>*,.subtopics>*{flex:none;scroll-snap-align:start;white-space:nowrap}
+.filters.drag,.subtopics.drag{cursor:grabbing;scroll-snap-type:none}
+@media(max-width:700px){.filters::-webkit-scrollbar,.subtopics::-webkit-scrollbar{display:none}.filters,.subtopics{scrollbar-width:none}}
+
 
 /*MODERN-END*/
-/*CREDITS-START*/
-.md-credits{max-width:900px;margin:44px auto 36px;padding:20px 18px;border:1px solid var(--line,#ddd);border-radius:22px;background:var(--panel,var(--card,#fff));text-align:center;color:var(--muted,#667);font-size:14px;box-shadow:0 8px 26px -18px #000}
-.md-credits .tag{font-weight:800;color:var(--ink,inherit);font-size:15px;margin-bottom:12px}.md-credits .tag small{display:block;font-weight:400;color:var(--muted,#667);font-size:12.5px;margin-top:2px}
-.md-credits .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.md-credits .row>div{flex:1 1 170px;max-width:260px;padding:10px 14px;border-radius:14px;background:var(--soft,var(--card-s,#f3f3f3));border:1px solid var(--line,#ddd)}
-.md-credits .row small{display:block;font-size:12px;color:var(--muted,#667);margin-bottom:2px}
-.md-credits .row b{font-size:15px;color:var(--accent,var(--a2,#09645e));font-weight:800}
-.md-credits .src{margin-top:12px;font-size:12.5px}
-@media print{.md-credits{break-inside:avoid;box-shadow:none}}
-/*CREDITS-END*/
 </style><!--MODERN-FONT--><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap" rel="stylesheet"><!--/MODERN-FONT-->
 </head>
 <body class="edition-design"><header class="top"><button id="menu" type="button" aria-controls="sidebar" aria-expanded="false">فهرست</button><strong>اختلالات یادگیری</strong><a href="#catalog" class="top-link">مباحث و جست‌وجو</a><details class="reader-options" id="reader-options"><summary aria-label="اندازهٔ متن مطالعه">اندازهٔ متن</summary><div class="reader-size" role="group" aria-label="اندازهٔ متن مطالعه"><button type="button" data-size="compact" aria-pressed="false">کوچک</button><button type="button" data-size="normal" aria-pressed="true">معمولی</button><button type="button" data-size="large" aria-pressed="false">درشت</button></div></details><button id="theme" type="button" aria-pressed="false">حالت تاریک</button></header>
@@ -888,7 +895,7 @@ drawReview();
  }
 })();
 </script><!--MODERN-JS--><script>
-/* modern layer: theme picker, scroll reveal, back-to-top */
+﻿/* modern layer: theme picker, scroll reveal, back-to-top */
 (()=>{
 const root=document.documentElement,KEY='learning-theme2';
 const T=[['light','روشن','#f2f6f4','#09645e'],['sepia','کاغذی','#f3ead6','#8a4b12'],['ocean','اقیانوس','#edf4fb','#0b5cad'],['violet','بنفش','#f4f1fb','#5b34c4'],['rose','رز','#fbf0f3','#b3204f'],['dark','تاریک','#101b1b','#8cddcc'],['midnight','نیمه‌شب','#000000','#7dd3fc']];
@@ -916,10 +923,18 @@ const els=[...document.querySelectorAll('.lesson-deck li,.path,.visual-card,.cha
 els.forEach(e=>e.classList.add('m-rev'));
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('m-in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -6% 0px',threshold:.05});els.forEach(e=>io.observe(e))}else els.forEach(e=>e.classList.add('m-in'));
 /* back to top */
-const up=document.createElement('button');up.id='mdTop';up.type='button';up.setAttribute('aria-label','بازگشت به بالا');up.textContent='↑';document.body.appendChild(up);
+if(!document.querySelector('#totop,#top,.to-top,.back-top')){const up=document.createElement('button');up.id='mdTop';up.type='button';up.setAttribute('aria-label','بازگشت به بالا');up.textContent='↑';document.body.appendChild(up);
 up.onclick=()=>scrollTo({top:0,behavior:'smooth'});
-addEventListener('scroll',()=>up.classList.toggle('show',scrollY>800),{passive:true});
+addEventListener('scroll',()=>up.classList.toggle('show',scrollY>800),{passive:true})}
 })();
+
+/* drag-to-scroll for chip sliders (desktop) */
+(()=>{document.querySelectorAll('.filters,.subtopics').forEach(el=>{let down=false,sx=0,sl=0,moved=false;
+ el.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;down=true;moved=false;sx=e.clientX;sl=el.scrollLeft});
+ addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-sx;if(Math.abs(dx)>4){moved=true;el.classList.add('drag')}if(moved)el.scrollLeft=sl-dx});
+ addEventListener('pointerup',()=>{down=false;setTimeout(()=>el.classList.remove('drag'),0)});
+ el.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
+ el.addEventListener('wheel',e=>{if(el.scrollWidth>el.clientWidth&&Math.abs(e.deltaY)>Math.abs(e.deltaX)&&e.shiftKey){el.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false})})})();
 
 </script><!--/MODERN-JS-->
 </body></html>
